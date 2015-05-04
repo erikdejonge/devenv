@@ -29,6 +29,7 @@ font-style: normal
 
 H6
 foreground: B3D8FD
+font-style: normal
 
 EMPH
 foreground: db8d50
