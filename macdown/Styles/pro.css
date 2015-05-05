@@ -10,18 +10,14 @@ blockquote {
     padding: 0;
 }
 body {
-
     text-rendering: geometricPrecision;
-
-
-
-
     font-family: "Source Code Pro Light";
     font-size: 15px;
     line-height: 150%;
     color: #F2F0CD;
     background-color: #0B0704;
     margin: 10px 13px 10px 13px;
+    padding-bottom: 32px;
 }
 strong {
     font-family: "Source Code Pro Regular";
@@ -74,7 +70,6 @@ h4,
 h5,
 h6 {
     color: #54B2BC;
-
     margin-top: 32px;
     margin-bottom: 8px;
     font-weight: normal;
@@ -83,7 +78,6 @@ h1 {
     margin-top: 8px;
     margin-bottom: 16px;
     font-size: 26px;
-
     color: #51AE8D;
     font-family: "Source Code Pro Regular";
 }
@@ -93,19 +87,15 @@ h2 {
     font-family: "Source Code Pro Regular";
 }
 h3 {
-
     font-size: 16px;
 }
 h4 {
-
     font-size: 16px;
 }
 h5 {
-
     font-size: 16px;
 }
 h6 {
-
     font-size: 16px;
 }
 ul, ol {
@@ -126,7 +116,6 @@ blockquote {
 blockquote p {
     font-size: 16px;
     color: #FF64A0;
-
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 50px;
@@ -143,27 +132,6 @@ code {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-}
-pre {
-    display: block;
-    padding: 16px;
-    margin: 0 0 18px;
-
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 1.1;
-    border: 1px solid #A4C3C2;
-    background-color: #051012;
-    color: #116CD6
-    white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    border-radius: 3px;
-}
-pre code {
-    background-color: #051012;
-    color: #F2F0CD;
-    padding: 0;
 }
 sup {
     font-size: 0.83em;
@@ -187,4 +155,24 @@ sup {
 	table, pre {
 		page-break-inside: avoid;
 	}
+}
+pre {
+    display: block;
+    padding: 16px;
+    margin: 0 0 18px;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1.1;
+    border: 1px solid #A4C3C2;
+    background-color: #051012;
+    color: #116CD6
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border-radius: 3px;
+}
+pre code {
+    background-color: #051012;
+    color: #F2F0CD;
+    padding: 0;
 }
