@@ -115,13 +115,14 @@ blockquote {
 }
 blockquote p {
     font-size: 16px;
-    color: #FF64A0;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 50px;
+    color: #E9D28E;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: 16px;
     padding-left: 15px;
     border-left: 3px solid #ccc;
 }
+
 code, pre {
     font-family: "Source Code Pro Light"
 }
@@ -163,7 +164,7 @@ pre {
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 1.1;
-    border: 1px solid #A4C3C2;
+    border: 1px solid #3C3C3E;
     background-color: #051012;
     color: #116CD6
     white-space: pre;

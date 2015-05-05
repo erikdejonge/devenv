@@ -64,16 +64,20 @@ def main():
                     else:
                         l = l.replace("sourceCode", "python")
 
-
+                l = l.replace("*[", "##").replace("]*", "")
                 if "-- " in l:
                     l = l.replace("-- a", "\n.. a").strip()
                     l = l.replace("-- :", "\n   :").strip()
                     l = l.replace("\\", "")
-                    codebuf2 += "```\n"
-                    codebuf2 += l
-                    codebuf2 += "\n```"
-                else:
-                    codebuf2 += l
+
+                    if ":target: <" in l:
+                        l = l.replace(":target: <", "^ [target](").replace(">", ")").replace("^", ">")
+                    else:
+                        l = "```\n" + l + "\n```"
+
+
+
+                codebuf2 += l
                 cnt += 1
 
             open(arg.rstfile.lower().replace(".rst", ".md"), "w").write(codebuf2)
