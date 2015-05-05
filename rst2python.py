@@ -6,8 +6,9 @@ Usage:
   tests.py [options] <rstfile>
 
 Options:
-  -h --help                     Show this screen.
-  -v --verbose                  Folder from where to run the command [default: .].
+  -h --help     Show this screen.
+  -f --force    Overwrite existing md files.
+  -s --silent   Folder from where to run the command [default: .].
 """
 from arguments import Arguments
 
@@ -24,8 +25,13 @@ def main():
         print("file does not exist")
         return
 
+    if arg.force is False:
+        if os.path.exists(arg.rstfile.replace(".rst", ".md")):
+            print("\033[91m" + arg.rstfile.replace(".rst", ".md") + " exists\033[0m")
+            return
 
-    print("\033[94m" + arg.rstfile.lower(), "->\033[0;96m", arg.rstfile.lower().replace(".rst", ".md") + "\033[0m")
+    if not arg.silent:
+        print("\033[94m" + arg.rstfile.lower(), "->\033[0;96m", arg.rstfile.lower().replace(".rst", ".md") + "\033[0m")
 
     os.system("pandoc -f rst -t markdown_github " + arg.rstfile + " -o " + arg.rstfile.lower().replace(".rst", ".md") + " 2> /dev/null")
     try:
