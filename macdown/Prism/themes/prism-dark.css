@@ -15,7 +15,7 @@ pre[class*="language-"] {
     word-break: normal;
     font-family: "Source Code Pro Light";
     font-size: 16px;
-    line-height: 24px;
+    line-height: 150%;
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
@@ -32,18 +32,20 @@ pre[class*="language-"],
 
 /* Code blocks */
 pre[class*="language-"] {
-    padding: 1em;
-    margin: .5em 0;
+    /*padding: 1em;*/
+    /*margin: .5em 0;*/
     overflow: auto;
-    border: 1px solid #A4C3C2;
+    border: 1px solid #2A595F;
     border-radius: 3px;
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-    padding: .15em .2em .05em;
-    border-radius: 3px;
-    border: 1px solid #A4C3C2;
+    /*padding: .15em .2em .05em;*/
+    border-radius: 5px;
+    border: 1px solid #2A595F;
 }
 
 .token.comment,

@@ -17,7 +17,7 @@ body {
     color: #F2F0CD;
     background-color: #0B0704;
     margin: 10px 13px 10px 13px;
-    padding-bottom: 32px;
+    padding-bottom: 64px;
 }
 strong {
     font-family: "Source Code Pro Regular";
@@ -48,6 +48,8 @@ th {
 }
 a {
     color: #64B68A;
+    text-decoration: none;
+    border-bottom: 1px solid #2A595F;
 }
 a:hover {
     color: #64B68A;
@@ -61,7 +63,7 @@ p {
     margin-bottom: 10px;
 }
 img {
-     background-color: #383838;
+     background-color: #7F7F7F;
 }
 h1,
 h2,
@@ -114,15 +116,18 @@ blockquote {
     font-style: normal;
 }
 blockquote p {
-    font-size: 16px;
+    font-size: 18px;
     color: #E9D28E;
     margin-top: 16px;
     margin-bottom: 16px;
     margin-left: 16px;
-    padding-left: 15px;
-    border-left: 3px solid #ccc;
+    padding-left: 8px;
+    border-left: 3px solid #2A595F;
 }
-
+blockquote p a {
+    text-decoration: none;
+    border-bottom: 1px solid #2A595F;
+}
 code, pre {
     font-family: "Source Code Pro Light"
 }
@@ -157,6 +162,8 @@ sup {
 		page-break-inside: avoid;
 	}
 }
+
+
 pre {
     display: block;
     padding: 16px;
@@ -171,6 +178,9 @@ pre {
     white-space: pre-wrap;
     word-wrap: break-word;
     border-radius: 3px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+
 }
 pre code {
     background-color: #051012;
