@@ -7,7 +7,8 @@
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #A4C3C2;
-
+	font-smoothing: antialiased;
+	text-rendering: auto;
 	font-family: "Source Code Pro Light", Consolas, Monaco, 'Andale Mono', monospace;
 	direction: ltr;
 	text-align: left;
