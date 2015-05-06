@@ -27,6 +27,9 @@ def correct_codeblocks(mdfile):
     cnt = 0
 
     for l in inbuf:
+        if "'''" in l:
+            return 0
+    for l in inbuf:
         if l.strip().startswith("```"):
             if inblock:
                 inblock = False
@@ -39,7 +42,7 @@ def correct_codeblocks(mdfile):
                 cnt += 1
                 cb = True
 
-            elif l.startswith("    ") and not l.endswith(";") and not cb:
+            elif l.startswith("    ") and not l.strip().startswith("<") and not "/>" in l and not l.endswith(";") and not cb :
                 if not cb:
                     cnt += 1
                     outbuf.append("\n```python")
@@ -77,6 +80,10 @@ def main():
     if arg.verbose is True:
         print(arg)
 
+    if arg.mdfile.lower().strip().endswith(".markdown"):
+        print("mv "+arg.mdfile+" "+arg.mdfile.replace(".markdown", ".md"))
+        os.system("mv "+arg.mdfile+" "+arg.mdfile.replace(".markdown", ".md"))
+    return
     if not os.path.exists(arg.mdfile):
         print("file does not exist")
         return

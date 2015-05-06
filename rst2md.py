@@ -29,7 +29,6 @@ def main():
     if not os.path.exists(arg.rstfile):
         print("file does not exist")
         return
-
     if arg.force is False:
         if os.path.exists(arg.rstfile.replace(".rst", ".md")):
             print("\033[91m" + arg.rstfile.replace(".rst", ".md") + " exists\033[0m")
