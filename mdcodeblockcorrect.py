@@ -34,20 +34,31 @@ def correct_codeblocks(mdfile):
                 inblock = True
 
         if not inblock:
-            if l.startswith("    ") and not l.endswith(";"):
+            if (l.strip().startswith("sed") or l.strip().startswith("gsed")) and not cb:
+                outbuf.append("\n```bash")
+                cnt += 1
+                cb = True
+
+            elif l.startswith("    ") and not l.endswith(";") and not cb:
                 if not cb:
                     cnt += 1
-                    outbuf.append("```python")
+                    outbuf.append("\n```python")
 
                 cb = True
             else:
                 if cb is True:
-                    cb = False
-                    outbuf.append("```")
+                    if not (l.strip().startswith("sed") or l.strip().startswith("gsed")):
+                        cb = False
+                        outbuf.append("```\n")
 
             if cb is True:
                 l = l.replace("    ", "", 1)
-
+        # used for sed cheatcheat conversion
+        # if l.endswith(":"):
+        #     l = "#"+l.lower().capitalize()
+        # else:
+        #     if l.strip().startswith("# "):
+        #         l = l.strip().replace("# ", "").capitalize()
         outbuf.append(l)
 
     if cb is True:

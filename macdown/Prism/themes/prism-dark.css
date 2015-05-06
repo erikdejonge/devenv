@@ -37,8 +37,8 @@ pre[class*="language-"] {
     overflow: auto;
     border: 1px solid #2A595F;
     border-radius: 3px;
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 /* Inline code */
