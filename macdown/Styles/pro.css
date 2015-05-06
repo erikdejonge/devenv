@@ -31,6 +31,7 @@ em {
     color: #64B68A;
 }
 table {
+
 	margin: 10px 0 15px 0;
 	border-collapse: collapse;
 }
@@ -72,7 +73,7 @@ h4,
 h5,
 h6 {
     color: #54B2BC;
-    margin-top: 32px;
+    margin-top: 24px;
     margin-bottom: 8px;
     font-weight: normal;
 }
@@ -84,8 +85,8 @@ h1 {
 
 }
 h2 {
-    font-size: 20px;
-    margin-bottom: 16px;
+    font-size: 18px;
+
 }
 h3 {
     font-size: 16px;
