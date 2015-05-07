@@ -27,7 +27,7 @@ def correct_codeblocks(mdfile):
     cnt = 0
 
     for l in inbuf:
-        if "'''" in l:
+        if "```" in l:
             return 0
     for l in inbuf:
         if l.strip().startswith("```"):
@@ -83,7 +83,7 @@ def main():
     if arg.mdfile.lower().strip().endswith(".markdown"):
         print("mv "+arg.mdfile+" "+arg.mdfile.replace(".markdown", ".md"))
         os.system("mv "+arg.mdfile+" "+arg.mdfile.replace(".markdown", ".md"))
-    return
+
     if not os.path.exists(arg.mdfile):
         print("file does not exist")
         return
