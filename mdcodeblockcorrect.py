@@ -15,7 +15,7 @@ from arguments import Arguments
 import os
 
 
-def correct_codeblocks(mdfile):
+def correct_codeblocks(mdfile, force=False):
     """
     @type mdfile: str
     @return: None
@@ -28,10 +28,13 @@ def correct_codeblocks(mdfile):
 
     for l in inbuf:
         if "```" in l:
-            return 0
+            if force is False:
+                return 0
+
     for l in inbuf:
+
         l = l.replace("###", "")
-        if l.strip().startswith("`") and l.strip().endswith("`"):
+        if l.strip().startswith("`") and l.strip().endswith("`") and "```" in l:
             l = l.replace("`", "##", 1).lstrip()
             l = l.replace("`", "")
         if l.strip().startswith("```"):
@@ -46,7 +49,7 @@ def correct_codeblocks(mdfile):
                 cnt += 1
                 cb = True
 
-            elif l.startswith("    ") and not l.strip().startswith("<") and not "/>" in l and not l.endswith(";") and not cb :
+            elif l.startswith("    ") and not l.strip().startswith("<") and not "/>" in l and not l.endswith(";") and not "`" in l and not cb :
                 if not cb:
                     cnt += 1
                     outbuf.append("\n```python")

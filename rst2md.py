@@ -42,40 +42,7 @@ def main():
         # noinspection PyBroadException
         try:
             codebuf = [x for x in open(arg.rstfile.lower().replace(".rst", ".md"))]
-            codebuf.append("")
-            cnt = 0
-            codebuf2 = ""
-
-            for l in codebuf:
-                try:
-                    checkword = codebuf[cnt + 1]
-                except IndexError:
-                    checkword = ""
-
-                if "sourceCode" in l:
-                    if "$" in checkword:
-                        l = l.replace("sourceCode", "bash")
-                    elif ">" in checkword:
-                        l = l.replace("sourceCode", "bash")
-                    elif "<" in checkword:
-                        l = l.replace("sourceCode", "html")
-                    else:
-                        l = l.replace("sourceCode", "python")
-
-                l = l.replace("*[", "##").replace("]*", "")
-
-                if "-- " in l:
-                    l = l.replace("-- a", "\n.. a").strip()
-                    l = l.replace("-- :", "\n   :").strip()
-                    l = l.replace("\\", "")
-
-                    if ":target:" in l:
-                        l = "\n"
-                    else:
-                        l = "```\n" + l + "\n```"
-
-                codebuf2 += l
-                cnt += 1
+            codebuf2 = make_nice_md(codebuf)
 
             open(arg.rstfile.lower().replace(".rst", ".md"), "w").write(codebuf2)
         except:
@@ -87,6 +54,52 @@ def main():
             os.remove(arg.rstfile)
     finally:
         os.remove(arg.rstfile + ".tmp")
+
+
+def make_nice_md(codebuf):
+    codebuf.append("")
+    cnt = 0
+    codebuf2 = ""
+    inblock = False
+    for l in codebuf:
+        if "```" in l:
+            inblock = not inblock
+        try:
+            checkword = codebuf[cnt + 1]
+        except IndexError:
+            checkword = ""
+
+        if "sourceCode" in l:
+            if "$" in checkword:
+                l = l.replace("sourceCode", "bash")
+            elif ">" in checkword:
+                l = l.replace("sourceCode", "bash")
+            elif "<" in checkword:
+                l = l.replace("sourceCode", "html")
+            else:
+                l = l.replace("sourceCode", "python")
+
+        l = l.replace("*[", "##").replace("]*", "")
+
+        if "-- " in l:
+            l = l.replace("-- a", "\n.. a").strip()
+            l = l.replace("-- :", "\n   :").strip()
+            l = l.replace("\\", "")
+
+            if ":target:" in l:
+                l = "\n"
+            else:
+                l = "```\n" + l + "\n```"
+        if inblock and "```" in l:
+            if not l.strip().endswith("```"):
+                l = l.replace("```", "```\n\n")
+                print(l)
+        codebuf2 += l
+        cnt += 1
+
+    codebuf2 = codebuf2.replace("```\n```", "")
+    codebuf2 = codebuf2.replace("``````", "")
+    return codebuf2
 
 
 if __name__ == "__main__":
