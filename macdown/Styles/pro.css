@@ -81,8 +81,8 @@ img {
 }
 
 ul {
-    padding: 16px 0px 16px 10px;
-    margin: 16px 0px 16px 10px;
+    padding: 16px 0px 8px 10px;
+    margin: 16px 0px 8px 10px;
 }
 
 input[type="checkbox"] {
@@ -161,22 +161,39 @@ h3,
 h4,
 h5,
 h6 {
-    color: #54B2BC;
-    margin-top: 24px;
-    margin-bottom: 8px;
     font-weight: normal;
-    font-size: 18px;
+    color: #E4CB77;
+    margin-top: 18px;
+    text-transform: capitalize;
+    text-rendering: geometricPrecision;
+    font-family: "Source Code Pro Light";
+    font-size: 16px;
+    line-height: 150%;
+    margin-top: 32px;
 }
 
 h1 {
-    margin-top: 32px;
-    margin-bottom: 16px;
-    font-size: 24px;
     color: #54B2BC;
+    font-weight: normal;
+    margin-top: 32px;
+    margin-bottom: 8px;
+    font-size: 26px;
+    color: #54B2BC;
+    font-weight: bold;
+}
+h2 {
+    color: #54B2BC;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 32px;
+
+    font-size: 20px;
 }
 
-h2 {
-    font-size: 20px;
+h3 {
+    color: #54B2BC;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 ul, ol {
@@ -276,3 +293,11 @@ pre code {
     color: #F2F0CD;
     padding: 0;
 }
+
+
+p {
+
+    white-space: pre-line;
+}
+
+

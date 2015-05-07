@@ -11,7 +11,7 @@ Options:
   -s --silent   Folder from where to run the command [default: .].
 """
 from arguments import Arguments
-
+from consoleprinter import forceascii
 import os
 
 
@@ -20,7 +20,13 @@ def correct_codeblocks(mdfile, force=False):
     @type mdfile: str
     @return: None
     """
-    inbuf = [x.rstrip().replace("\t", "    ") for x in open(mdfile)]
+    try:
+        inbuf = [x.rstrip().replace("\t", "    ") for x in open(mdfile)]
+    except:
+        inbuf = []
+        for l in open(mdfile):
+            inbuf.append(forceascii(l).replace("\t", "    "))
+
     outbuf = []
     cb = False
     inblock = False
