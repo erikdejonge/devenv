@@ -93,7 +93,7 @@ def make_nice_md(codebuf):
         if inblock and "```" in l:
             if not l.strip().endswith("```"):
                 l = l.replace("```", "```\n\n")
-                print(l)
+
         codebuf2 += l
         cnt += 1
 

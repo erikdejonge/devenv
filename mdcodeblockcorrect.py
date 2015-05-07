@@ -34,8 +34,10 @@ def correct_codeblocks(mdfile, force=False):
     for l in inbuf:
 
         l = l.replace("###", "")
-        if l.strip().startswith("`") and l.strip().endswith("`") and "```" in l:
+        if l.strip().startswith("`") and l.strip().endswith("`") and "```" not in l:
             l = l.replace("`", "##", 1).lstrip()
+            l = l.replace("`", "")
+        if "`" in l and l.count("`")!=3:
             l = l.replace("`", "")
         if l.strip().startswith("```"):
             if inblock:
