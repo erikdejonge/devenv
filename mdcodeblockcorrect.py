@@ -30,6 +30,10 @@ def correct_codeblocks(mdfile):
         if "```" in l:
             return 0
     for l in inbuf:
+        l = l.replace("###", "")
+        if l.strip().startswith("`") and l.strip().endswith("`"):
+            l = l.replace("`", "##", 1).lstrip()
+            l = l.replace("`", "")
         if l.strip().startswith("```"):
             if inblock:
                 inblock = False
@@ -50,7 +54,7 @@ def correct_codeblocks(mdfile):
                 cb = True
             else:
                 if cb is True:
-                    if not (l.strip().startswith("sed") or l.strip().startswith("gsed")):
+                    if not (l.strip().startswith("sed") or l.strip().startswith("gsed") or l.startswith("    ") or len(l.strip())==0):
                         cb = False
                         outbuf.append("```\n")
 

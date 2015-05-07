@@ -18,112 +18,92 @@ Installation
 Usage
 -----
 
-### `middleware.wsgi(application, **kwargs)`
+##middleware.wsgi(application, **kwargs)
 
 [Middleware factory](http://aiohttp.readthedocs.org/en/v0.14.4/web.html#middlewares) that wraps a WSGI application for use inside an aiohttp [Application](http://aiohttp.readthedocs.org/en/v0.14.4/web_reference.html#aiohttp.web.Application).
 
 
 ```python
 from aiohttp.web import Application
-```
-
-    from aiohttp_wsgi.middleware import wsgi
-
-```python
+from aiohttp_wsgi.middleware import wsgi
 from your_app.wsgi import application
-```
 
-
-
-```python
 aiohttp_application = Application(middlewares=[
-```
-
-        wsgi(application),
-
-```python
+    wsgi(application),
 ])
-```
 
+```
 
 **Available arguments:**
 
-`script_name`
+##script_name
 The URL prefix to mount the WSGI application. Corresponds to `environ["SCRIPT_NAME"]`. This should **not** end with a slash. Defaults to `""`.
 
-`url_scheme`
+##url_scheme
 hint about the URL scheme used to access the application. Corresponds to `environ["wsgi.uri_scheme"]`. Default value auto-detected to `"http"` or `"https"`.
 
-`stderr`
+##stderr
 A file-like value for WSGI error logging. Corresponds to `environ["wsgi.errors"]`. Defaults to `sys.stderr`.
 
-`executor`
+##executor
 An [Executor](https://docs.python.org/dev/library/concurrent.futures.html#executor-objects) instance used to run WSGI requests. Defaults to the asyncio base executor.
 
-`loop`
+##loop
 The asyncio [loop](https://docs.python.org/3.4/library/asyncio-eventloop.html#base-event-loop). Defaults to `asyncio.get_event_loop()`.
 
-### `configure_server(application, **kwargs)`
+##configure_server(application, **kwargs)
 
 High-level factory method that wraps a WSGI application in an asyncio [server](https://docs.python.org/3.4/library/asyncio-eventloop.html#server) and aiohttp [Application](http://aiohttp.readthedocs.org/en/v0.14.4/web_reference.html#aiohttp.web.Application).
 
 
 ```python
 from aiohttp_wsgi import configure_server
-```
+from your_app.wsgi import application
 
-    from your_app.wsgi import application
-
-
-```python
 server, app = configure_server(application)
-```
 
+```
 
 **Available arguments:**
 
-`host`
+##host
 The IP address to bind the server. Defaults to `"0.0.0.0"`.
 
-`port`
+##port
 The network port to bind the server. Defaults to `8080`.
 
-`unix_socket`
+##unix_socket
 The path to a unix socket to bind the server. Overrides `host`.
 
-`unix_socket_perms`
+##unix_socket_perms
 A set of filesystem permissions to apply to the unix socket. Defaults to `0o600`.
 
-`socket`
+##socket
 A preexisting socket object to use for the server. Overrides `host`.
 
-`backlog`
+##backlog
 The maximum number of queued connections for the socket. Defaults to `1024`.
 
-`routes`
+##routes
 A list of `(method, path, handler)` routes to add to the aiohttp [Application](http://aiohttp.readthedocs.org/en/v0.14.4/web_reference.html#aiohttp.web.Application). Defaults to `[]`.
 
-`static`
+##static
 A list of `(path, dirname)` static routes to add to the aiohttp [Application](http://aiohttp.readthedocs.org/en/v0.14.4/web_reference.html#aiohttp.web.Application). Defaults to `[]`.
 
 `configure_server()` also accepts all arguments available to `middleware.wsgi()`.
 
-### `serve(application, **kwargs)`
+##serve(application, **kwargs)
 
 High-level factory method that starts a [server](https://docs.python.org/3.4/library/asyncio-eventloop.html#server) running a WSGI application.
 
 
 ```python
 from aiohttp_wsgi import serve
-```
+from your_app.wsgi import application
 
-    from your_app.wsgi import application
-
-
-```python
 serve(application)
-```
 
+```
 
 `serve()` accepts all arguments available to `configure_server()`.
 
@@ -141,8 +121,8 @@ This project is built on every push using the Travis-CI service.
 
 ![image](https://travis-ci.org/etianen/aiohttp-wsgi.svg?branch=master)
 
-)
-   > [target](https://travis-ci.org/etianen/aiohttp-wsgi)
+
+
 Support and announcements
 -------------------------
 

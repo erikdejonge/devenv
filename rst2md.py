@@ -69,8 +69,8 @@ def main():
                     l = l.replace("-- :", "\n   :").strip()
                     l = l.replace("\\", "")
 
-                    if ":target: <" in l:
-                        l = l.replace(":target: <", "^ [target](").replace(">", ")").replace("^", ">")
+                    if ":target:" in l:
+                        l = "\n"
                     else:
                         l = "```\n" + l + "\n```"
 
