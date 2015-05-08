@@ -8,6 +8,7 @@ Usage:
 Options:
   -h --help     Show this screen.
   -v --verbose  Print arguments
+  -f --force    Force check
   -s --silent   Folder from where to run the command [default: .].
 """
 from arguments import Arguments
@@ -81,8 +82,11 @@ def correct_codeblocks(mdfile, force=False):
 
     if cb is True:
         outbuf.append("```")
-
-    open(mdfile, "w").write("\n".join(outbuf))
+    outbuf = "\n".join(outbuf)
+    if force is True:
+        outbuf = outbuf.replace("```", "\n```")
+        outbuf = outbuf.replace("\n\n\n```", "\n\n```")
+    open(mdfile, "w").write(outbuf)
     return cnt
 
 
@@ -104,7 +108,7 @@ def main():
         return
 
     mdfile = arg.mdfile
-    cnt = correct_codeblocks(mdfile)
+    cnt = correct_codeblocks(mdfile, arg.force)
 
     if not arg.silent:
         if cnt != 0:
