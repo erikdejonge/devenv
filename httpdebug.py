@@ -14,12 +14,14 @@ created : 19-05-15 / 16:41
 """
 from arguments import Arguments
 from cmdssh import call_command
-from consoleprinter import colorize_for_print, remove_extra_indentation
+from consoleprinter import colorize_for_print, remove_extra_indentation, clear_screen
+
 
 def main():
     """
     main
     """
+    clear_screen()
     arguments = Arguments(__doc__)
     command = "/usr/bin/curl -s {} -o /dev/null -w ".format(arguments.url)
     command += """
@@ -51,15 +53,16 @@ def main():
             time_total:  %{time_total}
          url_effective:  %{url_effective}
                     ----------
+
             time_total:  %{time_total}\n"; """.strip()
 
-    #print(command)
+    # print(command)
     result = call_command(command, streamoutput=False, returnoutput=True, ret_and_code=True)
 
     if result[0] == 0:
-
         print(colorize_for_print(remove_extra_indentation(result[1], frontspacer="@$", padding=1)).replace("@$", " "))
-        #print({1:result[1]})
+
+        # print({1:result[1]})
     else:
         print("error")
 if __name__ == "__main__":
