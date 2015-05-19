@@ -56,7 +56,6 @@ def main():
 
             time_total:  %{time_total}\n"; """.strip()
 
-    # print(command)
     result = call_command(command, streamoutput=False, returnoutput=True, ret_and_code=True)
 
     if result[0] == 0:
@@ -65,5 +64,6 @@ def main():
         # print({1:result[1]})
     else:
         print("error")
+        print(result[1])
 if __name__ == "__main__":
     main()
