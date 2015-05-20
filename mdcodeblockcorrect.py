@@ -113,7 +113,7 @@ def main():
 
     if not arg.silent:
         if cnt != 0:
-            print("\033[94m" + arg.mdfile.lower(), "->\033[0;96m " + str(cnt) + " code blocks corrected\033[0m")
+            print("\033[34m" + arg.mdfile.lower(), "->\033[0;96m " + str(cnt) + " code blocks corrected\033[0m")
 
 
 if __name__ == "__main__":

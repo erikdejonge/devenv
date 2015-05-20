@@ -35,7 +35,7 @@ def main():
             return
 
     if not arg.silent:
-        print("\033[94m" + arg.rstfile.lower(), "->\033[0;96m", arg.rstfile.lower().replace(".rst", ".md") + "\033[0m")
+        print("\033[34m" + arg.rstfile.lower(), "->\033[0;96m", arg.rstfile.lower().replace(".rst", ".md") + "\033[0m")
     open(arg.rstfile + ".tmp", "w").write(open(arg.rstfile).read().replace(".. auto", "-- auto").replace("   :", "-- :"))
     try:
         os.system("pandoc -f rst -t markdown_github " + arg.rstfile + ".tmp" + " -o " + arg.rstfile.lower().replace(".rst", ".md") + " 2> /dev/null")
@@ -55,7 +55,6 @@ def main():
     finally:
         os.remove(arg.rstfile + ".tmp")
 
-@fsdfsd
 def make_nice_md(codebuf):
     codebuf.append("")
     cnt = 0
