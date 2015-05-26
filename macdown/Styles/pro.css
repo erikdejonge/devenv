@@ -9,7 +9,6 @@ blockquote {
     margin: 0;
     padding: 0;
 }
-
 body {
     text-rendering: geometricPrecision;
     font-family: "Source Code Pro Light";
@@ -20,71 +19,58 @@ body {
     margin: 10px 13px 10px 13px;
     padding-bottom: 64px;
 }
-
 strong {
     font-family: "Source Code Pro Regular";
     font-weight: normal;
     color: #64B68A;
 }
-
 em {
     font-family: "Source Code Pro Light";
     font-weight: normal;
     font-style: normal;
     color: #64B68A;
 }
-
 table {
     min-width: 850px !important;
     width: 100% !important;
     margin: 10px 0 15px 0;
     border-collapse: collapse;
 }
-
 table tr:nth-child(2n) {
     background-color: #06181B;
 }
-
 td, th {
     border: 1px solid #3C3C3E;
     padding: 3px 10px;
 }
-
 th {
     padding: 5px 10px;
     color: #B3D8FD;
     background-color: #06181B;
 }
-
 a {
     color: #B4D9FB;
     text-decoration: none;
     border-bottom: 1px solid #2A595F;
 }
-
 a:hover {
     color: #2668D4;
     text-decoration: none;
 }
-
 a img {
     border: none;
 }
-
 p {
     margin-bottom: 10px;
     margin-bottom: 10px;
 }
-
 img {
     background-color: #7F7F7F;
 }
-
 ul {
     padding: 16px 0px 8px 10px;
     margin: 16px 0px 8px 10px;
 }
-
 input[type="checkbox"] {
     -webkit-appearance: none; /* Hides the default checkbox style */
     height: 18px !important;
@@ -97,11 +83,9 @@ input[type="checkbox"] {
     background-color: #FCB8B0;
     color: black
 }
-
 input[type="checkbox"]:checked {
     background-color: #BCFBBA;
 }
-
 input[type="checkbox"]:before, input[type="checkbox"]:checked:before {
     position: absolute;
     top: -1px;
@@ -110,20 +94,15 @@ input[type="checkbox"]:before, input[type="checkbox"]:checked:before {
     width: 22px !important;
     line-height: 22px;
     text-align: center;
-
     font-weight: bold;
     content: '✘';
 }
-
 input[type="checkbox"]:checked:before {
     content: '✔';
-
 }
-
 input[type="checkbox"]:hover:before {
     background: rgba(255, 255, 255, 0.3);
 }
-
 li {
     list-style-type: disc;
     padding-top: 4px;
@@ -131,18 +110,15 @@ li {
     margin-left: 8px;
     padding-left: 0px;
 }
-
 li.task-list-item {
     list-style-type: none;
     margin-left: -20px;
 }
-
 li.task-list-item label {
     display: block;
     padding-left: 15px;
     text-indent: -15px;
 }
-
 li.task-list-item input {
     width: 13px;
     height: 13px;
@@ -156,7 +132,6 @@ li.task-list-item input {
 ul li:nth-child(even) {
     background-color: #06181B;
 }
-
 h1,
 h2,
 h3,
@@ -164,84 +139,68 @@ h4,
 h5,
 h6 {
     font-weight: normal;
-    color: #E4CB77;
+    color: #E9D28E;
     margin-top: 18px;
-    text-transform: capitalize;
     text-rendering: geometricPrecision;
     font-family: "Source Code Pro Light";
     font-size: 16px;
-
-    margin-top: 32px;
+    margin-top: 16px;
+    margin-bottom: 4px;
 }
-
 h1 {
+    text-transform: capitalize;
     color: #54B2BC;
     font-weight: normal;
     margin-top: 32px;
-    margin-bottom: 8px;
-    font-size: 26px;
-    color: #54B2BC;
-    font-weight: bold;
+    font-size: 24px;
 }
 h2 {
-    color: #54B2BC;
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 32px;
+    text-transform: capitalize;
 
+    margin-top: 24px;
+    font-weight: normal;
     font-size: 20px;
 }
-
 h3 {
-    color: #54B2BC;
-    font-size: 16px;
-    font-weight: bold;
+    margin-top: 6px;
 }
-
 h4 {
-    margin-top: 16px;
-}
-h5 {
     margin-top: 0px;
 }
-
+h5 {
+    color: #E9D28E;
+    margin-top: 0px;
+}
 ul, ol {
     padding-left: 30px;
     margin-top: 0px;
     padding-top: 0px;
 }
-
 hr {
     margin: 0 0 19px;
     border: 0;
     border-bottom: 1px solid #F2F0CD;
 }
-
 blockquote {
     margin-top: 8px;
     margin-bottom: 8px;
     font-style: normal;
 }
-
 blockquote p {
     font-size: 18px;
-    color: #E9D28E;
     margin-top: 16px;
     margin-bottom: 16px;
     margin-left: 16px;
     padding-left: 8px;
-    border-left: 3px solid #2A595F;
+    border-left: 3px solid #54B2BC;
 }
-
 blockquote p a {
     text-decoration: none;
     border-bottom: 1px solid #2A595F;
 }
-
 code, pre {
     font-family: "Source Code Pro Light"
 }
-
 code {
     color: #F2EBA9;
     /*padding: 1px 3px;*/
@@ -250,35 +209,29 @@ code {
     /*-moz-border-radius: 3px;*/
     /*border-radius: 3px;*/
 }
-
 sup {
     font-size: 0.83em;
     vertical-align: super;
     line-height: 0;
 }
-
 * {
     -webkit-print-color-adjust: exact;
 }
-
 @media screen and (min-width: 914px) {
     body {
         width: 854px;
         margin: 10px auto;
     }
 }
-
 @media print {
     body, code, pre code, h1, h2, h3, h4, h5, h6 {
         color: black;
         background: white;
     }
-
     table, pre {
         page-break-inside: avoid;
     }
 }
-
 pre {
     display: block;
     padding: 16px;
@@ -294,19 +247,12 @@ pre {
     border-radius: 3px;
     margin-top: 16px;
     margin-bottom: 16px;
-
 }
-
 pre code {
     background-color: #051012;
     color: #F2F0CD;
     padding: 0;
 }
-
-
 p {
-
     white-space: pre-line;
 }
-
-
