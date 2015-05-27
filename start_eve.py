@@ -2,7 +2,7 @@
 # coding=utf-8
 
 import os
-
+import time
 from sh import machine, grep
 
 
@@ -17,7 +17,9 @@ def main():
         machine_eve = grep(machine("ls"), "eve").strip()
 
         if "Stopped" in machine_eve or "Saved" in machine_eve:
-            machine("start", "eve")
+            p = machine("start", "eve", _bg=True)
+            time.sleep(5)
+            p.wait()
             print(1)
         elif "Running" in machine_eve:
             print(0)
