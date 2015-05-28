@@ -58,7 +58,7 @@ a:hover {
     text-decoration: none;
 }
 a img {
-    border: none;
+    border: 2px solid;
 }
 p {
     margin-bottom: 10px;
@@ -67,7 +67,7 @@ p {
 img {
     background-color: #7F7F7F;
 }
-ul {
+ul, ol {
     padding: 16px 0px 8px 10px;
     margin: 16px 0px 8px 10px;
 }
@@ -104,12 +104,14 @@ input[type="checkbox"]:hover:before {
     background: rgba(255, 255, 255, 0.3);
 }
 li {
-    list-style-type: disc;
     padding-top: 4px;
     padding-bottom: 4px;
     margin-left: 8px;
     padding-left: 0px;
 }
+li p.first {
+  display: inline-block; }
+
 li.task-list-item {
     list-style-type: none;
     margin-left: -20px;
