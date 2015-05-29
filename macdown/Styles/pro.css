@@ -158,13 +158,14 @@ h1 {
 }
 h2 {
     text-transform: capitalize;
-
+    color: #54B2BC;
     margin-top: 24px;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 18px;
 }
 h3 {
     margin-top: 6px;
+    color: #54B2BC;
 }
 h4 {
     margin-top: 0px;
