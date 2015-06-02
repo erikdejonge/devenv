@@ -1,18 +1,18 @@
-#!/usr/bin/env pypy3
+#!/usr/bin/env python3
 # coding=utf-8
 """
 locate
 """
+
 from __future__ import division, print_function, absolute_import, unicode_literals
 from future import standard_library
-
 import os
 import sys
 import argparse
 
-from functools import cmp_to_key
 from fuzzywuzzy import fuzz
 from past.builtins import cmp
+from functools import cmp_to_key
 
 
 def main():
@@ -157,6 +157,7 @@ def main():
     for i in folders2:
         print(i)
 
+
 standard_library.install_aliases()
 
 # sys.stdout.write("\n== current working dir results ==\n\n")
@@ -166,7 +167,6 @@ standard_library.install_aliases()
 #    sys.stdout.write(i + "\n")
 
 # sys.stdout.flush()
-
 
 if __name__ == "__main__":
     main()
