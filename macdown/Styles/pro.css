@@ -15,7 +15,7 @@ body {
     font-size: 16px;
     line-height: 150%;
     color: #F2F0CD;
-    background-color: #0B0704;
+    background-color: #1c1c1c;
     margin: 10px 13px 10px 13px;
     padding-bottom: 64px;
 }
@@ -141,38 +141,38 @@ h4,
 h5,
 h6 {
     font-weight: normal;
-    color: #E9D28E;
+    color: #b4d9fb;
     margin-top: 18px;
     text-rendering: geometricPrecision;
     font-family: "Source Code Pro Light";
     font-size: 16px;
-    margin-top: 16px;
+    margin-top: 6px;
     margin-bottom: 4px;
-}
-h1 {
     text-transform: capitalize;
+}
+h1 {    
     color: #54B2BC;
     font-weight: normal;
     margin-top: 32px;
     font-size: 24px;
 }
-h2 {
-    text-transform: capitalize;
+h2 {    
     color: #54B2BC;
     margin-top: 24px;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 20px;
 }
 h3 {
-    margin-top: 6px;
-    color: #54B2BC;
+    margin-top: 12px;      
 }
 h4 {
-    margin-top: 0px;
+    
 }
-h5 {
-    color: #E9D28E;
-    margin-top: 0px;
+h5 {    
+    
+}
+h6 {
+
 }
 ul, ol {
     padding-left: 30px;
@@ -203,6 +203,7 @@ blockquote p a {
 }
 code, pre {
     font-family: "Source Code Pro Light"
+    font-size: 14px;
 }
 code {
     color: #F2EBA9;
@@ -237,7 +238,7 @@ sup {
 }
 pre {
     display: block;
-    padding: 16px;
+    padding: 12px;
     margin: 0 0 18px;
     font-size: 16px;
     line-height: 20px;

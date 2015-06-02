@@ -33,23 +33,39 @@ class IArguments(Arguments):
         super().__init__(doc)
 
 
+def search_appfolder(filename, searchfolder):
+    """
+    @type filename: str
+    @type searchfolder: str
+    @return: None
+    """
+
+    print("\033[37msearch: " + searchfolder  + "\033[0m")
+    applist = []
+    os.chdir(searchfolder)
+
+    for app in glob.glob("*.app"):
+        if filename.lower().strip() in app.lower().strip():
+            applist.append(app)
+
+    return applist
+
+
 def main():
     """
     main
     """
     arguments = IArguments(__doc__)
-    os.chdir("/Applications")
-    applist = []
 
-    for app in glob.glob("*.app"):
-        if arguments.name.lower().strip() in app.lower().strip():
-            applist.append(app)
+    applist = []
+    applist.extend(search_appfolder(arguments.name, "/Applications"))
+    applist.extend(search_appfolder(arguments.name, "/Utilities"))
 
     if len(applist) == 1:
         os.system("open /Applications/" + applist[0])
     else:
         answer = doinput(description="Which one?", default="q", answers=applist, force=False, returnnum=True)
-        os.system("open '/Applications/" + applist[answer]+"'")
+        os.system("open '/Applications/" + applist[answer] + "'")
 
 
 if __name__ == "__main__":
