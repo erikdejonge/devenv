@@ -12,7 +12,7 @@ blockquote {
 body {
     text-rendering: geometricPrecision;
     font-family: "Source Code Pro Light";
-    font-size: 16px;
+    font-size: 15px;
     line-height: 150%;
     color: #F2F0CD;    
     background-color: #06181b;
@@ -154,7 +154,7 @@ h1 {
     color: #54B2BC;
     font-weight: normal;
     margin-top: 32px;
-    font-size: 24px;
+    font-size: 26px;
     margin-bottom: 12px;
 }
 h2 {    
@@ -165,7 +165,7 @@ h2 {
     margin-bottom: 8px;
 }
 h3 {
-    margin-top: 12px;
+    margin-top: 16px;
     margin-bottom: 6px;
 }
 h4 {
@@ -183,7 +183,7 @@ ul, ol {
     padding-top: 0px;
 }
 hr {
-    margin: 0 0 19px;
+    margin: 32px 12px;
     border: 0;
     border-bottom: 1px solid #F2F0CD;
 }
