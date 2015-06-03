@@ -14,8 +14,8 @@ body {
     font-family: "Source Code Pro Light";
     font-size: 16px;
     line-height: 150%;
-    color: #F2F0CD;
-    background-color: #1c1c1c;
+    color: #F2F0CD;    
+    background-color: #06181b;
     margin: 10px 13px 10px 13px;
     padding-bottom: 64px;
 }
@@ -155,15 +155,18 @@ h1 {
     font-weight: normal;
     margin-top: 32px;
     font-size: 24px;
+    margin-bottom: 12px;
 }
 h2 {    
     color: #54B2BC;
     margin-top: 24px;
     font-weight: normal;
     font-size: 20px;
+    margin-bottom: 8px;
 }
 h3 {
-    margin-top: 12px;      
+    margin-top: 12px;
+    margin-bottom: 6px;
 }
 h4 {
     
