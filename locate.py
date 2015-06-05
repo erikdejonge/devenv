@@ -22,7 +22,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('find_strings', metavar='FINDARGS', type=str, nargs='+', help='find arguments')
     args = parser.parse_args()
+    numargs = len(args.find_strings)
     find_strings = " ".join(args.find_strings)
+    find_strings_display = ", ".join(args.find_strings)
     mdfind_results = []
     textsearch = False
 
@@ -33,7 +35,8 @@ def main():
         find_strings = find_strings.strip().strip("+")
         textsearch = True
 
-    print("\033[91m[" + find_strings + "] Files:\033[0m")
+    print("\033[91m[" + find_strings_display + "]("+str(numargs)+"):\033[0m")
+    return
     mdfind_results.extend(os.popen("mdfind -onlyin '" + os.path.expanduser("~") + "' -name '" + find_strings + "'").read().split("\n"))
     mdfind_results = [x for x in mdfind_results if x]
     mdfind_results.extend(os.popen("mdfind -name '" + find_strings + "'").read().split("\n"))
