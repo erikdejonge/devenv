@@ -1,48 +1,71 @@
 #!/usr/bin/env python3
 # coding=utf-8
 """
-locate
-"""
+Call mdfind to do a quick search
 
+Usage:
+  locate.py [options] <query>
+
+Options:
+  -h --help     Show this screen.
+  -d --showdirs Show folders seperately
+
+author  : rabshakeh (erik@a8.nl)
+project : devenv
+created : 09-06-15 / 09:35
+"""
 from __future__ import division, print_function, absolute_import, unicode_literals
 from future import standard_library
+
 import os
-import sys
 import argparse
 
+from arguments import Arguments
 from fuzzywuzzy import fuzz
 from past.builtins import cmp
-from functools import cmp_to_key
 
+
+class IArguments(Arguments):
+    """
+    IArguments
+    """
+    def __init__(self, doc):
+        """
+        __init__
+        """
+        self.help=False
+        self.showdirs=False
+        self.searchword=""
+        super().__init__(doc)
 
 def main():
     """
     main
     """
-    parser = argparse.ArgumentParser()
-    parser.add_argument('find_strings', metavar='FINDARGS', type=str, nargs='+', help='find arguments')
-    args = parser.parse_args()
-    numargs = len(args.find_strings)
-    find_strings = " ".join(args.find_strings)
-    find_strings_display = ", ".join(args.find_strings)
+    args = IArguments(__doc__)
+    print(args.for_print())
+
+    numargs = len(args.searchword)
+    searchword = " ".join(args.searchword)
+    query_display = ", ".join(args.searchword)
     mdfind_results = []
     textsearch = False
 
-    if find_strings.strip().endswith("*"):
-        find_strings = find_strings.strip().strip("*")
+    if searchword.strip().endswith("*"):
+        searchword = searchword.strip().strip("*")
         textsearch = True
-    elif find_strings.strip().endswith("+"):
-        find_strings = find_strings.strip().strip("+")
+    elif searchword.strip().endswith("+"):
+        searchword = searchword.strip().strip("+")
         textsearch = True
 
-    print("\033[91m[" + find_strings_display + "]("+str(numargs)+"):\033[0m")
+    print("\033[91m[" + query_display + "](" + str(numargs) + "):\033[0m")
     return
-    mdfind_results.extend(os.popen("mdfind -onlyin '" + os.path.expanduser("~") + "' -name '" + find_strings + "'").read().split("\n"))
+    mdfind_results.extend(os.popen("mdfind -onlyin '" + os.path.expanduser("~") + "' -name '" + searchword + "'").read().split("\n"))
     mdfind_results = [x for x in mdfind_results if x]
-    mdfind_results.extend(os.popen("mdfind -name '" + find_strings + "'").read().split("\n"))
+    mdfind_results.extend(os.popen("mdfind -name '" + searchword + "'").read().split("\n"))
 
     if textsearch:
-        mdfind_results.extend(os.popen("mdfind -onlyin ~/workspace " + find_strings).read().split("\n"))
+        mdfind_results.extend(os.popen("mdfind -onlyin ~/workspace " + searchword).read().split("\n"))
 
     mdfind_results = [x for x in mdfind_results if x]
     mdfind_results = set(mdfind_results)
@@ -113,7 +136,7 @@ def main():
 
     if len(folders) > 0 and len(mdfind_results3) < 50:
         print()
-        print("\033[91m[" + find_strings + "] Folders:\033[0m")
+        print("\033[91m[" + searchword + "] Folders:\033[0m")
         last = None
         nextcnt = 0
 
@@ -153,13 +176,12 @@ def main():
                     newi = "\033[34m" + str(i) + "\033[0m"
 
                 folders2.append(newi)
+    if args.showdirs is True:
+        folders2.sort(key=lambda x: (x.count("/"), len(x), x))
+        folders2.reverse()
 
-    folders2.sort(key=lambda x: (x.count("/"), len(x), x))
-    folders2.reverse()
-
-    for i in folders2:
-        print(i)
-
+        for i in folders2:
+            print(i)
 
 standard_library.install_aliases()
 
@@ -170,6 +192,7 @@ standard_library.install_aliases()
 #    sys.stdout.write(i + "\n")
 
 # sys.stdout.flush()
+
 
 if __name__ == "__main__":
     main()
