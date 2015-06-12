@@ -1,0 +1,98 @@
+#!/bin/bash
+# Copyright (c) 2013 DLH. See LICENSE.txt for the MIT license.
+
+declare -a URLS URL_TITLES
+JOBS=3
+YOUTUBE_DL_ARGS=
+TITLE_PADDING=0
+
+function error() {
+    echo "Error: $@"
+    exit 1
+}
+
+TITLES_DIRECTORY=$(mktemp -d -t youtube-dl-parallel.XXX) || error "mktemp failed"
+trap 'rm -r "$TITLES_DIRECTORY"' EXIT
+
+function prefix_output() {
+    local padding=$1
+    local prefix=$2
+    while read line; do
+        printf "%-${padding}s: %s\n" "$prefix" "$line"
+    done
+}
+
+function download() {
+    local padding=$1
+    local prefix=$2
+    local url=$3
+    youtube-dl $YOUTUBE_DL_ARGS --no-playlist --newline "$url" 2>&1 | prefix_output "$padding" "$prefix"
+}
+
+function get_title() {
+    local url=$1
+    local title=$(youtube-dl --ignore-config --no-playlist --get-title "$url" 2>&1)
+    test $? -eq 0 || title="$url"
+    echo "$title" > "$TITLES_DIRECTORY/$PARALLEL_SEQ"
+}
+
+function parse_options()  {
+    while getopts "hj:" option "$@"; do
+        case $option in
+            h)
+                echo "Usage: $0 [-hj] <url> [<url> ...] [-- <youtube-dl options>]"
+                echo "    -h       : Shows this help message."
+                echo "    -j <jobs>: The number of jobs to run in parallel. The default is 3."
+                echo
+                echo "If “-” is provided as an argument, then urls will additionally be read from stdin."
+                exit;;
+            j)
+                JOBS="$OPTARG";;
+            \?)
+                error "Unknown option";;
+        esac
+    done
+    shift $((OPTIND - 1))
+
+    for url in "$@"; do
+        if test "$url" = "-"; then
+            while read line; do
+                URLS+=($line)
+            done
+        elif test "$url" = "--"; then
+            shift
+            YOUTUBE_DL_ARGS="$@"
+            break
+        else
+            URLS+=($url)
+        fi
+        shift
+    done
+}
+
+function find_longest_title() {
+    pushd "$TITLES_DIRECTORY" > /dev/null
+    for title_file in $(ls | sort -n); do
+        local title=$(cat "$title_file")
+        local length=$(echo "$title" | wc -m)
+        if test $length -gt $TITLE_PADDING; then
+            TITLE_PADDING=$length
+        fi
+        URL_TITLES+=("$title")
+    done
+    popd > /dev/null
+}
+
+parse_options "$@"
+
+if test -z "$URLS"; then
+    error "No urls specified. Try $0 -h for more information."
+fi
+
+# Export functions and variables for use with parallel
+export -f prefix_output download get_title
+export TITLES_DIRECTORY YOUTUBE_DL_ARGS
+
+parallel --jobs "$JOBS" get_title ::: "${URLS[@]}"
+find_longest_title
+parallel --xapply --ungroup --jobs "$JOBS" "download $TITLE_PADDING {1} {2}" ::: "${URL_TITLES[@]}" ::: "${URLS[@]}"
