@@ -65,7 +65,7 @@ def main():
             possible_test_file_path = os.path.join(root, posfile)
             if possible_test_file_path.endswith(arguments.extension):
                 searchstruct[possible_test_file_path] = open(searchstruct).read()
-    
+
 
 if __name__ == "__main__":
     main()
