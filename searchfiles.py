@@ -74,7 +74,7 @@ def main():
 
         for root, folders, files in os.walk(arguments.searchfolder):
             if len(searchstruct) % 100 == 0:
-
+                print_stdout(".")
             for posfile in files:
                 possible_test_file_path = os.path.join(root, posfile)
                 #print(arguments.extension.strip(), possible_test_file_path)
