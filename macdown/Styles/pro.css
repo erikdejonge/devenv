@@ -272,7 +272,7 @@ pre {
     margin: 0 0 16px;
     font-size: 16px;
     line-height: 20px;
-    letter-spacing: 1.1;
+    letter-spacing: 0.05em;
     border: 1px solid #3C3C3E;
     background-color: #051012;
     color: #116CD6;
