@@ -38,19 +38,26 @@ def main():
         lines.append([linepart for linepart in line.split(" ") if linepart])
 
     lines.sort(key=lambda linepart:(float(linepart[1]), float(linepart[2]), float(linepart[3])))
-
+    print('\033[34mpid\tcpu/mem\t\t program')
     for line in lines:
         #print(line)
         result = '\033[33m' + str(line[1]) + "\t("+line[2]+", "+line[3]+")\t"
         if line[1] in psauxdict:
             proc = " ".join(psauxdict[line[1]]).split(" ")
-
         else:
             proc = " ".join(line[10:]).split(" ")
+        binary = None
         if ".app" in proc[0]:
+            binary = os.path.basename(proc[0])
             proc[0] = proc[0].split(".app")[0]
-        
-        result += '\033[30m ' + os.path.basename(proc[0])
+
+        dirname =  os.path.dirname(proc[0])
+        if dirname:
+            dirname += "/"
+
+        result += '\033[30m ' + str(dirname + os.path.basename(proc[0])).strip()
+        if binary:
+            result += "/"+binary
         if len(proc) > 1:
             result += " "
             result += " ".join(proc[1:])[:80]
@@ -58,6 +65,7 @@ def main():
                 result += "..."
         result += '\033[0m'
         result = result.replace("\n", "").strip()
+        #print(line)
         print(result)
 
 
