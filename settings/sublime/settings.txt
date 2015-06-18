@@ -1,0 +1,20 @@
+{
+    "always_prompt_for_file_reload": false,
+    "atomic_save": true,
+    "color_scheme": "Packages/User/Sunburst.tmTheme",
+    "font_face": "Source Code Pro ExtraLight",
+    "font_size": 16,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "remember_open_files": false,
+    "save_on_focus_lost": true,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "update_check": false,
+    // Valid options are "no_bold", "no_italic", "no_antialias", "gray_antialias",
+    // "subpixel_antialias", "no_round" (OS X only), "gdi" (Windows only) and
+    // "directwrite" (Windows only)
+    "font_options": ["subpixel_antialias"]
+}
