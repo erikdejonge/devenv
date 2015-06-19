@@ -89,6 +89,7 @@ p {
 }
 img {
     background-color: #7F7F7F;
+    max-width: 854px;
 }
 ul, ol {
     padding: 16px 0 8px 10px;
