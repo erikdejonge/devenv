@@ -71,7 +71,6 @@ def dosearch(arguments, cachefilename, searchstruct):
                         pass
                     else:
                         if arguments.hidden is False or (not strinstr([root, possible_test_file_path], [".git", ".dep", ".npm", ".travis", ".bower", "node_modules", ".hg", ".idea", "__MACOSX",  ".fetch.json", ".DS_Store"])):
-                            print(possible_test_file_path)
                             try:
                                 searchstruct[possible_test_file_path]=open(possible_test_file_path).read()
                             except UnicodeDecodeError as ex:
@@ -105,7 +104,7 @@ def main():
     main
     """
     arguments=IArguments(__doc__)
-    print(arguments)
+
     cachefolder=os.path.join(os.path.expanduser("~"), ".searchfiles")
 
     if os.path.exists(cachefolder) and os.path.isfile(cachefolder):
