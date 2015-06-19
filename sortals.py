@@ -13,8 +13,9 @@ author  : rabshakeh (erik@a8.nl)
 project : devenv
 created : 15-06-15 / 15:45
 """
+import os
 import sys
-
+import subprocess
 
 def main():
     """
@@ -33,10 +34,20 @@ def main():
         implist = []
 
         for impitem in implementation.split("\n"):
-            implist.append(impitem.strip())
+
+            if impitem.startswith("_"):
+                bashprof = open(os.path.join(os.path.expanduser("~"), ".bash_profile")).read()
+                spbash = bashprof.split(impitem)
+                func = ""
+                if len(spbash) > 0:
+                    spbash = spbash[1].split("}")
+                    func = "function "+impitem+spbash[0]+"}\n"
+                implist.append(impitem.strip()+": \n"+func)
+            else:
+                implist.append(impitem.strip())
 
         implementation = "\n".join(implist)
-        result += '\033[30m\n' + implementation + '\033[0m'
+        result += '\033[90m\n' + implementation + '\033[0m'
         result = result.replace("alias ", "")
         print(result)
 
