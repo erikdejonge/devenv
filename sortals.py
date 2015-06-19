@@ -37,17 +37,17 @@ def main():
 
             if impitem.startswith("_"):
                 bashprof = open(os.path.join(os.path.expanduser("~"), ".bash_profile")).read()
-                spbash = bashprof.split(impitem)
+                spbash = bashprof.split("function "+impitem+"()")
                 func = ""
                 if len(spbash) > 0:
                     spbash = spbash[1].split("}")
-                    func = "function "+impitem+spbash[0]+"}\n"
-                implist.append(impitem.strip()+": \n"+func)
+                    func = "\033[37mfunction "+impitem+"()"+spbash[0]+"}"
+                implist.append(impitem.strip()+":\n"+func)
             else:
                 implist.append(impitem.strip())
 
         implementation = "\n".join(implist)
-        result += '\033[34m\n' + implementation + '\033[0m'
+        result += '\033[90m\n' + implementation + '\033[0m'
         result = result.replace("alias ", "")
         print(result)
 
