@@ -47,7 +47,7 @@ def main():
                 implist.append(impitem.strip())
 
         implementation = "\n".join(implist)
-        result += '\033[90m\n' + implementation + '\033[0m'
+        result += '\033[34m\n' + implementation + '\033[0m'
         result = result.replace("alias ", "")
         print(result)
 
