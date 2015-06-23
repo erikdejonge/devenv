@@ -40,7 +40,7 @@ def main():
                 spbash = bashprof.split("function "+impitem+"()")
                 func = ""
                 if len(spbash) > 0:
-                    spbash = spbash[1].split("}")
+                    spbash = spbash[1].split("}\n")
                     func = "\033[37mfunction "+impitem+"()"+spbash[0]+"}"
                 implist.append(impitem.strip()+":\n"+func)
             else:
