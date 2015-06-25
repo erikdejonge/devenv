@@ -16,7 +16,11 @@ created : 15-06-15 / 15:45
 """
 import os
 import sys
+from consoleprinter import console
 
+def debug(s):
+
+    console(s, fileref=True)
 
 def main():
     """
@@ -29,7 +33,6 @@ def main():
     for line in input1.split("\n---\n")[0].split(" "):
         if len(line.strip()) > 0:
             input2.append(line.strip())
-
     if len(input1.split("\n---\n")) > 1:
         for line in input1.split("\n---\n")[1].split("alias "):
             if len(line.strip()) > 0:
@@ -51,22 +54,24 @@ def main():
                     line = line.split("=")[0].replace("alias ", "").strip()
                     input2.append(line)
 
+
+
     input2 = [x.strip() for x in list(set(input2))]
     bashprof = open(os.path.join(os.path.expanduser("~"), ".bash_profile")).read()
     input3 = []
+
     for line in input2:
+        for bline in bashprof.split("\n"):
+            if bline.startswith("alias ") and line in bline:
+                input3.append(bline.split("=")[0].lstrip("alias "))
 
-
-
-        if line.startswith("_"):
-            for bline in bashprof.split("\n"):
-                if bline.startswith("alias ") and line in bline:
-                    input3.append(bline.split("=")[0].lstrip("alias "))
     for inp3 in input3:
         input2.append(inp3)
 
+
     for line in input2:
-        result = '\033[33m' + line.split('=')[0].strip().replace(':', '').strip()+":"
+
+        result = '\033[33m' + line.split('=')[0].strip().replace(':', '').strip() + ":"
         implementation = line.split('=')
 
         if len(implementation) > 1:
@@ -81,9 +86,9 @@ def main():
 
         implist = []
 
-
         for impitem in implementation.split("\n"):
-            if impitem.startswith("_"):
+
+            if "function " + impitem + "()" in bashprof:
                 spbash = bashprof.split("function " + impitem + "()")
                 func = ""
 
@@ -92,7 +97,6 @@ def main():
                     func = "\033[37mfunction " + impitem + "()" + spbash[0].replace("\n\n", "\n") + "}"
 
                 implist.append(func)
-
             else:
                 spbash = bashprof.split("alias " + impitem + "=")
 
