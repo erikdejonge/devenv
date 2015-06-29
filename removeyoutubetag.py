@@ -45,8 +45,9 @@ def main():
 
     roots = set()
 
-    for root, _, _ in os.walk(arguments.inputdir):
-        roots.add(root)
+    # for root, _, _ in os.walk(arguments.inputdir):
+    #    roots.add(root)
+    roots.add(arguments.inputdir)
 
     for root in roots:
         for fpath in os.listdir(root):
@@ -63,7 +64,18 @@ def main():
                 taglen = len(fpj)
                 break
 
-            if taglen == 11 and "_" not in tag:
+            if taglen >= 11 and "." in tag:
+                for fpk in tag.split("."):
+                    tag = fpk
+                    taglen = fpk
+                    break
+
+            if taglen == 10:
+                nfpath = forceascii(fpathsplitext).replace("-" + tag, "").strip("_").strip("-").strip() + fpathsplitextlast
+                fpath = os.path.join(root, fpath)
+                nfpath = os.path.join(root, nfpath)
+                print("mv", '"' + fpath + '"', '"' + nfpath + '"')
+            elif taglen == 11:
                 if "-" + tag in fpath:
                     nfpath = forceascii(fpathsplitext).replace("-" + tag, "").strip("_").strip("-").strip() + fpathsplitextlast
                     fpath = os.path.join(root, fpath)

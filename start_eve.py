@@ -3,7 +3,7 @@
 
 import os
 import time
-from sh import machine, grep
+from sh import docker_machine, grep
 
 
 def main():
