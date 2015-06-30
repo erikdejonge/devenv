@@ -1,0 +1,5 @@
+#min     hour     mday     month     wday    user     command
+#* * * * * /usr/local/bin/python /Users/rabshakeh/workspace/cryptobox/www_cryptobox_nl/server/manage.py make_rsa_keys -p 1 -k 8192 -s 100
+* * * * * /Users/rabshakeh/workspace/research/printtime.py > /Users/rabshakeh/time.txt
+*/10 * * * * /usr/local/bin/python3 /Users/rabshakeh/workspace/brainyquote/printbrainyquote.py -r -d ~/workspace/brainyquote/quotes  > /Users/rabshakeh/quote.txt
+*/1 * * * * /usr/local/bin/python3 /Users/rabshakeh/workspace/brainyquote/printbrainyquote.py -c -r -l 30 -d ~/workspace/brainyquote/quotes  > /Users/rabshakeh/cquote.txt
