@@ -14,10 +14,10 @@ def main():
 
     if len(x) < 300 or len(x) > 400:
         print("check eve", len(x))
-        machine_eve = grep(machine("ls"), "eve").strip()
+        machine_eve = grep(docker_machine("ls"), "eve").strip()
 
         if "Stopped" in machine_eve or "Saved" in machine_eve:
-            p = machine("start", "eve", _bg=True)
+            p = docker_machine("start", "eve", _bg=True)
             time.sleep(5)
             p.wait()
             print(1)
