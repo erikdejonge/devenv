@@ -1,0 +1,27 @@
+# coding=utf-8
+"""
+Lorum ipsum
+
+Usage:
+  ${NAME} [options] <input>
+
+Options:
+  -h --help     Show this screen.
+
+author  : ${USER} (erik@a8.nl)
+project : ${PROJECT_NAME}
+created : ${DATE} / ${TIME}
+"""
+from arguments import Arguments
+
+
+def main():
+    """
+    main
+    """
+    arguments = Arguments(__doc__)
+    print(arguments)
+
+
+if __name__ == "__main__":
+    main()
