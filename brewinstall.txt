@@ -1,18 +1,13 @@
-brew install
+brew install mackup
 brew install coreutils
 brew install findutils
 brew install bash
-brew install homebrew/dupes/grep
-brew install grep
-brew install grep --with-default-names
 brew install homebrew/dupes grep
 brew install rsync
 brew install rsync --default-names
 brew install rsync --with-default-names
 brew install cgrep
 brew install grep
-hist brew install
-hist brew install > brewinstall.txt
 brew cask install
 brew cask install hazel
 brew cask install --force hazel
@@ -23,4 +18,3 @@ brew cask install shiori
 brew cask install qlstephen
 brew cask install atom
 brew cask install quicklook-json
-hist brew cask install >> brewinstall.txt
