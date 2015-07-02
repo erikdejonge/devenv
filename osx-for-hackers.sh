@@ -12,6 +12,9 @@ sudo -v
 
 echo "This script will make your Mac awesome"
 
+echo "hazel"
+defaults write com.noodlesoft.Hazel ScanInvisibles -bool YES
+
 ###############################################################################
 # General UI/UX
 ###############################################################################
