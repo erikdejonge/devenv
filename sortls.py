@@ -17,8 +17,13 @@ def main():
     main
     """
     input = sys.stdin.read()
+
     for line in input.split("\n"):
-        console(line)
+        linesplit = line.split(" ")
+        print(linesplit)
+        if len(linesplit) > 5:
+            print(linesplit[6]+"\n")
+            #console(line, plaintext=True, color=Colors.default)
 
 if __name__ == "__main__":
     main()
