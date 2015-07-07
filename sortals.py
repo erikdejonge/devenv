@@ -33,6 +33,11 @@ def main():
     for line in input1.split("\n---\n")[0].split(" "):
         if len(line.strip()) > 0:
             input2.append(line.strip())
+    if len(input1.split("\n---\n")[1].split("alias "))> 30:
+        print("too many items")
+
+        return
+
     if len(input1.split("\n---\n")) > 1:
         for line in input1.split("\n---\n")[1].split("alias "):
             if len(line.strip()) > 0:
@@ -68,7 +73,7 @@ def main():
     for inp3 in input3:
         input2.append(inp3)
 
-
+    printed = set([":", '\x1b[33m:\x1b[37m\n\x1b[0m'])
     for line in input2:
 
         result = '\033[33m' + line.split('=')[0].strip().replace(':', '').strip() + ":"
@@ -110,8 +115,10 @@ def main():
         implementation = "\n".join(implist)
         result += '\033[37m\n' + implementation.strip() + '\033[0m'
         result = result.replace("alias ", "")
-        print(result + "\n")
-
+        if result.strip() not in printed:
+            #print(str({1:result.strip()}) + "\n")
+            print(result.strip()+"\n")
+        printed.add(result.strip())
 
 if __name__ == "__main__":
     main()
