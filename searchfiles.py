@@ -79,11 +79,11 @@ def dosearch(arguments, cachefilename, searchstruct):
                                 searchstruct[possible_test_file_path]=str(ex)
                             except OSError as ex:
                                 searchstruct[possible_test_file_path]=str(ex)
-                if arguments.query.lower() in searchstruct[possible_test_file_path].lower():
+                if possible_test_file_path in searchstruct and arguments.query.lower() in searchstruct[possible_test_file_path].lower():
                     print("\033[33m" + possible_test_file_path + "\033[0m")
                     print("\033[37m" + str(os.popen("cat -n '" + possible_test_file_path + "' | tr '[:upper:]' '[:lower:]' | grep " + arguments.query.lower()).read()) + "\033[0m")
-            searchstruct = {}
-        searchstruct = {}
+            #searchstruct = {}
+        #searchstruct = {}
         pickle.dump(searchstruct, open(cachefilename, "wb"))
 
     return searchstruct
