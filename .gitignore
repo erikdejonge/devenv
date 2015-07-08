@@ -1,3 +1,6 @@
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch bash_profile.sh' --prune-empty --tag-name-filter cat -- --all
+
+bash_profile.sh
 automator/Services/Services
 .idea
 # Byte-compiled / optimized / DLL files
