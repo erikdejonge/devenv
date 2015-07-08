@@ -88,6 +88,8 @@
 				</array>
 				<key>Class Name</key>
 				<string>AMImportFilesIntoITunesAction</string>
+				<key>Disabled</key>
+				<false/>
 				<key>InputUUID</key>
 				<string>0816063B-B588-43A7-B43A-F8FF60194584</string>
 				<key>Keywords</key>
@@ -224,8 +226,6 @@
 				</array>
 				<key>OutputUUID</key>
 				<string>5CCCF965-25EF-4902-AE3A-2BD1BC88D395</string>
-				<key>StartAction</key>
-				<false/>
 				<key>UUID</key>
 				<string>AE6D0783-C92D-4ACD-884E-1C5D9DB6BF1E</string>
 				<key>UnlocalizedApplications</key>
@@ -253,12 +253,10 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>1089.000000:468.000000</string>
+				<string>1089.000000:421.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -268,7 +266,7 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>17E26991-3AA9-4F90-B8F8-2F67490DBAD9</key>
+		<key>D257DAC7-8821-4F56-B4A1-C62757937A69</key>
 		<dict>
 			<key>from</key>
 			<string>AD6F2224-4DC0-4E09-9287-0664474EB34B - AD6F2224-4DC0-4E09-9287-0664474EB34B</string>
@@ -283,7 +281,7 @@ end run</string>
 		<key>serviceApplicationPath</key>
 		<string>/System/Library/CoreServices/Finder.app</string>
 		<key>serviceInputTypeIdentifier</key>
-		<string>com.apple.Automator.fileSystemObject</string>
+		<string>com.apple.Automator.fileSystemObject.music</string>
 		<key>serviceOutputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>serviceProcessesInput</key>
