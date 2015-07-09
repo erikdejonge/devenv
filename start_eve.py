@@ -10,6 +10,9 @@ def main():
     """
     main
     """
+    if os.path.exists(os.path.expanduser("~/.upgradingeve")):
+        print("0")
+        return
     x = os.popen("ps aux | grep vbox | grep -v grep").read().strip()
 
     if len(x) < 300 or len(x) > 400:
