@@ -1,18 +1,19 @@
 # coding=utf-8
 """
-Lorum ipsum
+Convert a file to plain ascii
 
 Usage:
-  ${NAME} [options] <input>
+  force_ascii.py [options] <input>
 
 Options:
   -h --help     Show this screen.
 
-author  : ${USER} (erik@a8.nl)
-project : ${PROJECT_NAME}
-created : ${DATE} / ${TIME}
+author  : rabshakeh (erik@a8.nl)
+project : devenv
+created : 13-07-15 / 14:21
 """
 from arguments import Arguments
+from consoleprinter import forceascii
 
 
 class IArguments(Arguments):
@@ -33,7 +34,9 @@ def main():
     main
     """
     arguments = IArguments(__doc__)
-    print(arguments)
+    content = open(arguments.input, "rt").read()
+
+    print(content)
 
 
 if __name__ == "__main__":
