@@ -14,7 +14,7 @@ project : devenv
 created : 13-07-15 / 14:21
 """
 import os
-
+import shutil
 from arguments import Arguments
 from consoleprinter import console
 
@@ -45,9 +45,13 @@ def main():
     else:
         encoding = open("fileencoding.txt").read().strip()
 
-    content = open(arguments.input, "rt", encoding=encoding).read()
+    if not os.path.exists(arguments.input):
+        console("no file [" + arguments.input + "] found")
+        exit(1)
+    shutil.copy(arguments.input, arguments.input+".bak")
+    content = open(arguments.input+".bak", "rt", encoding=encoding).read()
     content = content.encode("utf-8")
-    print(content)
+    open(arguments.input+".bak", "wt", encoding="utf-8").write(content.decode())
 
 
 if __name__ == "__main__":
