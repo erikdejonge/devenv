@@ -10,7 +10,6 @@ project : devenv
 created : 02-07-15 / 09:54
 """
 import sys
-from consoleprinter import console, Colors
 
 def main():
     """
