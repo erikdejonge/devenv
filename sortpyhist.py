@@ -49,32 +49,34 @@ def main():
             last = ""
 
             for cmd in cmdlist:
-                cmd = cmd.split(": python")
-                date = cmd.pop(0)
-                date = time.strftime("%Y/%m/%d %H:%M", time.localtime(int(date)))
-                cmd = "".join(cmd)
-                if cmd != last:
-                    last = cmd
-                    cmd = cmd.replace(os.path.expanduser("~"), "~")
+                cmd = cmd.split(": ")
 
-                    if "'" not in cmd and '"' not in cmd:
-                        cmd = [cmdi for cmdi in cmd.split("3 ") if cmdi]
-                        cmd = " ".join(cmd)
-                        cmd = [cmdi for cmdi in cmd.split(" ") if cmdi]
-                        cmds = ""
+                if len(cmd) > 0:
+                    date = cmd.pop(0)
+                    date = time.strftime("%Y/%m/%d %H:%M", time.localtime(int(date)))
+                    cmd = "".join(cmd)
+                    if cmd != last:
+                        last = cmd
+                        cmd = cmd.replace(os.path.expanduser("~"), "~")
 
-                        for cnt, cmdi in list(enumerate(cmd)):
-                            if cnt % 2 == 0:
-                                cmds += "\033[90m"
-                            else:
-                                cmds += "\033[93m"
+                        if "'" not in cmd and '"' not in cmd:
+                            cmd = [cmdi for cmdi in cmd.split("3 ") if cmdi]
+                            cmd = " ".join(cmd)
+                            cmd = [cmdi for cmdi in cmd.split(" ") if cmdi]
+                            cmds = ""
 
-                            cmds += cmdi + " "
+                            for cnt, cmdi in list(enumerate(cmd)):
+                                if cnt % 2 == 0:
+                                    cmds += "\033[90m"
+                                else:
+                                    cmds += "\033[93m"
 
-                        cmds = cmds.strip()
+                                cmds += cmdi + " "
 
-                    cmd = "\033[90mpython3 \033[33m" + cmds
-                    console(date, cmd, color=Colors.blue)
+                            cmds = cmds.strip()
+
+                        cmd = cmds
+                        console(date, cmd, color=Colors.blue)
         else:
             console_warning(arguments.input, "file not found")
     finally:
@@ -83,3 +85,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
