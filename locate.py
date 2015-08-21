@@ -23,7 +23,7 @@ from arguments import Arguments
 from functools import cmp_to_key
 from fuzzywuzzy import fuzz
 from past.builtins import cmp
-
+from consoleprinter import console
 
 class IArguments(Arguments):
     """
@@ -38,6 +38,9 @@ class IArguments(Arguments):
         self.query = ""
         super().__init__(doc)
 
+def get_mdfind(cmd):
+    console(cmd)
+    return cmd
 
 def locatequery(args):
     """
@@ -58,12 +61,12 @@ def locatequery(args):
         textsearch = True
 
     print("\033[91m[" + query_display + "](" + str(numargs) + "):\033[0m")
-    mdfind_results.extend(os.popen("mdfind -onlyin '" + os.path.expanduser("~") + "' -name '" + searchword + "'").read().split("\n"))
+    mdfind_results.extend(os.popen(get_mdfind("mdfind -onlyin '" + os.path.expanduser("~") + "' -name '" + searchword + "'")).read().split("\n"))
     mdfind_results = [x for x in mdfind_results if x]
-    mdfind_results.extend(os.popen("mdfind -name '" + searchword + "'").read().split("\n"))
+    mdfind_results.extend(os.popen(get_mdfind("mdfind -name '" + searchword + "'")).read().split("\n"))
 
     if textsearch:
-        mdfind_results.extend(os.popen("mdfind -onlyin ~/workspace " + searchword).read().split("\n"))
+        mdfind_results.extend(os.popen(get_mdfind("mdfind -onlyin ~/workspace " + searchword)).read().split("\n"))
 
     return mdfind_results, searchword
 
@@ -180,8 +183,15 @@ def main():
             folders.append(i)
 
         last = i
+    if len(mdfind_results3) > 0:
+        mdfind_results3.reverse()
+    else:
+        for i in open("find.txt"):
+            if fuzz.ratio(i, last) > 70:
+                mdfind_results3.append("\033[91m" + str(i) + "\033[0m")
 
-    mdfind_results3.reverse()
+        if len(mdfind_results3) > 0:
+            mdfind_results3.reverse()
 
     for i in mdfind_results3:
         print(i)
