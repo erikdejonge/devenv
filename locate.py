@@ -22,8 +22,9 @@ import os
 from arguments import Arguments
 from functools import cmp_to_key
 from fuzzywuzzy import fuzz
-from past.builtins import cmp
 from consoleprinter import console
+from past.builtins import cmp
+
 
 class IArguments(Arguments):
     """
@@ -38,9 +39,16 @@ class IArguments(Arguments):
         self.query = ""
         super().__init__(doc)
 
+
 def get_mdfind(cmd):
-    console(cmd)
+    """
+    @type cmd: str
+    @return: None
+    """
+
+    #console(cmd)
     return cmd
+
 
 def locatequery(args):
     """
@@ -169,6 +177,10 @@ def main():
 
     mdfind_results2 = sorted(mdfind_results2, key=cmp_to_key(lambda x, y: cmp(len(y), len(x))))
     mdfind_results2.reverse()
+    mdfind_results2 = []
+
+    if len(mdfind_results2) == 0:
+        mdfind_results2.extend(os.popen("/usr/bin/locate " + searchword).read().split("\n"))
     mdfind_results3 = []
 
     for i in mdfind_results2:
@@ -183,15 +195,9 @@ def main():
             folders.append(i)
 
         last = i
+
     if len(mdfind_results3) > 0:
         mdfind_results3.reverse()
-    else:
-        for i in open("find.txt"):
-            if fuzz.ratio(i, last) > 70:
-                mdfind_results3.append("\033[91m" + str(i) + "\033[0m")
-
-        if len(mdfind_results3) > 0:
-            mdfind_results3.reverse()
 
     for i in mdfind_results3:
         print(i)
