@@ -45,7 +45,6 @@ def get_mdfind(cmd):
     @type cmd: str
     @return: None
     """
-
     #console(cmd)
     return cmd
 
@@ -177,7 +176,6 @@ def main():
 
     mdfind_results2 = sorted(mdfind_results2, key=cmp_to_key(lambda x, y: cmp(len(y), len(x))))
     mdfind_results2.reverse()
-    mdfind_results2 = []
 
     if len(mdfind_results2) == 0:
         mdfind_results2.extend(os.popen("/usr/bin/locate " + searchword).read().split("\n"))
