@@ -1,0 +1,956 @@
+{
+  "plist": {
+    "-version": "1.0",
+    "dict": {
+      "key": [
+        "author",
+        "comment",
+        "name",
+        "settings",
+        "uuid"
+      ],
+      "string": [
+        "Stanley Rost",
+        "(π) Soryu, 2005",
+        "Sunburst",
+        "C8C58F9A-35FE-44A4-9BC2-2F3C343DC81D"
+      ],
+      "array": {
+        "dict": [
+          {
+            "key": "settings",
+            "dict": {
+              "key": [
+                "background",
+                "caret",
+                "foreground",
+                "invisibles",
+                "lineHighlight",
+                "selection"
+              ],
+              "string": [
+                "#000000",
+                "#A7A7A7",
+                "#EFEEC0",
+                "#CAE2FB3D",
+                "#FFFFFF1A",
+                "#DDF0FF33"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Comment",
+              "comment"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": [
+                "italic",
+                "#AEAEAE"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Constant",
+              "constant"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#3387CC"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Entity",
+              "entity"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": "#89BDFF"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Keyword",
+              "keyword"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": "#E28964"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Storage",
+              "storage"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": "#99CF50"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "String",
+              "string"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": "#65B042"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Support",
+              "support"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": "#9B859D"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Variable",
+              "variable"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#3E87E3"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Invalid – Deprecated",
+              "invalid.deprecated"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": [
+                "italic underline",
+                "#FD5FF1"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Invalid – Illegal",
+              "invalid.illegal"
+            ],
+            "dict": {
+              "key": [
+                "background",
+                "foreground"
+              ],
+              "string": [
+                "#562D56BF",
+                "#FD5FF1"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "settings"
+            ],
+            "string": "-----------------------------------"
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "♦ Embedded Source (Bright)",
+              "text source"
+            ],
+            "dict": {
+              "key": "background",
+              "string": "#B1B3BA08"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "♦ Entity inherited-class",
+              "entity.other.inherited-class"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": [
+                "italic",
+                "#9B5C2E"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "♦ String embedded-source",
+              "string.quoted source"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": "#DAEFA3"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "♦ String constant",
+              "string constant"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#DDF2A4"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "♦ String.regexp",
+              "string.regexp"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#E9C062"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "♦ String.regexp.«special»",
+              "string.regexp constant.character.escape, string.regexp source.ruby.embedded, string.regexp string.regexp.arbitrary-repitition"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#CF7D34"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "♦ String variable",
+              "string variable"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#8A9A95"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "♦ Support.function",
+              "support.function"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": "#DAD085"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "♦ Support.constant",
+              "support.constant"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": "#CF6A4C"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "c C/C++ Preprocessor Line",
+              "meta.preprocessor.c"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#8996A8"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "c C/C++ Preprocessor Directive",
+              "meta.preprocessor.c keyword"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#AFC4DB"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "j Entity Name Type",
+              "entity.name.type"
+            ],
+            "dict": {
+              "key": "fontStyle",
+              "string": "underline"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "j Cast",
+              "meta.cast"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": [
+                "italic",
+                "#676767"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "✘ Doctype/XML Processing",
+              "meta.sgml.html meta.doctype, meta.sgml.html meta.doctype entity, meta.sgml.html meta.doctype string, meta.xml-processing, meta.xml-processing entity, meta.xml-processing string"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#494949"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "✘ Meta.tag.«all»",
+              "meta.tag, meta.tag entity"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#89BDFF"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "✘ Meta.tag.inline",
+              "source entity.name.tag, source entity.other.attribute-name, meta.tag.inline, meta.tag.inline entity"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#E0C589"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "✘ Namespaces",
+              "entity.name.tag.namespace, entity.other.attribute-name.namespace"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#E18964"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "§ css tag-name",
+              "meta.selector.css entity.name.tag"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#CDA869"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "§ css:pseudo-class",
+              "meta.selector.css entity.other.attribute-name.tag.pseudo-class"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#8F9D6A"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "§ css#id",
+              "meta.selector.css entity.other.attribute-name.id"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#8B98AB"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "§ css.class",
+              "meta.selector.css entity.other.attribute-name.class"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#9B703F"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "§ css property-name:",
+              "support.type.property-name.css"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#C5AF75"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "§ css property-value;",
+              "meta.property-group support.constant.property-value.css, meta.property-value support.constant.property-value.css"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#F9EE98"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "§ css @at-rule",
+              "meta.preprocessor.at-rule keyword.control.at-rule"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#8693A5"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "§ css additional-constants",
+              "meta.property-value support.constant.named-color.css, meta.property-value constant"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#DD7B3B"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "§ css constructor.argument",
+              "meta.constructor.argument.css"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#8F9D6A"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "⎇ diff.header",
+              "meta.diff, meta.diff.header"
+            ],
+            "dict": {
+              "key": [
+                "background",
+                "fontStyle",
+                "foreground"
+              ],
+              "string": [
+                "#0E2231",
+                "italic",
+                "#EFEEC0"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "⎇ diff.deleted",
+              "markup.deleted"
+            ],
+            "dict": {
+              "key": [
+                "background",
+                "foreground"
+              ],
+              "string": [
+                "#420E09",
+                "#EFEEC0"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "⎇ diff.changed",
+              "markup.changed"
+            ],
+            "dict": {
+              "key": [
+                "background",
+                "foreground"
+              ],
+              "string": [
+                "#4A410D",
+                "#EFEEC0"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "⎇ diff.inserted",
+              "markup.inserted"
+            ],
+            "dict": {
+              "key": [
+                "background",
+                "foreground"
+              ],
+              "string": [
+                "#253B22",
+                "#EFEEC0"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "settings"
+            ],
+            "string": "--------------------------------"
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Markup: Italic",
+              "markup.italic"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": [
+                "italic",
+                "#E9C062"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Markup: Bold",
+              "markup.bold"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": [
+                "bold",
+                "#E9C062"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Markup: Underline",
+              "markup.underline"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": [
+                "underline",
+                "#E18964"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Markup: Quote",
+              "markup.quote"
+            ],
+            "dict": {
+              "key": [
+                "background",
+                "fontStyle",
+                "foreground"
+              ],
+              "string": [
+                "#FEE09C12",
+                "italic",
+                "#E1D4B9"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Markup: Heading",
+              "markup.heading, markup.heading entity"
+            ],
+            "dict": {
+              "key": [
+                "background",
+                "fontStyle",
+                "foreground"
+              ],
+              "string": [
+                "#632D04",
+                "#FEDCC5"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Markup: List",
+              "markup.list"
+            ],
+            "dict": {
+              "key": "foreground",
+              "string": "#E1D4B9"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Markup: Raw",
+              "markup.raw"
+            ],
+            "dict": {
+              "key": [
+                "background",
+                "fontStyle",
+                "foreground"
+              ],
+              "string": [
+                "#B1B3BA08",
+                "#578BB3"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Markup: Comment",
+              "markup comment"
+            ],
+            "dict": {
+              "key": [
+                "fontStyle",
+                "foreground"
+              ],
+              "string": [
+                "italic",
+                "#F67B37"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Markup: Separator",
+              "meta.separator"
+            ],
+            "dict": {
+              "key": [
+                "background",
+                "foreground"
+              ],
+              "string": [
+                "#242424",
+                "#60A633"
+              ]
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Log Entry",
+              "meta.line.entry.logfile, meta.line.exit.logfile"
+            ],
+            "dict": {
+              "key": "background",
+              "string": "#EEEEEE29"
+            }
+          },
+          {
+            "key": [
+              "name",
+              "scope",
+              "settings"
+            ],
+            "string": [
+              "Log Entry Error",
+              "meta.line.error.logfile"
+            ],
+            "dict": {
+              "key": "background",
+              "string": "#751012"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
