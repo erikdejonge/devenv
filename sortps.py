@@ -34,14 +34,23 @@ def main():
 
     lines = []
 
+    first = True
     for line in sys.stdin:
-        lines.append([linepart for linepart in line.split(" ") if linepart])
+        if not first and len(line) > 0:
+            lines.append([linepart for linepart in line.split(" ") if linepart])
+        first = False
 
-    lines.sort(key=lambda linepart:(float(linepart[1]), float(linepart[2]), float(linepart[3])))
+    lines.sort(key=lambda linepart:(float(linepart[2]), float(linepart[3]), float(linepart[1])))
     print('\033[34mpid\tcpu/mem\t\t program')
     for line in lines:
-        #print(line)
-        result = '\033[33m' + str(line[1]) + "\t("+line[2]+", "+line[3]+")\t"
+        memory = line[3]
+        if float(memory) > 5:
+            memory = "\033[34m" + str(memory)  + "\033[34m"
+        cpu = line[2]
+        if float(cpu) > 5:
+            cpu = "\033[36m" + str(cpu)  + "\033[34m"
+
+        result = '\033[33m' + str(line[1]) + "\t"+cpu+" \033[33m/ "+memory+"\t"
         if line[1] in psauxdict:
             proc = " ".join(psauxdict[line[1]]).split(" ")
         else:
