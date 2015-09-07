@@ -16,11 +16,17 @@ created : 15-06-15 / 15:45
 """
 import os
 import sys
+
 from consoleprinter import console
 
-def debug(s):
 
+def debug(s):
+    """
+    @type s: list
+    @return: None
+    """
     console(s, fileref=True)
+
 
 def main():
     """
@@ -33,15 +39,15 @@ def main():
     for line in input1.split("\n---\n")[0].split(" "):
         if len(line.strip()) > 0:
             input2.append(line.strip())
-    if len(input1.split("\n---\n")[1].split("alias "))> 30:
+    if len(input1.split("\n---\n")[1].split("alias ")) > 30:
         print("too many items")
-
         return
 
     if len(input1.split("\n---\n")) > 1:
         for line in input1.split("\n---\n")[1].split("alias "):
             if len(line.strip()) > 0:
                 newip = []
+                input2 = list(set(input2))
 
                 if len(input2) > 0:
                     for rem in input2:
@@ -59,8 +65,6 @@ def main():
                     line = line.split("=")[0].replace("alias ", "").strip()
                     input2.append(line)
 
-
-
     input2 = [x.strip() for x in list(set(input2))]
     bashprof = open(os.path.join(os.path.expanduser("~"), ".bash_profile")).read()
     input3 = []
@@ -74,8 +78,9 @@ def main():
         input2.append(inp3)
 
     printed = set([":", '\x1b[33m:\x1b[37m\n\x1b[0m'])
-    for line in input2:
+    input2.sort()
 
+    for line in input2:
         result = '\033[33m' + line.split('=')[0].strip().replace(':', '').strip() + ":"
         implementation = line.split('=')
 
@@ -92,7 +97,6 @@ def main():
         implist = []
 
         for impitem in implementation.split("\n"):
-
             if "function " + impitem + "()" in bashprof:
                 spbash = bashprof.split("function " + impitem + "()")
                 func = ""
@@ -115,10 +119,12 @@ def main():
         implementation = "\n".join(implist)
         result += '\033[37m\n' + implementation.strip() + '\033[0m'
         result = result.replace("alias ", "")
+
         if result.strip() not in printed:
-            #print(str({1:result.strip()}) + "\n")
-            print(result.strip()+"\n")
+            print(result.strip() + "\n")
+
         printed.add(result.strip())
+
 
 if __name__ == "__main__":
     main()
