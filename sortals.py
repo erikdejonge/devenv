@@ -17,7 +17,7 @@ created : 15-06-15 / 15:45
 import os
 import sys
 
-from consoleprinter import console
+from consoleprinter import console,remove_color
 
 
 def debug(s):
@@ -70,10 +70,11 @@ def main():
     input3 = []
 
     for line in input2:
+        linecnt = 0
         for bline in bashprof.split("\n"):
             if bline.startswith("alias ") and line in bline:
-                input3.append(bline.split("=")[0].lstrip("alias "))
-
+                input3.append(bline.split("=")[0].replace("alias ", "")+ " -> "+str(linecnt))
+            linecnt += 1
     for inp3 in input3:
         input2.append(inp3)
 
@@ -81,7 +82,11 @@ def main():
     input2.sort()
 
     for line in input2:
-        result = '\033[33m' + line.split('=')[0].strip().replace(':', '').strip() + ":"
+        if "->" not in line:
+            if line.strip().startswith("_"):
+                result = '\033[34m' + line.split('=')[0].strip().replace(':', '').strip() + ":"
+            else:
+                result = '\033[33m' + line.split('=')[0].strip().replace(':', '').strip() + ":"
         implementation = line.split('=')
 
         if len(implementation) > 1:
@@ -120,10 +125,10 @@ def main():
         result += '\033[37m\n' + implementation.strip() + '\033[0m'
         result = result.replace("alias ", "")
 
-        if result.strip() not in printed:
+        if remove_color(result.strip().split(" -> ")[0].strip()) not in printed:
             print(result.strip() + "\n")
 
-        printed.add(result.strip())
+        printed.add(remove_color(result.strip().split(" -> ")[0].strip()))
 
 
 if __name__ == "__main__":
