@@ -39,7 +39,7 @@ TERM xterm-256color
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
 NORMAL 00   # global default, although everything should be something.
 FILE 00;     # normal file
-DIR 00;36   # directory
+DIR 00;34   # directory
 FIFO 40;33  # pipe
 SOCK 00;35  # socket
 DOOR 00;35  # door
@@ -48,50 +48,45 @@ CHR 0;33;01    # character device driver
 ORPHAN 00;31;40 # symlink to nonexistent file
 
 # This is for files with execute permission:
-EXEC 01;35
+EXEC 00;35
+
 
 # List any file extensions like '.gz' or '.tar' that you would like ls
 # to colorize below. Put the extension, a space, and the color init string.
 # (and any comments you want to add after a '#')
 
-# If you use DOS-style suffixes, you may want to uncomment the following:
-#.cmd 01;32 # executables (bright green)
-#.exe 01;32
-#.com 01;32
-#.btm 01;32
-#.bat 01;32
 
-.tar 01;31 # archives or compressed (bright red)
-.tgz 01;31
-.arj 01;31
-.taz 01;31
-.lzh 01;31
-.zip 01;31
-.z   01;31
-.Z   01;31
-.gz  01;31
-.bz2 01;31
-.deb 01;31
-.rpm 01;31
-.jar 01;31
-.dmg 01;31
+.tar 00;35 # archives or compressed (bright red)
+.tgz 00;35
+.arj 00;35
+.taz 00;35
+.lzh 00;35
+.zip 00;35
+.z   00;35
+.Z   00;35
+.gz  00;35
+.bz2 00;35
+.deb 00;35
+.rpm 00;35
+.jar 00;35
+.dmg 00;35
 
 # image formats
-.jpg 01;35
-.png 01;35
-.gif 01;35
-.bmp 01;35
-.ppm 01;35
-.tga 01;35
-.xbm 01;35
-.xpm 01;35
-.tif 01;35
-.png 01;35
-.mpg 01;35
-.avi 01;35
-.fli 01;35
-.gl 01;35
-.dl 01;35
+.jpg 00;94
+.png 00;94
+.gif 00;94
+.bmp 00;94
+.ppm 00;94
+.tga 00;94
+.xbm 00;94
+.xpm 00;94
+.tif 00;94
+.png 00;94
+.mpg 00;94
+.avi 00;94
+.fli 00;94
+.gl 00;94
+.dl 00;94
 
 # source code files
 .pl 00;33
