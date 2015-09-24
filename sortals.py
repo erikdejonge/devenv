@@ -81,6 +81,7 @@ def main():
     printed = set([":", '\x1b[33m:\x1b[37m\n\x1b[0m'])
     input2.sort()
 
+    last = ""
     for line in input2:
         if "->" not in line:
             if line.strip().startswith("_"):
@@ -124,9 +125,16 @@ def main():
         implementation = "\n".join(implist)
         result += '\033[37m\n' + implementation.strip() + '\033[0m'
         result = result.replace("alias ", "")
+        if remove_color(line.strip().split("->")[0].strip()).strip() is last.strip():
+            print(line)
 
-        if remove_color(result.strip().split(" -> ")[0].strip()) not in printed:
+        if "->" in line:
+            last = remove_color(line.strip().split("->")[0].strip())
+
+        elif remove_color(line.strip().split("->")[0].strip()) not in str(printed):
             print(result.strip() + "\n")
+
+
 
         printed.add(remove_color(result.strip().split(" -> ")[0].strip()))
 
