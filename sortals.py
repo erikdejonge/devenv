@@ -47,22 +47,33 @@ def main():
                 aliasses.append((alias, imp))
             else:
                 console_warning("cant split this", line)
+
                 raise RuntimeError()
 
     print(get_alias_and_implementation(aliasses, profile, searchfor))
 
 
 def get_alias_and_implementation(aliasses, profile, searchfor):
+    """
+    @type aliasses: list
+    @type profile: str
+    @type searchfor: str
+    @return: None
+    """
     retval = ""
     for alias in aliasses:
         if alias[0].strip().lower() == searchfor.strip().lower():
             imp = alias[1].strip()
-            retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\""
+            retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n----\n"
+
             if imp.startswith("_"):
                 for func in profile.split("function "):
                     if func.startswith(imp):
-                        retval += "\n\033[90mfunction " + func.strip() + "\033[0m\n----\n"
+                        retval += "\033[90mfunction " + func.strip() + "\033[0m\n\n"
+
+    retval = retval.strip() + "\n----\n"
     return retval
+
 
 if __name__ == "__main__":
     main()
