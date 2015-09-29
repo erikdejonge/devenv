@@ -62,16 +62,18 @@ def get_alias_and_implementation(aliasses, profile, searchfor):
     """
     retval = ""
     for alias in aliasses:
-        if alias[0].strip().lower() == searchfor.strip().lower():
+        if searchfor.strip().lower() in  alias[0].strip().lower():
             imp = alias[1].strip()
-            retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n----\n"
+            retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n⎯⎯⎯\n"
 
             if imp.startswith("_"):
+                foundfunc = False
                 for func in profile.split("function "):
                     if func.startswith(imp):
+                        foundfunc = True
                         retval += "\033[90mfunction " + func.strip() + "\033[0m\n\n"
-
-    retval = retval.strip() + "\n----\n"
+                if foundfunc:
+                    retval = retval.strip() + "\n--\n"
     return retval
 
 

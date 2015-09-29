@@ -175,10 +175,8 @@
 			<string>entity.other.inherited-class</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
 				<key>foreground</key>
-				<string>#9B5C2E</string>
+				<string>#FFD479</string>
 			</dict>
 		</dict>
 		<dict>
@@ -248,7 +246,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#DAD085</string>
+				<string>#FE7474</string>
 			</dict>
 		</dict>
 		<dict>
