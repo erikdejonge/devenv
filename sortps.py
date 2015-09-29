@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # coding=utf-8
 """
-Reformats ps output (piped)
+Reformats ps output
 
 Usage:
-  sortps
+  sortps.py
 
 Options:
   -h --help     Show this screen.
+  --grepval     value to seach for
 
 author  : rabshakeh (erik@a8.nl)
 project : devenv
@@ -15,7 +16,6 @@ created : 15-06-15 / 15:45
 """
 import os
 import sys
-
 
 def main():
     """
