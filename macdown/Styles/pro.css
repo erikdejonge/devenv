@@ -194,21 +194,22 @@ h1 {
 }
 
 h2 {
-    color: #81ddaf;
-    margin-top: 24px;
+    color: #ffd479;
+    margin-top: 20px;
     font-weight: normal;
     font-size: 20px;
     margin-bottom: 8px;
+    text-transform: capitalize;
 }
 
 h3 {
 
-    color: #ffd479;
+    color: #81ddaf;
     margin-top: 24px;
 }
 
 h4 {
-    color: #bafcb8;
+    color: #81ddaf;
     color: #ffd479;
 }
 
@@ -324,4 +325,8 @@ pre:not([class]) {
 
 p {
     white-space: pre-line;
+}
+
+img[src='Error.src']{
+    display: none;
 }
