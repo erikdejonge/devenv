@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # coding=utf-8
 """
 Lorum ipsum
@@ -12,10 +13,12 @@ author  : rabshakeh (erik@a8.nl)
 project : devenv
 created : 30-09-15 / 20:57
 """
+import os
 import sys
+import time
 
 from arguments import Arguments
-from consoleprinter import console
+from consoleprinter import console, query_yes_no
 
 if sys.version_info.major < 3:
     console("\033[31mpython3 is required\033[0m")
@@ -35,14 +38,45 @@ class IArguments(Arguments):
         super().__init__(doc)
 
 
+def ossystem(cmd):
+    """
+    @type cmd: str
+    @return: None
+    """
+    os.system(cmd)
+
+
 def main():
     """
     main
     """
     arguments = IArguments(__doc__)
-    console(arguments)
+    print(arguments.input)
 
+    arguments.input = os.path.abspath(os.path.expanduser(str(arguments.input)))
 
+    if not os.path.exists(arguments.input):
+        console(arguments.input, "not found", color="red")
+        alts = os.popen("mdfind "+os.path.basename(arguments.input)+" | grep "+os.path.basename(arguments.input)+" | grep -v pyc").read()
+        alts = str(alts).split("\n")
+        if len(alts) > 0:
+            for alternative in alts:
+                if query_yes_no("Try \033[34m"+alternative+"\033[96m instead?"):
+                    arguments.input = alternative
+                    break
+            else:
+                return
+        else:
+            return
+    console("opening", arguments.input, color="darkyellow")
+    if arguments.input.lower().endswith("py"):
+        ossystem("cd " + os.path.dirname(arguments.input) + "&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + os.path.dirname(arguments.input) + " --line 1 " + arguments.input + " > /dev/null 2> /dev/null")
+        time.sleep(1)
+        ossystem("osascript -e 'tell application \"Pycharm\" to activate'")
+    else:
+        os.system("cd " + os.path.dirname(arguments.input) + "&&/usr/bin/open " + arguments.input)
+
+# print(cmd)
 
 
 if __name__ == "__main__":
