@@ -71,7 +71,7 @@ def main():
     console("opening", arguments.input, color="darkyellow")
     if arguments.input.lower().endswith("py"):
         ossystem("cd " + os.path.dirname(arguments.input) + "&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + os.path.dirname(arguments.input) + " --line 1 " + arguments.input + " > /dev/null 2> /dev/null")
-        time.sleep(1)
+        time.sleep(0.2)
         ossystem("osascript -e 'tell application \"Pycharm\" to activate'")
     else:
         os.system("cd " + os.path.dirname(arguments.input) + "&&/usr/bin/open " + arguments.input)
