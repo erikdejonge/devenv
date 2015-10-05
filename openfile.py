@@ -43,6 +43,7 @@ def ossystem(cmd):
     @type cmd: str
     @return: None
     """
+    #print(cmd)
     os.system(cmd)
 
 
@@ -69,9 +70,19 @@ def main():
         else:
             return
     console("opening", arguments.input, color="darkyellow")
+    pycharm = False
     if arguments.input.lower().endswith("py"):
-        ossystem("cd " + os.path.dirname(arguments.input) + "&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + os.path.dirname(arguments.input) + " --line 1 " + arguments.input + " > /dev/null 2> /dev/null")
+        pycharm = True
+        arguments.input = os.path.dirname(arguments.input)
+    if os.path.isdir(arguments.input):
+        if os.path.exists(os.path.join(arguments.input, ".idea")):
+            pycharm = True
+
+    if pycharm:
+
+        ossystem("cd " + os.path.dirname(arguments.input) + "&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + arguments.input + " > /dev/null 2> /dev/null")
         time.sleep(0.2)
+
         ossystem("osascript -e 'tell application \"Pycharm\" to activate'")
     else:
         os.system("cd " + os.path.dirname(arguments.input) + "&&/usr/bin/open " + arguments.input)
