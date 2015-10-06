@@ -55,32 +55,38 @@ def main():
     print(arguments.input)
 
     arguments.input = os.path.abspath(os.path.expanduser(str(arguments.input)))
-
+    alternative = ""
     if not os.path.exists(arguments.input):
         console(arguments.input, "not found", color="red")
-        alts = os.popen("mdfind "+os.path.basename(arguments.input)+" | grep "+os.path.basename(arguments.input)+" | grep -v pyc").read()
-        alts = str(alts).split("\n")
+        alts = os.popen("mdfind "+os.path.basename(arguments.input)+" | grep "+os.path.basename(arguments.input).split(".")[0] +" | grep -v pyc").read()
+        alts = [x.strip() for x in str(alts).split("\n") if x.strip()]
+
         if len(alts) > 0:
-            for alternative in alts:
-                if query_yes_no("Try \033[34m"+alternative+"\033[96m instead?"):
-                    arguments.input = alternative
+            alts.sort(key=lambda x:len(x))
+            for alternative2 in alts:
+
+                if query_yes_no("Try \033[34m"+alternative2+"\033[96m instead?", default=False):
+                    alternative = alternative2
                     break
             else:
                 return
         else:
             return
-    console("opening", arguments.input, color="darkyellow")
+    if alternative:
+        arguments.input =alternative
+        console("opening", arguments.input, color="darkyellow")
     pycharm = False
     if arguments.input.lower().endswith("py"):
         pycharm = True
-        arguments.input = os.path.dirname(arguments.input)
+
     if os.path.isdir(arguments.input):
         if os.path.exists(os.path.join(arguments.input, ".idea")):
             pycharm = True
+        if os.path.exists(os.path.join(arguments.input, "setup.py")):
+            pycharm = True
 
     if pycharm:
-
-        ossystem("cd " + os.path.dirname(arguments.input) + "&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + arguments.input + " > /dev/null 2> /dev/null")
+        ossystem("cd " + os.path.dirname(arguments.input) + "&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + os.path.dirname(arguments.input) + " --line 1 " + arguments.input + " > /dev/null 2> /dev/null &")
         time.sleep(0.2)
 
         ossystem("osascript -e 'tell application \"Pycharm\" to activate'")
