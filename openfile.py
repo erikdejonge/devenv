@@ -83,6 +83,7 @@ def main():
 
     if arguments.input.lower().endswith("py"):
         pycharm = True
+        arguments.input = os.path.dirname(arguments.input)
     elif "http" in arguments.input:
         os.system("osascript -e 'tell application \"Safari]\" to open location \"" + arguments.input + "\"")
         os.system("osascript -e 'tell application \"Safari\" to activate';")
@@ -95,7 +96,7 @@ def main():
             pycharm = True
 
     if pycharm:
-        ossystem("cd " + os.path.dirname(arguments.input) + "&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + os.path.dirname(arguments.input) + " --line 1 " + arguments.input + " > /dev/null 2> /dev/null &")
+        ossystem("cd " + arguments.input + "&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + arguments.input + " --line 1 " + arguments.input + " > /dev/null 2> /dev/null &")
         time.sleep(0.2)
         ossystem("osascript -e 'tell application \"Pycharm\" to activate'")
     else:
