@@ -54,8 +54,16 @@ def main():
     """
     arguments = IArguments(__doc__)
 
-    print(arguments.input)
-    arguments.input = os.path.abspath(os.path.expanduser(str(arguments.input)))
+    print("\033[91mopen: {}\033[0m".format(arguments.input))
+
+
+    if "http" in arguments.input:
+        os.system("osascript -e 'tell application \"Safari\" to open location \"" + arguments.input + "\"'")
+        os.system("osascript -e 'tell application \"Safari\" to activate';")
+
+        return
+    else:
+        arguments.input = os.path.abspath(os.path.expanduser(str(arguments.input)))
     alternative = ""
 
     if not os.path.exists(arguments.input):
@@ -84,10 +92,6 @@ def main():
     if arguments.input.lower().endswith("py"):
         pycharm = True
         arguments.input = os.path.dirname(arguments.input)
-    elif "http" in arguments.input:
-        os.system("osascript -e 'tell application \"Safari]\" to open location \"" + arguments.input + "\"")
-        os.system("osascript -e 'tell application \"Safari\" to activate';")
-        return
     elif os.path.isdir(arguments.input):
         if os.path.exists(os.path.join(arguments.input, ".idea")):
             pycharm = True
