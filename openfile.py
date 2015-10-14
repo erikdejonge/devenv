@@ -56,7 +56,6 @@ def main():
 
     print("\033[91mopen: {}\033[0m".format(arguments.input))
 
-
     if "http" in arguments.input:
         os.system("osascript -e 'tell application \"Safari\" to open location \"" + arguments.input + "\"'")
         os.system("osascript -e 'tell application \"Safari\" to activate';")
@@ -64,6 +63,7 @@ def main():
         return
     else:
         arguments.input = os.path.abspath(os.path.expanduser(str(arguments.input)))
+
     alternative = ""
 
     if not os.path.exists(arguments.input):
@@ -91,7 +91,6 @@ def main():
 
     if arguments.input.lower().endswith("py"):
         pycharm = True
-        arguments.input = os.path.dirname(arguments.input)
     elif os.path.isdir(arguments.input):
         if os.path.exists(os.path.join(arguments.input, ".idea")):
             pycharm = True
@@ -100,7 +99,7 @@ def main():
             pycharm = True
 
     if pycharm:
-        ossystem("cd " + arguments.input + "&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + arguments.input + " --line 1 " + arguments.input + " > /dev/null 2> /dev/null &")
+        ossystem("cd " + os.path.dirname(arguments.input) + "&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + os.path.dirname(arguments.input) + " --line 1 " + arguments.input + " > /dev/null 2> /dev/null &")
         time.sleep(0.2)
         ossystem("osascript -e 'tell application \"Pycharm\" to activate'")
     else:
