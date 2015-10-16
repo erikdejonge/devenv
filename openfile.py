@@ -89,8 +89,24 @@ def main():
 
     pycharm = False
 
-    if arguments.input.lower().endswith("py"):
+    def endswith(extension):
+        """
+        @type extension: str
+        @return: None
+        """
+        return arguments.input.lower().endswith(extension)
+
+    if endswith("py"):
         pycharm = True
+    elif endswith("html"):
+        if os.path.exists(arguments.input):
+            location = "file://" + os.getcwd() + "/" + arguments.input
+        else:
+            location = arguments.input
+
+        os.system("osascript -e 'tell application \"Safari\" to open location \"" + location + "\"'")
+        time.sleep(0.2)
+        os.system("osascript -e 'tell application \"Safari\" to activate';")
     elif os.path.isdir(arguments.input):
         if os.path.exists(os.path.join(arguments.input, ".idea")):
             pycharm = True
@@ -99,7 +115,14 @@ def main():
             pycharm = True
 
     if pycharm:
-        ossystem("cd " + os.path.dirname(arguments.input) + "&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + os.path.dirname(arguments.input) + " --line 1 " + arguments.input + " > /dev/null 2> /dev/null &")
+        if os.path.exists(os.path.join(arguments.input, ".idea")):
+            cmd = "cd " + arguments.input
+            cmd += "&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + arguments.input + " > /dev/null 2> /dev/null &"
+        else:
+            cmd = "cd " + os.path.dirname(arguments.input)
+            cmd += "&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + os.path.dirname(arguments.input) + " --line 1 " + arguments.input + " > /dev/null 2> /dev/null &"
+
+        ossystem(cmd)
         time.sleep(0.2)
         ossystem("osascript -e 'tell application \"Pycharm\" to activate'")
     else:
