@@ -100,7 +100,7 @@ def main():
         pycharm = True
     elif endswith("html"):
         if os.path.exists(arguments.input):
-            location = "file://" + os.getcwd() + "/" + arguments.input
+            location = "file://" + os.path.join(os.getcwd(), arguments.input)
         else:
             location = arguments.input
 
