@@ -108,9 +108,6 @@ def main():
         time.sleep(0.2)
         os.system("osascript -e 'tell application \"Safari\" to activate';")
     elif os.path.isdir(arguments.input):
-        if os.path.exists(os.path.join(arguments.input, ".idea")):
-            pycharm = True
-
         if os.path.exists(os.path.join(arguments.input, "setup.py")):
             pycharm = True
 
