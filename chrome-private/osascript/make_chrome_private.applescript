@@ -16,14 +16,14 @@ try
 	
 on error errStr number errorNumber
 	set errored to true
-	sleep(2)
+	delay 2
 end try
 
 
 try
 	get theURL
 on error
-	sleep(5)
+	delay 5
 	set theURL to "chrome://version/"
 end try
 
