@@ -1,6 +1,7 @@
 
 property theURL : ""
 set theURL to "chrome://version/"
+set errored to false
 
 tell application "Google Chrome"
 	activate
@@ -11,23 +12,17 @@ try
 		tell application "Google Chrome"
 			
 			set theURL to URL of tab of window 1
+			set listSize to count of theURL
+			
 		end tell
 	end tell
 	
-on error errStr number errorNumber
+on error errStr
+	display dialog errStr
 	set errored to true
-	delay 2
 end try
 
-
-try
-	get theURL
-on error
-	delay 5
-	set theURL to "chrome://version/"
-end try
-
-
+if not errored then
 tell application "System Events"
 	tell process "Google Chrome"
 		click menu item "Close All" of menu "File" of menu bar 1
@@ -35,10 +30,15 @@ tell application "System Events"
 	end tell
 end tell
 
+	repeat with aurl in theURL
+
 tell application "Google Chrome"
 	tell window 1
-		open location theURL
+		open location aurl
 	end tell
 	activate
 end tell
+
+	end repeat
+end if
 
