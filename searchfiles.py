@@ -56,6 +56,8 @@ def dosearch(arguments, cachefilename, searchstruct):
     @type searchstruct: dict
     @return: None
     """
+    arguments233213211111
+    exit(1)
     if arguments.reset is False and os.path.exists(cachefilename):
         searchstruct = pickle.load(open(cachefilename, "rb"))
         print("\033[34mloading search", len(searchstruct), "\033[0m")
