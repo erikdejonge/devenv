@@ -68,10 +68,13 @@ def main():
 
     if not os.path.exists(arguments.input):
         console(arguments.input, "not found", color="red")
-        alts = os.popen("mdfind " + os.path.basename(arguments.input) + " | grep " + os.path.basename(arguments.input).split(".")[0] + " | grep -v pyc").read()
+
+        alts = os.popen("mdfind " + os.path.basename(arguments.input) + " | grep " + os.path.basename(arguments.input).split(".")[0] + " | grep -v pyc 2> /dev/null").read()
         alts = [x.strip() for x in str(alts).split("\n") if x.strip()]
+        alts.extend([os.path.join(os.getcwd(), x) for x in os.listdir() if x.strip() and os.path.basename(arguments.input).split(".")[0] in x])
 
         if len(alts) > 0:
+            alts = list(set(alts))
             alts.sort(key=lambda x: len(x))
 
             for alternative2 in alts:
