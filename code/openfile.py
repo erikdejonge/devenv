@@ -52,11 +52,19 @@ def main():
     """
     main
     """
+
     arguments = IArguments(__doc__)
+
+    def endswith(extension):
+        """
+        @type extension: str
+        @return: None
+        """
+        return arguments.input.lower().endswith(extension)
 
     print("\033[91mopen: {}\033[0m".format(arguments.input))
 
-    if "http" in arguments.input:
+    if "http" in arguments.input and not endswith("md"):
         os.system("osascript -e 'tell application \"Safari\" to open location \"" + arguments.input + "\"'")
         os.system("osascript -e 'tell application \"Safari\" to activate';")
 
@@ -91,13 +99,6 @@ def main():
         console("opening", arguments.input, color="darkyellow")
 
     pycharm = False
-
-    def endswith(extension):
-        """
-        @type extension: str
-        @return: None
-        """
-        return arguments.input.lower().endswith(extension)
 
     if endswith("py"):
         pycharm = True
