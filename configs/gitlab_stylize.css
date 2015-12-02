@@ -1,0 +1,41 @@
+body {
+    font-family: "CMU Bright" important;
+    font-size: 16px !important;
+}
+pre, .wiki code, .file-content.code pre {
+    font-family: "Source Code Pro" important;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+    font-size: 16px !important;
+    color: #000 !important;
+}
+
+.code.dark {
+    background-color: #000 !important;
+    color: #c5c8c6 !important
+}
+
+.code.dark pre.highlight,.code.dark .line-numbers,.code.dark .line-numbers a {
+    background-color: #000 !important;
+    color: #c5c8c6 !important
+}
+.code.dark .n {
+    color: #DEDDBF !important;
+}
+
+
+
+.code.dark .s {
+    color: #FFFEA7 !important;
+}
+
+.code.dark .k {
+    color: #93DD9F !important;
+}
+
+.code.dark .nf {
+    color: #FF7900 !important;
+}
+.code.dark .nc {
+    color: #FF7900 !important;
+}
+
