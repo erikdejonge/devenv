@@ -7,7 +7,7 @@
 }
 
 /* This defines styles and classes used in the book */
-body { margin: 5%; text-align: justify; font-size: medium;  font-family: "Computer Modern"}
+body { margin: 5%; text-align: justify; font-size: small;  font-family: "Computer Modern"}
 code { font-family: monospace; }
 h1 { text-align: left; }
 h2 { text-align: left; }
