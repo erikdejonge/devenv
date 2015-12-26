@@ -1,0 +1,475 @@
+23 December 2015, week 51, day 357, 09:03 
+co2:593
+
+Humor:
+  Smiling is definitely one of the best beauty remedies. If you have a good sense of 
+  humor and a good approach to life, that's beautiful.
+  -- Rashida Jones 
+
+co1. 2015-12-07 Vir2l body niet in taakomschrijving bug gixen
+2. 2015-12-23 Apotheek container
+
+[rabshakeh:lycia ~/workspace/governet/demo_governet_nl/site/dynamic] colors
+print("\033[30m", xxx ,"\033[0m")    print("\033[30m{}\033[0m".format(xxx))    print("\033[30mxxx\033[0m") 
+print("\033[31m", xxx ,"\033[0m")    print("\033[31m{}\033[0m".format(xxx))    print("\033[31mxxx\033[0m") 
+print("\033[32m", xxx ,"\033[0m")    print("\033[32m{}\033[0m".format(xxx))    print("\033[32mxxx\033[0m") 
+print("\033[33m", xxx ,"\033[0m")    print("\033[33m{}\033[0m".format(xxx))    print("\033[33mxxx\033[0m") 
+print("\033[34m", xxx ,"\033[0m")    print("\033[34m{}\033[0m".format(xxx))    print("\033[34mxxx\033[0m") 
+print("\033[35m", xxx ,"\033[0m")    print("\033[35m{}\033[0m".format(xxx))    print("\033[35mxxx\033[0m") 
+print("\033[36m", xxx ,"\033[0m")    print("\033[36m{}\033[0m".format(xxx))    print("\033[36mxxx\033[0m") 
+print("\033[37m", xxx ,"\033[0m")    print("\033[37m{}\033[0m".format(xxx))    print("\033[37mxxx\033[0m") 
+print("\033[38m", xxx ,"\033[0m")    print("\033[38m{}\033[0m".format(xxx))    print("\033[38mxxx\033[0m") 
+
+echo -e "\033[30m"xxx"\033[0m" 
+echo -e "\033[31m"xxx"\033[0m" 
+echo -e "\033[32m"xxx"\033[0m" 
+echo -e "\033[33m"xxx"\033[0m" 
+echo -e "\033[34m"xxx"\033[0m" 
+echo -e "\033[35m"xxx"\033[0m" 
+echo -e "\033[36m"xxx"\033[0m" 
+echo -e "\033[37m"xxx"\033[0m" 
+echo -e "\033[38m"xxx"\033[0m" 
+
+print("\033[90m", xxx ,"\033[0m")    print("\033[90m{}\033[0m".format(xxx))    print("\033[90mxxx\033[0m") 
+print("\033[91m", xxx ,"\033[0m")    print("\033[91m{}\033[0m".format(xxx))    print("\033[91mxxx\033[0m") 
+print("\033[92m", xxx ,"\033[0m")    print("\033[92m{}\033[0m".format(xxx))    print("\033[92mxxx\033[0m") 
+print("\033[93m", xxx ,"\033[0m")    print("\033[93m{}\033[0m".format(xxx))    print("\033[93mxxx\033[0m") 
+print("\033[94m", xxx ,"\033[0m")    print("\033[94m{}\033[0m".format(xxx))    print("\033[94mxxx\033[0m") 
+print("\033[95m", xxx ,"\033[0m")    print("\033[95m{}\033[0m".format(xxx))    print("\033[95mxxx\033[0m") 
+print("\033[96m", xxx ,"\033[0m")    print("\033[96m{}\033[0m".format(xxx))    print("\033[96mxxx\033[0m") 
+print("\033[97m", xxx ,"\033[0m")    print("\033[97m{}\033[0m".format(xxx))    print("\033[97mxxx\033[0m") 
+print("\033[98m", xxx ,"\033[0m")    print("\033[98m{}\033[0m".format(xxx))    print("\033[98mxxx\033[0m") 
+
+echo -e "\033[90m"xxx"\033[0m" 
+echo -e "\033[91m"xxx"\033[0m" 
+echo -e "\033[92m"xxx"\033[0m" 
+echo -e "\033[93m"xxx"\033[0m" 
+echo -e "\033[94m"xxx"\033[0m" 
+echo -e "\033[95m"xxx"\033[0m" 
+echo -e "\033[96m"xxx"\033[0m" 
+echo -e "\033[97m"xxx"\033[0m" 
+echo -e "\033[98m"xxx"\033[0m" 
+
+console  orange (91)
+console  magenta (35)
+console  white (97)
+console  purple (34)
+console  cyan (36)
+console  darkcyan (96)
+console  black (90)
+console  darkgreen (32)
+console  default (0)
+console  blue (34)
+console  darkmagenta (95)
+console  grey (90)
+console  yellow (33)
+console  darkyellow (33)
+console  green (32)
+console  red (31)
+1.20 | i | am | done
+[rabshakeh:lycia ~/workspace/governet/demo_governet_nl/site/dynamic] top
+
+
+
+
+
+
+
+
+
+
+
+
+started
+
+   CPU0  [||||||||||||||||||||||||||||||||||||||||] 100.0%
+   CPU1  [                                        ]   0.0%
+   CPU2  [|||||||||||||||                         ]  39.5%
+-
+--
+--- top 10 cpu ---
+--
+-
+16732	 49.0	/System/Library/CoreServices/backupd.bundle/Contents/Resources/backupd
+321	 15.6	/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal -psn_0_36873
+4196	 14.8	/Applications/PyCharm.app/Contents/MacOS/pycharm /Users/rabshakeh/workspace/pip/pytop/pytopcmd
+75	 6.4	/System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Support/mds
+223	 3.2	/System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+0	 2.8	kernel_task
+215	 1.9	/System/Library/CoreServices/backupd.bundle/Contents/Resources/mtmd
+772	 1.0	plications/Dropbox.app/Contents/MacOS/Dropbox --client=2 --server-address=/var/folders/vp/rgd3mfxd55v0yr5_n4k1jz1h0000gn/T/pymp-HdP26Z/listener-FrKOun
+100	 0.4	/usr/libexec/locationd
+240	 0.4	/usr/sbin/coreaudiod
+424	 0.4	/Applications/duet.app/Contents/MacOS/duet
+[rabshakeh:lycia ~/workspace/governet/demo_governet_nl/site/dynamic] colors
+print("\033[30m", xxx ,"\033[0m")    print("\033[30m{}\033[0m".format(xxx))    print("\033[30mxxx\033[0m") 
+print("\033[31m", xxx ,"\033[0m")    print("\033[31m{}\033[0m".format(xxx))    print("\033[31mxxx\033[0m") 
+print("\033[32m", xxx ,"\033[0m")    print("\033[32m{}\033[0m".format(xxx))    print("\033[32mxxx\033[0m") 
+print("\033[33m", xxx ,"\033[0m")    print("\033[33m{}\033[0m".format(xxx))    print("\033[33mxxx\033[0m") 
+print("\033[34m", xxx ,"\033[0m")    print("\033[34m{}\033[0m".format(xxx))    print("\033[34mxxx\033[0m") 
+print("\033[35m", xxx ,"\033[0m")    print("\033[35m{}\033[0m".format(xxx))    print("\033[35mxxx\033[0m") 
+print("\033[36m", xxx ,"\033[0m")    print("\033[36m{}\033[0m".format(xxx))    print("\033[36mxxx\033[0m") 
+print("\033[37m", xxx ,"\033[0m")    print("\033[37m{}\033[0m".format(xxx))    print("\033[37mxxx\033[0m") 
+print("\033[38m", xxx ,"\033[0m")    print("\033[38m{}\033[0m".format(xxx))    print("\033[38mxxx\033[0m") 
+
+echo -e "\033[30m"xxx"\033[0m" 
+echo -e "\033[31m"xxx"\033[0m" 
+echo -e "\033[32m"xxx"\033[0m" 
+echo -e "\033[33m"xxx"\033[0m" 
+echo -e "\033[34m"xxx"\033[0m" 
+echo -e "\033[35m"xxx"\033[0m" 
+echo -e "\033[36m"xxx"\033[0m" 
+echo -e "\033[37m"xxx"\033[0m" 
+echo -e "\033[38m"xxx"\033[0m" 
+
+print("\033[90m", xxx ,"\033[0m")    print("\033[90m{}\033[0m".format(xxx))    print("\033[90mxxx\033[0m") 
+print("\033[91m", xxx ,"\033[0m")    print("\033[91m{}\033[0m".format(xxx))    print("\033[91mxxx\033[0m") 
+print("\033[92m", xxx ,"\033[0m")    print("\033[92m{}\033[0m".format(xxx))    print("\033[92mxxx\033[0m") 
+print("\033[93m", xxx ,"\033[0m")    print("\033[93m{}\033[0m".format(xxx))    print("\033[93mxxx\033[0m") 
+print("\033[94m", xxx ,"\033[0m")    print("\033[94m{}\033[0m".format(xxx))    print("\033[94mxxx\033[0m") 
+print("\033[95m", xxx ,"\033[0m")    print("\033[95m{}\033[0m".format(xxx))    print("\033[95mxxx\033[0m") 
+print("\033[96m", xxx ,"\033[0m")    print("\033[96m{}\033[0m".format(xxx))    print("\033[96mxxx\033[0m") 
+print("\033[97m", xxx ,"\033[0m")    print("\033[97m{}\033[0m".format(xxx))    print("\033[97mxxx\033[0m") 
+print("\033[98m", xxx ,"\033[0m")    print("\033[98m{}\033[0m".format(xxx))    print("\033[98mxxx\033[0m") 
+
+echo -e "\033[90m"xxx"\033[0m" 
+echo -e "\033[91m"xxx"\033[0m" 
+echo -e "\033[92m"xxx"\033[0m" 
+echo -e "\033[93m"xxx"\033[0m" 
+echo -e "\033[94m"xxx"\033[0m" 
+echo -e "\033[95m"xxx"\033[0m" 
+echo -e "\033[96m"xxx"\033[0m" 
+echo -e "\033[97m"xxx"\033[0m" 
+echo -e "\033[98m"xxx"\033[0m" 
+
+console  darkgreen (32)
+console  red (31)
+console  darkyellow (33)
+console  grey (90)
+console  orange (91)
+console  purple (34)
+console  blue (34)
+console  darkmagenta (95)
+console  black (90)
+console  darkcyan (96)
+console  magenta (35)
+console  white (97)
+console  yellow (33)
+console  green (32)
+console  cyan (36)
+console  default (0)
+0.73 | i | am | done
+[rabshakeh:lycia ~/workspace/governet/demo_governet_nl/site/dynamic] top
+
+
+
+
+
+
+started
+
+   CPU0  [|||||||||||||                           ]  34.1%
+   CPU1  [||                                      ]   5.6%
+-
+--
+--- top 10 cpu ---
+--
+-
+16732	 61.1	/System/Library/CoreServices/backupd.bundle/Contents/Resources/backupd
+321	 18.7	/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal -psn_0_36873
+0	 2.7	kernel_task
+772	 1.1	plications/Dropbox.app/Contents/MacOS/Dropbox --client=2 --server-address=/var/folders/vp/rgd3mfxd55v0yr5_n4k1jz1h0000gn/T/pymp-HdP26Z/listener-FrKOun
+4155	 0.6	/Applications/Karabiner.app/Contents/Applications/Karabiner_AXNotifier.app/Contents/MacOS/Karabiner_AXNotifier -psn_0_266305
+4196	 0.6	/Applications/PyCharm.app/Contents/MacOS/pycharm /Users/rabshakeh/workspace/pip/pytop/pytopcmd
+95	 0.5	/Library/Application Support/Adobe/Adobe Desktop Common/ElevationManager/AdobeUpdateDaemon
+240	 0.5	/usr/sbin/coreaudiod
+424	 0.5	/Applications/duet.app/Contents/MacOS/duet
+1	 0.3	/sbin/launchd
+204	 0.3	/System/Library/Frameworks/ApplicationServices.framework/Frameworks/CoreGraphics.framework/Resources/WindowServer -daemon
+[rabshakeh:lycia ~/workspace/governet/demo_governet_nl/site/dynamic] top
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+started
+
+   CPU0  [||||||||||||||||||||||||||||||||||||||||] 100.0%
+   CPU1  [                                        ]   0.0%
+   CPU2  [||||||||                                ]  21.8%
+-
+--
+--- top 10 cpu ---
+--
+-
+16732	 40.9	/System/Library/CoreServices/backupd.bundle/Contents/Resources/backupd
+4196	 30.5	/Applications/PyCharm.app/Contents/MacOS/pycharm /Users/rabshakeh/workspace/pip/pytop/pytopcmd
+321	 19.7	/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal -psn_0_36873
+204	 17.7	/System/Library/Frameworks/ApplicationServices.framework/Frameworks/CoreGraphics.framework/Resources/WindowServer -daemon
+1	 1.6	/sbin/launchd
+0	 1.5	kernel_task
+772	 1.1	plications/Dropbox.app/Contents/MacOS/Dropbox --client=2 --server-address=/var/folders/vp/rgd3mfxd55v0yr5_n4k1jz1h0000gn/T/pymp-HdP26Z/listener-FrKOun
+424	 0.7	/Applications/duet.app/Contents/MacOS/duet
+240	 0.5	/usr/sbin/coreaudiod
+19025	 0.2	/System/Library/Image Capture/Devices/PTPCamera.app/Contents/MacOS/PTPCamera
+449	 0.1	/Applications/Boom 2.app/Contents/MacOS/Boom 2 -psn_0_110619
+[rabshakeh:lycia ~/workspace/governet/demo_governet_nl/site/dynamic] colors
+print("\033[30m", xxx ,"\033[0m")    print("\033[30m{}\033[0m".format(xxx))    print("\033[30mxxx\033[0m") 
+print("\033[31m", xxx ,"\033[0m")    print("\033[31m{}\033[0m".format(xxx))    print("\033[31mxxx\033[0m") 
+print("\033[32m", xxx ,"\033[0m")    print("\033[32m{}\033[0m".format(xxx))    print("\033[32mxxx\033[0m") 
+print("\033[33m", xxx ,"\033[0m")    print("\033[33m{}\033[0m".format(xxx))    print("\033[33mxxx\033[0m") 
+print("\033[34m", xxx ,"\033[0m")    print("\033[34m{}\033[0m".format(xxx))    print("\033[34mxxx\033[0m") 
+print("\033[35m", xxx ,"\033[0m")    print("\033[35m{}\033[0m".format(xxx))    print("\033[35mxxx\033[0m") 
+print("\033[36m", xxx ,"\033[0m")    print("\033[36m{}\033[0m".format(xxx))    print("\033[36mxxx\033[0m") 
+print("\033[37m", xxx ,"\033[0m")    print("\033[37m{}\033[0m".format(xxx))    print("\033[37mxxx\033[0m") 
+print("\033[38m", xxx ,"\033[0m")    print("\033[38m{}\033[0m".format(xxx))    print("\033[38mxxx\033[0m") 
+
+echo -e "\033[30m"xxx"\033[0m" 
+echo -e "\033[31m"xxx"\033[0m" 
+echo -e "\033[32m"xxx"\033[0m" 
+echo -e "\033[33m"xxx"\033[0m" 
+echo -e "\033[34m"xxx"\033[0m" 
+echo -e "\033[35m"xxx"\033[0m" 
+echo -e "\033[36m"xxx"\033[0m" 
+echo -e "\033[37m"xxx"\033[0m" 
+echo -e "\033[38m"xxx"\033[0m" 
+
+print("\033[90m", xxx ,"\033[0m")    print("\033[90m{}\033[0m".format(xxx))    print("\033[90mxxx\033[0m") 
+print("\033[91m", xxx ,"\033[0m")    print("\033[91m{}\033[0m".format(xxx))    print("\033[91mxxx\033[0m") 
+print("\033[92m", xxx ,"\033[0m")    print("\033[92m{}\033[0m".format(xxx))    print("\033[92mxxx\033[0m") 
+print("\033[93m", xxx ,"\033[0m")    print("\033[93m{}\033[0m".format(xxx))    print("\033[93mxxx\033[0m") 
+print("\033[94m", xxx ,"\033[0m")    print("\033[94m{}\033[0m".format(xxx))    print("\033[94mxxx\033[0m") 
+print("\033[95m", xxx ,"\033[0m")    print("\033[95m{}\033[0m".format(xxx))    print("\033[95mxxx\033[0m") 
+print("\033[96m", xxx ,"\033[0m")    print("\033[96m{}\033[0m".format(xxx))    print("\033[96mxxx\033[0m") 
+print("\033[97m", xxx ,"\033[0m")    print("\033[97m{}\033[0m".format(xxx))    print("\033[97mxxx\033[0m") 
+print("\033[98m", xxx ,"\033[0m")    print("\033[98m{}\033[0m".format(xxx))    print("\033[98mxxx\033[0m") 
+
+echo -e "\033[90m"xxx"\033[0m" 
+echo -e "\033[91m"xxx"\033[0m" 
+echo -e "\033[92m"xxx"\033[0m" 
+echo -e "\033[93m"xxx"\033[0m" 
+echo -e "\033[94m"xxx"\033[0m" 
+echo -e "\033[95m"xxx"\033[0m" 
+echo -e "\033[96m"xxx"\033[0m" 
+echo -e "\033[97m"xxx"\033[0m" 
+echo -e "\033[98m"xxx"\033[0m" 
+
+console  grey (90)
+console  yellow (33)
+console  green (32)
+console  cyan (36)
+console  purple (34)
+console  blue (34)
+console  red (31)
+console  darkgreen (32)
+console  darkcyan (96)
+console  darkmagenta (95)
+console  default (0)
+console  orange (91)
+console  black (90)
+console  darkyellow (33)
+console  white (97)
+console  magenta (35)
+0.70 | i | am | done
+[rabshakeh:lycia ~/workspace/governet/demo_governet_nl/site/dynamic] colors
+print("\033[30m", xxx ,"\033[0m")    print("\033[30m{}\033[0m".format(xxx))    print("\033[30mxxx\033[0m") 
+print("\033[31m", xxx ,"\033[0m")    print("\033[31m{}\033[0m".format(xxx))    print("\033[31mxxx\033[0m") 
+print("\033[32m", xxx ,"\033[0m")    print("\033[32m{}\033[0m".format(xxx))    print("\033[32mxxx\033[0m") 
+print("\033[33m", xxx ,"\033[0m")    print("\033[33m{}\033[0m".format(xxx))    print("\033[33mxxx\033[0m") 
+print("\033[34m", xxx ,"\033[0m")    print("\033[34m{}\033[0m".format(xxx))    print("\033[34mxxx\033[0m") 
+print("\033[35m", xxx ,"\033[0m")    print("\033[35m{}\033[0m".format(xxx))    print("\033[35mxxx\033[0m") 
+print("\033[36m", xxx ,"\033[0m")    print("\033[36m{}\033[0m".format(xxx))    print("\033[36mxxx\033[0m") 
+print("\033[37m", xxx ,"\033[0m")    print("\033[37m{}\033[0m".format(xxx))    print("\033[37mxxx\033[0m") 
+print("\033[38m", xxx ,"\033[0m")    print("\033[38m{}\033[0m".format(xxx))    print("\033[38mxxx\033[0m") 
+
+echo -e "\033[30m"xxx"\033[0m" 
+echo -e "\033[31m"xxx"\033[0m" 
+echo -e "\033[32m"xxx"\033[0m" 
+echo -e "\033[33m"xxx"\033[0m" 
+echo -e "\033[34m"xxx"\033[0m" 
+echo -e "\033[35m"xxx"\033[0m" 
+echo -e "\033[36m"xxx"\033[0m" 
+echo -e "\033[37m"xxx"\033[0m" 
+echo -e "\033[38m"xxx"\033[0m" 
+
+print("\033[90m", xxx ,"\033[0m")    print("\033[90m{}\033[0m".format(xxx))    print("\033[90mxxx\033[0m") 
+print("\033[91m", xxx ,"\033[0m")    print("\033[91m{}\033[0m".format(xxx))    print("\033[91mxxx\033[0m") 
+print("\033[92m", xxx ,"\033[0m")    print("\033[92m{}\033[0m".format(xxx))    print("\033[92mxxx\033[0m") 
+print("\033[93m", xxx ,"\033[0m")    print("\033[93m{}\033[0m".format(xxx))    print("\033[93mxxx\033[0m") 
+print("\033[94m", xxx ,"\033[0m")    print("\033[94m{}\033[0m".format(xxx))    print("\033[94mxxx\033[0m") 
+print("\033[95m", xxx ,"\033[0m")    print("\033[95m{}\033[0m".format(xxx))    print("\033[95mxxx\033[0m") 
+print("\033[96m", xxx ,"\033[0m")    print("\033[96m{}\033[0m".format(xxx))    print("\033[96mxxx\033[0m") 
+print("\033[97m", xxx ,"\033[0m")    print("\033[97m{}\033[0m".format(xxx))    print("\033[97mxxx\033[0m") 
+print("\033[98m", xxx ,"\033[0m")    print("\033[98m{}\033[0m".format(xxx))    print("\033[98mxxx\033[0m") 
+
+echo -e "\033[90m"xxx"\033[0m" 
+echo -e "\033[91m"xxx"\033[0m" 
+echo -e "\033[92m"xxx"\033[0m" 
+echo -e "\033[93m"xxx"\033[0m" 
+echo -e "\033[94m"xxx"\033[0m" 
+echo -e "\033[95m"xxx"\033[0m" 
+echo -e "\033[96m"xxx"\033[0m" 
+echo -e "\033[97m"xxx"\033[0m" 
+echo -e "\033[98m"xxx"\033[0m" 
+
+console  blue (34)
+console  cyan (36)
+console  darkmagenta (95)
+console  green (32)
+console  red (31)
+console  darkcyan (96)
+console  darkgreen (32)
+console  magenta (35)
+console  orange (91)
+console  white (97)
+console  purple (34)
+console  default (0)
+console  black (90)
+console  grey (90)
+console  darkyellow (33)
+console  yellow (33)
+0.69 | i | am | done
+[rabshakeh:lycia ~/workspace/governet/demo_governet_nl/site/dynamic] top
+started
+
+   CPU0  [||||||||||||||||||||                    ]  50.0%
+   CPU1  [                                        ]   0.0%
+-
+--
+--- top 10 cpu ---
+--
+-
+321	 16.5	/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal -psn_0_36873
+16732	 11.0	/System/Library/CoreServices/backupd.bundle/Contents/Resources/backupd
+772	 0.8	plications/Dropbox.app/Contents/MacOS/Dropbox --client=2 --server-address=/var/folders/vp/rgd3mfxd55v0yr5_n4k1jz1h0000gn/T/pymp-HdP26Z/listener-FrKOun
+215	 0.6	/System/Library/CoreServices/backupd.bundle/Contents/Resources/mtmd
+4196	 0.6	/Applications/PyCharm.app/Contents/MacOS/pycharm /Users/rabshakeh/workspace/pip/pytop/pytopcmd
+424	 0.5	/Applications/duet.app/Contents/MacOS/duet
+240	 0.3	/usr/sbin/coreaudiod
+449	 0.1	/Applications/Boom 2.app/Contents/MacOS/Boom 2 -psn_0_110619
+19794	 0.1	hakeh/Library/Preferences/PyCharm50/jdbc-drivers/postgresql-9.4-1201.jdbc4.jar com.intellij.database.remote.RemoteJdbcServer org.postgresql.Driver
+0	 0.0	kernel_task
+1	 0.0	/sbin/launchd
+[rabshakeh:lycia ~/workspace/governet/demo_governet_nl/site/dynamic] top
+Traceback (most recent call last):
+                                    File "/Users/rabshakeh/workspace/pip/pytop/pytopcmd/__init__.py", line 64, in <module>
+                                                                                                                              curses.init_pair(i-1, i, -1)
+   _curses.error: init_pair() returned ERR
+                                          [rabshakeh:lycia ~/workspace/governet/demo_governet_nl/site/dynamic] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
