@@ -64,7 +64,9 @@ def main():
 
     print("\033[91mopen: {}\033[0m".format(arguments.input))
 
-    if "http" in arguments.input and not endswith("md"):
+    if "dash://" in arguments.input:
+        os.system("/usr/bin/open "+arguments.input)
+    elif "http" in arguments.input and not endswith("md"):
         os.system("osascript -e 'tell application \"Google Chrome\" to open location \"" + arguments.input + "\"'")
         os.system("osascript -e 'tell application \"Google Chrome\" to activate';")
 
