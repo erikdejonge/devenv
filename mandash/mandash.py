@@ -57,23 +57,23 @@ def main():
     if arguments.term3:
         query += " " + arguments.term3
 
-    with tempfile.NamedTemporaryFile(buffering=False) as tf:
+    with open("command:"+query.replace(" ", "_"), "w+b", buffering=False) as tf:
         result = ""
         try:
-            result = cmd_run("/usr/bin/man " + query, streamoutput=False, verbose=True)
+            result = cmd_run("/usr/bin/man " + query, streamoutput=False)
         except (BaseException) as ex:
-            print("opening dash")
+            print(ex, "opening dash")
             shell("open dash://" + query.replace(" ", ":"))
             return
 
         tf.write(result.encode('utf-8'))
-        tf.seek(0)
+        tf.close()
 
         if result.count('\n') > height:
             shell("less " + tf.name)
         else:
             shell("more " + tf.name)
 
-
+        os.remove(tf.name)
 if __name__ == "__main__":
     main()
