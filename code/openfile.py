@@ -120,10 +120,10 @@ def main():
     if pycharm:
         if os.path.exists(os.path.join(arguments.input, ".idea")):
             cmd = "cd '" + arguments.input
-            cmd += "'&&/Applications/PyCharm.app/Contents/MacOS/pycharm '" + arguments.input + "'' > /dev/null 2> /dev/null &"
+            cmd += "'&&/Applications/Jetbrains/PyCharm.app/Contents/MacOS/pycharm '" + arguments.input + "'' > /dev/null 2> /dev/null &"
         else:
             cmd = "cd '" + os.path.dirname(arguments.input)
-            cmd += "'&&/Applications/PyCharm.app/Contents/MacOS/pycharm " + os.path.dirname(arguments.input) + " > /dev/null 2> /dev/null &"
+            cmd += "'&&/Applications/Jetbrains/PyCharm.app/Contents/MacOS/pycharm " + os.path.dirname(arguments.input) + " > /dev/null 2> /dev/null &"
 
         ossystem(cmd)
         time.sleep(0.2)
