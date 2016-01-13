@@ -44,7 +44,7 @@ def ossystem(cmd):
     @return: None
     """
 
-    print(cmd)
+    #print(cmd)
     os.system(cmd)
 
 

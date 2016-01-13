@@ -13,11 +13,11 @@ author  : rabshakeh (erik@a8.nl)
 project : devenv
 created : 13-01-16 / 11:36
 """
+import os
 import sys
 
-from cmdssh import cmd_run, shell
 from arguments import Arguments
-import os
+from cmdssh import shell, cmd_run, CallCommandException
 try:
     (width, height) = os.get_terminal_size()
 except OSError as ex:
@@ -25,7 +25,7 @@ except OSError as ex:
     height = 1100
 
 if sys.version_info.major < 3:
-    console("\033[31mpython3 is required\033[0m")
+    print("\033[31mpython3 is required\033[0m")
     exit(1)
 
 
@@ -41,7 +41,6 @@ class IArguments(Arguments):
         self.term2 = ""
         self.term3 = ""
         super().__init__(doc)
-import tempfile
 
 
 def main():
@@ -57,23 +56,24 @@ def main():
     if arguments.term3:
         query += " " + arguments.term3
 
-    with open("command:"+query.replace(" ", "_"), "w+b", buffering=False) as tf:
-        result = ""
+    with open("command:" + query.replace(" ", "_"), "w+b", buffering=False) as tf:
         try:
             result = cmd_run("/usr/bin/man " + query, streamoutput=False)
-        except (BaseException) as ex:
-            print(ex, "opening dash")
+            tf.write(result.encode('utf-8'))
+            tf.close()
+
+            if result.count('\n') > height:
+                shell("less " + tf.name)
+            else:
+                shell("more " + tf.name)
+        except CallCommandException:
+            print("opening dash")
             shell("open dash://" + query.replace(" ", ":"))
             return
+        finally:
+            print(tf.name)
+            os.remove(tf.name)
 
-        tf.write(result.encode('utf-8'))
-        tf.close()
 
-        if result.count('\n') > height:
-            shell("less " + tf.name)
-        else:
-            shell("more " + tf.name)
-
-        os.remove(tf.name)
 if __name__ == "__main__":
     main()
