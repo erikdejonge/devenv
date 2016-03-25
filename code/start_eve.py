@@ -3,7 +3,7 @@
 
 import os
 import time
-from sh import docker_machine, grep
+from sh import docker_machine, grep, Command
 
 
 def main():
@@ -13,26 +13,18 @@ def main():
     if os.path.exists(os.path.expanduser("~/.upgradingeve")):
         print("0")
         return
-    x = os.popen("ps aux | grep vbox | grep -v grep").read().strip()
 
-    if len(x) < 300 or len(x) > 400:
-        print("check eve", len(x))
-        machine_eve = grep(docker_machine("ls"), "eve").strip()
+    machine_eve = grep(docker_machine("ls"), "eve").strip()
 
-        if "Stopped" in machine_eve or "Saved" in machine_eve:
-            p = docker_machine("start", "eve", _bg=True)
-            time.sleep(5)
-            p.wait()
-            print(1)
-        elif "Running" in machine_eve:
-            print(0)
-        else:
-            for i in range(10):
-                machine_eve = machine_eve.replace("   ", "  ")
-
-            print("\033[31mError:", machine_eve, "\033[0m")
+    if "Stopped" in machine_eve or "Saved" in machine_eve:
+        os.system('docker-machine -D start eve')
+    elif "Running" in machine_eve:
+        pass
     else:
-        print("0")
+        for i in range(10):
+            machine_eve = machine_eve.replace("   ", "  ")
+
+        print("\033[31mError:", machine_eve, "\033[0m")
 
 
 if __name__ == "__main__":
