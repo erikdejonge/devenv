@@ -1,7 +1,6 @@
 .DS_Store
 
 bashrc.sh
-bash_profile.sh
 automator/Services/Services
 .idea
 # Byte-compiled / optimized / DLL files
