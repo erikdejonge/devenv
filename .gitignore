@@ -1,6 +1,8 @@
 .dockercfg
 .DS_Store
 
+.DS_Store
+
 bashrc.sh
 automator/Services/Services
 .idea
