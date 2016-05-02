@@ -45,7 +45,25 @@ def main():
     main
     """
     arguments = IArguments(__doc__)
-    console(arguments)
+    console("modifying", arguments.input)
+    console("<br>", "to", "\\n")
+    content = open(arguments.input, "r").read()
+    content = content.replace("<br/>", "<br>")
+    content = content.replace("<br />", "<br>")
+    content = content.replace("<br>", "\n")
+    cl = []
+
+    for l in content.split("\n"):
+        if ("<p>" in l) and ("</p>" in l):
+            print()
+            print("  ", l)
+            l = l.replace("<p>", "")
+            l = l.replace("</p>", "")
+            cl.append(l)
+        else:
+            print(l)
+    content = "\n".join(cl)
+    open(arguments.input+".md", "w").write(content)
 
 
 if __name__ == "__main__":
