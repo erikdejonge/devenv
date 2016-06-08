@@ -16,7 +16,7 @@ created : 15-06-15 / 15:45
 """
 import os
 import sys
-
+import consoleprinter
 from consoleprinter import console, remove_color, console_warning
 from terminaltables import AsciiTable
 
@@ -41,7 +41,9 @@ def main():
     """
     input = sys.stdin.read()
     searchfor = input.strip()
-    profile = open(os.path.expanduser("~/.bash_profile")).read()
+    profile = open(os.path.expanduser("~/.bash_profile"), 'rb').read()
+    profile = profile.decode("utf8")
+
     aliasses = []
     lines = []
 
