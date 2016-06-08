@@ -1,10 +1,12 @@
--Xms6g
--Xmx8g
--XX:PermSize=256m
--XX:MaxPermSize=8g
--XX:ReservedCodeCacheSize=240m
--XX:+UseCompressedOops
--Xss10M
+
+Postbus 657
+2900 AR
+CAPELLE AAN DEN IJSSEL
+-Xms16g
+-Xmx16g
+-Xss64m
+-XX:PermSize=1024m
+-XX:MaxPermSize=4g
 -XX:+CMSClassUnloadingEnabled
 -XX:+UseParallelGC
 -XX:AggressiveOpts
@@ -17,3 +19,11 @@
 -XX:TargetSurvivorRatio=90
 -XX:MaxTenuringThreshold=31
 -XX:+UseBiasedLocking
+-XX:ParallelGCThreads=8
+-XX:+UseParNewGC
+-XX:+UseConcMarkSweepGC
+-XX:+DisableExplicitGC
+-XX:+ExplicitGCInvokesConcurrent
+-XX:+PrintGCDetails
+-XX:+UnlockExperimentalVMOptions
+-XX:+UseConcMarkSweepGC
