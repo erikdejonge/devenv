@@ -45,10 +45,10 @@ def main():
     for line in lines:
         memory = line[3]
         if float(memory) > 5:
-            memory = "\033[34m" + str(memory)  + "\033[34m"
+            memory = "\033[31m" + str(memory)  + "\033[34m"
         cpu = line[2]
         if float(cpu) > 5:
-            cpu = "\033[36m" + str(cpu)  + "\033[34m"
+            cpu = "\033[31m" + str(cpu)  + "\033[34m"
 
         result = '\033[33m' + str(line[1]) + "\t"+cpu+" \033[33m/ "+memory+"\t"
         if line[1] in psauxdict:

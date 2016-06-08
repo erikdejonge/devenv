@@ -23,22 +23,22 @@ on error errStr
 end try
 
 if not errored then
-tell application "System Events"
-	tell process "Google Chrome"
-		click menu item "Close All" of menu "File" of menu bar 1
-		click menu item "New Incognito Window" of menu "File" of menu bar 1
+	tell application "System Events"
+		tell process "Google Chrome"
+			click menu item "Close All" of menu 1 of menu bar item "File" of menu bar 1
+			click menu item "New Incognito Window" of menu 1 of menu bar item "File" of menu bar 1
+		end tell
 	end tell
-end tell
-
+	
 	repeat with aurl in theURL
-
-tell application "Google Chrome"
-	tell window 1
-		open location aurl
-	end tell
-	activate
-end tell
-
+		
+		tell application "Google Chrome"
+			tell window 1
+				open location aurl
+			end tell
+			activate
+		end tell
+		
 	end repeat
 end if
 
