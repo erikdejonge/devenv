@@ -55,13 +55,13 @@ def main():
 
     for l in content.split("\n"):
         if ("<p>" in l) and ("</p>" in l):
-            print()
-            print("  ", l)
+            #print()
+            #print("  ", l)
             l = l.replace("<p>", "")
             l = l.replace("</p>", "")
             cl.append(l)
-        else:
-            print(l)
+        #else:
+        #    print(l)
     content = "\n".join(cl)
     open(arguments.input+".md", "w").write(content)
 
