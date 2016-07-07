@@ -112,7 +112,7 @@ if __name__ == \"__main__\":
     date = time.strftime("%d %b %Y", localtime)
     time = time.strftime("%H:%M", localtime)
     template_filled = templ.format(PROJECT_NAME=project_name, NAME=name, USER=user, DATE=date, TIME=time, WHEREAMI=whereami)
-    print(template_filled)
+    #print(template_filled)
     filename = arguments.filename
     if not filename.endswith('.py'):
         filename += ".py"
