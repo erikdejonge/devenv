@@ -4,7 +4,7 @@
 Project devenv
 
 Usage:
-  safefilenames.py [options] <input>
+  safefilenames.py [options] <filepath>
 
 Options:
   -h --help     Show this screen.
@@ -16,10 +16,11 @@ where   : Latitude: 51.825385
           longitude: 4.651021
           https://www.google.nl/maps/place/51.825385,4.651021
 """
+import os
 import sys
 
 from arguments import Arguments
-from consoleprinter import console
+from consoleprinter import console, get_safe_filename_string
 
 if sys.version_info.major < 3:
     console("Python 3 is required", color="red", plaintext="True")
@@ -39,16 +40,21 @@ class IArguments(Arguments):
         self.input = ""
         super().__init__(doc)
 
-def safe_string():
-    echo $@|puf "[consoleprinter.get_safe_string(os.path.basename(x)).replace(' ', '_').replace('-', '_').replace('__', '_').replace('___', '_').replace('..', '.').replace('._', '_').lower().replace('|', '_').replace('\'', '').lower().strip('_') for x in lines]"
 
 def main():
     """
     main
     """
     arguments = IArguments(__doc__)
-    console(arguments)
+    for fp in os.listdir(arguments.filepath):
+        nfp = get_safe_filename_string(fp)
+        if fp != nfp:
+            ffp = os.path.join(arguments.filepath, fp)
+            fnfp = os.path.join(arguments.filepath, nfp)
+            print(fp, "->", nfp)
+            os.system('mv "'+ffp+'" "'+fnfp+'"')
 
 
 if __name__ == "__main__":
     main()
+
