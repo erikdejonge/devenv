@@ -7,7 +7,8 @@ Usage:
   safefilenames.py [options] <filepath>
 
 Options:
-  -h --help     Show this screen.
+  -h --help      Show this screen.
+  -r --recursive Recursive
 
 author  : rabshakeh (erik@a8.nl)
 project : devenv
@@ -31,7 +32,6 @@ class IArguments(Arguments):
     """
     IArguments
     """
-
     def __init__(self, doc):
         """
         __init__
@@ -39,6 +39,41 @@ class IArguments(Arguments):
         self.help = False
         self.input = ""
         super().__init__(doc)
+        self.seen = set()
+
+def change_filepath(fdp, fp):
+    """
+    @type arguments: IArguments
+    @type fp: str
+    @return: None
+    """
+    nfp = get_safe_filename_string(fp)
+    if fp != nfp:
+        if os.path.isdir(fdp):
+            ffp = os.path.join(fdp, fp)
+            fnfp = os.path.join(fdp, nfp)
+        else:
+            ffp = fp
+            fnfp = nfp
+
+        print(ffp, "->", fnfp)
+
+        os.system('mv "'+ffp+'" "'+fnfp+'"')
+
+
+def walkdir(recursive, fdp):
+    """
+    @type arguments: IArguments
+    @return: None
+    """
+
+    for fp in os.listdir(fdp):
+        change_filepath(fdp, fp)
+        if recursive is not None:
+            fpd = os.path.join(fdp, fp)
+
+            if os.path.isdir(fpd):
+                walkdir(recursive, fpd)
 
 
 def main():
@@ -46,15 +81,13 @@ def main():
     main
     """
     arguments = IArguments(__doc__)
-    for fp in os.listdir(arguments.filepath):
-        nfp = get_safe_filename_string(fp)
-        if fp != nfp:
-            ffp = os.path.join(arguments.filepath, fp)
-            fnfp = os.path.join(arguments.filepath, nfp)
-            print(fp, "->", nfp)
-            os.system('mv "'+ffp+'" "'+fnfp+'"')
+    print(arguments)
+
+    if os.path.isfile(arguments.filepath):
+        change_filepath(os.path.dirname(arguments.filepath), os.path.basename(arguments.filepath))
+    else:
+        walkdir(arguments.recursive, arguments.filepath)
 
 
 if __name__ == "__main__":
     main()
-
