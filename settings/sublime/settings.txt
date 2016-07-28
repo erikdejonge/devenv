@@ -1,20 +1,43 @@
 {
     "always_prompt_for_file_reload": false,
     "atomic_save": true,
-    "color_scheme": "Packages/User/Sunburst.tmTheme",
-    "font_face": "Source Code Pro ExtraLight",
-    "font_size": 16,
+    "auto_complete_selector": "-",
+    "auto_complete_triggers":
+    [
+        {
+            "characters": ".",
+            "selector": "source.python"
+        }
+    ],
+    "bold_folder_labels": true,
+    "caret_style": "phase",
+    "color_scheme": "Packages/User/pro (SublimePythonIDE).tmTheme",
+    "fade_fold_buttons": false,
+    "font_face": "Source Code Pro Regular",
+    "font_options":
+    [
+        "subpixel_antialias"
+    ],
+    "font_size": 15,
+    "highlight_line": true,
+    "hot_exit": false,
+    "ignore_vcs_packages": false,
     "ignored_packages":
     [
+        "ASP",
+        "Auto Fold",
+        "CSS",
+        "Python",
+        "Theme - Spacegray",
         "Vintage"
     ],
+    "line_padding_bottom": 2,
+    "line_padding_top": 0,
+    "open_files_in_new_window": false,
     "remember_open_files": false,
     "save_on_focus_lost": true,
+    "theme": "Default.sublime-theme",
     "translate_tabs_to_spaces": true,
     "trim_trailing_white_space_on_save": true,
-    "update_check": false,
-    // Valid options are "no_bold", "no_italic", "no_antialias", "gray_antialias",
-    // "subpixel_antialias", "no_round" (OS X only), "gdi" (Windows only) and
-    // "directwrite" (Windows only)
-    "font_options": ["subpixel_antialias"]
+    "update_check": true
 }
