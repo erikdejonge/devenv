@@ -55,10 +55,9 @@ def change_filepath(fdp, fp):
         else:
             ffp = fp
             fnfp = nfp
-
-        print(ffp, "->", fnfp)
-
-        os.system('mv "'+ffp+'" "'+fnfp+'"')
+        if ffp != fnfp:
+            print(ffp, "->", fnfp)
+            os.system('mv "'+ffp+'" "'+fnfp+'"')
 
 
 def walkdir(recursive, fdp):
