@@ -41,6 +41,7 @@ class IArguments(Arguments):
         super().__init__(doc)
         self.seen = set()
 
+
 def change_filepath(fdp, fp):
     """
     @type arguments: IArguments
@@ -85,7 +86,8 @@ def main():
     if os.path.isfile(arguments.filepath):
         change_filepath(os.path.dirname(arguments.filepath), os.path.basename(arguments.filepath))
     else:
-        walkdir(arguments.recursive, arguments.filepath)
+        for i in range(0,10):
+            walkdir(arguments.recursive, arguments.filepath)
 
 
 if __name__ == "__main__":
