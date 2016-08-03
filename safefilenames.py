@@ -81,7 +81,7 @@ def main():
     main
     """
     arguments = IArguments(__doc__)
-    print(arguments)
+
 
     if os.path.isfile(arguments.filepath):
         change_filepath(os.path.dirname(arguments.filepath), os.path.basename(arguments.filepath))
