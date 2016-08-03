@@ -18,6 +18,7 @@ import os
 import sys
 import consoleprinter
 from consoleprinter import console, remove_color, console_warning
+
 from terminaltables import AsciiTable
 
 
@@ -35,6 +36,38 @@ def chunks(l, n):
         yield l[i:i + n]
 
 
+def get_alias_and_implementation(aliasses, profile, searchfor):
+    """
+    @type aliasses: list
+    @type profile: str
+    @type searchfor: str
+    @return: None
+    """
+    retval = ""
+    for alias in aliasses:
+        if searchfor.strip().lower() in alias[0].strip().lower() or searchfor.strip().lower() in alias[1].strip().lower():
+            imp = alias[1].strip()
+
+            if imp.count(";") > 1:
+                retval += "\033[30malias " + alias[0].strip() + "=" + imp.strip() + "\"\n"
+                retval += "\033[91m" + alias[0].strip() + ":\033[33m\n   " + imp.replace(";", ";\n  ") + "\033[0m\n⎯⎯⎯\n"
+            else:
+                retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n⎯⎯⎯\n"
+
+            if imp.startswith("_"):
+                foundfunc = False
+
+                for func in profile.split("function "):
+                    if func.startswith(imp):
+                        foundfunc = True
+                        retval += "\033[90mfunction " + func.strip() + "\033[0m\n\n"
+
+                if foundfunc:
+                    retval = retval.strip() + "\n--\n"
+
+    return retval
+
+
 def main():
     """
     main
@@ -43,7 +76,6 @@ def main():
     searchfor = input.strip()
     profile = open(os.path.expanduser("~/.bash_profile"), 'rb').read()
     profile = profile.decode("utf8")
-
     aliasses = []
     lines = []
 
@@ -104,7 +136,7 @@ def main():
             myaliasses4.append(list(i))
 
         table = AsciiTable(myaliasses4)
-        print (table.table)
+        print(table.table)
     else:
         retval = get_alias_and_implementation(aliasses, profile, searchfor)
 
@@ -131,41 +163,25 @@ def main():
 
                     # print("\033[0m")
 
+            if len(retval) == 0:
+                cnt = 0
+
+                for line in lines:
+                    cnt += 1
+
+                    if searchfor.lower() in line.lower():
+                        if cnt > 3:
+                            for i in range(cnt - 3, cnt + 3):
+                                if len(lines[i].strip()) > 0:
+                                    retval += "\033[30m" + str(cnt) + ": \033[33m" + lines[i] + "\n"
+
+                        retval += "\n"
+
+                print(retval)
+
             print("--\033[0m")
         else:
             print(retval)
-
-
-def get_alias_and_implementation(aliasses, profile, searchfor):
-    """
-    @type aliasses: list
-    @type profile: str
-    @type searchfor: str
-    @return: None
-    """
-    retval = ""
-    for alias in aliasses:
-        if searchfor.strip().lower() in alias[0].strip().lower() or searchfor.strip().lower() in alias[1].strip().lower():
-            imp = alias[1].strip()
-
-            if imp.count(";") > 1:
-                retval += "\033[30malias " + alias[0].strip() + "=" + imp.strip() + "\"\n"
-                retval += "\033[91m" + alias[0].strip() + ":\033[33m\n   " + imp.replace(";", ";\n  ") + "\033[0m\n⎯⎯⎯\n"
-            else:
-                retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n⎯⎯⎯\n"
-
-            if imp.startswith("_"):
-                foundfunc = False
-
-                for func in profile.split("function "):
-                    if func.startswith(imp):
-                        foundfunc = True
-                        retval += "\033[90mfunction " + func.strip() + "\033[0m\n\n"
-
-                if foundfunc:
-                    retval = retval.strip() + "\n--\n"
-
-    return retval
 
 
 if __name__ == "__main__":
