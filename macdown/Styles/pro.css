@@ -20,7 +20,7 @@ blockquote {
 body {
     text-rendering: geometricPrecision;
 
-    /*font-family:  "Source Code Pro Light";*/
+    /*font-family:  "Source Code Pro Regular";*/
     font-family:  "CMU Sans Serif", "Computer Modern";
     font-size: 16px;
     line-height: 24px;
@@ -187,7 +187,7 @@ h6 {
     color: #;
     margin-top: 18px;
     text-rendering: geometricPrecision;
-    font-family: "Source Code Pro Light";
+    font-family: "Source Code Pro Regular";
     font-size: 16px;
     margin-top: 12px;
     margin-bottom: 4px;
@@ -272,7 +272,7 @@ blockquote p a {
 }
 
 code, pre {
-    font-family: "Source Code Pro Light" !important;
+    font-family: "Source Code Pro Regular" !important;
     color: #8EB1D0;
     display: block;
     padding: 4px;
