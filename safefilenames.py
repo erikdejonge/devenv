@@ -48,17 +48,25 @@ def change_filepath(fdp, fp):
     @type fp: str
     @return: None
     """
+    ext = ['mp4', 'mkv', 'srt', 'avi', 'mov', 'gif', 'jpg', 'png', 'txt', 'rtf', 'py', 'pdf', 'txt', 'docx']
     nfp = get_safe_filename_string(fp)
-    if os.getcwd().endswith("Movies") and 'ds_store' not in nfp.lower() and 'youtube' not in nfp.lower():
+    if os.getcwd().endswith("MyMovies") and 'ds_store' not in nfp.lower() and 'youtube' not in nfp.lower() and "imovie" not in nfp.lower():
+
         replaces = ['xvid', 'hdrip', 'x264-killersettv', 'x264', 'gaz','yify','ac3', '1080p', 'etrg', 'brrip', '-evo', '_evo', '720p', '480p', 'bluray', 'web_dl', 'reenc', 'deejayahmed', 'aac', 'team_nanban', 'repack', 'hdtv', 'dvdscr', '.hq', 'hive-cm8', 'hd-ts', 'extended', 'proper', 'cpg', '.hc']
         replaces.extend([str(x) for x in range(1950, 2020)])
         for i in replaces:
             nfp = nfp.replace(i, "").replace("..", ".").replace("-.", ".").replace("_.", "_").strip(".").strip("_").strip("-").strip(".").replace(".", "_").replace("_nfo", ".txt").replace("_url", ".txt")
-        ext = ['mp4', 'mkv', 'srt', 'avi', 'mov', 'gif', 'jpg', 'png', 'txt', 'rtf', 'py']
+
         for i in ext:
             e = "_"+i
             n = "."+i
             nfp = nfp.replace(e, n)
+
+    for i in ext:
+        e = "_"+i+"."+i
+        n = "."+i
+        nfp = nfp.replace(e, n)
+    nfp = nfp.replace("_-_", "_")
 
     if fp != nfp:
         if os.path.isdir(fdp):
