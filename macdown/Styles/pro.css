@@ -1,3 +1,4 @@
+
 h1,
 h2,
 h3,
@@ -18,22 +19,26 @@ blockquote {
 
 
 body {
-    text-rendering: geometricPrecision;
-
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     /*font-family:  "Source Code Pro Regular";*/
-    font-family:  "CMU Sans Serif", "Computer Modern";
+    font-family: "Verdana" ,"CMU Bright", "Lexie Readable";
     font-size: 16px;
     line-height: 24px;
-    color: rgba(242, 240, 205, 0.8);
+    color: rgba(242, 240, 205, 1);
     background-color: #02090B;
-    background-color: #000;
+    /* background-color: #000; */
     margin: 10px 13px 10px 13px;
-    padding-bottom: 64px;
+
+    padding: 16px 32px 32px 16px;
+
     letter-spacing: 0.01em;
-
-
-
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 html * {
     color-profile: sRGB;
@@ -50,6 +55,7 @@ em {
 
     font-weight: normal;
     color: #64B68A;
+    color: #B6FFAA;
 }
 
 table {
@@ -184,54 +190,65 @@ h4,
 h5,
 h6 {
     font-weight: normal;
-    color: #;
-    margin-top: 18px;
-    text-rendering: geometricPrecision;
-    font-family: "Source Code Pro Regular";
+
+    text-transform: capitalize;
     font-size: 16px;
-    margin-top: 12px;
-    margin-bottom: 4px;
+    font-family: "Lexie Readable";
     line-height: 24px;
+    color: #54B2BC;
+    margin-top: 24px;
 }
 
 h1 {
-    color: #54B2BC;
+
+    color: #FFDB6E;
     font-weight: normal;
-    margin-top: 16px;
     line-height: 32px;
-    font-size: 30px;
-    margin-bottom: 8px;
-    text-transform: capitalize;
+    font-size: 26px;
+
+    margin-bottom: 18px;
+    margin-top: 24px;
 }
 
 h2 {
+    color: #FFDF73;
 
-    color: #54B2BC;
-    margin-top: 12px;
+
+
     line-height: 32px;
     font-weight: normal;
-    font-size: 26px;
-    margin-bottom: 6px;
+    font-size: 22px;
+
+    margin-bottom: 8px;
 }
 
 h3 {
-    font-size: 24px;
-    color: #54B2BC;
 
-    margin-top: 12px;
+    font-size: 20px;
+
+    color: #FFFC93;
+
 }
 
 h4 {
-    font-size: 20px;
-    color: #54B2BC;
+    margin-top: 24x;
+    font-size: 18px;
+    text-transform: capitalize;
+    color:  #E6FFAC;
 }
 
 h5 {
-    color: #54B2BC;
+    margin-top: 24px;
+    font-size: 16px;
+    text-transform: capitalize;
+    color:  #C3FEC2;
 }
 
 h6 {
-    color: #B6FFAA;
+    margin-top: 24px;
+    font-size: 16px;
+    color: ##C4FFC2;
+    text-transform: capitalize;
 }
 
 ul, ol {
@@ -241,14 +258,14 @@ ul, ol {
 }
 
 hr {
-    margin: 32px 12px;
+    margin: 16px 12px;
     border: 0;
     border-bottom: 1px solid #B4C5C5;
 }
 
 p, blockquote, ul, ol, dl, li, table, pre {
     margin: 8px 0;
-    margin-top: 12px;
+    margin-top: 8px;
 }
 blockquote {
     margin-top: 8px;
@@ -308,12 +325,6 @@ sup {
     -webkit-print-color-adjust: exact;
 }
 
-@media screen and (min-width: 914px) {
-    body {
-        width: 1145px;
-        margin: 10px auto;
-    }
-}
 
 @media print {
     body, code, pre code, h1, h2, h3, h4, h5, h6 {
