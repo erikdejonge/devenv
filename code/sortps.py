@@ -23,14 +23,14 @@ def main():
     """
     psauxdict = {}
     lines = []
-    for line in os.popen("ps aux").read().split("\n"):
-        lines.append(line)
-    lines.pop(0)
-    for line in lines:
+    # for line in os.popen("ps aux").read().split("\n"):
+    #     lines.append(line)
+    # lines.pop(0)
+    # for line in lines:
 
-        lineparts = [linepart for linepart in line.split(" ") if linepart]
-        if len(lineparts) > 0:
-            psauxdict[lineparts[1]] = " ".join(lineparts[10:]).split(" ")
+    #     lineparts = [linepart for linepart in line.split(" ") if linepart]
+    #     if len(lineparts) > 0:
+    #         psauxdict[lineparts[1]] = " ".join(lineparts[10:]).split(" ")
 
     lines = []
 
