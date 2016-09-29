@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 # coding=utf-8
 """
 Project devenv
@@ -21,7 +21,8 @@ import os
 import sys
 
 from arguments import Arguments
-from consoleprinter import console, get_safe_filename_string
+from consoleprinter import console
+from consoleprinter import get_safe_filename_string
 
 if sys.version_info.major < 3:
     console("Python 3 is required", color="red", plaintext="True")
@@ -52,10 +53,10 @@ def change_filepath(fdp, fp):
     nfp = get_safe_filename_string(fp)
     if os.getcwd().endswith("MyMovies") and 'ds_store' not in nfp.lower() and 'youtube' not in nfp.lower() and "imovie" not in nfp.lower():
 
-        replaces = ['xvid', 'hdrip', 'x264-killersettv', 'x264', 'gaz','yify','ac3', '1080p', 'etrg', 'brrip', '-evo', '_evo', '720p', '480p', 'bluray', 'web_dl', 'reenc', 'deejayahmed', 'aac', 'team_nanban', 'repack', 'hdtv', 'dvdscr', '.hq', 'hive-cm8', 'hd-ts', 'extended', 'proper', 'cpg', '.hc']
+        replaces = ['multisub', '_ger', 'highcode', '-phd', 'eng_subs', 'h264', '-mp4', 'xvid', 'hdrip', 'x264-killersettv', 'x264', 'gaz','yify','ac3', '1080p', 'etrg', 'brrip', '-evo', '_evo', '720p', '480p', 'bluray', 'web_dl', 'reenc', 'deejayahmed', 'aac', 'team_nanban', 'repack', 'hdtv', 'dvdscr', '.hq', 'hive-cm8', 'hd-ts', 'extended', 'proper', 'cpg', '.hc']
         replaces.extend([str(x) for x in range(1950, 2020)])
         for i in replaces:
-            nfp = nfp.replace(i, "").replace("..", ".").replace("-.", ".").replace("_.", "_").strip(".").strip("_").strip("-").strip(".").replace(".", "_").replace("_nfo", ".txt").replace("_url", ".txt")
+            nfp = nfp.replace(i, "").replace("..", ".").replace("-.", ".").replace("_.", "__").strip(".").strip("_").strip("-").strip(".").replace(".", "_").replace("_nfo", ".txt").replace("_url", ".txt")
 
         for i in ext:
             e = "_"+i
@@ -66,7 +67,9 @@ def change_filepath(fdp, fp):
         e = "_"+i+"."+i
         n = "."+i
         nfp = nfp.replace(e, n)
-    nfp = nfp.replace("_-_", "_")
+    nfp = nfp.replace("_-_", "_").strip(".").strip("_")
+    for i in range(0,3):
+        nfp = nfp.replace("..", ".").replace("-.", ".").replace("_.", ".").strip(".").strip("_").strip("-").strip(".")
 
     if fp != nfp:
         if os.path.isdir(fdp):
