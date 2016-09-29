@@ -41,7 +41,7 @@ def main():
 
         if os.path.exists(arguments.input):
             cmdlist = open(arguments.input).read()
-            cmdlist = [cmd for cmd in cmdlist.split("\n") if len(cmd.strip()) > 0 and "sortpyhist.py" not in cmd]
+            cmdlist = [cmd for cmd in cmdlist.split("\n") if len(cmd.strip()) > 0 and "sortpyhist.py" not in cmd and not cmd.strip().startswith(":")]
 
             if 0 == (len(cmdlist)):
                 console("the list is empty", color=Colors.red)
@@ -52,9 +52,17 @@ def main():
                 cmd = cmd.split(": ")
 
                 if len(cmd) > 0:
+
                     date = cmd.pop(0)
-                    date = time.strftime("%Y/%m/%d %H:%M", time.localtime(int(date)))
+
+
+                    try:
+                        date = date + " "+time.strftime("%Y/%m/%d %H:%M", time.localtime(int(date)))
+                    except ValueError:
+                        print('date |'+str(date)+'|')
+                        raise
                     cmd = "".join(cmd)
+                    cmd = cmd.strip().strip("->")
                     if cmd != last:
                         last = cmd
                         cmd = cmd.replace(os.path.expanduser("~"), "~")
