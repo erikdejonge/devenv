@@ -49,7 +49,7 @@ def change_filepath(fdp, fp):
     @type fp: str
     @return: None
     """
-    ext = ['mp4', 'mkv', 'srt', 'avi', 'mov', 'gif', 'jpg', 'png', 'txt', 'rtf', 'py', 'pdf', 'txt', 'docx']
+    ext = ['a', 'ai', 'aif', 'aifc', 'aiff', 'au', 'avi', 'bat', 'bcpio', 'bin', 'bmp', 'c', 'cdf', 'cpio', 'csh', 'css', 'csv', 'dll', 'doc', 'docx', 'dot', 'dvi', 'eml', 'eps', 'etx', 'exe', 'gif', 'gtar', 'h', 'hdf', 'htm', 'html', 'ico', 'ief', 'jpe', 'jpeg', 'jpg', 'js', 'ksh', 'latex', 'm1v', 'm3u', 'm3u8', 'm4v', 'man', 'me', 'mht', 'mhtml', 'mif', 'mkv', 'mov', 'movie', 'mp2', 'mp3', 'mp4', 'mpa', 'mpe', 'mpeg', 'mpg', 'ms', 'nc', 'nws', 'o', 'obj', 'oda', 'p12', 'p7c', 'pbm', 'pdf', 'pfx', 'pgm', 'pl', 'png', 'pnm', 'pot', 'ppa', 'ppm', 'pps', 'ppt', 'ps', 'pwz', 'py', 'pyc', 'pyo', 'qt', 'ra', 'ram', 'ras', 'rdf', 'rgb', 'roff', 'rtf', 'rtx', 'sgm', 'sgml', 'sh', 'shar', 'snd', 'so', 'src', 'srt', 'sv4cpio', 'sv4crc', 'svg', 'swf', 't', 'tar', 'tcl', 'tex', 'texi', 'texinfo', 'tif', 'tiff', 'tr', 'tsv', 'txt', 'ustar', 'vcf', 'wav', 'webm', 'wiz', 'wsdl', 'xbm', 'xlb', 'xls', 'xml', 'xpdl', 'xpm', 'xsl', 'xwd', 'zip']
     nfp = get_safe_filename_string(fp)
     if os.getcwd().endswith("MyMovies") and 'ds_store' not in nfp.lower() and 'youtube' not in nfp.lower() and "imovie" not in nfp.lower():
 
@@ -67,6 +67,12 @@ def change_filepath(fdp, fp):
         e = "_"+i+"."+i
         n = "."+i
         nfp = nfp.replace(e, n)
+    for i in ext:
+        e = "_"+i
+        n = "."+i
+        if nfp.endswith(e):
+            nfp = nfp.strip(e)
+            nfp += n
     nfp = nfp.replace("_-_", "_").strip(".").strip("_")
     for i in range(0,3):
         nfp = nfp.replace("..", ".").replace("-.", ".").replace("_.", ".").strip(".").strip("_").strip("-").strip(".")
