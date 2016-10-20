@@ -22,6 +22,8 @@
 	<true/>
 	<key>HideScrollbar</key>
 	<true/>
+	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>MaxVertically</key>
@@ -49,7 +51,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>307</string>
+		<string>322</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -63,11 +65,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>2063 593 973 479 0 0 3840 2137 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 197 606 456 0 0 3840 2137 </string>
+	<string>232 198 606 456 0 0 3440 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>1610 1309 620 392 0 0 3840 2137 </string>
+	<string>1410 769 620 392 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1380 610 1210 1227 0 0 3840 2137 </string>
+	<string>1170 578 730 777 0 0 3440 1418 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1408,7 +1410,7 @@
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
-			<string>xterm-256color</string>
+			<string>xterm-new</string>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
@@ -1431,10 +1433,14 @@
 			<string>/Users/rabshakeh</string>
 		</dict>
 	</array>
+	<key>NoSyncInstallationId</key>
+	<string>32E898BC-66BF-4A9E-81BB-99A82871E990</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>479228321.17847103</real>
 	<key>OpenBookmark</key>
@@ -1476,18 +1482,22 @@
 	<string>/Users/rabshakeh/workspace/devenv/iterm</string>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/nightly.xml</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=69</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-03-09T15:14:15Z</date>
+	<date>2016-10-13T14:44:34Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUSkippedVersion</key>
+	<string>3.0.20160620-nightly</string>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>SmartPlacement</key>
@@ -1497,7 +1507,7 @@
 	<key>UseBorder</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20160307-nightly</string>
+	<string>3.0.20160918-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>3</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
