@@ -174,7 +174,7 @@ li.task-list-item input {
     vertical-align: bottom;
     position: relative;
     top: -1px;
-    *overflow: hidden;
+    overflow: hidden;
 }
 
 ul li:nth-child(even) {
@@ -345,7 +345,7 @@ pre {
     line-height: 20px;
     letter-spacing: 1.1;
     background-color: #051012;
-    color: #116CD6 white-space : pre;
+    color: #116CD6;
     white-space: pre-wrap;
     word-wrap: break-word;
     border-radius: 3px;
