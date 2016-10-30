@@ -88,21 +88,31 @@ def change_filepath(fdp, fp):
             print(ffp, "->", fnfp)
             os.system('mv "'+ffp+'" "'+fnfp+'"')
 
-
+skipmsg = set()
 def walkdir(recursive, fdp):
     """
     @type arguments: IArguments
     @return: None
     """
+    global skipmsg
+    skipnames = ['$RECYCLE.BIN']
 
     for fp in os.listdir(fdp):
-        change_filepath(fdp, fp)
-        if recursive is not None:
-            fpd = os.path.join(fdp, fp)
+        skip = False
+        for skipname in skipnames:
+            if skipname in fp:
+                skip = True
+        if not skip:
+            change_filepath(fdp, fp)
+            if recursive is not None:
+                fpd = os.path.join(fdp, fp)
 
-            if os.path.isdir(fpd):
-                walkdir(recursive, fpd)
-
+                if os.path.isdir(fpd):
+                    walkdir(recursive, fpd)
+        else:
+            if fp not in skipmsg:
+                print("\033[33mskipping {}\033[0m".format(fp))
+                skipmsg.add(fp)
 
 def main():
     """
