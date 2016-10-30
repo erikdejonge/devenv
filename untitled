@@ -1,0 +1,1129 @@
+<div id="bodyContent"><div id="box"><div id="box_inner"><div id="text"><div id="pages"><div class="page" id="page1"><div class="page_content"><div id="articleHeader"><h1 id="articleHeader__title">MacBook</h1><div id="articleHeader__separator" class="separator"><div class="separatorLine setTextColorAsBackgroundColor"></div></div></div>
+
+
+
+
+
+
+
+
+<p>Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to installing it on any other computer. However, due to the specific hardware configuration of a Mac, there are a few deviations and special considerations which warrant a separate guide. For more background information, please see the <a href="https://wiki.archlinux.org/index.php/Installation_guide" title="Installation guide" target="_blank">Installation guide</a> and <a href="https://wiki.archlinux.org/index.php/UEFI" title="UEFI" target="_blank">UEFI</a>. This guide contains installation-instructions that can be used on any Apple computer whose hardware is supported by the Linux kernel. Please see 'related' pages (on the top right of this page) for model-specific tips and troubleshooting.
+</p>
+
+
+<h2>Overview</h2>
+<p>Specifically, the procedure for installing Arch Linux on a MacBook is:
+</p>
+<ol><li> <b><a href="https://wiki.archlinux.org/index.php/MacBook#Firmware_updates" target="_blank"> Firmware updates</a></b>: It always helps to start from a clean, backed up, and up-to-date install of OS X.</li>
+<li> <b><a href="https://wiki.archlinux.org/index.php/MacBook#Partitions" target="_blank">Partition</a></b>: Resizing or deleting the OS X partition to create partitions for Arch Linux.</li>
+<li> <b><a href="https://wiki.archlinux.org/index.php/MacBook#Setup_bootloader" target="_blank">Setup bootloader</a></b>: Making sure that the new partition is bootable.</li>
+<li> <b><a href="https://wiki.archlinux.org/index.php/MacBook#Installation" target="_blank">Install Arch Linux</a></b>: Actually installing Arch Linux.</li>
+<li> <b><a href="https://wiki.archlinux.org/index.php/MacBook#Post-installation" target="_blank">Post-installation</a></b>: MacBook-specific configuration.</li></ol>
+<h2>Firmware updates</h2>
+<p>Before proceeding with the installation of Arch Linux, it is important to ensure that the latest firmware updates for you MacBook are installed. This procedure requires OS X.
+In OS X, open the App Store and check for updates. If your mac finds and installs any updates, make sure to <b>reboot</b> your computer, and then check again for updates to make sure that you installed everything.
+</p>
+<div><strong> Note: </strong>If you uninstalled OS X or want to reinstall it, <a href="https://support.apple.com/en-us/HT204904" target="_blank">Apple</a> has great instructions.</div>
+<p>It is advisable to keep OS X installed, because MacBook firmware updates can only be installed using OS X. However, if you plan to remove OS X completely, make backups of these files, which you will need in Linux for adjusting the <a href="https://wiki.archlinux.org/index.php/MacBook#Color_Profile" target="_blank">color profile</a>:
+</p>
+<pre>/Library/ColorSync/Profiles/Displays/*
+</pre>
+<p>Continue to <a href="https://wiki.archlinux.org/index.php/MacBook#Partitions" target="_blank">#Partitions</a>
+</p>
+<h2>Partitions</h2>
+<p>Partitioning of the storage drive is no different from any other laptop. However, if you plan on keeping OS X for dual booting, you should consider that, by default, a MacBook's drive is formatted using GPT and contains at least 3 partitions:
+</p>
+<ul><li> <b>EFI</b>: the ~200 MB <a href="https://wiki.archlinux.org/index.php/EFI_System_Partition" title="EFI System Partition" target="_blank">EFI System Partition</a>.</li>
+<li> <b>OS X</b>: the main partition containing your OS X installation. It is formatted using <a href="https://wiki.archlinux.org/index.php/File_systems" title="File systems" target="_blank">HFS+</a>.</li>
+<li> <b>Recovery</b>: A recovery partition present in almost all MacBooks running OS X 10.7 or newer. It is usually hidden from OS X but can be viewed with partitioning tools.</li></ul>
+<div><strong> Note: </strong>In Macs that use the <a href="https://wiki.archlinux.org/index.php/Apple_Fusion_Drive" title="Apple Fusion Drive" target="_blank">Apple Fusion Drive</a>, the partition scheme could be different.</div>
+<p>How to partition depends on how many operating systems you want install. The following options will be explained:
+</p>
+<ul><li> Single boot: <a href="https://wiki.archlinux.org/index.php/MacBook#Arch_Linux_only" target="_blank">#Arch Linux only</a></li>
+<li> Dual boot: <a href="https://wiki.archlinux.org/index.php/MacBook#OS_X_with_Arch_Linux" target="_blank">#OS X with Arch Linux</a> <i>(recommended so you can still return to OS X when needed)</i></li>
+<li> Triple boot: <a href="https://wiki.archlinux.org/index.php/MacBook#OS_X.2C_Windows_XP.2C_and_Arch_Linux_triple_boot" target="_blank">#OS X, Windows XP, and Arch Linux triple boot</a></li></ul>
+<h3>Arch Linux only</h3>
+<p>This situation is the easiest to deal with. Partitioning is the same as any other hardware that Arch Linux can be installed on. Please refer to the standard <a href="https://wiki.archlinux.org/index.php/Installation_guide" title="Installation guide" target="_blank">Installation guide</a> for details.
+</p>
+<div><strong> Note: </strong>It is advisable to <b>disable</b> the MacBook startup sound before proceeding with partitioning. Just boot in OS X, mute your system sound and reboot again to the Arch Linux Installation media. Please keep in mind that the volume of the startup sound can only be modified reliably in OS X.</div>
+<p>If you want to configure you system in order to have full-disk encryption, please look at the <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system" target="_blank">following</a> page for details.
+</p><p>An example for a very basic partitioning, that does not consider a separate <code>/home</code> partition nor encryption or LVM, is the following:
+</p>
+<pre>partition  mountpoint  size    type  label
+/dev/sda1  /boot       200MiB  vfat  EFI
+/dev/sda2  /swap       adjust  swap  swap
+/dev/sda3  /           remain  ext4  root
+</pre>
+<ul><li> Done, you can continue to <a href="https://wiki.archlinux.org/index.php/MacBook#Installation" target="_blank">#Installation</a></li></ul>
+<h3>Arch Linux with OS X or other operative systems</h3>
+<p>You need to partition your hard drive while keeping the partitions used for OS X/Windows. If you wish to keep OS X, the easiest way is to use partitioning tools in OS X and then finish with Arch Linux tools.
+</p>
+<div><strong> Warning: </strong> If you OS X partition is encrypted with FileVault 2, you <b>must</b> disable the disk encryption before proceeding. After the OS X partition has been resized, FileVault 2 can be re-enabled.</div>
+<p><b>Procedure</b>:
+</p>
+<ul><li> In OS X, run <i>Disk Utility.app</i> (located in <code>/Applications/Utilities</code>)</li>
+<li> Select the drive to be partitioned in the left-hand column (not the partitions!). Click on the <b>Partition</b> button.</li>
+<li> Add a new partition by pressing the <b>+</b> button and choose how much space you want to leave for OS X, and how much for the new partition. Keep in mind the new partition will be formatted in Arch Linux, so you can choose any partition type you want. </li>
+<li> If the above completed successfully, then you can continue. If not, then you may need to fix your partitions from within OS X first.</li>
+<li> Boot the Arch installation media or <a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media" title="USB flash installation media" target="_blank">LiveUSB</a> by holding down the <code>Alt</code> <b>during boot</b>. Proceed with <a href="https://wiki.archlinux.org/index.php/MacBook#Installation" target="_blank">#Installation</a>.</li></ul>
+<p>It is possible to resize the newly created partition from within the Arch installation media, or delete it in order to proceed with the creation of other partitions (eg. swap).
+</p>
+<div><strong> Tip: </strong>Instead of cluttering your drive with different partition, it is possible to use a <a href="https://wiki.archlinux.org/index.php/Swap#Swap_file" title="Swap" target="_blank">swapfile</a> instead of a dedicated partition. Another solution can be setting up <a href="https://wiki.archlinux.org/index.php/LVM" title="LVM" target="_blank">LVM</a> in order to use the newly-created partition as a container. Please refer to the linked articles.</div>
+<h4>Option 1: EFI</h4>
+<ul><li> Run <i>cgdisk</i></li></ul>
+<ul><li> Delete the partition you made in <i>Disk Utility.app</i> and create the necessary partitions for Arch Linux. OS X likes to see a 128 MiB gap after partitions, so when you create the first partition after the last OS X-partition, type in <b>+128M</b> when cgdisk asks for the first sector for the partition. More information about Apple's partitioning policy can be read  <a href="https://developer.apple.com/library/mac/technotes/tn2166/_index.html#//apple_ref/doc/uid/DTS10003927-CH1-SUBSECTION5" target="_blank">here</a>. A simple example (no LVM, crypto):</li></ul>
+<div><strong> Note: </strong>
+<ul><li> The swap partition is optional on machines with 4GB of RAM or more. A <b><a href="https://wiki.archlinux.org/index.php/Swap_file" title="Swap file" target="_blank">swap file</a></b> can be created later.</li>
+<li> The easiest dual-boot option is to install rEFInd from inside OS X, to its root directory (default for <code>install.sh</code>). Following that, copy the driver folder from the installation tarball into the new rEFInd location, and uncomment the lines <i>"scan_all_linux_kernels"</i> and <i>"also_scan_dirs"</i> options in <code>refind.conf</code>. Configuration of boot options can then be done from a <code>refind_linux.conf</code> in Arch's <code>/boot</code> directory.</li>
+<li> If you want to be able to boot GRUB from the Apple boot loader, you can create a small hfs+ partition (for convenience, use OS X to format it in <i>Disk Utility.app</i> afterwards). Follow the GRUB EFI install procedure, and mount your <code>/boot/efi</code> directory to the hfs+ partition you created. Finally, finish up again in OS X by blessing the partition. This will set GRUB as the default boot option (holding alt at startup goes to the mac boot options screen still. See <a href="http://mjg59.dreamwidth.org/7468.html" target="_blank">http://mjg59.dreamwidth.org/7468.html</a>).,</li>
+<li> OS X's EFI partition can be shared with Arch Linux, making the creation of an additional EFI partition dedicated to Arch completely optional.</li></ul>
+</div>
+<div><strong> Note: </strong>For more information on partitioning, see <a href="https://wiki.archlinux.org/index.php/Partitioning" title="Partitioning" target="_blank">Partitioning</a></div>
+<pre>partition  mountpoint  size       type  label
+/dev/sda1  /boot/efi   200MiB     vfat  EFI
+/dev/sda2  -          &nbsp;?          hfs+  OS X
+/dev/sda3  -          &nbsp;?          hfs+  Recovery
+/dev/sda4  -           100MiB     hfs+  Boot Arch Linux from the Apple boot loader (optional)
+/dev/sda5  /boot       100MiB     boot  boot
+/dev/sda6  -          &nbsp;?          swap  swap (optional)
+/dev/sda7  /           10GiB      ext4  root
+/dev/sda8  /home       remaining  ext4  home
+</pre>
+<ul><li> Done, you can continue to <a href="https://wiki.archlinux.org/index.php/MacBook#Installation" target="_blank">#Installation</a></li></ul>
+<h4>Option 2: BIOS-compatibility</h4>
+<ul><li> Run <i>parted</i> as root.</li></ul>
+<ul><li> Delete the empty space partition and partition the space as you would for any other installation. Note that MBR is limited to 4 primary partitions (including the efi partition). That leaves 2 primary partitions for Arch. One strategy is to have a system and home partition, and use a swap file (I have not tried to use logical partitions). Another is to dedicate one partition to a shared partition (see below).</li></ul>
+<ul><li> Next, create new filesystems on those partitions which need them, especially the partition which will contain <code>/boot</code>. If you are not sure how to do this using <code>mkfs.ext2</code> (or whatever), run <code>/arch/setup</code> and work through until you get to Prepare Hard Drive and use the <i>"Manually configure block devices..."</i> option, then exit the installer. This is necessary so that rEFIt will set the right partition type in the MBR in the next step (without an existing filesystem, it seems to ignore the partition type set by parted), without which GRUB will refuse to install to the right partition.</li></ul>
+<ul><li> At this point you should reboot your computer and have rEFIt fix the partition tables on your hard drive.  (If you do not do this, you may have to reinstall GRUB later on in order to have your Mac recognize the Linux partition.)  When you are into the rEFIt menu, select <b>update partition table</b>, then press <code>y</code>. Reboot.</li></ul>
+<ul><li> Done, you can continue with <a href="https://wiki.archlinux.org/index.php/MacBook#Installation" target="_blank">#Installation</a>.</li></ul>
+<h3>OS X, Windows XP, and Arch Linux triple boot</h3>
+<p>This may not work for everyone but it has been successfully tested on a MacBook from late 2009.
+</p><p>The easiest way to partition your hard drive, so that all these operating systems can co-exist, is to use disk utility in OS X, use the formatter on windows XP, install XP and then finish with Arch Linux tools.
+</p>
+<div><strong> Warning: </strong>It is highly recommended that this only be attempted after a clean install of OS X. Using these methods on a pre-existing system may have undesired results. At least back your stuff up with timemachine or clonezilla before you begin.</div>
+<p><b>Procedure</b>:
+</p>
+<ul><li> In OS X, run <b>Disk Utility</b> (located in <code>/Applications/Utilities</code>).</li></ul>
+<ul><li> Select the drive to be partitioned in the left-hand column (not the partitions!). Click on the <b>partition</b> tab on the right.</li></ul>
+<ul><li> Select the volume to be resized in the <b>volume scheme.</b></li></ul>
+<ul><li> Decide how much space you wish to have for your OS X partition, how much for XP, and how much for Arch Linux. Remember that a typical installation of OS X requires around 15-20 GiB, and XP about the same, depending on the number of software applications and files. Something like OS X 200Gb, XP 25Gb, Arch 25Gb should be fine.</li></ul>
+<ul><li> Put your decisions into action by pressing the + button and adding the new partitions, Label them as you like and make sure that your XP partition is the last one on the disk and is formatted for FAT32. It is probably best to have Arch formatted in HFS format as to not confuse you later, it will be reformatted anyway.</li></ul>
+<p>So in linux terms your partitions will be something like:
+</p>
+<dl><dd><ul><li>sda (disk)</li>
+<li>sda1 (Mac boot partition - you cannot see this one in OS X)</li>
+<li>sda2 (OS X install in HFS+)</li>
+<li>sda3 (Arch install temporarly in HFS)</li>
+<li>sda4 (XP install in FAT32)</li></ul></dd></dl>
+<ul><li> Finally, click <b>apply</b>. This will create a new partition out of the empty space.</li></ul>
+<div><strong> Note: </strong>Using this method you may not be able to have a shared partition between OS X and Arch Linux, this is because the mac will only allow for 4 active partitions. You will however be able to mount a HFS partition in Arch for one workaround. There are other workarounds possible also.</div>
+<ul><li> If the above completed successfully, you can continue. If not, then you may need to fix your partitions from within OS X first.</li></ul>
+<ul><li> You will not be needing boot camp this way, the program rEFIt is much more flexible (though not as flexible as GRUB). Download and install rEFIt <a href="http://refit.sourceforge.net/" target="_blank">[1]</a></li></ul>
+<ul><li> Go into a terminal in OS X and perform the following, this will enable the rEFIt boot manager. </li></ul>
+<pre>cd /efi/refit
+./enable.sh
+</pre>
+<ul><li> Reboot to check the rEFIt is working, it should appear on boot. When it comes up go to the rEFIt partition manager and agree to the changes.</li></ul>
+<ul><li> Put your XP install CD and boot it with rEFIt - You may have to reboot a few times until it is recognized by the boot loader. Install XP and once it is installed use the OS X installation CD to get your drivers running nicely in XP.
+<ul><li> Note: when installing XP make sure you select your XP partition and format it again inside the XP installer. If you do not reformat it will not work.</li></ul></li></ul>
+<ul><li> Boot the Arch install CD, log in as root and run <code># /arch/setup</code>.</li></ul>
+<ul><li> Follow the install as normal but note that you will have to tell that arch installer to mount sda3 as the root partition and format it as ext3, there will not be a /boot or swap partition so ignore those warnings.</li></ul>
+<ul><li> At this point, if you are dual booting, you should reboot your computer and have rEFIt fix the partition tables on your hard drive.  (If you do not do this, you may have to reinstall GRUB later on in order to have your Mac recognize the Linux partition.)  When you are into the rEFIt menu, select <b>update partition table</b>, then press Y.</li></ul>
+<pre># reboot
+</pre>
+<ul><li> Done! You can continue to <a href="https://wiki.archlinux.org/index.php/MacBook#Installation" target="_blank">#Installation</a> but make sure you read <a href="https://wiki.archlinux.org/index.php/MacBook#Booting_directly_from_GRUB" target="_blank">#Booting directly from GRUB</a><sup>[<a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_section_links" title="ArchWiki:Requests" target="_blank">broken link</a>: invalid section]</sup> for the stage "* (for booting with EFI) After the install boot loader stage, exit the installer and install GRUB."</li></ul>
+<h2>Setup bootloader</h2>
+<h3>Using the native Apple bootloader with systemd-boot (Recommended)</h3>
+<p>Apple's native EFI bootloader reads <code>.efi</code> files located inside the <a href="https://wiki.archlinux.org/index.php/EFI_System_Partition" title="EFI System Partition" target="_blank">EFI System Partition</a> at <code>/EFI/BOOT/BOOTX64.EFI</code>. Luckly, this is also the default install location the <a href="https://wiki.archlinux.org/index.php/Systemd-boot" title="Systemd-boot" target="_blank">systemd-boot</a> binary. This means that booting linux using <i>systemd-boot</i> is very simple.
+</p>
+<ul><li> First, make sure you mounted the EFI System Partition at <code>/boot</code></li>
+<li> Proceed with <a href="https://wiki.archlinux.org/index.php/MacBook#Installation" target="_blank">#Installation</a> normally</li>
+<li> Once inside the chrooted enviroment, type the following command to install <i>systemd-boot</i>:</li></ul>
+<pre># bootctl --path=/boot install</pre>
+<p>The above command will copy the <i>systemd-boot</i> binary to <code>/boot/EFI/Boot/BOOTX64.EFI</code> and add <i>systemd-boot</i> itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
+</p>
+<ul><li> Proceed to <a href="https://wiki.archlinux.org/index.php/Systemd-boot#Configuration" title="Systemd-boot" target="_blank">systemd-boot#Configuration</a> in order to correctly set up the bootloader</li></ul>
+<p>At the next reboot, the Apple Boot Manager, shown when holding down the option key when booting the MacBook, should display Arch Linux (it will be displayed as <code>EFI Boot</code> as a possible boot option.
+</p>
+<div><strong> Tip: </strong>If you installed Arch Linux alongside OS X, you will be able to change the default boot location from  system Settings inside OS X. If Arch Linux does not show up as a possible boot option, you will have to mount the EFI System Partition inside OS X before selecting your boot option:
+<pre>$ diskutil mount disk0s1</pre>
+</div>
+<h3>Using the native Apple bootloader with GRUB</h3>
+<p>Despite using UEFI, the MacBook's native EFI bootloader <a href="http://refit.sourceforge.net/myths/" target="_blank">does not use the EFI partition for booting</a>. Instead, it looks for .efi files inside all the partitions in internal and external drives and shows them as possible boot options if certain conditions are satisfied. For example, MacBooks can detect an existing OSX installation after checking that:
+</p>
+<ul><li> there is a partition formatted as HFS+</li>
+<li> the partition contains the partition id <code>af00</code> </li>
+<li> in the root of that partition, there is a file called <code>mach_kernel</code></li>
+<li> inside that partition, there a <code>boot.efi</code> file inside <code>/System/Library/CoreServices</code></li></ul>
+<p>This means that configuring an Arch installation to be automatically recognized by the MacBook bootloader is possible. Moreover, it simply requires a properly-formatted HFS+ <code>/boot</code> partition and does not require meddling with the EFI system partition. The advantage of this method is that it can coexist with OS X nicely and allows to avoid other bootloaders such as rEFInd. However, this requires manual configuration. The following steps will illustrate how to perform this configuration using GRUB.
+</p>
+<ul><li> First, while configuring a new Arch installation, create a separate <code>/boot</code> partition. Many tools are available in the Arch ISO, for example <b>cgdisk</b>.</li>
+<li> Make sure the partition is at least ~250 MB in size, since it will be used to store the kernel as well as any custom kernel you will install in the future. Moreover, make sure the partition type is set as Apple HFS/HFS+ (it will appear as <code>Apple HFS/HFS+</code> in fdisk/cgdisk or <code>af00</code> in gdisk)</li>
+<li> Since the Arch installation ISO does not include the package <a href="https://www.archlinux.org/packages/?name=hfsprogs" target="_blank">hfsprogs</a>, we need to install it in the installation environment before proceeding with formatting the new partition as HFS+</li></ul>
+<pre> # pacman -Sy hfsprogs
+ # modprobe hfsplus
+ # mkfs.hfsplus /dev/sd<b>X</b> -v "Arch Linux"
+</pre>
+<p>Note: replace /dev/sd<b>X</b> with the correct device as appropriate
+</p>
+<ul><li> Done, proceed with <a href="https://wiki.archlinux.org/index.php/MacBook#Installation" target="_blank">#Installation</a></li></ul>
+<div><strong> Warning: </strong>
+<p>Once inside the chrooted enviroment, don’t forget to install <a href="https://www.archlinux.org/packages/?name=hfsprogs" target="_blank">hfsprogs</a> on the newly installed system as well. After the installation of the package, regenerate the initramfs while chrooted
+</p>
+<pre> # mkinitcpio -p linux
+</pre>
+</div>
+<ul><li> Once inside the chrooted enviroment, install the <a href="https://www.archlinux.org/packages/?name=grub" target="_blank">grub</a> and  <a href="https://www.archlinux.org/packages/?name=efibootmgr" target="_blank">efibootmgr</a> packages. The following steps install the GRUB UEFI application to <code>/boot/EFI/arch/System/Library/CoreServices/boot.efi</code> and install its modules to <code>/boot/grub/x86_64-efi</code>.</li></ul>
+<pre> # grub-install --target=x86_64-efi --efi-directory=/boot
+</pre>
+<p>After that, remember to create a standard configuration file:
+</p>
+<pre> # grub-mkconfig -o /boot/grub/grub.cfg
+</pre>
+<p>As you can see, the directory structure of the <code>boot.efi</code> is not correct, as the <code>/System/Library/CoreServices</code> directory is not supposed to be a subdirectory of the <code>/boot/EFI/</code> folder. For this reason, we need to relocate the <code>boot.efi</code> stub in a location the MacBook bootloader is able to recognize:
+</p>
+<pre> # mv /boot/EFI/arch/System/ /boot/
+ # rm -r /boot/EFI/
+</pre>
+<p>Also, create a dummy <code>mach_kernel</code> file
+</p>
+<pre> # touch /boot/mach_kernel
+</pre>
+<p>After that, you need to create the following file
+</p>
+<pre># nano /boot/System/Library/CoreServices/SystemVersion.plist</pre>
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ &lt;plist version="1.0"&gt;
+ &lt;dict&gt;
+        &lt;key&gt;ProductBuildVersion&lt;/key&gt;
+        &lt;string&gt;&lt;/string&gt;
+        &lt;key&gt;ProductName&lt;/key&gt;
+        &lt;string&gt;Linux&lt;/string&gt;
+        &lt;key&gt;ProductVersion&lt;/key&gt;
+        &lt;string&gt;Arch Linux&lt;/string&gt;
+ &lt;/dict&gt;
+ &lt;/plist&gt;</pre>
+<p>At the next reboot, the Apple Boot Manager, shown when holding down the option key when booting the MacBook, should display Arch Linux as a possible boot option. Selecting that option will boot GRUB.
+</p><p>Done! GRUB can now be selected on the standard MacBook bootloader and you can boot into your newly installed Arch Linux.
+</p>
+<div><strong> Tip: </strong> After the installation, it is optionally possible to set a custom icon that will be displayed in the MacBook boot loader. In order to do that, you need to install the <a href="https://www.archlinux.org/packages/?name=wget" target="_blank">wget</a>, <a href="https://www.archlinux.org/packages/?name=librsvg" target="_blank">librsvg</a> and <a href="https://aur.archlinux.org/packages/libicns/" target="_blank">libicns</a><sup><small>AUR</small></sup> packages. After that, just follow the following commands:
+<pre> $ wget -O /tmp/archlinux.svg <a href="https://www.archlinux.org/logos/archlinux-icon-crystal-64.svg" target="_blank">https://www.archlinux.org/logos/archlinux-icon-crystal-64.svg</a>
+ $ rsvg-convert -w 128 -h 128 -o /tmp/archlogo.png /tmp/archlinux.svg
+ $ sudo png2icns /boot/.VolumeIcon.icns /tmp/archlogo.png
+ $ rm /tmp/archlogo.png
+ $ rm /tmp/archlinux.svg
+</pre>
+<p>Obviously, you can replace the Arch logo with any other icon you like.
+</p>
+</div>
+<h3>Other methods</h3>
+<div>
+<p><b>This article or section is out of date.</b></p>
+<div><b>Reason:</b>  Section that describes bootloader setup for other setups should be revised and re-structured into more readable way (Discuss in <a href="https://wiki.archlinux.org/index.php/Talk:MacBook" target="_blank">Talk:MacBook#</a>)</div>
+</div>
+<div><strong> Tip: </strong>rEFIt is a popular bootloader for EFI-firmware computers (including Macs). It can be installed at any time during the installation. For instructions, please see <a href="https://wiki.archlinux.org/index.php/MacBook#rEFIt" target="_blank">#rEFIt</a>. </div>
+<p>If you are going for an Arch Linux-only setup, installing the bootloader is no different than on any other machine: Install <a href="https://wiki.archlinux.org/index.php/Systemd-boot" title="Systemd-boot" target="_blank">systemd-boot</a>, <a href="https://wiki.archlinux.org/index.php/REFInd" title="REFInd" target="_blank">rEFInd</a> or other bootloader of your choice.
+</p><p>If, on the other hand, you are dual/triple booting, then read on.
+</p><h3>Installing GRUB to EFI partition directly</h3>
+<ul><li> If you would like to use GRUB as your main bootloader and use the "boot while holding the Alt/Option key" method to go back to OS X rather than using alternatives such as rEFIt (<a href="http://refit.sourceforge.net/" target="_blank">http://refit.sourceforge.net/</a>, mentioned previously in <a href="https://wiki.archlinux.org/index.php/MacBook#BIOS-compatibility" target="_blank">#BIOS-compatibility</a><sup>[<a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_section_links" title="ArchWiki:Requests" target="_blank">broken link</a>: invalid section]</sup> and <a href="https://wiki.archlinux.org/index.php/MacBook#OS_X.2C_Windows_XP.2C_and_Arch_Linux_triple_boot" target="_blank">#OS X, Windows XP, and Arch Linux triple boot</a>) then you must install <a href="https://www.archlinux.org/packages/?name=grub" target="_blank">grub</a> to your Mac's <b>already-existing</b> EFI partition (see below). </li></ul>
+<div><strong> Note: </strong> These instructions are known to work on a MacBook Pro (Early 2011). Please read the procedure carefully <b>as well as the details following it</b>.</div>
+<div><strong> Note: </strong> With a new MacBook Pro (Mid 2014), this procedure worked only after installing the
+<a href="https://www.archlinux.org/packages/?name=efibootmgr" target="_blank">efibootmgr</a> package.</div>
+<p><b>Procedure</b>:
+</p>
+<ul><li> Install <a href="https://www.archlinux.org/packages/?name=grub" target="_blank">grub</a></li></ul>
+<ul><li> Make a directory named <code>efi</code> in <code>/boot</code> </li></ul>
+<ul><li> Mount the <b>already-existing</b> EFI partition on your Mac to this <code>/boot/efi</code> directory</li></ul>
+<ul><li> Install GRUB to this directory</li></ul>
+<ul><li> Make a directory named <code> locale</code> in <code> /boot/grub</code></li></ul>
+<ul><li> Copy <code> grub.mo</code> from <code> /usr/share/locale/en\@quot/LC_MESSAGES/</code> to <code> /boot/grub/locale</code> </li></ul>
+<ul><li> Generate a configuration for GRUB</li></ul>
+<ul><li> Done! GRUB will now start on reboot and you can boot into your newly installed Arch Linux.</li></ul>
+<ul><li> Remember to hold ALT/Option key <b>while</b> starting your computer if you want to boot back into OS X.</li></ul>
+<p><b>Details (quoted from <a href="https://wiki.archlinux.org/index.php/GRUB_EFI_Examples#M5A97" title="GRUB EFI Examples" target="_blank">GRUB EFI Examples#M5A97</a>):</b>
+</p><p>Finish the standard Arch install procedures, making sure that you install <a href="https://www.archlinux.org/packages/?name=grub" target="_blank">grub</a> and partition your boot hard disk as GPT.
+</p><p>From <a href="https://wiki.archlinux.org/index.php/GRUB#Install_to_UEFI_system_partition" title="GRUB" target="_blank">GRUB#Install_to_UEFI_system_partition</a><sup>[<a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_section_links" title="ArchWiki:Requests" target="_blank">broken link</a>: invalid section]</sup>:
+</p><p>The UEFI system partition will need to be mounted at <code>/boot/efi/</code> for the GRUB install script to detect it:
+</p>
+<pre># mkdir -p /boot/efi
+# mount -t vfat /dev/sdXY /boot/efi
+</pre>
+<p>Where X is your boot hard disk and Y is the efi partition you created earlier.
+</p><p>Install GRUB UEFI application to  and its modules to <code>/boot/grub/x86_64-efi</code> using:
+</p>
+<pre># modprobe dm-mod
+# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch_grub --recheck --debug
+# mkdir -p /boot/grub/locale
+# cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
+</pre>
+<p>Generate a configuration for GRUB
+</p>
+<pre># grub-mkconfig -o /boot/grub/grub.cfg
+</pre>
+<h3>Using blessing</h3>
+<p>It is possible to boot directly from GRUB in EFI mode without using rEFIt through what is known as "blessing" after placing GRUB on a <b>separate partition</b>.  These instructions are known to work on a MacBook7,1. It is advisable to host GRUB on either a FAT32 or HFS+ partition, but ext2 or ext3 may also work. GRUB's appleloader command does not currently work with the 7,1, but support can be added with the patch available <a href="https://savannah.gnu.org/bugs/index.php?33185" target="_blank">here</a>.
+</p><p>After the GRUB install is in the desired location, the firmware needs to be instructed to boot from that location.  This can be done from either an existing OS X install or an OS X install disk.  The following command assumes that the GRUB install is in <code>/efi/grub</code> on an existing OS X partition:
+</p>
+<pre> # bless --folder /efi/grub --file /efi/grub/grub.efi
+</pre>
+<h3>Compilation</h3>
+<p>Some models may need EFI_ARCH set to i386.
+</p>
+<pre> bzr branch --revision -2 bzr://bzr.savannah.gnu.org/grub/trunk/grub grub
+ cd grub
+ ./autogen.sh
+ patch -p1 &lt; appleloader_macbook_7_1.patch
+ export EFI_ARCH=x86_64
+ ./configure --with-platform=efi --target=${EFI_ARCH} --program-prefix=""
+ make
+ cd grub-core
+ ../grub-mkimage -O ${EFI_ARCH}-efi -d . -o grub.efi -p "" part_gpt part_msdos ntfs ntfscomp hfsplus fat ext2 normal chain boot configfile linux multiboot
+ cp grub.efi *.mod *.lst yourinstalllocation
+</pre>
+<h2>Installation</h2>
+ <div><strong> Note: </strong>This section is only required if you want to have OS X installed along with Arch Linux. If not, follow the steps in the official install guide, then skip to <a href="https://wiki.archlinux.org/index.php/MacBook#Post-installation" target="_blank">#Post-installation</a>.</div>
+<ul><li> Boot from the Arch Linux install CD, from the latest <a href="https://wiki.archlinux.org/index.php/Archboot" title="Archboot" target="_blank">Archboot</a> iso (unofficial), or from a <a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media#Using_manual_formatting" title="USB flash installation media" target="_blank">manually created</a> bootable USB drive.</li></ul>
+<div><strong> Note: </strong>
+<ul><li> On a MacBookPro7,1, I had an error booting the installation media Version 2012.12.01: "unable to handle kernel NULL pointer dereference at 0000000000000010" during pacpi_set_dmamode. To fix this problem, boot with the option: acpi=off. After chrooting, add MODULES="ata_generic" into /etc/mkinitcpio.conf and execute mkinitcpio -p linux, see: <a href="https://wiki.archlinux.org/index.php/Installation_guide#Configure_the_system" title="Installation guide" target="_blank">Installation Guide, 9 Configure the system</a>.</li>
+<li> Some MacBook users report strange keyboard output such as long delays and character doubling. To fix this problem, boot with the following options: arch noapic irqpoll acpi=force</li></ul></div>
+<ul><li> Proceed through the installation as described in the <a href="https://wiki.archlinux.org/index.php/Installation_guide" title="Installation guide" target="_blank">Installation guide</a> <b>except</b> in the following areas:
+<ul><li> Skip the <a href="https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disks" title="Installation guide" target="_blank">partition the disks</a> stage, do only the <a href="https://wiki.archlinux.org/index.php/Installation_guide#Format_the_partitions" title="Installation guide" target="_blank">partition formatting</a> and <a href="https://wiki.archlinux.org/index.php/Installation_guide#Mount_the_partitions" title="Installation guide" target="_blank">mounting</a> steps, taking care to assign the correct partitions. Partitions have already been created if you followed <a href="https://wiki.archlinux.org/index.php/MacBook#Partitions" target="_blank">#Partitions</a></li>
+<li> <b>(for booting with EFI</b>) After the <a href="https://wiki.archlinux.org/index.php/Installation_guide#Boot_loader" title="Installation guide" target="_blank">install boot loader</a> stage, exit the installer and install <a href="https://wiki.archlinux.org/index.php/GRUB" title="GRUB" target="_blank">GRUB</a>.</li>
+<li> <b>(for booting with BIOS-compatibility)</b> In the <a href="https://wiki.archlinux.org/index.php/Installation_guide#Boot_loader" title="Installation guide" target="_blank">install boot loader</a> stage, edit the menu.lst file and add <b>reboot=pci</b> to the end of the <b>kernel</b> lines, for example: <pre>kernel /vmlinuz26 root=/dev/sda5 ro reboot=pci</pre> This will allow your MacBook to reboot correctly from Arch.</li>
+<li> <b>(for booting with BIOS-compatibility)</b> Also in the <a href="https://wiki.archlinux.org/index.php/Installation_guide#Install_a_boot_loader" title="Installation guide" target="_blank">install boot loader</a><sup>[<a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_section_links" title="ArchWiki:Requests" target="_blank">broken link</a>: invalid section]</sup> stage, install GRUB on whatever partition that <code>/boot</code> is on. <div><strong> Warning: </strong>Do not install GRUB onto <i>/dev/sda</i>&nbsp;!!!  Doing so is likely to lead to an unstable post-environment.</div></li>
+<li> In the <a href="https://wiki.archlinux.org/index.php/Installation_guide#Configure_the_system" title="Installation guide" target="_blank">configure system</a> stage, edit /etc/mkinitcpio.conf and ensure the <b>keyboard</b> hook is in the <b>HOOKS</b> line somewhere after the <b>autodetect</b> hook.  This will load the drivers for your keyboard in case you need to use it before Arch boots (e.g. entering a <a href="https://wiki.archlinux.org/index.php/LUKS" title="LUKS" target="_blank">LUKS</a> password or using the troubleshooting shell).</li></ul></li></ul>
+<ul><li> When the install process is complete, reboot your computer.</li></ul>
+<ul><li> If using optical media, hold down the eject key as your MacBook starts, this should eject the Arch Linux install disk.</li></ul>
+<ul><li> If dual-booting OS X and Arch Linux, hold down the alt (option) key while the system boots to use the Mac bootloader to select which OS to boot.</li></ul>
+<h2>Post-installation</h2>
+<div>
+<p><b>This article or section needs language, wiki syntax or style improvements.</b></p>
+<div><b>Reason:</b> Duplicated information, does not comply with <a href="https://wiki.archlinux.org/index.php/Help:Style" title="Help:Style" target="_blank">Help:Style</a>. (Discuss in <a href="https://wiki.archlinux.org/index.php/Talk:MacBook" target="_blank">Talk:MacBook#</a>)</div>
+</div>
+<p>See <a href="https://wiki.archlinux.org/index.php/General_recommendations" title="General recommendations" target="_blank">General recommendations</a> for system management directions and post-installation tutorials like setting up a graphical user interface, sound or a touchpad.
+</p>
+<h4>Video</h4>
+<p>Different MacBook models have different graphic cards.
+To see which graphics card you have type:
+</p>
+<pre>$ lspci | grep VGA
+</pre>
+<ul><li> If it returns a string containing <b>intel</b>, read <a href="https://wiki.archlinux.org/index.php/Intel_graphics" title="Intel graphics" target="_blank">Intel graphics</a>.</li></ul>
+<ul><li> If it returns <b>nVidia</b>, read <a href="https://wiki.archlinux.org/index.php/NVIDIA" title="NVIDIA" target="_blank">NVIDIA</a>.</li></ul>
+<ul><li> Otherwise if it returns <b>ATI</b> or <b>AMD</b>, read <a href="https://wiki.archlinux.org/index.php/ATI" title="ATI" target="_blank">ATI</a>.</li></ul>
+<h5>NVIDIA note</h5>
+<div><strong> Tip: </strong>If you have installed OS in EFI mode and NVIDIA binary drivers are working only in BIOS mode (e.g. you get black screen on EFI boot), try this approach: <a href="http://askubuntu.com/a/613573/492886" target="_blank">http://askubuntu.com/a/613573/492886</a> </div>
+<p>For MacBooks with NVIDIA graphics, for the backlight to work properly you may need the <a href="https://aur.archlinux.org/packages/nvidia-bl/" target="_blank">nvidia-bl</a><sup><small>AUR</small></sup> package.
+</p>
+<div><strong> Tip: </strong>
+<ul><li> If backlight control does not work after installing nvidia-bl, you should <a href="https://wiki.archlinux.org/index.php/Blacklist" title="Blacklist" target="_blank">blacklist</a> apple_bl kernel module.</li>
+<li> If backlight control does not work even this way, try setting module parameters, e.g. <code>options nvidiabl screen_type=3 min=0 max=44000</code> in <code>/etc/modprobe.conf</code> in case of MacBook Air 3.2</li>
+<li> Alternatively, you can choose to use the <a href="https://aur.archlinux.org/packages/pommed-light/" target="_blank">pommed-light</a><sup><small>AUR</small></sup> package. If you do so, you may wish to change the step settings in <code>/etc/pommed.conf.mactel</code> to something around 5000-10000 depending on how many levels of brightness you desire.  The max brightness is around 80000, so take that into account.</li></ul></div>
+<h5>MacBookPro5,5, NVIDIA and secondary display</h5>
+<p>As of January 1 2011, the latest NVIDIA drivers (290.10) might not work properly when a secondary display is used (tested with TwinView), NVIDIA's current <a href="http://www.nvnews.net/vbulletin/showthread.php?t=122606" target="_blank">long-live supported</a> 275xx drivers seem to work fine. Install <a href="https://aur.archlinux.org/packages/nvidia-275xx/" target="_blank">nvidia-275xx</a><sup><small>AUR</small></sup><sup>[<a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links" title="ArchWiki:Requests" target="_blank">broken link</a>: archived in <a href="https://github.com/felixonmars/aur3-mirror/tree/master/nvidia-275xx" target="_blank">aur-mirror</a>]</sup> and <a href="https://aur.archlinux.org/packages/nvidia-utils-275xx/" target="_blank">nvidia-utils-275xx</a><sup><small>AUR</small></sup><sup>[<a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links" title="ArchWiki:Requests" target="_blank">broken link</a>: archived in <a href="https://github.com/felixonmars/aur3-mirror/tree/master/nvidia-utils-275xx" target="_blank">aur-mirror</a>]</sup>, and possibly <a href="https://aur.archlinux.org/packages/lib32-nvidia-utils-275xx/" target="_blank">lib32-nvidia-utils-275xx</a><sup><small>AUR</small></sup><sup>[<a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links" title="ArchWiki:Requests" target="_blank">broken link</a>: archived in <a href="https://github.com/felixonmars/aur3-mirror/tree/master/lib32-nvidia-utils-275xx" target="_blank">aur-mirror</a>]</sup> if you are on x86_64 system and want 32-bits support.
+</p><p>MacBookPro5,5 has an NVIDIA 9400m graphics card. This problem might apply to other devices as well.
+</p>
+<h4>Touchpad</h4>
+<p>The touchpad should have basic functionality by default. A true multitouch driver which behaves very similarly to native OS X is included in the <a href="https://aur.archlinux.org/packages/xf86-input-multitouch-git/" target="_blank">xf86-input-multitouch-git</a><sup><small>AUR</small></sup><sup>[<a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links" title="ArchWiki:Requests" target="_blank">broken link</a>: archived in <a href="https://github.com/felixonmars/aur3-mirror/tree/master/xf86-input-multitouch-git" target="_blank">aur-mirror</a>]</sup> package. It supports 1, 2 and 3 finger gestures, including differentiation between horizontal and vertical 3 finger swipe. Additional details are available at <a href="http://bitmath.org/code/multitouch/" target="_blank">the driver's project page</a>.
+</p><p>xf86-input-multitouch-git does not support any sort of configuration without editing the driver's source.  Some users are also experiencing issues with false clicks from palm touches.  There is now a much more configurable fork available as <a href="https://aur.archlinux.org/packages/xf86-input-mtrack-git/" target="_blank">xf86-input-mtrack-git</a><sup><small>AUR</small></sup>.  Configuration options are documented in the <a href="https://github.com/BlueDragonX/xf86-input-mtrack" target="_blank">readme</a>.
+</p><p>The following mtrack options work well on a MacBook7,1:
+</p>
+<pre> Option "Thumbsize" "50"
+ Option "ScrollDistance" "100"
+</pre>
+<p>Probably you need also to add:
+</p>
+<pre> MatchDevicePath "/dev/input/event10"
+</pre>
+<p>To disable tap-to-click (that is, to press down to click) by default, add the following to your mtrack configuration section
+</p>
+<pre>   Option          "TapButton1" "0"
+   Option          "TapButton2" "0"
+   Option          "TapButton3" "0"
+</pre>
+<p><b>Natural scrolling:</b> To configure natural two finger scrolling similar to <a href="http://www.apple.com/au/osx/what-is/gestures.html#gallery-gestures-scroll" target="_blank">OS X</a>, refer to <a href="https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Natural_scrolling" title="Touchpad Synaptics" target="_blank">Touchpad Synaptics#Natural scrolling</a>. If you are using GNOME, it will override these settings - in this case refer to <a href="https://wiki.archlinux.org/index.php/GNOME#Natural_scrolling_touchpad" title="GNOME" target="_blank">GNOME#Natural_scrolling_touchpad</a><sup>[<a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_section_links" title="ArchWiki:Requests" target="_blank">broken link</a>: invalid section]</sup>.
+</p><p>If you are using <a href="https://aur.archlinux.org/packages/xf86-input-mtrack-git/" target="_blank">xf86-input-mtrack-git</a><sup><small>AUR</small></sup>, you can simply swap the scroll up and scroll down buttons (along with the scroll left and scroll right):
+</p>
+<pre>/etc/X11/xorg.conf.d/10-mtrack.conf</pre>
+<pre>  ...
+  Option "ScrollUpButton" "5"
+  Option "ScrollDownButton" "4"
+  Option "ScrollLeftButton" "7"
+  Option "ScrollRightButton" "6"
+  ...</pre>
+<p>
+<b>Special Note About Older Macbook Models (confirmed on MacBook2,1):</b> On older Macbook models (pre-multitouch), the touchpad will not function properly until you install the xf86-input-synaptics package. Please see <a href="https://wiki.archlinux.org/index.php/Touchpad_Synaptics" title="Touchpad Synaptics" target="_blank">Touchpad Synaptics</a> for more information on installing and configuring this package.
+</p><p><b>Note on MacBookPro5,5:</b> I found it is much simpler to use the <a href="https://www.archlinux.org/packages/?name=xf86-input-synaptics" target="_blank">xf86-input-synaptics</a> in Extra. Although it does not have much function as 3 finger swipe, this driver provides faster response. <a href="https://www.archlinux.org/packages/?name=gpointing-device-settings" target="_blank">gpointing-device-settings</a> also provides a simple GUI config. Below is a Xorg config file /etc/X11/xorg.conf.d/60-synaptics.conf for reference only.
+</p>
+<pre> Section "InputClass"
+       Identifier "touchpad catchall"
+       Driver "synaptics"
+       MatchIsTouchpad "on"
+       MatchDevicePath "/dev/input/event*"
+       Option "SHMConfig" "on"
+       Option "TapButton1" "1"
+       Option "TapButton2" "3"
+       Option "TapButton3" "2"
+       Option "PalmDetect" "on"
+       Option "VertEdgeScroll" "off"
+       Option "HorizEdgeScroll" "off"
+       Option "CornerCoasting" "off"
+       Option "EdgeMotionUseAlways" "off"
+       Option "AreaLeftEdge" "10"
+       Option "AreaRightEdge" "1270"
+ EndSection
+</pre>
+<p><b>For some users, the two-finger right-click may not work correctly and trackpad may also become less responsive after these settings. For me, removing the 'AreaLeftEdge' and 'AreaRightEdge', solved that problem.</b>
+<b>OS X like MultiTouch Gestures</b> <i>currently broken due to newer synaptic drivers!</i> For users looking to add more of OS X's multitouch gestures to Arch, <a href="https://github.com/iberianpig/xSwipe" target="_blank">xSwipe</a> is a highly customisable, light weight perl script, which does just that. Once installed and configured (see xSwipe wiki on Github) I would recommend adding xSwipe as a <a href="https://wiki.archlinux.org/index.php/Autostarting" title="Autostarting" target="_blank">start up item</a>.
+</p>
+<h4>Keyboard</h4>
+<p>MacBook keyboards work by default. For swaping fn keys with Fx keys see <a href="https://wiki.archlinux.org/index.php/Apple_Keyboard" title="Apple Keyboard" target="_blank">Apple Keyboard</a>.
+</p><p>To enable it you can map with right application like <b>xbindkeys</b> or through DE preferences; but another very good way, that we recommend, is to install the <a href="https://aur.archlinux.org/packages/pommed/" target="_blank">pommed</a><sup><small>AUR</small></sup><sup>[<a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links" title="ArchWiki:Requests" target="_blank">broken link</a>: archived in <a href="https://github.com/felixonmars/aur3-mirror/tree/master/pommed" target="_blank">aur-mirror</a>]</sup> package.
+</p><p>Edit the <code>/etc/pommed.conf</code> according to your hardware on MacBook, building it from <code>/etc/pommed.conf.mac</code> or <code>/etc/pommed.conf.ppc</code> example files.
+</p><p>Note that you can also run it without a configuration file, the defaults may work for you. Then <a href="https://wiki.archlinux.org/index.php/Enable" title="Enable" target="_blank">enable</a> and start <code>pommed.service</code>.
+</p>
+<div><strong> Tip: </strong>if you are using Gnome or KDE you can easily configure <i>3rd level functionality</i>, <i>multimedia key</i>, etc. in Keyboard Preferences.</div>
+<div><strong> Note: </strong>See the <a href="https://wiki.archlinux.org/index.php/Xorg_input_hotplugging" title="Xorg input hotplugging" target="_blank">Xorg input hotplugging</a> page for other configuration information.</div>
+<h5>Keyboard Backlight</h5>
+<p>The keyboard backlight is controlled by <code>/sys/class/leds/smc::kbd_backlight</code>.  Write the desired value to <code>brightness</code> in that directory.
+</p><p>You may also use <a href="https://aur.archlinux.org/packages/kbdlight/" target="_blank">kbdlight</a><sup><small>AUR</small></sup> to control keyboard backlight though scripts or by running it via <a href="https://wiki.archlinux.org/index.php/Sxhkd" title="Sxhkd" target="_blank">sxhkd</a>. It has the advantage of allowing keyboard light-level changes without being root.
+</p>
+<h6>NVIDIA note</h6>
+<p>If the brightness does not function correctly through pommed, make sure you have installed the <a href="https://aur.archlinux.org/packages/nvidia-bl/" target="_blank">nvidia-bl</a><sup><small>AUR</small></sup> package and insert
+</p>
+<pre>find . -name "*" -exec sed -i 's/mbp_backlight/nvidia_backlight/' '{}' \;
+</pre>
+<p>into the second line of the pommed PKGBUILD build() function and remake the package. From <a href="https://bbs.archlinux.org/viewtopic.php?id=105091" target="_blank">this forum post</a>.
+</p><p>Another possible solution is to modify the pommed PKGBUILD build():
+</p>
+<pre>find . -name "*" -exec sed -i 's/nvidia_backlight/apple_backlight/' '{}' \;
+</pre>
+<p>If the previous does not work try the following,
+</p><p>run nvidia-settings, edit  the file '/etc/X11/xorg.conf' and add this line into the Device section:
+</p>
+<pre>Option "RegistryDwords" "EnableBrightnessControl=1"
+</pre>
+<p>Save and reboot and check backlight buttons work.
+More information available at <a href="https://help.ubuntu.com/community/MacBookPro5-5/Precise#LCD" target="_blank">Ubuntu MacBookPro5,5</a>
+</p>
+<h3>Wi-Fi</h3>
+<p>Different MacBook models have different wireless cards.
+</p><p>You can easily check what card do your MacBook have by:
+</p>
+<pre># lspci | grep Network
+</pre>
+<ul><li> If you have an Atheros card, all should work out-of-the-box.</li></ul>
+<ul><li> If you have a Broadcom card, follow the <a href="https://wiki.archlinux.org/index.php/Broadcom_BCM4312" title="Broadcom BCM4312" target="_blank">Broadcom BCM4312</a> page.</li></ul>
+<ul><li> 5.0 and 6.0 generation MacBooks may have a BCM43xx, follow the instructions for the broadcom-wl driver on the <a href="https://wiki.archlinux.org/index.php/Broadcom_wireless" title="Broadcom wireless" target="_blank">Broadcom wireless</a> page. The interfaces can swap during reboot so its best to define them in a udev rule (instructions on the <a href="https://wiki.archlinux.org/index.php/Broadcom_wireless" title="Broadcom wireless" target="_blank">Broadcom wireless</a> page).</li></ul>
+<ul><li> 8.1 generation MacBooks have BCM4331, for which support is not present in either Linux (3.0 and 3.1) or the proprietary drivers by Broadcom. There is however preliminary support for it in Linux 3.2. To run the drivers on earlier kernels, you will need to use <a href="https://backports.wiki.kernel.org/index.php/Documentation/compat-drivers" target="_blank">compat-drivers</a></li></ul>
+<div><strong> Note: </strong>If your connection frequently drops, you may have to turn off Wi-Fi power management. If you are running <a href="https://wiki.archlinux.org/index.php/Pm-utils" title="Pm-utils" target="_blank">pm-utils</a>, you may override wireless power management by creating an executable file <code>/etc/pm/wireless</code> with the lines:
+<pre>#!/bin/sh
+iwconfig wlp2s0 power off
+</pre>
+</div>
+<h3>Power management</h3>
+<p><a href="https://wiki.archlinux.org/index.php/Powerdown" title="Powerdown" target="_blank">Powerdown</a> is a very simple to set up set of scripts what will maximize your battery duration. A MacBook Air 2013 with powerdown provides about 11 hours of light usage with just powerdown installed.
+All the usual <a href="https://wiki.archlinux.org/index.php/Power_management" title="Power management" target="_blank">power management</a> recomendations apply as well.
+</p><p>Adding 'acpi_osi=' to kernel parameters reportedly (as well as for me) brings the battery life of a Mac book Air 2013 from 5 hours to 11-12 hours. See <a href="https://bbs.archlinux.org/viewtopic.php?pid=1530283#p1530283" target="_blank">this forum post</a> for more information.
+</p>
+<h4>Suspend and Hibernate</h4>
+<p>Suspending (suspend to ram) and hibernating (suspend to disk) work fine out of the box:
+</p>
+<pre>   systemctl suspend
+</pre>
+<p>Issues were reported where the machine would "suspend immediately after resume" in certain conditions when suspending by closing the lid. This was solved by de-selecting the option "event_when_closed_battery" in gconf-editor → gnome-power-manager → actions).
+</p><p>See <a href="https://wiki.archlinux.org/index.php/Suspend_and_hibernate" title="Suspend and hibernate" target="_blank">Suspend and hibernate</a> for details on how to configure hibernation. Noticably, you'll need a swap partition or file (see the mentioned article for further instructions).
+</p><p>If after suspend laptop is woken up after few seconds, may help to disable all stuff in /proc/acpi/wakeup, exclude LID0:
+</p>
+<pre># echo XHC1 &gt; /proc/acpi/wakeup
+$ cat /proc/acpi/wakeup
+Device  S-state   Status   Sysfs node
+P0P2      S3    *disabled
+EC    S3    *disabled
+HDEF      S3    *disabled  pci:0000:00:1b.0
+RP01      S3    *disabled  pci:0000:00:1c.0
+RP02      S3    *disabled  pci:0000:00:1c.1
+RP03      S3    *disabled  pci:0000:00:1c.2
+ARPT      S4    *disabled  pci:0000:03:00.0
+RP05      S3    *disabled  pci:0000:00:1c.4
+RP06      S3    *disabled  pci:0000:00:1c.5
+SPIT      S3    *disabled
+XHC1      S3    *disabled  pci:0000:00:14.0
+ADP1      S3    *disabled
+LID0      S3    *enabled
+</pre>
+<p>And for permanent disabling:
+</p>
+<pre>$ cat /etc/udev/rules.d/90-xhc_sleep.rules
+
+# disable wake from S3 on XHC1
+SUBSYSTEM=="pci", KERNEL=="0000:00:14.0", ATTR{power/wakeup}="disabled"
+</pre>
+<p>If this does not work, check that ARPT is disabled, and add a corresponding rule to udev, like this:
+</p>
+<pre>SUBSYSTEM=="pci", KERNEL=="0000:03:00.0", ATTR{power/wakeup}="disabled"
+</pre>
+<p>If this still does not work, try disabling LID0.
+This way suspending via lid-closing should be made impossible, so you might want to follow the instructions in <a href="https://bbs.archlinux.org/viewtopic.php?pid=1556046#p1556046" target="_blank">this forum post</a> to make suspending via both lid-closing and systemd possible, by using systemd services.
+</p>
+<h3>Light sensor</h3>
+<p>The values can be read from:
+</p>
+<pre> /sys/devices/platform/applesmc.768/light
+</pre>
+<p>A "cat" on this path returns two-tuples like (4,0). The below referenced lighter script ignores the second value - which always seems to be 0 - and uses the first number as measured environment lighting brightness value.
+</p><p>If you want to use the built in light sensor to automatically adjust screen and keyboard backlight brightness check out
+<b>Lighter</b> <a href="https://github.com/Janhouse/lighter" target="_blank">[2]</a> (simple perl script, easy to fine-tune) and <b>Lightum</b> <a href="https://github.com/poliva/lightum" target="_blank">[3]</a> (Requires Gnome or KDE but is older and more complete than Lighter).
+</p>
+<h3>Sound</h3>
+<div><strong> Tip: </strong> If using <a href="https://wiki.archlinux.org/index.php/ALSA" title="ALSA" target="_blank">ALSA</a>, the internal speaker might not be disabled when using the headphone jack. To solve this, enable "Auto-mute" using <code>alsamixer</code></div>
+<p>First of all follow <a href="https://wiki.archlinux.org/index.php/ALSA" title="ALSA" target="_blank">ALSA</a> wiki page, then if something does not work correctly, continue reading this part.
+</p><p>Edit your <code>/etc/modprobe.d/50-sound.conf</code> or <code>/etc/modprobe.d/modprobe.conf</code> appending this line:
+</p>
+<pre>options snd_hda_intel model=intel-mac-auto
+</pre>
+<p>This should automatically specify the codec in your MacBook. If you have a MacBookPro12,1, you might need
+</p>
+<pre> options snd-hda-intel index=1,0
+</pre>
+<p>instead. Alternatively, for MacBookPro5,X, you can use:
+</p>
+<pre>options snd_hda_intel model=mb5
+</pre>
+<p>(note that the jack output is controlled with "HP").
+</p><p>If you have an iMac8,1, you should instead use
+</p>
+<pre>options snd-hda-intel model=mbp3 position_fix=2
+</pre>
+<p>You can try to specify other options, that depend on your hardware. All other possible settings are listed in Kernel Documentation, avaible online:
+</p>
+
+<p>Then, reboot.
+</p>
+<h3>Bluetooth</h3>
+<p>Bluetooth should work out-of-the box. See the article on <a href="https://wiki.archlinux.org/index.php/Bluetooth" title="Bluetooth" target="_blank">Bluetooth</a> to install and configure all software needed.
+</p>
+<h3>Webcam</h3>
+<h4>iSight</h4>
+<div><strong> Note: </strong>Linux kernel from 2.6.26 includes the Linux UVC driver natively. <b>MBP 6,2+ (Kernel ~2.6.37+) iSight works out of the box</b> without the need to use firmware from OS X. Only use <code>isight-firmware-tools</code> if it doesn't work normally.</div>
+<p>iSight webcams on MacBooks or pre 6,2 MacBook Pros (6,2 came out around 2010) require the Apple's proprietary firmware that cannot be redistributed. It must be extracted from OS X and loaded onto Arch.
+</p><p>You will need to install <a href="https://aur.archlinux.org/packages/isight-firmware-tools/" target="_blank">isight-firmware-tools</a><sup><small>AUR</small></sup> to extract the firmware. This package also includes a udev rule and ELF binary that are necessary, even once you have extracted the firmware file into <code>/lib/firmware/isight.fw</code>, for the file to be loaded every time you boot your computer (namely <code>/etc/udev/rules.d/isight.rules</code> which uses <code>/usr/lib/udev/ift-load</code>).
+</p><p>Instructions:
+</p><p>First you need to get the firmware out of a particular file located on your OS X install. It is located in <code>/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBVideoSupport.kext/Contents/MacOS/AppleUSBVideoSupport</code>.
+</p>
+<div><strong> Tip: </strong> The <code>AppleUSBVideoSupport</code> file from a OS X 10.6 (Snow Leopard) installation may not work properly. If possible, use the file from OS X 10.5 or earlier.</div>
+<p>To mount the OS X drive if multi-booting:
+</p>
+<pre># sudo mkdir /media/OSX
+# sudo mount -t hfsplus /dev/sda2 /media/OSX
+</pre>
+<p>Then, install the <a href="https://aur.archlinux.org/packages/isight-firmware-tools/" target="_blank">isight-firmware-tools</a><sup><small>AUR</small></sup> package.
+</p><p>Locate the <code>AppleUSBVideoSupport</code> file in the OS X directory listed above. Either copy it over to your Arch system (Any OS X installation should do, such as an iMac, not just one specific to your system) or, if multi-booting, mount the OS X drive and navigate to the directory. (On 10.7 (Lion) the directory is <code>/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBVideoSupport.kext/Contents/MacOS</code>.) In that directory you can go ahead and extract the driver:
+</p>
+<pre># ift-extract --apple-driver AppleUSBVideoSupport
+</pre>
+<p>When it's done, check that the firmware has been found:
+</p>
+<pre># ls /lib/firmware/isight.fw
+</pre>
+<p>Once successful, completely <b>SHUTDOWN</b> your Mac and start it back up again (to clear the hardware state of the webcam). Do <i>not</i> reboot.
+</p><p>It should be automatically loaded at boot; if it isn't you can load the <b>uvcvideo</b> module <a href="https://wiki.archlinux.org/index.php/Kernel_modules" title="Kernel modules" target="_blank">manually or load it at boot</a>.
+</p><p>You can use many applications to test the webcam:
+</p>
+<ul><li> MPlayer</li></ul>
+<pre># mplayer tv:// -tv driver=v4l2:width=320:height=240:device=/dev/video0 -fps 30
+</pre>
+<ul><li> Cheese</li>
+<li> Skype</li>
+<li> Ekiga</li></ul>
+<p>A simple solution to take snapshots is:
+</p>
+<pre># mplayer tv:// -vf screenshot
+</pre>
+<p>and the pressing the s key to take a snapshot. Files are of the format <code>shot\d\d\d\d.png</code> and are reported in the standard output.
+</p>
+<h4>Facetime HD</h4>
+<p>According to Apple, all recent MacBook models contain a Facetime HD camera instead of the iSight. The following list is an example:
+</p>
+<ul><li> iMac (21,5" mid 2011)</li>
+<li> iMac (27" mid 2011)</li>
+<li> MacBook Air (mid 2011)</li>
+<li> MacBook Pro (15" early 2011)</li>
+<li> MacBook Pro (17" early 2011)</li>
+<li> MacBook Pro (13" early 2011)</li></ul>
+<p>If your MacBook is more recent than the models listed above, it is likely equipped with the Facetime HD camera as well.
+</p><p>In order to make the camera work, you need to install the <a href="https://aur.archlinux.org/packages/bcwc-pcie-dkms/" target="_blank">bcwc-pcie-dkms</a><sup><small>AUR</small></sup> and <a href="https://aur.archlinux.org/packages/bcwc-pcie-firmware/" target="_blank">bcwc-pcie-firmware</a><sup><small>AUR</small></sup> packages. This will enable camera video support through the <code>facetimehd</code> kernel module.
+</p><p>In order to verify if the Facetime camera is working after the installation of both packages, you'll need to reboot your system.
+</p>
+<div><strong> Note: </strong>Keep in mind that, although working, this is a reverse-engineered driver. PC suspension is not supported if a program that is keeping the camera active is running.</div>
+<h3>Temperature Sensors</h3>
+<p>For reading temperature just install <a href="https://www.archlinux.org/packages/?name=lm_sensors" target="_blank">lm_sensors</a>. See the <a href="https://wiki.archlinux.org/index.php/Lm_sensors" title="Lm sensors" target="_blank">lm_sensors</a> page for more information.
+</p>
+<h3>Color Profile</h3>
+<p>We can use color profiles from OS X.
+</p><p>First, install the <a href="https://aur.archlinux.org/packages/xcalib/" target="_blank">xcalib</a><sup><small>AUR</small></sup> package.
+</p><p>Second copy pre-saved color profiles placed in <code>/Library/ColorSync/Profiles/Displays/</code> on OS X partition to <code>~/colorprofiles/</code> for example.
+</p><p>There are color profile files agree with in MacBook models; select the right one:
+</p>
+<ul><li> <b>Color LCD-4271800.icc</b> for MacBook Pro with CoreDuo CPU</li>
+<li> <b>Color LCD-4271880.icc</b> for MacBook with Core2Duo</li>
+<li> <b>Color LCD-4271780.icc</b> for MacBook (non-Pro) based on CoreDuo or Core2Duo.</li></ul>
+<div><strong> Tip: </strong>Also OS X allows to save current color profile from <i>Displays &gt; Color</i> section of the <i>Mac OS System Preferences</i>, in this case file is saved to <code>/Users/&lt;username&gt;/Library/ColorSync/Profiles</code>.</div>
+<p>Finally you can activate it by running
+</p>
+<pre># xcalib ~/colorprofile.icc
+</pre>
+<div><strong> Note: </strong>Previous command set the color profile only for the current session; this mean that you must run it every time you login in your system. For automating it you can execute the command by <b>Autostart Application</b>, concording with your DE (or add the command to your login manager's initialization script, e.g. /etc/gdm/Init/Default).</div>
+<div><strong> Warning: </strong>GNOME will revert the profile set by xcalib. It's preferable to set the profile using <b>Color</b> in settings.</div>
+<h3>Apple Remote</h3>
+<p>First, to correctly install and configure the <b>lirc</b> software that control IR see <a href="https://wiki.archlinux.org/index.php/LIRC" title="LIRC" target="_blank">LIRC</a> wiki.
+</p><p>Then make LIRC use <code>/dev/usb/hiddev0</code> (or <code>/dev/hiddev0</code>) by editing <code>/etc/conf.d/lircd</code>. Here is how mine look:
+</p>
+<pre>#
+# Parameters for lirc daemon
+#
+LIRC_DEVICE="/dev/usb/hiddev0"
+LIRC_DRIVER="macmini"
+LIRC_EXTRAOPTS=""
+LIRC_CONFIGFILE="/etc/lirc/lircd.conf"
+</pre>
+<p>Use <b>irrecord</b> (available when installing <b>lirc</b>) to create a configuration file matching your remote control signals (alternatively, you can try to use the <code>lircd.conf</code> below):
+</p>
+<pre># irrecord -d /dev/usb/hiddev0 -H macmini output_conf_file
+</pre>
+<p>Start <b>lircd</b> and use <b>irw</b> to check if it works.
+</p><p>Example of an <code>/etc/lirc/lircd.conf</code>:
+</p>
+<pre>begin remote
+
+  name  lircd.conf.macbook
+  bits            8
+  eps            30
+  aeps          100
+
+  one             0     0
+  zero            0     0
+  pre_data_bits   24
+  pre_data       0x87EEFD
+  gap          211994
+  toggle_bit_mask 0x87EEFD01
+
+      begin codes
+          Repeat                   0x01
+          Menu                     0x03
+          Play                     0x05
+          Prev                     0x09
+          Next                     0x06
+          Up                       0x0A
+          Down                     0x0C
+      end codes
+
+end remote
+</pre>
+<h3>HFS partition sharing</h3>
+<p>First, install the <a href="https://www.archlinux.org/packages/?name=hfsprogs" target="_blank">hfsprogs</a> package.
+</p><p>we have to list our partitions. Use
+</p>
+<pre>fdisk -l /dev/sda
+</pre>
+<p>example output:
+</p>
+<pre># fdisk -l /dev/sda
+    Device  Boot     Start         End      Blocks   Id  Type
+ /dev/sda1               1          26      204819   ee  GPT
+ /dev/sda2              26       13602   109051903+  af  Unknown
+ /dev/sda3   *       13602       14478     7031250   83  Linux
+ /dev/sda4           14478       14594      932832+  82  Linux swap / Solaris
+</pre>
+<p>As we see, the "Unknown" partition is our OS X partition, which is located in <code>/dev/sda2</code>.
+</p><p>Create a "mac" folder in /media:
+</p>
+<pre># mkdir /media/mac
+</pre>
+<p>Add at the end of <i>/etc/fstab</i> this line:
+</p>
+<pre>/dev/sda2    /media/mac     hfsplus auto,user,rw,exec   0 0
+</pre>
+<p>Mount it&nbsp;:
+</p>
+<pre>mount /media/mac
+</pre>
+<p>and check it:
+</p>
+<pre>ls /media/mac
+</pre>
+<h3>HFS+ Partitions</h3>
+<h4>Journaling</h4>
+<p>HFS+ partitions, now the default in OS X, are not fully supported by Linux and are mounted as read-only by default. In order to write to an HFS+ partition, the safe way is to disable journaling. This can be accomplished using the OS X Disk Utility. Refer to this <a href="http://support.apple.com/kb/ht2355" target="_blank">Apple support page</a> for more information or try to do it from the command line:
+</p><p>Find your partition:
+</p>
+<pre>$ diskutil list
+/dev/disk0
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *750.2 GB   disk0
+   1:                        EFI EFI                     209.7 MB   disk0s1
+   2:                  Apple_HFS OSX                     149.5 GB   disk0s2
+   3:                  Apple_HFS Macintosh HD            599.2 GB   disk0s3
+   4:                 Apple_Boot Recovery HD             650.0 MB   disk0s4
+</pre>
+<p>In this example we will use <i>disk0s3</i> partition named as <i>Macintosh HD</i>. To know if journaling is activate or not you could execute:
+</p>
+<pre>$ diskutil info /dev/disk0s3 | grep -i journal
+   File System Personality:  Journaled HFS+
+   Name (User Visible):      Mac OS Extended (Journaled)
+   Journal:                  Journal size 49152 KB at offset 0x1176000
+</pre>
+<p>As you can read the journaling is active. To turn off the journaling you could execute:
+</p>
+<pre>$ sudo diskutil disableJournal disk0s3
+Password:
+Journaling has been disabled for volume Macintosh HD on disk0s3
+</pre>
+<p>To verify it is done execute the info command again:
+</p>
+<pre>$diskutil info /dev/disk0s3 | grep -i journal
+$
+</pre>
+<p>If you get noting as output, then journaling is disabled.
+</p><p>However, if you fail to disable journaling. You can change "auto,user,rw,exec" in "/etc/fstab" to "auto,user,force,rw,exec" and mount it.
+</p>
+<h4>Yosemite and later</h4>
+<p>Since Yosemite, HFS+ partitions are now wrapped a CoreStorage volume. Verify that you have an CoreStorage volume.
+</p>
+<pre># fdisk -l /dev/sdX
+ Disk /dev/sdX: 298.1 GiB, 320072933376 bytes, 625142448 sectors
+ Units: sectors of 1* 512 = 512 bytes
+ Sector size (logical/physical): 512 bytes / 4096 bytes
+ I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+ Disklabel type: gpt
+ Device      Start      End         Sectors    Size     Type
+ /dev/sdX1   40         409639      409600     200M     EFI System
+ /dev/sdX2   409640     623872871   623463232  297.3G   Apple Core storage
+ /dev/sdX3   623872872  625142407   1269536    916.0M   Apple boot
+</pre>
+<p>HFS+ uses two volume headers, one 1024 bytes into the device and one 1024 from the end of the device. With the HFS+ partition wrapped in the CoreStorage volume the end of the partition is not actually 1024 bytes from the end of the <code>/dev/sdX2</code> partition.
+To fix this you need to specify <code>sizelimit=X</code> when mounting.
+</p><p>To determine <code>sizelimit</code> do the following:
+</p>
+<ol><li> Run <code>testdisk /dev/sdX</code> and select your drive</li>
+<li> Select <code>EFI GPT</code></li>
+<li> Select <code>Analyse</code> and then <code>Quick Search</code></li></ol>
+<p>Sample output:
+</p>
+<pre> TestDisk 7.0, Data Recovery Utility, April 2015
+ Christophe GRENIER &lt;grenier@cgsecurity.org&gt;
+ <a href="http://www.cgsecurity.org/" target="_blank">http://www.cgsecurity.org</a>
+
+ Disk /dev/sdX  - 320 GB / 298 GiB - CHS 38913 255 63
+     Partition     Start      End        Size in sectors
+ P  EFI System     40         409639     409600  [EFI]
+ P  Mac HFS        409640     623147815  622738176
+ P  Mac HFS        623872872  625142407  1269536
+</pre>
+<p>What you see now is the output of the HFS partition itself without the CoreStorage volume. Take the size in sectors (622738176 in this example) and multiply by the number of bytes in your logical sector size (512 in this example).
+</p><p>622738176 * 512 = 318841946112
+</p><p>Finally, mount your disk with the <code>sizelimit=X</code> option.
+</p>
+<pre> mount /dev/sdX -t hfsplus -o ro,sizelimit=318841946112
+</pre>
+<h3>Home Sharing</h3>
+<p><i><b>UID Synchronization</b></i>
+</p>
+<h4>In OS X</h4>
+<div><strong> Note: </strong>It is strongly recommended that UID/GID manipulation be done immediately after a new user account is created, in OS X as well as in Arch Linux.  If you installed OS X from scratch, then this operation is guaranteed to work after logging into your account for the first time.</div>
+<h5>Step 1: change UID and GID(s)</h5>
+<p><i><b>Pre-Leopard</b></i>
+</p>
+<ol><li> Open <b>NetInfo Manager</b> located in the <i>/Applications/Utilities</i> folder.</li>
+<li> If not done for you already, enable access to user account transactions by clicking on the closed lock at the bottom of the window, and entering your account password, or root password if you have created a root account.</li>
+<li> Navigate to <i>/users/&lt;new user name&gt;</i> where &lt;new user name&gt; is the name of the account that will have read/write access to the folder that will be shared with the primary user in Arch.</li>
+<li> Change the <b>UID</b> value to 1000 (the value used by default for first user created in Arch).</li>
+<li> Also change the <b>GID</b> value to 1000 (the value used by default for user account creation in Arch).</li>
+<li> Navigate to <code>/groups/&lt;new user name&gt;</code>, automatically saving the changes you have made so far.</li></ol>
+<div><strong> Note: </strong>If you get an error message that the transaction is not allowed, log out and log back in.</div>
+<p><i><b>Leopard</b></i>
+</p><p>In Leopard, the <b>NetInfo Manager</b> application is not present. A different set of steps is required for UID synchronization:
+</p>
+<ol><li> Open <b>System Preferences</b>.</li>
+<li> Click on <b>Users &amp; Groups</b>.</li>
+<li> Unlock the pane if not already done so.</li>
+<li> Right-click on the desired user and select <b>Advanced Options</b>.</li>
+<li> Write down the value of the <b>User ID</b> field, you will need it later on. Change both the UID and GID to match the UID and GID of the account wished to be shared with in Arch (1000 by default for the first user created in Arch).</li></ol>
+<h5>Step 2: change "Home" permissions</h5>
+<ol><li> Open up <b>Terminal</b> in the <code>/Applications/Utilities</code> folder.</li></ol>
+<ol><li> Enter the following command to reclaim the permission settings of your home folder, replacing &lt;your user name&gt;, &lt;your user group&gt; and &lt;your old UID&gt; with the user name whose UID and GID values you just changed, the group name whose GID value you just changed and the old UID number, respectively.</li></ol>
+<pre># find /User/&lt;your user name&gt; -user &lt;your old UID&gt; -exec chown &lt;your user name&gt;:&lt;your user group&gt; {} \;
+</pre>
+<h4>In Arch</h4>
+<p>To synchronize your UID in Arch Linux, you are advised to perform this operation <i>while creating a new user account</i>.
+It is therefore recommended that you do this as soon as you install Arch Linux.
+</p><p>Now you must substitute Arch's home with OS X's home, by modify entries of <code>/etc/fstab</code>.
+</p>
+<h3>Avoid long EFI wait before booting</h3>
+<p>If your MacBook spends 30 seconds with "white screen" before booting you need to tell the firmware where is the booting partition.
+</p><p>Boot OS X, if do not have it installed, you can use the install DVD (select language, then click Utilities-&gt;Terminal), or another MacBook with OS X (connect the two computers via firewire or thunderbolt, start the other MacBook keeping pressed T, boot your MacBook keeping pressed Options).
+</p><p>Either way, once you got a OS X terminal running on your MacBook you need to execute, as root, a different command if the boot partition is EFI or it is not:
+</p>
+<pre># bless --device /dev/disk0s1 --setBoot            # if the booting partition is EFI
+</pre>
+
+<pre># bless --device /dev/disk0s1 --setBoot --legacy   # if the booting partition is not EFI
+</pre>
+<p>(given that if your GRUB or EFI is on sda1, /dev/disk1s2 if it is on sdb2, etc). See also <a href="https://bbs.archlinux.org/viewtopic.php?pid=833215" target="_blank">https://bbs.archlinux.org/viewtopic.php?pid=833215</a> and <a href="https://support.apple.com/kb/HT1533" target="_blank">https://support.apple.com/kb/HT1533</a> .
+</p>
+<h3>Mute startup chime</h3>
+<p>The startup chime volume is controlled by the EFI variable <i>SystemAudioVolume-7c436110-ab2a-4bbb-a880-fe41995c9f82</i>. So it can be muted with
+</p>
+<pre># printf "\x07\x00\x00\x00\x00" &gt; /sys/firmware/efi/efivars/SystemAudioVolume-7c436110-ab2a-4bbb-a880-fe41995c9f82
+</pre>
+<p>Alternatively, you can use a OS X install disk to mute the chime. Boot from it, select language, then click <i>Utilities &gt; Terminal</i>, and enter
+</p>
+<pre># /usr/sbin/nvram SystemAudioVolume=%01
+</pre>
+<p>(or whatever volume you want).
+</p>
+<div><strong> Note: </strong>Required formatting of the value provided for key SystemAudioVolume may differ depending on MacBook model and perhaps the version of OS X install media. If the above command fails to work, try enclosing the value in double quotes.</div>
+<h3>kworker using high CPU</h3>
+<p>Sometime with the addition of Yosemite, some users found that kworker CPU usage will spike, as disccused <a href="https://bbs.archlinux.org/viewtopic.php?id=171883&amp;p=11" target="_blank">here</a>. This is sometimes the result of runaway ACPI interrupts.
+</p><p>To check and see, you can count the number of recent ACPI interrupts and see if any of them are out of control.
+</p>
+<pre>   grep . -r /sys/firmware/acpi/interrupts/
+</pre>
+<p>
+If you see that one particular interrupt is out of control (possibly GPE66), i.e., registering hundreds of thousands of lines, you can try disabling it (replace XX with the runaway interrupt):
+</p><pre>   echo "disable" &gt; /sys/firmware/acpi/interrupts/gpeXX
+</pre>
+<p>
+Disabling random ACPI interrupts could cause all kinds of problems, so do this at your own risk. If this fixes the problem, there is discussion about how to make a systemd service that automatically disables an interrupt at every boot <a href="https://bbs.archlinux.org/viewtopic.php?pid=1488371" target="_blank">here</a>.
+</p>
+<h2>rEFIt</h2>
+<div><strong> Note: </strong>
+<ul><li> You probably want to have a look at <a href="http://www.rodsbooks.com/refind/" target="_blank">rEFInd</a>, which is some type of successor of rEFIt.</li>
+<li> This is not a requirement.  It only gives you a menu to choose between OS X and Arch Linux upon every boot.</li></ul>
+</div>
+<p>For more see, <a href="http://refit.sourceforge.net/myths/" target="_blank">rEFIt myths</a>.
+</p><p>In OS X, download the ".dmg" from <a href="http://refit.sourceforge.net/" target="_blank">rEFIt Homepage</a> and install it.
+</p>
+<div><strong> Note: </strong>If you have already partitioned your hard disk in preparation for the Arch installation, rEFIt may not be enabled by default.  You will have to run the "enable.sh" script installed in /efi/refit/.</div>
+<p>Open up <b>Terminal</b> and enter:
+</p>
+<pre>cd /efi/refit;
+./enable.sh
+</pre>
+<h3>Problems with rEFIt</h3>
+<p>If you experience problems after the install of Arch or rEFIt, especially is the right OS is not showing up to boot to or if it dumps you at a GRUB prompt stuck like the following:
+</p>
+<pre>GRUB&gt;_
+</pre>
+<p>Then have a look at this link:
+</p><p><a href="http://mac.linux.be/content/problems-refit-and-grub-after-installation" target="_blank">http://mac.linux.be/content/problems-refit-and-grub-after-installation</a>
+</p><p>It can give you a basic idea on how to boot off the Arch live cd, mount the problem Arch install, chroot, use gptsync, and reinstall GRUB. This is probably for more advanced users who can translate the commands from a debian system to an Arch system and also apply it to the partitions on their machine. Be careful not to install GRUB in the wrong spot.
+</p><p>If you need a copy of gptsync you can wget it from here:
+<a href="http://packages.debian.org/sid/gptsync" target="_blank">http://packages.debian.org/sid/gptsync</a>
+or try these, for 64 bit:
+</p><p>wget <a href="http://ftp.us.debian.org/debian/pool/main/r/refit/gptsync_0.14-2_amd64.deb" target="_blank">http://ftp.us.debian.org/debian/pool/main/r/refit/gptsync_0.14-2_amd64.deb</a>
+</p><p>and for i386:
+</p>
+<pre>wget <a href="http://ftp.us.debian.org/debian/pool/main/r/refit/gptsync_0.14-2_i386.deb" target="_blank">http://ftp.us.debian.org/debian/pool/main/r/refit/gptsync_0.14-2_i386.deb</a>
+</pre>
+<p>since they are .deb packages you will need the program <a href="https://aur.archlinux.org/packages/deb2targz/" target="_blank">deb2targz</a><sup><small>AUR</small></sup>.
+</p>
+<h4>Mavericks upgrade breaks Arch boot option</h4>
+<p>For some multi-boot users who utilize a separate Linux boot partition, the OS X Mavericks upgrade may overwrite the boot partition with Apple's own recovery boot filesystem. This breaks the Arch Linux boot option in rEFIt/rEFInd. The best way to proceed in this situation is to abandon a separate boot partition and use the EFI system partition (ESP) to install the bootloader of your choice. It is also recommended that you use rEFInd instead of rEFIt as development on the latter has halted.
+</p><p>Assuming grub2 as the bootloader:
+</p><p>Use the Arch LiveCD to boot to a shell and <a href="https://wiki.archlinux.org/index.php/Change_root" title="Change root" target="_blank">chroot</a> to your broken Arch Linux environment.
+</p><p>Mount the ESP on /boot.
+</p><p>Edit the fstab and remove the old boot partition and make ESP the new boot partition. Now mount the ESP as the new /boot parition.
+</p>
+<pre># mount -a
+</pre>
+<p><a href="https://wiki.archlinux.org/index.php/Install" title="Install" target="_blank">Reinstall</a> <a href="https://www.archlinux.org/packages/?name=linux" target="_blank">linux</a>.
+</p><p>Create a new initramfs and vmlinuz in /boot.
+</p>
+<pre># mkinitcpio -p linux
+</pre>
+<p>Install grub.
+</p>
+<pre># grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub --recheck --debug
+</pre>
+<p>Create a new grub.cfg file.
+</p>
+<pre># grub-mkconfig -o /boot/EFI/grub/grub.cfg
+</pre>
+<p>Make sure that grub.cfg is in the same directory as grubx64.efi.
+</p><p>Generate a new refind_linux.conf file in /boot simply by running mkrlconf.sh which comes with rEFInd.
+</p><p>Exit the chroot environment.
+</p><p>Reboot. You should see a new entry for Arch Linux in rEFInd and it should boot to your Arch Linux installation.
+</p>
+<h2>Model-specific information</h2>
+<h3>MacBook</h3>
+<h4>April 2016 12" - Version 9,1</h4>
+<ul><li> Booting from USB via EFI works fine, when giving the <code>noapic</code> kernel option. (On Ubuntu, also <code>noacpi nomodeset</code> seem to be necessary.) Remember to hold the Alt key on booting.</li></ul>
+<ul><li> The wireless card works out of the box with <code>brcmfmac</code>.</li></ul>
+<ul><li> Suspend-to-RAM works out of the box.</li></ul>
+<ul><li> The built-in flash drive does <i>not</i> work with kernel 4.5.4-1-ARCH, but it <i>does</i> work with kernel 4.6.0-mainline (install <a href="https://aur.archlinux.org/packages/linux-mainline/" target="_blank">linux-mainline</a><sup><small>AUR</small></sup>). As long as a <a href="http://lists.infradead.org/pipermail/linux-nvme/2016-May/004618.html" target="_blank">rather trivial patch</a> is not merged into the kernel, either this patch must be applied locally or one puts <code>modprobe nvme; echo 106b 2003 &gt; /sys/bus/pci/drivers/nvme/new_id</code> into a mkinitcpio hook (to be started after the udev hook). The reason is that the NVMe controller of the flash drive doesn't advertise itself with the correct PCI device class. Note that with the patch, a short sleep still seems to be necessary.</li></ul>
+<ul><li> Audio recording works out of the box. Audio playback doesn't work (still looking for a solution).</li></ul>
+<ul><li> The keyboard and the touchpad do <i>not</i> work (still looking for a solution).
+<ul><li> There's a WIP driver <a href="https://github.com/cb22/macbook12-spi-driver" target="_blank">here</a> that sort of works with a DSDT hack (the previous problem with this driver related to battery drain has been fixed now).</li></ul></li></ul>
+<h4>Mid 2007 13" - Version 2,1</h4>
+<div><strong> Note: </strong>I used the 201212 ISO image.</div>
+<p>Since older Macbooks have a 32bit EFI running, the usual installation image is not recognized. You need to either remove the UEFI support from the disc (<a href="https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface#Remove_UEFI_boot_support_from_ISO" title="Unified Extensible Firmware Interface" target="_blank">Unified_Extensible_Firmware_Interface#Remove_UEFI_boot_support_from_ISO</a>) or build a 32bit EFI version of the disc. The paragraphs below will take the first path to success, booting into BIOS mode and its pitfalls. For a try the other way round, read <a href="https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface#Create_UEFI_bootable_USB_from_ISO" title="Unified Extensible Firmware Interface" target="_blank">Unified_Extensible_Firmware_Interface#Create_UEFI_bootable_USB_from_ISO</a> first.
+</p><p>First prepare your harddisc according to your wishes. In this scenario it was a "Linux only" approach with
+</p>
+<pre>/dev/sda1 HFS+ AF00 200M -&gt; EFI boot system on Apple HFS+ partition
+/dev/sda2 ext4 8300 147G -&gt; arch system
+/dev/sda3 swap 8200 1G   -&gt; swap
+</pre>
+<p>The <a href="https://aur.archlinux.org/packages/hfsprogs/" target="_blank">hfsprogs</a><sup><small>AUR</small></sup> package contains the tools to handle HFS/HFS+ filesystems. The rEFInd bootloader recognizes it on its own. Usually the partition for the EFI bootloader is a FAT32 (vfat) partition. In this case I tried rEFIt first, which apparently needs the HFS+ filesystem to work, and kept it at that.
+</p><p>The mount points are:
+</p>
+<pre>/dev/sda2 -&gt; /
+/dev/sda1 -&gt; /boot
+</pre>
+<p>The bootloader in use was <a href="http://www.rodsbooks.com/refind/index.html" target="_blank">rEFInd</a> instead of rEFIt. To install it, the rEFInd homepage provides a good guide. Usually it is simply done by copying rEFInd:
+</p>
+<pre>mkdir /boot/EFI
+cp -vr /usr/share/refind/drivers_ia32 /boot/EFI/refind/
+cp -vr /usr/share/refind/tools_ia32 /boot/EFI/refind/
+cp -vr /usr/share/refind/fonts /boot/EFI/refind/
+cp -vr /usr/share/refind/icons /boot/EFI/refind/
+cp -v /usr/share/refind/refind_ia32.efi /boot/EFI/refind/
+cp -v /usr/share/refind/refind.conf-sample /boot/EFI/refind/refind.conf
+cp -v /usr/share/refind/refind_linux.conf-sample /boot/refind_linux.conf
+</pre>
+<div><strong> Note: </strong>I'm using the 32bit version of Arch and refind, since the EFI of the old MacBooks is 32bit. I'm not sure about 32bit rEFInd booting a 64bit Arch...</div>
+<p>The pitfall here is, that the system bootet in BIOS compatibility mode and not in EFI mode. You cannot therefore use <code>efibootmgr</code>, because the EFI variables (even with 'modprobe efivars') are not available. While installing the system get <a href="https://aur.archlinux.org/packages/mactel-boot/" target="_blank">mactel-boot</a><sup><small>AUR</small></sup>. The <code>hfs-bless</code> utility comes in handy, when blessing the EFI bootloader. This is done by calling:
+</p>
+<pre>hfs-bless /boot/EFI/refind/refind_ia32.efi
+</pre>
+<p>Since the Linux kernel does come with EFI stub enabled, it seems a good idea to run it through a bootloader first. Especially if it runs not out of the box. But using rEFInd makes GRUB (or any other bootloader) obsolete, because of that.
+</p>
+<div><strong> Note: </strong>In the refind_linux.conf you add any kernel option you may want as long as you use the EFI stub of your kernel. In refind.conf you adjust your needs for the bootloader itself, like menu entries. If you use them (menu entries), rEFInd should not look for these EFI stub kernels itself, so blacklist the directories used in here, like <code>/boot/</code>.</div>
+<p>Not running out of the box is unfortunately the initial stage for the kernel. Since we installed it in BIOS mode, two modules are missing to grant access to the root partition while booting. Hence the 'initfsram-linux.img' can not be found/loaded. Adding the following modules to your 'MODULES' line in <code>/etc/mkinitcpio.conf</code> solved this (<a href="https://bbs.archlinux.org/viewtopic.php?pid=1139226#p1139226" target="_blank">original post</a>).
+</p>
+<pre>/etc/mkinitcpio.conf</pre>
+<pre>MODULES="ahci sd_mod"</pre>
+<p>Rebuild your kernel image:
+</p>
+<pre>mkinitcpio -p linux
+</pre>
+<p>The bootloader rEFInd can scan kernels even out of the '/boot/...' directory and assumes an efi kernel even without the extension '.efi'. If you do not want to try out special kernels, this should work without the hassle to copy each kernel after building to some spot special.
+</p><p>If you happen to get multiple entries for one boot image, it often results of a previous installation of a bootloader within the MBR. To remove that, try the following - taken from the <a href="http://ubuntuforums.org/showpost.php?p=7828260&amp;postcount=4" target="_blank">original post</a>. This is valid for GPT partitioned discs, so please check your environment and save your MBR first.
+</p>
+<pre># dd if=/dev/zero of=/dev/sda bs=440 count=1
+</pre>
+<h3>MacBook Pro with Retina display</h3>
+<h4>Early 2015 13"/15" - Version 12,x/11,4+</h4>
+<h5>Wireless</h5>
+<p>The <code>brcmfmac</code> driver is working as of 2015-11-20, with newer firmware necessary for working 5GHz support (<a href="https://bugzilla.kernel.org/show_bug.cgi?id=100201#c65" target="_blank">see here.</a>)
+</p>
+<h5>Bluetooth</h5>
+<p>Bluetooth is fully supported starting from kernel-4.4.0.
+</p>
+<h5>Suspend &amp; Power Off (11,4+)</h5>
+<p>The 11,4 and 11,5 MacBook Pros do not shutdown or suspend correctly with the default kernel. This issue is being addressed in <a href="https://bugzilla.kernel.org/show_bug.cgi?id=103211" target="_blank">Bug 103211</a> and a temporary patch is currently available in <a href="https://aur.archlinux.org/packages/linux-macbook/" target="_blank">linux-macbook</a><sup><small>AUR</small></sup>.
+</p>
+<h5>Keyboard &amp; Trackpad</h5>
+<p>Haptic feedback works out of the box due to the trackpad's built-in firmware.
+</p><p>There are several drivers available that provide multitouch support. The following have been confirmed working with the MacBookPro12,1.
+</p><p>For <a href="https://www.archlinux.org/packages/?name=xf86-input-libinput" target="_blank">xf86-input-libinput</a> the following configuration emulates some features from the OS X functionality. For more options see <a href="https://www.mankier.com/4/libinput" target="_blank">libinput(4)</a>.
+</p>
+<pre>/etc/X11/xorg.conf.d/90-libinput.conf</pre>
+<pre>Section "InputClass"
+    Identifier "libinput touchpad catchall"
+    MatchIsTouchpad "on"
+    MatchDevicePath "/dev/input/event*"
+    Driver "libinput"
+    Option "NaturalScrolling" "true"
+EndSection</pre>
+<p>For <a href="https://www.archlinux.org/packages/?name=xf86-input-synaptics" target="_blank">xf86-input-synaptics</a> the following configuration is necessary to make the touchpad work fully.
+</p>
+<pre>/etc/X11/xorg.conf.d/60-magictrackpad.conf</pre>
+<pre>Section "InputClass"
+    Identifier "Trackpad"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+    MatchDevicePath "/dev/input/event*"
+EndSection</pre>
+<p>Further, some US/ANSI keyboards suffer from an issue where the tilde key (~, the key vertically between Esc and Tab) registers as &lt; and &gt;. The following config file fixes this issue.
+</p>
+<pre>/etc/modprobe.d/hid_apple.conf</pre>
+<pre>options hid_apple iso_layout=0</pre>
+<p>See <a href="https://bugzilla.kernel.org/show_bug.cgi?id=96771" target="_blank">this kernel bugzilla</a> for more details and the relevant patches for earlier kernels.
+</p>
+<h5>Graphics</h5>
+<p>For Intel-only graphics, install <a href="https://www.archlinux.org/packages/?name=xf86-video-intel" target="_blank">xf86-video-intel</a>. For more information or OpenGL/3D support, follow instructions at <a href="https://wiki.archlinux.org/index.php/Intel_graphics" title="Intel graphics" target="_blank">Intel graphics</a>.
+</p><p>For Dual Graphics see <a href="https://wiki.archlinux.org/index.php/MacBookPro11,x#Graphics" target="_blank">this section on the 11,3</a>.
+</p>
+<div><strong> Note: </strong>The kernel parameters <i>acpi_backlight</i>, <i>i915.lvds_downclock</i>, <i>i915.enable_ips</i>, and <i>intel_iommu</i> are no longer necessary as of kernel 4.2.</div>
+<h4>2012 - 2014 models</h4>
+<ul><li> <a href="https://wiki.archlinux.org/index.php/MacBookPro11,x" title="MacBookPro11,x" target="_blank">MacBookPro11,x</a> (Late 2013—Mid 2014)</li>
+<li> <a href="https://wiki.archlinux.org/index.php/MacBookPro10,x" title="MacBookPro10,x" target="_blank">MacBookPro10,x</a> (Mid 2012—Early 2013)</li></ul>
+<h3>MacBook Air</h3>
+<h4>Early 2014 11" - Version 6,1</h4>
+<p>This is almost the same as the 2013 version, where the only known difference is a slightly faster processor. The version numbers have not been changed since the 2013 version.
+</p><p>It works excellently after following the instructions for the MBA 2013 13" here and in the forum thread.
+Bluetooth, which has been reported not working for some people with the 2013 version, works without trouble for the 2014 version, although it should be excactly the same.
+</p>
+<div><strong> Note: </strong> Unless you have a local repository on a USB disk, you need a USB to ethernet adaptor or a USB wireless adaptor supported natively by the kernel to easily install Arch Linux, since you have to install the <a href="https://aur.archlinux.org/packages/broadcom-wl-dkms/" target="_blank">broadcom-wl-dkms</a><sup><small>AUR</small></sup> package to make the internal wireless adaptor work.</div>
+<p>Unresolved issues:
+</p>
+<pre> - There is no driver for the webcam yet.
+ - rEFInd uses 30 seconds to start booting. Using the bless trick stops rEFInd from loading, and it has to be re-installed.
+</pre>
+<h4>Mid 2013 13" - Version 6,2</h4>
+<p><a href="https://bbs.archlinux.org/viewtopic.php?id=165899" target="_blank">Dedicated forum thread</a>
+</p>
+<h5>Installing and booting</h5>
+<p>Booting from a normal 2013.6 USB key works fine, but I could not seem to get either GRUB or Syslinux working.
+</p><p>I was able to boot by first installing Arch Linux following the MacBook guide at the wiki (having a separate FAT32 /boot partition). Skip the bootloader installation.
+</p><p>Installing <a href="http://www.rodsbooks.com/refind/getting.html" target="_blank">rEFInd</a> from OS X (important!) and installing the EFI stub loader made me able to boot fine.
+</p><p><a href="https://bbs.archlinux.org/viewtopic.php?id=165710" target="_blank">Dedicated thread</a>.
+</p>
+<div><strong> Note: </strong> Installing <a href="http://www.rodsbooks.com/refind/getting.html" target="_blank">rEFInd</a> from Linux (or from OS X, but to the esp) also works fine</div>
+<h5>Arch Only Installation</h5>
+<p>This method works without rEFInd and uses grub to boot EFI.  Partition as follows:
+</p>
+<pre> /dev/sda1 200M Microsoft basic data
+ /dev/sda2 256M Linux filesystem
+ /dev/sda3 4G Linux swap
+ /dev/sda4 108.6G Linux filesystem
+</pre>
+<p>sda1 can also be a HFS+ partition for EFI.  This example chooses to use FAT32 (vfat). Although swap is optional, it is required for hibernation. Instead of sda4 for root and home, an alternative partition scheme would be to make sda4 as root and sda5 as home.
+</p><p>Format and mount:
+</p>
+<pre> mkfs.vfat -F 32 /dev/sda1
+ mkfs.ext2 /dev/sda2
+ mkswap /dev/sda3
+ swapon /dev/sda3
+ mkfs.ext4 /dev/sda4
+</pre>
+<pre> mount /dev/sda4 /mnt
+ mkdir /mnt/boot
+ mount/dev/sda2 /mnt/boot
+ mkdir /mnt/boot/efi
+ mount /dev/sda1 /mnt/boot/efi
+</pre>
+<p>Finish the installation according to the <a href="https://wiki.archlinux.org/index.php/Installation_guide" title="Installation guide" target="_blank">Installation guide</a> and skip anything after the bootloader.  After you have generated your initramfs and set root passwd follow below to setup grub:
+</p>
+<pre> pacman -S grub efibootmgr
+ mount -t efivarfs efivarfs /sys/firmware/efi/efivars
+ grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub --recheck --debug
+ grub-mkconfig -o /boot/efi/EFI/grub/grub.cfg
+ cp /boot/efi/EFI/grub/grub.cfg /boot/grub/grub.cfg
+ cp /boot/efi/EFI/grub/grubx64.efi /boot/efi/EFI/boot/bootx64.efi}}
+</pre>
+<p>Now you can exit/unmount/reboot:
+</p>
+<pre> exit
+ umount -R /mnt
+ reboot
+</pre>
+<h5>Stability problems</h5>
+<div><strong> Note: </strong> Passing <code>libata.force=1:noncq</code> to the kernel parameters solves the problem.</div>
+<p>This is the big worry for me. Every now and then my system hangs for a brief moment and everything involving net or disk access just hangs there for a while and then it seems to work.
+So far it only seems to happen when I run something disk- or CPU-intensive. Also had an occassion when I could not start X and just got this repeating all over my screen:
+</p>
+<pre>ata1.00: failed command: WRITE FPDMA QUEUED
+ata1.00: cmd 61/08:f0:10:8c:c2/00:00:0b:00:00/40 tag 30 ncq 4096 out
+res 40/00:00:00:00:00/00:00:00:00:00/00 Emask 0x4 (timeout)
+ata1.00: status: { DRDY }
+</pre>
+<p>On the next attempt it worked fine.
+I did SMART short and long tests on my disk and they returned fine:
+</p><p><a href="http://pastebin.com/vRE4T2Ld" target="_blank">smartctl -a</a>
+</p><p>There are some messages in my boot that indicate this could be disk and/or ACPI related.
+</p><p>These are with 2013-06 ISO, 3.9.7-1 2013 x86_64 kernel.
+</p><p><a href="http://pastebin.com/mjTJaPFa" target="_blank">journalctl -b</a>
+Seems to only work with the headphone jack, not with the speakers.
+</p><p><a href="http://pastebin.com/SdAcHuKh" target="_blank">dmesg</a>
+</p>
+<h5>Marvell ATA suspend bugs</h5>
+<p>If you have 2013 MacBook Air with a Marvell 128 or 256 GB drive, you might get the following ata errors instead after pm-suspend/resumes:
+</p>
+<pre>ata1: exception Emask 0x10 SAct 0x0 SErr 0x10000 action 0xe frozen
+ata1: irq_stat 0x00400000, PHY RDY changed
+ata1: SError: { PHYRdyChg }
+ata1: hard resetting link
+ata1: SATA link up 1.5 Gbps (SStatus 113 SControl 310)
+ata1.00: unexpected _GTF length (8)
+ata1.00: unexpected _GTF length (8)
+ata1.00: configured for UDMA/33
+ata1: EH complete
+</pre>
+<p>Try what Patrick and Tejun figured out on the <a href="https://bugzilla.kernel.org/show_bug.cgi?id=62351" target="_blank">linux bug</a>. I followed what Patrick describes with sata_alpm, and I haven't seen the issue since.
+</p><p>There are more steps on how to resolve this issue in <a href="https://bbs.archlinux.org/viewtopic.php?pid=1562168#p1562168" target="_blank">this thread on the Arch forum</a>
+</p>
+<h5>Suspend/Resume</h5>
+<p>Brightness is either 0% or 100% after resuming from suspend.  Until the kernel is fixed, use patjak's fix by installing <a href="https://aur.archlinux.org/packages/mba6x_bl-dkms/" target="_blank">mba6x_bl-dkms</a><sup><small>AUR</small></sup>.  Patjak's github is at <a href="https://github.com/patjak/mba6x_bl" target="_blank">[4]</a>.
+</p>
+
+<p>WiFi does not work out of the box. Install <a href="https://aur.archlinux.org/packages/broadcom-wl-dkms/" target="_blank">broadcom-wl-dkms</a><sup><small>AUR</small></sup> to connect to a network.
+</p>
+<h5>Touchpad</h5>
+<p>Since 3.10.3 kernel touchpad works perfectly with <a href="https://www.archlinux.org/packages/?name=xf86-input-synaptics" target="_blank">xf86-input-synaptics</a>.
+</p>
+<h5>Audio</h5>
+<p>As of Linux 3.12, sound works out of the box.  If you do not get sound with only <a href="https://www.archlinux.org/packages/?name=alsa-utils" target="_blank">alsa-utils</a>, you may need to create a /etc/asound.conf with below entries:
+</p>
+<pre> defaults.pcm.card 1
+ defaults.pcm.device 0
+ defaults.ctl.card 1
+</pre>
+<h4>Mid 2012 13" — version 5,2</h4>
+<p>Kernel panics using default boot media under arch kernel 3.5. Adding <code>intremap=off</code> fixes this. Additionally, there are problems loading the <code>applesmc</code> module (meaning the temperature sensors, fan, and keyboard backlight do not work). These problems are fixed in the linux 3.6-rc4 mainline kernel (I have tested).
+</p>
+<h4>Mid 2012 11.5" — Version 5,1</h4>
+<p>If you have issues with waking from sleep while in X11 such as a black screen or showing the console with a frozen mouse cursor then remove <a href="https://www.archlinux.org/packages/?name=xf86-input-synaptics" target="_blank">xf86-input-synaptics</a> and install <a href="https://aur.archlinux.org/packages/xf86-input-mtrack-git/" target="_blank">xf86-input-mtrack-git</a><sup><small>AUR</small></sup>. This fixed errors such as
+</p>
+<pre> (EE) [dix] bcm5974: unable to find touch point 0
+</pre>
+<p>and backtraces that causes X11 to crash. This might apply to Version 5,2 assuming they use the same trackpad.
+</p>
+<h5>Installing using the Archboot 2012.06 image</h5>
+<p>Several people have reported problems installing Arch Linux on the MBA version 5,2 (See <a href="https://bbs.archlinux.org/viewtopic.php?id=144089" target="_blank">problems booting Arch Linux on a MacBook Air Mid 2012</a>). A common problem is that the screen is not detected and therefore goes black when the installer boots. To fix this problem one has to select the normal install (Not the LTS) during boot and press tab to edit the boot flags. Then add noapic flag to the boot line. This should fix the screen going black. Install the system as you normally would. It may help later in the configuration process if the support packages are installed already at this stage.
+</p><p>When the install has finished again add the noapic flag to the GRUB boot line (if you use GRUB) and also add i915.diescreaming=1 (or perhaps i915.die). This should keep the screen from going black when booting the new system. After you enter the system the wireless driver should be loaded. If you installed the support packages during installation you should have the wifi-menu command. Run it and select the network you want to use. One could also use wpa_supplicant but wifi-menu is quite fast to use at this stage. Now you are ready to upgrade the system. As of writing there have been a lot of changes to Arch Linux since the 2012.06 image of Archboot was released (<a href="https://www.archlinux.org/news/filesystem-upgrade-manual-intervention-required-1/" target="_blank">filesystem</a> and <a href="https://www.archlinux.org/news/the-lib-directory-becomes-a-symlink/" target="_blank">glibc</a>). Therefore the upgrade process can be a bit difficult. The current solution has sucessfully upgraded a standart archboot version to a up-to-date version as of October 2012 and this step should be obsolete in future releases of archboot.
+</p><p>First ignore the new "big" changes to Arch Linux,
+</p>
+<pre> pacman -Suy --ignore glibc,libarchive,curl,filesystem
+</pre>
+<p>If this only upgrades pacman then run the command again. Remember to make sure that pacman is ignoring the packages you do not want upgraded now. Otherwise you may break the system and have to reinstall! Now upgrade to the new filesystem,
+</p>
+<pre>pacman -S filesystem --force
+</pre>
+<p>As described in <a href="https://wiki.archlinux.org/index.php/DeveloperWiki:usrlib" title="DeveloperWiki:usrlib" target="_blank">Glibc upgrade guide</a> there may be conflicts with installed packages that require the /lib directory. Follow the guide and remove any packages that use /lib. The stock 3.4.2 kernel from Archboot should be on this list so first upgrade this,
+</p>
+<pre>pacman -S linux
+</pre>
+<p>This may give some errors saying that the system may not boot because of missing modules. Ignore this warning for now. The stock install may also contain gcc in the /lib directory so also remove this if needed and any other packages that have conflicts. Now Glibc should be the only package in /lib so run the system upgrade and accept all changes,
+</p>
+<pre>pacman -Su
+</pre>
+<p>Finally reinstall the kernel so that it can find the correct modules.
+</p><p>Now this command should not give any errors like last time. You can also reinstall gcc at this point. After a rebooted the system should startup and the new kernel should have fixed the problem with the screen going black. If want to boot Xorg then you may need to remove the i915.diescreaming=1 line from GRUB. If not then attach a external screen and try to fix the problem that way. Some people have reported commands that may help on the <a href="https://bbs.archlinux.org/viewtopic.php?id=144089" target="_blank">forum</a>.
+</p>
+<h4>Mid 2011 — version 4,x</h4>
+<p>Works out-of-the-box since kernel 3.2. It is recommended to use <a href="https://wiki.archlinux.org/index.php/Archboot" title="Archboot" target="_blank">Archboot</a>, install <a href="https://wiki.archlinux.org/index.php/GRUB" title="GRUB" target="_blank">GRUB</a> and use EFI.
+</p>
+<h4>Early 2008 — version 1,1</h4>
+<p>Everything works out of the box though you will need <a href="https://www.archlinux.org/packages/?name=b43-fwcutter" target="_blank">b43-fwcutter</a> (or simply <a href="https://aur.archlinux.org/packages/b43-firmware/" target="_blank">b43-firmware</a><sup><small>AUR</small></sup>) for the wireless adapter to work.
+</p><p>Since this model has only one USB port, you may find it easiest to install Arch with a powered USB hub. Plug a USB network adapter (wireless or ethernet adapter to plug into a USB port) and your Arch installation media into the USB hub.
+</p><p>If you can't get any result by scanning wireless network after boot, unload modules <code>b43</code> and <code>ssb</code> and load them again:
+</p>
+<pre>   rmmod ssb
+   rmmod b43
+   modprobe b43
+</pre>
+<p>There is a good chance you will find what's wrong with DMA from the dmesg log.
+</p><p>Even if you can scan wireless networks after reloading the modules, it's still possible that you will only be able to connect to some networks, but not all of them. According to a more detailed discussion here: <a href="http://crunchbang.org/forums/viewtopic.php?id=17368" target="_blank">http://crunchbang.org/forums/viewtopic.php?id=17368</a>, adding <code>pio=1,qos=0</code> options to the b43 module can solve this problem.
+</p><p>I tested this for a 13' MacBookAir1,1 with a BCM4321 chipset, and it works.
+</p>
+<h2>See also</h2>
+
+
+
+
+
+
+
+</div></div></div><div id="footnotedLinks" class="separateSection"><div id="footnotedLinks__separator" class="separator"><div class="separatorLine setTextColorAsBackgroundColor"></div></div><ol id="footnotedLinks__list"></ol></div><div id="measure__lineHeight">Measure</div><div id="measure__fontSize">Measure</div></div></div></div><div id="background"></div></div>
