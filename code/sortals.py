@@ -74,8 +74,9 @@ def main():
     """
     input = sys.stdin.read()
     searchfor = input.strip()
-    profile = open(os.path.expanduser("~/.bash_profile"), 'rb').read()
-    profile = profile.decode("utf8")
+    profile = open(os.path.expanduser("~/.bash_profile"), 'rt').read()
+    if len(profile.strip()):
+        profile = profile.decode("utf8")
     aliasses = []
     lines = []
 
