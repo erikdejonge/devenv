@@ -14,10 +14,13 @@ author  : rabshakeh (erik@a8.nl)
 project : devenv
 created : 15-06-15 / 15:45
 """
+import consoleprinter
 import os
 import sys
-import consoleprinter
-from consoleprinter import console, remove_color, console_warning
+
+from consoleprinter import console
+from consoleprinter import console_warning
+from consoleprinter import remove_color
 
 from terminaltables import AsciiTable
 
@@ -74,16 +77,18 @@ def main():
     """
     input = sys.stdin.read()
     searchfor = input.strip()
-    profile = open(os.path.expanduser("~/.bash_profile"), 'rt').read()
+    profile = str(open(os.path.expanduser("~/.bash_profile"), 'r').read())
     if len(profile.strip()):
-        profile = profile.decode("utf8")
+        profile = profile.encode("utf8")
     aliasses = []
     lines = []
 
     if len(searchfor) == 0:
         print("possible commands:")
+    profile = str(profile)
 
     for line in profile.split("\n"):
+
         lines.append(line)
         if line.startswith("alias "):
             sline = line.split("=", 1)
