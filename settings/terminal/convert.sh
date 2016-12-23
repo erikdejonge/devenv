@@ -1,0 +1,1 @@
+/usr/libexec/PlistBuddy -x -c 'Print "Window Settings":"My Theme"' ~/Library/Preferences/com.apple.Terminal.plist|tr -d '\n\t'|grep -o '[^>]*</key><data>[^<]*'|while read l;do echo ${l%%<*} $(base64 -D<<<${l##*>}|plutil -convert xml1 - -o -|awk '/<data>/{getline;print}'|tr -d '\t'|base64 -D);done
