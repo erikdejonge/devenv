@@ -188,17 +188,19 @@ def change_filepath(fdp, fp):
             os.remove(nfp)
     else:
 
-        if os.getcwd().lower().endswith("mymovies") and 'ds_store' not in nfp.lower() and 'youtube' not in nfp.lower() and "imovie" not in nfp.lower():
-            replaces = ['brrip', '1080p', '720p', 'lolettv', 'internal', 'hevc-psa', 'fleet', 'killersettv', 'fumettv', 'yts', 'xvid-etrg', 'webrip', 'x264-deflateettv', 'hdtv', 'x264', 'proper', '-deepguy', '1080p', 'bluray', 'x264', 'dts-jyk', '1080p', 'yts', 'multisub', '_ger', 'highcode', '-phd', 'eng_subs', 'h264', '-mp4', 'xvid', 'hdrip', 'x264-killersettv',
+        if 'ds_store' not in nfp.lower() and 'vhs_emmj_indexed' not in nfp.lower() and 'youtube' not in nfp.lower() and "imovie" not in nfp.lower():
+            replaces = ['1080p', 'bluray', 'x264', 'dts-jyk', '1080p', 'brrip', '1080p', '720p', 'lolettv', 'internal', 'hevc-psa', 'fleet', 'killersettv', 'fumettv', 'yts', 'xvid-etrg', 'webrip', 'x264-deflateettv', 'hdtv', 'x264', 'proper', '-deepguy', '1080p', 'bluray', 'x264', 'dts-jyk', '1080p', 'yts', 'multisub', '_ger', 'highcode', '-phd', 'eng_subs', 'h264', '-mp4', 'xvid', 'hdrip', 'x264-killersettv',
                         'x264', 'gaz', 'yify', 'ac3', '1080p', 'etrg', 'brrip', '-evo', '_evo', '720p', '480p', 'bluray', 'web_dl', 'reenc', 'deejayahmed', 'aac', 'team_nanban', 'repack', 'hdtv', 'dvdscr', '.hq', 'hive-cm8', 'hd-ts', 'extended', 'proper', 'cpg', '.hc']
 
-            replaces.extend([str(x) for x in range(1950, 2020)])
+            #replaces.extend([str(x) for x in range(1950, 2020)])
             for i in replaces:
-                nfp = nfp.replace(i, "").replace("..", ".").replace("-.", ".").replace("_.", "__").strip(".").strip("_").strip("-").strip(".").replace(".", "_").replace("_nfo", ".txt").replace("_url", ".txt")
+                if "marit" not in i:
+                    nfp = nfp.replace(i, "").replace("..", ".").replace("-.", ".").replace("_.", "__").strip(".").strip("_").strip("-").strip(".").replace(".", "_").replace("_nfo", ".txt").replace("_url", ".txt")
 
             for i in ext:
                 e = "_" + i
                 n = "." + i
+
                 nfp = nfp.replace(e, n)
 
         for i in ext:
