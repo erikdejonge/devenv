@@ -47,7 +47,7 @@ def main():
     main
     """
     arguments = IArguments(__doc__)
-    #console(arguments)
+    console(arguments)
 
     try:
         resp = urllib.request.urlopen(arguments.input)
@@ -60,7 +60,12 @@ def main():
 
     for link in soup.find_all('a', href=True):
         print(link.text)
-        print(link['href'].strip(), "\n\n")
+        print(link['href'].strip(), "\n")
+
+    # for link in soup.find_all():
+    #     if "jpg" in str(link):
+    #         print(link.split("\""))
+
 
 if __name__ == "__main__":
     main()
