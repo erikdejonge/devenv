@@ -183,6 +183,7 @@ def change_filepath(fdp, fp):
         'zip']
 
     nfp = get_safe_filename_string(fp)
+
     if nfp=='ds_store':
         if os.path.exists(nfp):
             os.remove(nfp)
