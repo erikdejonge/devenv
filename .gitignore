@@ -1,6 +1,6 @@
 .dockercfg
 .DS_Store
-
+nohup.out
 .DS_Store
 
 bashrc.sh

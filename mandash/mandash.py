@@ -56,9 +56,10 @@ def main():
     if arguments.term3:
         query += " " + arguments.term3
 
-    with open("command:" + query.replace(" ", "_"), "w+b", buffering=False) as tf:
+    home = os.path.expanduser("~")
+    with open(home+"/command:" + query.replace(" ", "_"), "w+b", buffering=False) as tf:
         try:
-            result = cmd_run("/usr/bin/man " + query, streamoutput=False)
+            result = cmd_run("/usr/bin/man " + query, streamoutput=False, cwd=home)
             tf.write(result.encode('utf-8'))
             tf.close()
 
