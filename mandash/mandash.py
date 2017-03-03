@@ -57,8 +57,11 @@ def main():
         query += " " + arguments.term3
 
     home = os.path.expanduser("~")
+    print("hello", home)
+    exit(1)
     fname = home+"/command:" + query.replace(" ", "_")
-    print(fname)
+    print(home, fname)
+    exit(1)
     with open(fname, "w+b", buffering=False) as tf:
         try:
             result = cmd_run("/usr/bin/man " + query, streamoutput=False, cwd=home)
