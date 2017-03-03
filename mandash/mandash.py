@@ -15,7 +15,7 @@ created : 13-01-16 / 11:36
 """
 import os
 import sys
-
+import consoleprinter
 from arguments import Arguments
 from cmdssh import shell, cmd_run, CallCommandException
 try:
@@ -57,7 +57,9 @@ def main():
         query += " " + arguments.term3
 
     home = os.path.expanduser("~")
-    with open(home+"/command:" + query.replace(" ", "_"), "w+b", buffering=False) as tf:
+    fname = home+"/command:" + query.replace(" ", "_")
+    print(fname)
+    with open(fname, "w+b", buffering=False) as tf:
         try:
             result = cmd_run("/usr/bin/man " + query, streamoutput=False, cwd=home)
             tf.write(result.encode('utf-8'))
@@ -73,7 +75,7 @@ def main():
             return
         finally:
             print(tf.name)
-            os.remove(tf.name)
+            #os.remove(tf.name)
 
 
 if __name__ == "__main__":
