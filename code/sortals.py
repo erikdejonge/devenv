@@ -21,7 +21,6 @@ import sys
 from consoleprinter import console
 from consoleprinter import console_warning
 from consoleprinter import remove_color
-
 from terminaltables import AsciiTable
 
 
@@ -77,18 +76,19 @@ def main():
     """
     input = sys.stdin.read()
     searchfor = input.strip()
-    profile = str(open(os.path.expanduser("~/.bash_profile"), 'r').read())
-    if len(profile.strip()):
-        profile = profile.encode("utf8")
+    profile = str(open(os.path.expanduser("~/.bash_profile"), 'rt').read())
+
+    # if len(profile.strip()):
+    #    profile = profile.encode("utf8")
     aliasses = []
     lines = []
 
     if len(searchfor) == 0:
         print("possible commands:")
+
     profile = str(profile)
 
     for line in profile.split("\n"):
-
         lines.append(line)
         if line.startswith("alias "):
             sline = line.split("=", 1)
@@ -101,6 +101,8 @@ def main():
                 console_warning("cant split this", line)
 
                 raise RuntimeError()
+
+    # print(len(searchfor), len(aliasses))
 
     if len(searchfor) == 0:
         data = []
