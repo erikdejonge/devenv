@@ -57,12 +57,12 @@ def main():
         query += " " + arguments.term3
 
     home = os.path.expanduser("~")
-    print("hello", home)
-    exit(1)
+
+
     fname = home+"/command:" + query.replace(" ", "_")
-    print(home, fname)
-    exit(1)
-    with open(fname, "w+b", buffering=False) as tf:
+
+    tf = open(fname, "w+b", buffering=False)
+    with tf:
         try:
             result = cmd_run("/usr/bin/man " + query, streamoutput=False, cwd=home)
             tf.write(result.encode('utf-8'))
@@ -78,7 +78,7 @@ def main():
             return
         finally:
             print(tf.name)
-            #os.remove(tf.name)
+
 
 
 if __name__ == "__main__":
