@@ -23,7 +23,6 @@ from arguments import Arguments
 from consoleprinter import console
 from consoleprinter import get_safe_filename_string
 
-
 if sys.version_info.major < 3:
     console("Python 3 is required", color="red", plaintext="True")
     exit(1)
@@ -93,6 +92,7 @@ def change_filepath(fdp, fp):
         'm1v',
         'm3u',
         'm3u8',
+        'md',
         'm4v',
         'man',
         'me',
@@ -184,16 +184,25 @@ def change_filepath(fdp, fp):
 
     nfp = get_safe_filename_string(fp)
 
-    if nfp=='ds_store':
+    if nfp == 'ds_store':
         if os.path.exists(nfp):
             os.remove(nfp)
     else:
+        for i in ext:
+            mext = "." + i
+
+            # print(nfp, mext+mext)
+
+            if nfp.endswith(mext + mext):
+                nfp2 = nfp.strip(mext)
+                nfp2 += mext
+                nfp = nfp2
 
         if 'ds_store' not in nfp.lower() and 'vhs_emmj_indexed' not in nfp.lower() and 'youtube' not in nfp.lower() and "imovie" not in nfp.lower():
             replaces = ['1080p', 'bluray', 'x264', 'dts-jyk', '1080p', 'brrip', '1080p', '720p', 'lolettv', 'internal', 'hevc-psa', 'fleet', 'killersettv', 'fumettv', 'yts', 'xvid-etrg', 'webrip', 'x264-deflateettv', 'hdtv', 'x264', 'proper', '-deepguy', '1080p', 'bluray', 'x264', 'dts-jyk', '1080p', 'yts', 'multisub', '_ger', 'highcode', '-phd', 'eng_subs', 'h264', '-mp4', 'xvid', 'hdrip', 'x264-killersettv',
                         'x264', 'gaz', 'yify', 'ac3', '1080p', 'etrg', 'brrip', '-evo', '_evo', '720p', '480p', 'bluray', 'web_dl', 'reenc', 'deejayahmed', 'aac', 'team_nanban', 'repack', 'hdtv', 'dvdscr', '.hq', 'hive-cm8', 'hd-ts', 'extended', 'proper', 'cpg', '.hc']
 
-            #replaces.extend([str(x) for x in range(1950, 2020)])
+            # replaces.extend([str(x) for x in range(1950, 2020)])
             for i in replaces:
                 if "marit" not in i:
                     nfp = nfp.replace(i, "").replace("..", ".").replace("-.", ".").replace("_.", "__").strip(".").strip("_").strip("-").strip(".").replace(".", "_").replace("_nfo", ".txt").replace("_url", ".txt")
@@ -201,7 +210,6 @@ def change_filepath(fdp, fp):
             for i in ext:
                 e = "_" + i
                 n = "." + i
-
                 nfp = nfp.replace(e, n)
 
         for i in ext:
@@ -216,12 +224,18 @@ def change_filepath(fdp, fp):
             if nfp.endswith(e):
                 nfp = nfp.strip(e)
                 nfp += n
+                print(nfp)
 
         nfp = nfp.replace("_-_", "_").strip(".").strip("_")
 
         for i in range(0, 3):
             nfp = nfp.replace("..", ".").replace("-.", ".").replace("_.", ".").strip(".").strip("_").strip("-").strip(".")
 
+        nfpl = nfp.split(".")
+        nfp2 = "_".join(nfpl[:-1])
+        nfp2 += "." + nfpl[-1]
+
+        # print(nfp2)
         if fp != nfp:
             if os.path.isdir(fdp):
                 ffp = os.path.join(fdp, fp)
