@@ -75,6 +75,7 @@ def change_filepath(fdp, fp):
         'eps',
         'etx',
         'exe',
+        'flac',
         'gif',
         'gtar',
         'h',
