@@ -4,10 +4,11 @@
 Project htmltools
 
 Usage:
-  printlinks [options] <input>
+  printlinks [options] <input> [<extension>]
 
 Options:
   -h --help     Show this screen.
+  -r --relative Relative links also
 
 author  : rabshakeh (erik@a8.nl)
 project : htmltools
@@ -38,7 +39,9 @@ class IArguments(Arguments):
         __init__
         """
         self.help = False
+        self.relativelinks = False
         self.input = ""
+        self.extension = ""
         super().__init__(doc)
 
 
@@ -47,24 +50,26 @@ def main():
     main
     """
     arguments = IArguments(__doc__)
-    console(arguments)
+    #console(arguments)
+    links = {}
 
     try:
-        resp = urllib.request.urlopen(arguments.input)
-        resp = urllib.request.urlopen(arguments.input)
+        resp = urllib.request.urlopen(arguments.input)        
         soup = BeautifulSoup(resp, from_encoding=resp.info().get_param('charset'))
     except ValueError:
         resp = open(arguments.input).read()
         soup = BeautifulSoup(resp,  "html.parser")
 
 
-    for link in soup.find_all('a', href=True):
-        print(link.text)
-        print(link['href'].strip(), "\n")
+    for link in soup.find_all('a', href=True):       
+        if arguments.relativelinks is True or link['href'].strip().lower().startswith('http:'): 
+            links[link['href'].strip()]=link.text
 
-    # for link in soup.find_all():
+
+    print(len(links))  
+    for link in links:
     #     if "jpg" in str(link):
-    #         print(link.split("\""))
+        print(link, arguments.extension)
 
 
 if __name__ == "__main__":
