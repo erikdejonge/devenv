@@ -94,6 +94,7 @@ def change_filepath(fdp, fp):
         'm1v',
         'm3u',
         'm3u8',
+        'm4a',
         'm4b',
         'm4v',
         'md',
