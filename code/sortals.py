@@ -47,8 +47,6 @@ def get_alias_and_implementation(aliasses, profile, searchfor):
     for alias in aliasses:
         if searchfor.strip().lower() in alias[0].strip().lower() or searchfor.strip().lower() in alias[1].strip().lower():
             imp = alias[1].strip()
-<<<<<<< HEAD
-
             if imp.count(";") > 1:
                 retval += "\033[30malias " + alias[0].strip() + "=" + imp.strip() + "\"\n"
                 retval += "\033[91m" + alias[0].strip() + ":\033[33m\n   " + imp.replace(";", ";\n  ") + "\033[0m\n\n"
@@ -58,33 +56,14 @@ def get_alias_and_implementation(aliasses, profile, searchfor):
             if imp.startswith("_"):
                 foundfunc = False
 
-=======
-            
-            if imp.count(";") > 1:
-                retval += "\033[30malias " + alias[0].strip() + "=" + imp.strip() + "\"\n"
-                retval += "\033[91m" + alias[0].strip() + ":\033[33m\n   " + imp.replace(";", ";\n  ") + "\033[0m\n⎯⎯⎯\n"
-            else:
-                retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n⎯⎯⎯\n"
-            
-            if imp.startswith("_"):
-                foundfunc = False
-                
->>>>>>> 7883f8bd7b82db79eadf789551b94bd18c70759f
                 for func in profile.split("function "):
                     if func.startswith(imp):
                         foundfunc = True
                         retval += "\033[90mfunction " + func.strip() + "\033[0m\n\n"
-<<<<<<< HEAD
 
                 if foundfunc:
                     retval = retval.strip() + "\n\n"
 
-=======
-                
-                if foundfunc:
-                    retval = retval.strip() + "\n--\n"
-    
->>>>>>> 7883f8bd7b82db79eadf789551b94bd18c70759f
     return retval
 
 
@@ -97,37 +76,24 @@ def print_finds(aliasses, lines, profile, searchfor):
     @return: None
     """
     retval = get_alias_and_implementation(aliasses, profile, searchfor)
-<<<<<<< HEAD
 
     if len(retval) == 0:
         printing = False
 
-=======
-    
-    if len(retval) == 0:
-        printing = False
-        
->>>>>>> 7883f8bd7b82db79eadf789551b94bd18c70759f
         if searchfor.startswith("_"):
             searchfor = '_'.join(searchfor.split("_")[1:])
         for line in lines:
             if line.strip().startswith("function "):
                 if searchfor.lower() in line.lower():
                     printing = True
-<<<<<<< HEAD
                     print("\033[0m\033[90m")
 
-=======
-                    print("\033[0m--\033[90m")
-            
->>>>>>> 7883f8bd7b82db79eadf789551b94bd18c70759f
             if printing:
                 if line.startswith("function"):
                     linesp = line.split("function ")
                     print("function\033[33m", ''.join(linesp[1:]), "\033[90m")
                 else:
                     print(line)
-<<<<<<< HEAD
 
             if line.strip().startswith("}"):
                 printing = False
@@ -140,40 +106,16 @@ def print_finds(aliasses, lines, profile, searchfor):
             for line in lines:
                 cnt += 1
 
-=======
-            
-            if line.strip().startswith("}"):
-                printing = False
-                
-                # print("\033[0m")
-        
-        if len(retval) == 0:
-            cnt = 0
-            
-            for line in lines:
-                cnt += 1
-                
->>>>>>> 7883f8bd7b82db79eadf789551b94bd18c70759f
                 if searchfor.lower() in line.lower():
                     if cnt > 3:
                         for i in range(cnt - 3, cnt + 3):
                             if len(lines[i].strip()) > 0:
                                 retval += "\033[30m" + str(cnt) + ": \033[33m" + lines[i] + "\n"
-<<<<<<< HEAD
-
                     retval += "\n"
 
             print(retval)
 
         print("\033[0m")
-=======
-                    
-                    retval += "\n"
-            
-            print(retval)
-        
-        print("--\033[0m")
->>>>>>> 7883f8bd7b82db79eadf789551b94bd18c70759f
     else:
         print(retval)
 
@@ -189,7 +131,6 @@ def no_finds(aliasses):
     extra = [x[0] for x in aliasses[int(len(aliasses) / numcols) * numcols:]]
     myaliasses = zip(aliaschunks)
     myaliasses2 = []
-<<<<<<< HEAD
 
     for i in myaliasses:
         myaliasses2.append(i[0])
@@ -198,21 +139,10 @@ def no_finds(aliasses):
     while iline4 < len(myaliasses2[0]):
         myaliasses2[numcols - 1].append(' ')
 
-=======
-    
-    for i in myaliasses:
-        myaliasses2.append(i[0])
-    
-    iline4 = len(myaliasses2[numcols - 1])
-    while iline4 < len(myaliasses2[0]):
-        myaliasses2[numcols - 1].append(' ')
-    
->>>>>>> 7883f8bd7b82db79eadf789551b94bd18c70759f
     lex = len(extra)
     while lex < len(myaliasses2[0]):
         extra.append(' ')
         lex = len(extra)
-<<<<<<< HEAD
 
     zipparam = []
 
@@ -222,8 +152,6 @@ def no_finds(aliasses):
     zipparam.append(extra)
     zipparam = tuple(zipparam)
 
-=======
-    
     zipparam = []
     
     for i in range(0, numcols):
@@ -232,23 +160,18 @@ def no_finds(aliasses):
     zipparam.append(extra)
     zipparam = tuple(zipparam)
     
->>>>>>> 7883f8bd7b82db79eadf789551b94bd18c70759f
     # myaliasses3 = zip(myaliasses2[0], myaliasses2[1], myaliasses2[2], myaliasses2[3], myaliasses2[4], myaliasses2[5], myaliasses2[6], extra)
     myaliasses3 = zip(*zipparam)
     header = ['alias commands']
     header.extend(' ' * numcols)
     myaliasses4 = [header]
-<<<<<<< HEAD
 
     for i in myaliasses3:
         myaliasses4.append(list(i))
 
-=======
-    
     for i in myaliasses3:
         myaliasses4.append(list(i))
     
->>>>>>> 7883f8bd7b82db79eadf789551b94bd18c70759f
     table = AsciiTable(myaliasses4)
     print(table.table)
 
@@ -260,58 +183,23 @@ def main():
     userinput = sys.stdin.read()
     searchfor = userinput.strip()
     profile = str(open(os.path.expanduser("~/.bash_profile"), 'rt').read())
-<<<<<<< HEAD
-
-=======
     
->>>>>>> 7883f8bd7b82db79eadf789551b94bd18c70759f
     # if len(profile.strip()):
     #    profile = profile.encode("utf8")
     aliasses = []
     lines = []
-<<<<<<< HEAD
 
     if len(searchfor) == 0:
         print("possible commands:")
 
     profile = str(profile)
 
-=======
-    
-    if len(searchfor) == 0:
-        print("possible commands:")
-    
-    profile = str(profile)
-    
->>>>>>> 7883f8bd7b82db79eadf789551b94bd18c70759f
     for line in profile.split("\n"):
         lines.append(line)
         if line.startswith("alias "):
             sline = line.split("=", 1)
-<<<<<<< HEAD
-
-=======
-            
->>>>>>> 7883f8bd7b82db79eadf789551b94bd18c70759f
-            if len(sline) > 0:
-                alias = sline[0].strip().replace("alias ", "")
-                imp = sline[1].strip().strip(":").strip("'")
-                aliasses.append((alias, imp))
-            else:
-                console_warning("cant split this", line)
-<<<<<<< HEAD
-
                 raise RuntimeError()
 
-    # print(len(searchfor), len(aliasses))
-
-=======
-                
-                raise RuntimeError()
-    
-    # print(len(searchfor), len(aliasses))
-    
->>>>>>> 7883f8bd7b82db79eadf789551b94bd18c70759f
     if len(searchfor) == 0:
         no_finds(aliasses)
     else:
