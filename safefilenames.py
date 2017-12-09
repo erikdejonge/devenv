@@ -77,6 +77,8 @@ def change_filepath(fdp, fp):
         'exe',
         'flac',
         'gif',
+        'gz',
+        'gzip',
         'gtar',
         'h',
         'hdf',
@@ -195,6 +197,7 @@ def change_filepath(fdp, fp):
         'zip']
 
     nfp = get_safe_filename_string(fp)
+    print(nfp)
 
     if nfp == 'ds_store':
         if os.path.exists(nfp):
@@ -268,7 +271,7 @@ def walkdir(recursive, fdp):
     @return: None
     """
     global skipmsg
-    skipnames = ['$RECYCLE.BIN']
+    skipnames = ['$RECYCLE.BIN', '.git', '.gitignore']
 
     for fp in os.listdir(fdp):
         skip = False
