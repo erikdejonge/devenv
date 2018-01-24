@@ -73,6 +73,7 @@ def change_filepath(fdp, fp):
         'dvi',
         'eml',
         'eps',
+        'epub',
         'etx',
         'exe',
         'flac',
