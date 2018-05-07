@@ -1,0 +1,12 @@
+#!/bin/bash
+for output in $(xrandr | grep 3840x1600); do 
+    echo 'widescreen'
+done
+
+for output in $(xrandr | grep 3840x2160); do 
+    echo '4k'
+done
+
+for output in $(xrandr | grep 1920x180); do 
+    echo 'laptop screen'
+done

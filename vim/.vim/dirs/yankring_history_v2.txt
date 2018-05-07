@@ -1,0 +1,100 @@
+#,v
+1,v
+6,v
+A,v
+0,v
+8,v
+5,v
+16A085,v
+fefdc2,v
+f,v
+e,v
+d,v
+c,v
+2,v
+6    statusline #fefdc2,v
+4,v
+7,v
+a,v
+ ,v
+ff7c84,v
+:,v
+9fd79d,v
+000000,v
+697b8d,v
+97b8d9,v
+161616,v
+9,v
+b,v
+3,v
+x,v
+FEFDC2,v
+.,v
+;fade-in-step = 0.03,v
+-,v
+ihelloo,V
+ooihellooihellooihello,v
+!,v
+98b5b4,v
+586e75,v
+4f4f4f,v
+eee8d5,v
+c6b375,v
+073642,v
+616161,v
+dc322f,v
+859900,v
+002b36,v
+d33682,v
+8599,v
+exec --no-startup-id xsetroot -solid "#000000",V
+EndSection,V
+    Option         "ZAxisMapping" "4 5",V
+    Option         "Emulate3Buttons" "no",V
+    Option         "Device" "/dev/psaux",V
+    Option         "Protocol" "auto",V
+    Driver         "mouse",V
+    Identifier     "Mouse0",V
+    # generated from default,V
+,V
+r,v
+n,v
+exec /usr/bin/compton --config /home/joe/.compton.conf~.i3/config,V
+Z,v
+i,v
+p,v
+u,v
+t,v
+s,v
+o,v
+exec --no-startup-id /usr/bin/compton --config /home/rabshakeh/.config/compton.conf,V
+d,V
+inactive-opacity = 1.0;             # Default opacity of inactive windows. (0.0 - 1.0),V
+w,v
+l,v
+g,v
+exec --no-startup-id dual-screen,V
+	,v
+/,v
+~,v
+@,v
+!Xft.dpi : 96,V
+`,v
+];,V
+    "window_type = 'desktop'",V
+    "window_type = 'dock'",,V
+blur-background-exclude = [,V
+    "name *= 'Firefox'",,V
+    "name *= 'Chrome'",,V
+    "name *= 'Chromium'",,V
+    "name *= 'compton'",,V
+    "name *= 'VLC'",,V
+    "name = 'xfce4-notifyd'",,V
+    "name = 'Kupfer'",,V
+    "name = 'Docky'",,V
+    "name = 'Plank'",,V
+    "name = 'Notification'",,V
+glx-swap-method = "undefined";,V
+#paint-on-overlay = true;#glx-no-stencil = true;#glx-no-rebind-pixmap = true;#glx-use-copysubbuffermesa = false;#vsync = "undefined";#dbus = true;#detect-client-opacity = true;#xrender-sync-fence = true;,v
+backend = "glx";################################### GLX backend##################################glx-no-stencil = true;# GLX backend: Copy unmodified regions from front buffer instead of redrawing them all.# My tests with nvidia-drivers show a 10% decrease in performance when the whole screen is modified,# but a 20% increase when only 1/4 is.# My tests on nouveau show terrible slowdown.# Useful with --glx-swap-method, as well.glx-copy-from-front = false;# GLX backend: Use MESA_copy_sub_buffer to do partial screen update.# My tests on nouveau shows a 200% performance boost when only 1/4 of the screen is updated.# May break VSync and is not available on some drivers.# Overrides --glx-copy-from-front.# glx-use-copysubbuffermesa = true;# GLX backend: Avoid rebinding pixmap on window damage.# Probably could improve performance on rapid window content changes, but is known to break things on some drivers (LLVMpipe).# Recommended if it works.#glx-no-rebind-pixmap = true;# GLX backend: GLX buffer swap method we assume.# Could be undefined (0), copy (1), exchange (2), 3-6, or buffer-age (-1).# undefined is the slowest and the safest, and the default value.# copy is fastest, but may fail on some drivers,# 2-6 are gradually slower but safer (6 is still faster than 0).# Usually, double buffer means 2, triple buffer means 3.# buffer-age means auto-detect using GLX_EXT_buffer_age, supported by some drivers.# Useless with --glx-use-copysubbuffermesa.# Partially breaks --resize-damage.# Defaults to undefined.glx-swap-method = "undefined";,v
+# glx-no-rebind-pixmap = true;,V
