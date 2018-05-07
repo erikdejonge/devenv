@@ -1,0 +1,478 @@
+toilet -f ascii12  `hostname`
+echo "ascii12.tlf"
+toilet -f ascii9  `hostname`
+echo "ascii9.tlf"
+toilet -f bigascii12  `hostname`
+echo "bigascii12.tlf"
+toilet -f bigascii9  `hostname`
+echo "bigascii9.tlf"
+toilet -f bigmono12  `hostname`
+echo "bigmono12.tlf"
+toilet -f bigmono9  `hostname`
+echo "bigmono9.tlf"
+toilet -f circle  `hostname`
+echo "circle.tlf"
+toilet -f emboss  `hostname`
+echo "emboss.tlf"
+toilet -f emboss2  `hostname`
+echo "emboss2.tlf"
+toilet -f future  `hostname`
+echo "future.tlf"
+toilet -f letter  `hostname`
+echo "letter.tlf"
+toilet -f mono12  `hostname`
+echo "mono12.tlf"
+toilet -f mono9  `hostname`
+echo "mono9.tlf"
+toilet -f pagga  `hostname`
+echo "pagga.tlf"
+toilet -f smascii12  `hostname`
+echo "smascii12.tlf"
+toilet -f smascii9  `hostname`
+echo "smascii9.tlf"
+toilet -f smblock  `hostname`
+echo "smblock.tlf"
+toilet -f smbraille  `hostname`
+echo "smbraille.tlf"
+toilet -f smmono12  `hostname`
+echo "smmono12.tlf"
+toilet -f smmono9  `hostname`
+echo "smmono9.tlf"
+toilet -f wideterm  `hostname`
+echo "wideterm.tlf"
+figlet -f 3-d `hostname`
+echo "3-d.flf"
+figlet -f 3x5 `hostname`
+echo "3x5.flf"
+figlet -f 5lineoblique `hostname`
+echo "5lineoblique.flf"
+figlet -f 646-ca `hostname`
+echo "646-ca.flc"
+figlet -f 646-ca2 `hostname`
+echo "646-ca2.flc"
+figlet -f 646-cn `hostname`
+echo "646-cn.flc"
+figlet -f 646-cu `hostname`
+echo "646-cu.flc"
+figlet -f 646-de `hostname`
+echo "646-de.flc"
+figlet -f 646-dk `hostname`
+echo "646-dk.flc"
+figlet -f 646-es `hostname`
+echo "646-es.flc"
+figlet -f 646-es2 `hostname`
+echo "646-es2.flc"
+figlet -f 646-fr `hostname`
+echo "646-fr.flc"
+figlet -f 646-gb `hostname`
+echo "646-gb.flc"
+figlet -f 646-hu `hostname`
+echo "646-hu.flc"
+figlet -f 646-irv `hostname`
+echo "646-irv.flc"
+figlet -f 646-it `hostname`
+echo "646-it.flc"
+figlet -f 646-jp `hostname`
+echo "646-jp.flc"
+figlet -f 646-kr `hostname`
+echo "646-kr.flc"
+figlet -f 646-no `hostname`
+echo "646-no.flc"
+figlet -f 646-no2 `hostname`
+echo "646-no2.flc"
+figlet -f 646-pt `hostname`
+echo "646-pt.flc"
+figlet -f 646-pt2 `hostname`
+echo "646-pt2.flc"
+figlet -f 646-se `hostname`
+echo "646-se.flc"
+figlet -f 646-se2 `hostname`
+echo "646-se2.flc"
+figlet -f 646-yu `hostname`
+echo "646-yu.flc"
+figlet -f 8859-2 `hostname`
+echo "8859-2.flc"
+figlet -f 8859-3 `hostname`
+echo "8859-3.flc"
+figlet -f 8859-4 `hostname`
+echo "8859-4.flc"
+figlet -f 8859-5 `hostname`
+echo "8859-5.flc"
+figlet -f 8859-7 `hostname`
+echo "8859-7.flc"
+figlet -f 8859-8 `hostname`
+echo "8859-8.flc"
+figlet -f 8859-9 `hostname`
+echo "8859-9.flc"
+figlet -f C64-fonts `hostname`
+echo "C64-fonts"
+figlet -f Obanner-canon `hostname`
+echo "Obanner-canon.tgz"
+figlet -f Obanner `hostname`
+echo "Obanner.README"
+figlet -f Obanner `hostname`
+echo "Obanner.tgz"
+figlet -f acrobatic `hostname`
+echo "acrobatic.flf"
+figlet -f alligator `hostname`
+echo "alligator.flf"
+figlet -f alligator2 `hostname`
+echo "alligator2.flf"
+figlet -f alphabet `hostname`
+echo "alphabet.flf"
+figlet -f avatar `hostname`
+echo "avatar.flf"
+figlet -f banner `hostname`
+echo "banner.flf"
+figlet -f banner3-D `hostname`
+echo "banner3-D.flf"
+figlet -f banner3 `hostname`
+echo "banner3.flf"
+figlet -f banner4 `hostname`
+echo "banner4.flf"
+figlet -f barbwire `hostname`
+echo "barbwire.flf"
+figlet -f basic `hostname`
+echo "basic.flf"
+figlet -f bdffonts `hostname`
+echo "bdffonts"
+figlet -f bell `hostname`
+echo "bell.flf"
+figlet -f big `hostname`
+echo "big.flf"
+figlet -f bigchief `hostname`
+echo "bigchief.flf"
+figlet -f binary `hostname`
+echo "binary.flf"
+figlet -f block `hostname`
+echo "block.flf"
+figlet -f broadway `hostname`
+echo "broadway.flf"
+figlet -f bubble `hostname`
+echo "bubble.flf"
+figlet -f bulbhead `hostname`
+echo "bulbhead.flf"
+figlet -f calgphy2 `hostname`
+echo "calgphy2.flf"
+figlet -f caligraphy `hostname`
+echo "caligraphy.flf"
+figlet -f catwalk `hostname`
+echo "catwalk.flf"
+figlet -f chunky `hostname`
+echo "chunky.flf"
+figlet -f cjkfonts `hostname`
+echo "cjkfonts.readme"
+figlet -f cjkfonts `hostname`
+echo "cjkfonts.tar.gz"
+figlet -f coinstak `hostname`
+echo "coinstak.flf"
+figlet -f colossal `hostname`
+echo "colossal.flf"
+figlet -f computer `hostname`
+echo "computer.flf"
+figlet -f contessa `hostname`
+echo "contessa.flf"
+figlet -f contrast `hostname`
+echo "contrast.flf"
+figlet -f cosmic `hostname`
+echo "cosmic.flf"
+figlet -f cosmike `hostname`
+echo "cosmike.flf"
+figlet -f crawford `hostname`
+echo "crawford.flf"
+figlet -f cricket `hostname`
+echo "cricket.flf"
+figlet -f cursive `hostname`
+echo "cursive.flf"
+figlet -f cyberlarge `hostname`
+echo "cyberlarge.flf"
+figlet -f cybermedium `hostname`
+echo "cybermedium.flf"
+figlet -f cybersmall `hostname`
+echo "cybersmall.flf"
+figlet -f decimal `hostname`
+echo "decimal.flf"
+figlet -f diamond `hostname`
+echo "diamond.flf"
+figlet -f digital `hostname`
+echo "digital.flf"
+figlet -f doh `hostname`
+echo "doh.flf"
+figlet -f doom `hostname`
+echo "doom.flf"
+figlet -f dotmatrix `hostname`
+echo "dotmatrix.flf"
+figlet -f double `hostname`
+echo "double.flf"
+figlet -f drpepper `hostname`
+echo "drpepper.flf"
+figlet -f dwhistled `hostname`
+echo "dwhistled.flf"
+figlet -f eftichess `hostname`
+echo "eftichess.flf"
+figlet -f eftichessChart `hostname`
+echo "eftichessChart"
+figlet -f eftifont `hostname`
+echo "eftifont.flf"
+figlet -f eftipiti `hostname`
+echo "eftipiti.flf"
+figlet -f eftirobot `hostname`
+echo "eftirobot.flf"
+figlet -f eftitalic `hostname`
+echo "eftitalic.flf"
+figlet -f eftiwall-chart `hostname`
+echo "eftiwall-chart.txt"
+figlet -f eftiwall `hostname`
+echo "eftiwall.flf"
+figlet -f eftiwall `hostname`
+echo "eftiwall.txt"
+figlet -f eftiwater `hostname`
+echo "eftiwater.flf"
+figlet -f epic `hostname`
+echo "epic.flf"
+figlet -f febrew `hostname`
+echo "febrew"
+figlet -f fender `hostname`
+echo "fender.flf"
+figlet -f fourtops `hostname`
+echo "fourtops.flf"
+figlet -f fraktur `hostname`
+echo "fraktur.flf"
+figlet -f frango `hostname`
+echo "frango.flc"
+figlet -f fuzzy `hostname`
+echo "fuzzy.flf"
+figlet -f goofy `hostname`
+echo "goofy.flf"
+figlet -f gothic `hostname`
+echo "gothic.flf"
+figlet -f graceful `hostname`
+echo "graceful.flf"
+figlet -f gradient `hostname`
+echo "gradient.flf"
+figlet -f graffiti `hostname`
+echo "graffiti.flf"
+figlet -f hex `hostname`
+echo "hex.flf"
+figlet -f hollywood `hostname`
+echo "hollywood.flf"
+figlet -f hz `hostname`
+echo "hz.flc"
+figlet -f ilhebrew `hostname`
+echo "ilhebrew.flc"
+figlet -f invita `hostname`
+echo "invita.flf"
+figlet -f isometric1 `hostname`
+echo "isometric1.flf"
+figlet -f isometric2 `hostname`
+echo "isometric2.flf"
+figlet -f isometric3 `hostname`
+echo "isometric3.flf"
+figlet -f isometric4 `hostname`
+echo "isometric4.flf"
+figlet -f italic `hostname`
+echo "italic.flf"
+figlet -f ivrit `hostname`
+echo "ivrit.flf"
+figlet -f jazmine `hostname`
+echo "jazmine.flf"
+figlet -f jerusalem `hostname`
+echo "jerusalem.flf"
+figlet -f jis0201 `hostname`
+echo "jis0201.flc"
+figlet -f katakana `hostname`
+echo "katakana.flf"
+figlet -f kban `hostname`
+echo "kban.flf"
+figlet -f koi8r `hostname`
+echo "koi8r.flc"
+figlet -f l4me `hostname`
+echo "l4me.flf"
+figlet -f larry3d `hostname`
+echo "larry3d.flf"
+figlet -f lcd `hostname`
+echo "lcd.flf"
+figlet -f lean `hostname`
+echo "lean.flf"
+figlet -f letters `hostname`
+echo "letters.flf"
+figlet -f linux `hostname`
+echo "linux.flf"
+figlet -f lockergnome `hostname`
+echo "lockergnome.flf"
+figlet -f lower `hostname`
+echo "lower.flc"
+figlet -f madrid `hostname`
+echo "madrid.flf"
+figlet -f marquee `hostname`
+echo "marquee.flf"
+figlet -f maxfour `hostname`
+echo "maxfour.flf"
+figlet -f mike `hostname`
+echo "mike.flf"
+figlet -f mini `hostname`
+echo "mini.flf"
+figlet -f mirror `hostname`
+echo "mirror.flf"
+figlet -f mnemonic `hostname`
+echo "mnemonic.flf"
+figlet -f morse `hostname`
+echo "morse.flf"
+figlet -f moscow `hostname`
+echo "moscow.flc"
+figlet -f moscow `hostname`
+echo "moscow.flf"
+figlet -f mshebrew210 `hostname`
+echo "mshebrew210.flf"
+figlet -f nancyj-fancy `hostname`
+echo "nancyj-fancy.flf"
+figlet -f nancyj-underlined `hostname`
+echo "nancyj-underlined.flf"
+figlet -f nancyj `hostname`
+echo "nancyj.flf"
+figlet -f nipples `hostname`
+echo "nipples.flf"
+figlet -f ntgreek `hostname`
+echo "ntgreek.flf"
+figlet -f null `hostname`
+echo "null.flc"
+figlet -f nvscript `hostname`
+echo "nvscript.flf"
+figlet -f o8 `hostname`
+echo "o8.flf"
+figlet -f octal `hostname`
+echo "octal.flf"
+figlet -f ogre `hostname`
+echo "ogre.flf"
+figlet -f os2 `hostname`
+echo "os2.flf"
+figlet -f pawp `hostname`
+echo "pawp.flf"
+figlet -f peaks `hostname`
+echo "peaks.flf"
+figlet -f pebbles `hostname`
+echo "pebbles.flf"
+figlet -f pepper `hostname`
+echo "pepper.flf"
+figlet -f poison `hostname`
+echo "poison.flf"
+figlet -f puffy `hostname`
+echo "puffy.flf"
+figlet -f pyramid `hostname`
+echo "pyramid.flf"
+figlet -f rectangles `hostname`
+echo "rectangles.flf"
+figlet -f relief `hostname`
+echo "relief.flf"
+figlet -f relief2 `hostname`
+echo "relief2.flf"
+figlet -f rev `hostname`
+echo "rev.flf"
+figlet -f roman `hostname`
+echo "roman.flf"
+figlet -f rot13 `hostname`
+echo "rot13.flc"
+figlet -f rot13 `hostname`
+echo "rot13.flf"
+figlet -f rounded `hostname`
+echo "rounded.flf"
+figlet -f rowancap `hostname`
+echo "rowancap.flf"
+figlet -f rozzo `hostname`
+echo "rozzo.flf"
+figlet -f runic `hostname`
+echo "runic.flf"
+figlet -f runyc `hostname`
+echo "runyc.flf"
+figlet -f sblood `hostname`
+echo "sblood.flf"
+figlet -f script `hostname`
+echo "script.flf"
+figlet -f serifcap `hostname`
+echo "serifcap.flf"
+figlet -f shadow `hostname`
+echo "shadow.flf"
+figlet -f short `hostname`
+echo "short.flf"
+figlet -f slant `hostname`
+echo "slant.flf"
+figlet -f slide `hostname`
+echo "slide.flf"
+figlet -f slscript `hostname`
+echo "slscript.flf"
+figlet -f small `hostname`
+echo "small.flf"
+figlet -f smisome1 `hostname`
+echo "smisome1.flf"
+figlet -f smkeyboard `hostname`
+echo "smkeyboard.flf"
+figlet -f smscript `hostname`
+echo "smscript.flf"
+figlet -f smshadow `hostname`
+echo "smshadow.flf"
+figlet -f smslant `hostname`
+echo "smslant.flf"
+figlet -f smtengwar `hostname`
+echo "smtengwar.flf"
+figlet -f speed `hostname`
+echo "speed.flf"
+figlet -f stacey `hostname`
+echo "stacey.flf"
+figlet -f stampatello `hostname`
+echo "stampatello.flf"
+figlet -f standard `hostname`
+echo "standard.flf"
+figlet -f starwars `hostname`
+echo "starwars.flf"
+figlet -f stellar `hostname`
+echo "stellar.flf"
+figlet -f stop `hostname`
+echo "stop.flf"
+figlet -f straight `hostname`
+echo "straight.flf"
+figlet -f swap `hostname`
+echo "swap.flc"
+figlet -f tanja `hostname`
+echo "tanja.flf"
+figlet -f tengwar `hostname`
+echo "tengwar.flf"
+figlet -f term `hostname`
+echo "term.flf"
+figlet -f thick `hostname`
+echo "thick.flf"
+figlet -f thin `hostname`
+echo "thin.flf"
+figlet -f threepoint `hostname`
+echo "threepoint.flf"
+figlet -f ticks `hostname`
+echo "ticks.flf"
+figlet -f ticksslant `hostname`
+echo "ticksslant.flf"
+figlet -f tinker-toy `hostname`
+echo "tinker-toy.flf"
+figlet -f tombstone `hostname`
+echo "tombstone.flf"
+figlet -f trek `hostname`
+echo "trek.flf"
+figlet -f tsalagi `hostname`
+echo "tsalagi.flc"
+figlet -f tsalagi `hostname`
+echo "tsalagi.flf"
+figlet -f twopoint `hostname`
+echo "twopoint.flf"
+figlet -f univers `hostname`
+echo "univers.flf"
+figlet -f upper `hostname`
+echo "upper.flc"
+figlet -f usaflag `hostname`
+echo "usaflag.flf"
+figlet -f ushebrew `hostname`
+echo "ushebrew.flc"
+figlet -f uskata `hostname`
+echo "uskata.flc"
+figlet -f utf8 `hostname`
+echo "utf8.flc"
+figlet -f weird `hostname`
+echo "weird.flf"
+figlet -f whimsy `hostname`
+echo "whimsy.flf"

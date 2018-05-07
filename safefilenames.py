@@ -27,6 +27,7 @@ if sys.version_info.major < 3:
     console("Python 3 is required", color="red", plaintext="True")
     exit(1)
 
+
 class IArguments(Arguments):
     """
     IArguments
@@ -39,6 +40,7 @@ class IArguments(Arguments):
         self.input = ""
         super().__init__(doc)
         self.seen = set()
+
 
 def change_filepath(fdp, fp):
     """
@@ -64,12 +66,13 @@ def change_filepath(fdp, fp):
         'csh',
         'css',
         'csv',
+        'dat',
+        'db',
         'dll',
         'doc',
         'docx',
         'dot',
         'dmg',
-
         'dvi',
         'eml',
         'eps',
@@ -101,7 +104,6 @@ def change_filepath(fdp, fp):
         'm4b',
         'm4v',
         'md',
-
         'man',
         'me',
         'mht',
@@ -125,6 +127,7 @@ def change_filepath(fdp, fp):
         'o',
         'obj',
         'oda',
+        'part',
         'p12',
         'p7c',
         'pbm',
@@ -264,7 +267,9 @@ def change_filepath(fdp, fp):
                 print(ffp, "->", fnfp)
                 os.system('mv "' + ffp + '" "' + fnfp + '"')
 
+
 skipmsg = set()
+
 
 def walkdir(recursive, fdp):
     """
@@ -294,6 +299,7 @@ def walkdir(recursive, fdp):
                 print("\033[33mskipping {}\033[0m".format(fp))
                 skipmsg.add(fp)
 
+
 def main():
     """
     main
@@ -305,6 +311,7 @@ def main():
     else:
         for i in range(0, 10):
             walkdir(arguments.recursive, arguments.filepath)
+
 
 if __name__ == "__main__":
     main()
