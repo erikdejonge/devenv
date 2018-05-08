@@ -1,22 +1,26 @@
+e,v
+s,v
+l,v
+a,v
+f,v
 #,v
 1,v
-6,v
-A,v
-0,v
 8,v
+.,v
+0,v
+2,v
+4,v
+ ,v
+6,v
+3,v
+A,v
 5,v
 16A085,v
 fefdc2,v
-f,v
-e,v
 d,v
 c,v
-2,v
 6    statusline #fefdc2,v
-4,v
 7,v
-a,v
- ,v
 ff7c84,v
 :,v
 9fd79d,v
@@ -26,10 +30,8 @@ ff7c84,v
 161616,v
 9,v
 b,v
-3,v
 x,v
 FEFDC2,v
-.,v
 ;fade-in-step = 0.03,v
 -,v
 ihelloo,V
@@ -65,13 +67,11 @@ i,v
 p,v
 u,v
 t,v
-s,v
 o,v
 exec --no-startup-id /usr/bin/compton --config /home/rabshakeh/.config/compton.conf,V
 d,V
 inactive-opacity = 1.0;             # Default opacity of inactive windows. (0.0 - 1.0),V
 w,v
-l,v
 g,v
 exec --no-startup-id dual-screen,V
 	,v
