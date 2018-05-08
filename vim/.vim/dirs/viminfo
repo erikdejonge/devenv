@@ -11,19 +11,21 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/fdf6e3
+~MSle0~/\<default\>
 
 # Last Substitute Search Pattern:
-~MSle0&fdf6e3
+~MSle0&c7a774
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
-:w
-|2,0,1525707997,,"w"
 :q
-|2,0,1525707697,,"q"
+|2,0,1525783251,,"q"
+:w
+|2,0,1525779124,,"w"
+:%s/c7a774/7ed6c0/g
+|2,0,1525708185,,"%s/c7a774/7ed6c0/g"
 :%s/fdf6e3/c7a774/g
 |2,0,1525441585,,"%s/fdf6e3/c7a774/g"
 :/s/fdf6e3/c7a774/g
@@ -41,7 +43,17 @@ $
 
 # Search String History (newest to oldest):
 ? @$
-|2,1,1525707615,,"@$"
+|2,1,1525783002,,"@$"
+?/lxnn
+|2,1,1525777371,47,"lxnn"
+?/fade
+|2,1,1525776663,47,"fade"
+? \<default\>
+|2,1,1525708231,,"\\<default\\>"
+?/16a
+|2,1,1525708227,47,"16a"
+? c7a774
+|2,1,1525708185,,"c7a774"
 ? fdf6e3
 |2,1,1525441585,,"fdf6e3"
 ? s
@@ -130,16 +142,6 @@ $
 |2,1,1524496100,47,"boolean"
 ?/reverseVi
 |2,1,1524496074,47,"reverseVi"
-?/buffered
-|2,1,1524496046,47,"buffered"
-?/rewerw
-|2,1,1524496002,47,"rewerw"
-?/.
-|2,1,1524495999,47,"."
-?/UR
-|2,1,1524495978,47,"UR"
-?/urxvt
-|2,1,1524495965,47,"urxvt"
 
 # Expression History (newest to oldest):
 
@@ -148,411 +150,335 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
-	3
-|3,0,0,0,1,0,1525707952,"3"
-""1	CHAR	0
-	161616
-|3,1,1,0,1,0,1525707983,"161616"
+""0	CHAR	0
+	e
+|3,1,0,0,1,0,1525783002,"e"
+"1	CHAR	0
+	6
+	    statusline #fefdc2
+	
+|3,0,1,0,3,0,1525708264,"6","    statusline #fefdc2",""
 "2	CHAR	0
+	697b8d
+|3,0,2,0,1,0,1525708075,"697b8d"
+"3	CHAR	0
+	97b8d9
+|3,0,3,0,1,0,1525708044,"97b8d9"
+"4	CHAR	0
+	161616
+|3,0,4,0,1,0,1525707983,"161616"
+"5	CHAR	0
 	;
 	fade-in-step = 0.03
-|3,0,2,0,2,0,1525435034,";","fade-in-step = 0.03"
-"3	CHAR	0
-	98b5b4
-|3,0,3,0,1,0,1525265251,"98b5b4"
-"4	CHAR	0
-	98b5b4
-|3,0,4,0,1,0,1525265242,"98b5b4"
-"5	CHAR	0
-	586e75
-|3,0,5,0,1,0,1525265240,"586e75"
+|3,0,5,0,2,0,1525435034,";","fade-in-step = 0.03"
 "6	CHAR	0
+	98b5b4
+|3,0,6,0,1,0,1525265251,"98b5b4"
+"7	CHAR	0
+	98b5b4
+|3,0,7,0,1,0,1525265242,"98b5b4"
+"8	CHAR	0
+	586e75
+|3,0,8,0,1,0,1525265240,"586e75"
+"9	CHAR	0
 	002b36
-|3,0,6,0,1,0,1525265063,"002b36"
-"7	LINE	0
-	exec --no-startup-id xsetroot -solid "#000000"
-|3,0,7,1,1,0,1525261944,"exec --no-startup-id xsetroot -solid \"#000000\""
-"8	LINE	0
-	EndSection
-|3,0,8,1,1,0,1525261125,"EndSection"
-"9	LINE	0
-	    Option         "ZAxisMapping" "4 5"
-|3,0,9,1,1,0,1525261124,"    Option         \"ZAxisMapping\" \"4 5\""
+|3,0,9,0,1,0,1525265063,"002b36"
 "-	CHAR	0
-	161616
-|3,0,36,0,1,0,1525707983,"161616"
+	e
+|3,0,36,0,1,0,1525779018,"e"
 
 # File marks:
-'0  397  0  ~/.config/i3/config
-|4,48,397,0,1525708000,"~/.config/i3/config"
-'1  1  0  ~/.i3blocks.conf
-|4,49,1,0,1525707697,"~/.i3blocks.conf"
-'2  1  0  ~/.config/compton.conf
-|4,50,1,0,1525707686,"~/.config/compton.conf"
-'3  8  0  ~/.config
-|4,51,8,0,1525707617,"~/.config"
-'4  68  0  ~/.Xresources
-|4,52,68,0,1525441590,"~/.Xresources"
-'5  402  0  ~/.config/i3/config
-|4,53,402,0,1525441588,"~/.config/i3/config"
-'6  402  0  ~/.config/i3/config
-|4,54,402,0,1525441588,"~/.config/i3/config"
-'7  68  0  ~/.Xresources
-|4,55,68,0,1525441484,"~/.Xresources"
-'8  66  0  ~/.Xresources
-|4,56,66,0,1525441443,"~/.Xresources"
-'9  316  21  ~/.config/i3/config
-|4,57,316,21,1525441443,"~/.config/i3/config"
+'0  1  0  ~/workspace/devenv_private/etckeepergit/etckeeper.conf
+|4,48,1,0,1525783251,"~/workspace/devenv_private/etckeepergit/etckeeper.conf"
+'1  1  0  ~/.config/compton.conf
+|4,49,1,0,1525783013,"~/.config/compton.conf"
+'2  8  0  ~/.config
+|4,50,8,0,1525783004,"~/.config"
+'3  1  0  .i3/compt
+|4,51,1,0,1525780059,".i3/compt"
+'4  32  0  ~/.config/compton.conf
+|4,52,32,0,1525779182,"~/.config/compton.conf"
+'5  32  0  ~/.config/compton.conf
+|4,53,32,0,1525779182,"~/.config/compton.conf"
+'6  28  18  ~/.config/compton.conf
+|4,54,28,18,1525779125,"~/.config/compton.conf"
+'7  28  18  ~/.config/compton.conf
+|4,55,28,18,1525779125,"~/.config/compton.conf"
+'8  28  18  ~/.config/compton.conf
+|4,56,28,18,1525779125,"~/.config/compton.conf"
+'9  28  18  ~/.config/compton.conf
+|4,57,28,18,1525779125,"~/.config/compton.conf"
 
 # Jumplist (newest first):
--'  397  0  ~/.config/i3/config
-|4,39,397,0,1525708000,"~/.config/i3/config"
--'  319  30  ~/.config/i3/config
-|4,39,319,30,1525707909,"~/.config/i3/config"
--'  1  0  ~/.config/i3/config
-|4,39,1,0,1525707715,"~/.config/i3/config"
--'  1  0  ~/.i3blocks.conf
-|4,39,1,0,1525707697,"~/.i3blocks.conf"
--'  1  0  ~/.i3blocks.conf
-|4,39,1,0,1525707697,"~/.i3blocks.conf"
+-'  1  0  ~/workspace/devenv_private/etckeepergit/etckeeper.conf
+|4,39,1,0,1525783251,"~/workspace/devenv_private/etckeepergit/etckeeper.conf"
 -'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525707686,"~/.config/compton.conf"
+|4,39,1,0,1525783013,"~/.config/compton.conf"
 -'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525707686,"~/.config/compton.conf"
+|4,39,1,0,1525783013,"~/.config/compton.conf"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
 -'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525707686,"~/.config/compton.conf"
+|4,39,1,0,1525779161,"~/.config/compton.conf"
 -'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525707686,"~/.config/compton.conf"
--'  8  0  ~/.config
-|4,39,8,0,1525707617,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525707617,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525707617,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525707617,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525707617,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525707617,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525707617,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525707617,"~/.config"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441590,"~/.Xresources"
--'  402  0  ~/.config/i3/config
-|4,39,402,0,1525441588,"~/.config/i3/config"
--'  402  0  ~/.config/i3/config
-|4,39,402,0,1525441588,"~/.config/i3/config"
--'  402  0  ~/.config/i3/config
-|4,39,402,0,1525441588,"~/.config/i3/config"
--'  402  0  ~/.config/i3/config
-|4,39,402,0,1525441588,"~/.config/i3/config"
--'  402  0  ~/.config/i3/config
-|4,39,402,0,1525441588,"~/.config/i3/config"
--'  402  0  ~/.config/i3/config
-|4,39,402,0,1525441588,"~/.config/i3/config"
--'  402  0  ~/.config/i3/config
-|4,39,402,0,1525441588,"~/.config/i3/config"
--'  402  0  ~/.config/i3/config
-|4,39,402,0,1525441588,"~/.config/i3/config"
--'  402  0  ~/.config/i3/config
-|4,39,402,0,1525441588,"~/.config/i3/config"
--'  317  30  ~/.config/i3/config
-|4,39,317,30,1525441585,"~/.config/i3/config"
--'  317  30  ~/.config/i3/config
-|4,39,317,30,1525441585,"~/.config/i3/config"
--'  317  30  ~/.config/i3/config
-|4,39,317,30,1525441585,"~/.config/i3/config"
--'  317  30  ~/.config/i3/config
-|4,39,317,30,1525441585,"~/.config/i3/config"
--'  317  30  ~/.config/i3/config
-|4,39,317,30,1525441585,"~/.config/i3/config"
--'  317  30  ~/.config/i3/config
-|4,39,317,30,1525441585,"~/.config/i3/config"
--'  317  30  ~/.config/i3/config
-|4,39,317,30,1525441585,"~/.config/i3/config"
--'  317  30  ~/.config/i3/config
-|4,39,317,30,1525441585,"~/.config/i3/config"
--'  317  30  ~/.config/i3/config
-|4,39,317,30,1525441585,"~/.config/i3/config"
--'  318  30  ~/.config/i3/config
-|4,39,318,30,1525441571,"~/.config/i3/config"
--'  318  30  ~/.config/i3/config
-|4,39,318,30,1525441571,"~/.config/i3/config"
--'  318  30  ~/.config/i3/config
-|4,39,318,30,1525441571,"~/.config/i3/config"
--'  318  30  ~/.config/i3/config
-|4,39,318,30,1525441571,"~/.config/i3/config"
--'  318  30  ~/.config/i3/config
-|4,39,318,30,1525441571,"~/.config/i3/config"
--'  318  30  ~/.config/i3/config
-|4,39,318,30,1525441571,"~/.config/i3/config"
--'  318  30  ~/.config/i3/config
-|4,39,318,30,1525441571,"~/.config/i3/config"
--'  318  30  ~/.config/i3/config
-|4,39,318,30,1525441571,"~/.config/i3/config"
--'  318  30  ~/.config/i3/config
-|4,39,318,30,1525441571,"~/.config/i3/config"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  68  0  ~/.Xresources
-|4,39,68,0,1525441484,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.Xresources
-|4,39,1,0,1525441476,"~/.Xresources"
--'  1  0  ~/.config/i3/config
-|4,39,1,0,1525441467,"~/.config/i3/config"
--'  1  0  ~/.config/i3/config
-|4,39,1,0,1525441467,"~/.config/i3/config"
--'  1  0  ~/.config/i3/config
-|4,39,1,0,1525441467,"~/.config/i3/config"
--'  1  0  ~/.config/i3/config
-|4,39,1,0,1525441467,"~/.config/i3/config"
--'  1  0  ~/.config/i3/config
-|4,39,1,0,1525441467,"~/.config/i3/config"
--'  1  0  ~/.config/i3/config
-|4,39,1,0,1525441467,"~/.config/i3/config"
--'  1  0  ~/.config/i3/config
-|4,39,1,0,1525441467,"~/.config/i3/config"
--'  1  0  ~/.config/i3/config
-|4,39,1,0,1525441467,"~/.config/i3/config"
+|4,39,1,0,1525779161,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525779161,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525779161,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525779161,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525779161,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525779161,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525779161,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  28  18  ~/.config/compton.conf
+|4,39,28,18,1525779125,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778948,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778948,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778948,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778948,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778948,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778948,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778948,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778948,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  26  21  ~/.config/compton.conf
+|4,39,26,21,1525778910,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778880,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778880,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778880,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778880,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778880,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778880,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778880,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525778880,"~/.config/compton.conf"
+-'  31  0  ~/.config/compton.conf
+|4,39,31,0,1525778528,"~/.config/compton.conf"
+-'  31  0  ~/.config/compton.conf
+|4,39,31,0,1525778528,"~/.config/compton.conf"
+-'  31  0  ~/.config/compton.conf
+|4,39,31,0,1525778528,"~/.config/compton.conf"
+-'  31  0  ~/.config/compton.conf
+|4,39,31,0,1525778528,"~/.config/compton.conf"
+-'  31  0  ~/.config/compton.conf
+|4,39,31,0,1525778528,"~/.config/compton.conf"
+-'  31  0  ~/.config/compton.conf
+|4,39,31,0,1525778528,"~/.config/compton.conf"
+-'  31  0  ~/.config/compton.conf
+|4,39,31,0,1525778528,"~/.config/compton.conf"
 
 # History of marks within files (newest to oldest):
 
-> ~/.config/i3/config
-	*	1525707999	0
-	"	397	0
-	^	319	46
-	.	319	45
-	+	188	39
-	+	338	11
-	+	339	12
-	+	366	46
-	+	12	19
-	+	20	28
-	+	397	0
-	+	399	45
-	+	400	54
-	+	402	28
-	+	396	0
-	+	391	0
-	+	320	35
-	+	319	35
-	+	318	36
-	+	316	21
-	+	314	42
-	+	319	45
-	+	317	32
-	+	316	17
-	+	317	24
-	+	399	42
-	+	317	36
-	+	314	21
-	+	314	20
-	+	400	28
-	+	319	24
-	+	400	38
-	+	401	27
-	+	399	29
-	+	401	31
-	+	400	38
-	+	401	36
-	+	400	46
-	+	401	47
-	+	400	54
-	+	402	44
-	+	316	21
-	+	314	20
-	+	315	21
-	+	316	21
-	+	317	28
-	+	318	30
-	+	317	0
-	+	315	21
-	+	319	29
-	+	320	22
-	+	319	29
-	+	320	29
-	+	319	45
-
-> ~/.i3blocks.conf
-	*	1525707696	0
+> ~/workspace/devenv_private/etckeepergit/etckeeper.conf
+	*	1525783247	0
 	"	1	0
 
 > ~/.config/compton.conf
-	*	1525707685	0
+	*	1525783011	0
 	"	1	0
-	^	49	20
-	.	48	19
-	+	65	0
-	+	218	1
-	+	172	0
-	+	102	21
-	+	109	0
-	+	111	0
-	+	113	0
-	+	115	0
-	+	109	17
-	+	47	34
-	+	35	0
-	+	47	34
-	+	83	0
-	+	105	31
-	+	111	0
-	+	118	0
-	+	117	0
-	+	146	25
-	+	172	15
-	+	176	9
-	+	188	0
-	+	191	1
-	+	214	20
-	+	81	18
+	^	32	1
+	.	32	0
+	+	215	20
 	+	82	18
 	+	83	18
-	+	89	18
+	+	84	18
 	+	90	18
-	+	91	36
-	+	92	18
-	+	88	18
-	+	87	37
+	+	91	18
+	+	92	36
+	+	93	18
+	+	89	18
+	+	88	37
 	+	25	0
 	+	22	21
+	+	76	0
+	+	101	18
+	+	76	0
 	+	75	0
-	+	100	18
-	+	75	0
-	+	74	0
-	+	71	0
+	+	72	0
 	+	22	21
 	+	25	0
-	+	79	0
 	+	80	0
-	+	84	0
+	+	81	0
 	+	85	0
 	+	86	0
 	+	87	0
-	+	93	0
-	+	95	0
-	+	66	0
+	+	88	0
+	+	94	0
+	+	96	0
 	+	67	0
-	+	74	0
-	+	75	18
-	+	100	18
-	+	57	0
-	+	115	4
-	+	95	0
-	+	67	0
-	+	65	25
-	+	66	27
-	+	81	0
+	+	68	0
+	+	75	0
+	+	76	18
+	+	101	18
+	+	58	0
+	+	116	4
+	+	96	0
+	+	68	0
+	+	66	25
+	+	67	27
 	+	82	0
 	+	83	0
-	+	55	13
-	+	57	0
+	+	84	0
+	+	56	13
+	+	58	0
 	+	31	17
 	+	26	19
 	+	31	18
 	+	25	17
 	+	32	1
-	+	47	32
-	+	47	15
-	+	47	13
-	+	47	32
-	+	47	15
-	+	47	0
-	+	48	18
-	+	49	19
-	+	48	18
+	+	48	32
+	+	48	15
+	+	48	13
+	+	48	32
+	+	48	15
+	+	48	0
+	+	49	18
+	+	50	19
+	+	49	18
 	+	26	21
 	+	32	0
 	+	33	0
@@ -570,11 +496,116 @@ $
 	+	26	19
 	+	33	0
 	+	31	0
-	+	47	13
-	+	48	19
+	+	48	13
 	+	49	19
-	+	48	19
-	a	57	0
+	+	50	19
+	+	49	19
+	+	48	13
+	+	49	18
+	+	50	19
+	+	49	18
+	+	50	19
+	+	48	13
+	+	51	0
+	+	46	0
+	+	51	0
+	+	48	14
+	+	50	18
+	+	49	18
+	+	50	19
+	+	31	17
+	+	27	19
+	+	31	0
+	+	27	17
+	+	26	21
+	+	32	0
+	+	29	0
+	+	31	0
+	+	32	0
+	a	58	0
+
+> .i3/compt
+	*	1525780058	0
+	"	1	0
+
+> ~/.xprofile
+	*	1525777728	0
+	"	1	0
+
+> ~/.config/i3/config
+	*	1525777541	0
+	"	95	0
+	^	316	22
+	.	316	21
+	+	188	39
+	+	338	11
+	+	339	12
+	+	366	46
+	+	12	19
+	+	20	28
+	+	397	0
+	+	399	45
+	+	400	54
+	+	402	28
+	+	396	0
+	+	391	0
+	+	320	35
+	+	319	35
+	+	318	36
+	+	315	42
+	+	314	42
+	+	319	45
+	+	315	53
+	+	315	38
+	+	315	45
+	+	399	42
+	+	315	57
+	+	314	21
+	+	314	20
+	+	400	28
+	+	319	24
+	+	400	38
+	+	401	27
+	+	399	29
+	+	401	31
+	+	400	38
+	+	401	36
+	+	400	46
+	+	401	47
+	+	400	54
+	+	402	44
+	+	315	42
+	+	314	20
+	+	315	21
+	+	315	42
+	+	315	49
+	+	318	30
+	+	315	21
+	+	319	29
+	+	320	22
+	+	319	29
+	+	320	29
+	+	319	45
+	+	315	52
+	+	318	36
+	+	320	30
+	+	315	21
+	+	315	0
+	+	316	22
+	+	314	0
+	+	316	21
+
+> ~/.config/nitrogen/nitrogen.cfg
+	*	1525777235	0
+	"	1	0
+
+> ~/.config/nitrogen.cfg
+	*	1525777230	0
+	"	12	0
+
+> ~/.i3blocks.conf
+	*	1525707696	0
+	"	1	0
 
 > ~/.Xresources
 	*	1525441486	0
@@ -698,10 +729,6 @@ $
 > ~/.xsession
 	*	1525265508	0
 	"	2	0
-
-> ~/.xprofile
-	*	1525265501	0
-	"	1	0
 
 > ~/.extend.xinitrc
 	*	1525265325	0
