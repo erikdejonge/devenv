@@ -150,72 +150,120 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-""0	CHAR	0
+"0	CHAR	0
 	e
-|3,1,0,0,1,0,1525783002,"e"
-"1	CHAR	0
+|3,0,0,0,1,0,1525783002,"e"
+""1	LINE	0
+	.idea
+|3,1,1,1,1,0,1525783362,".idea"
+"2	CHAR	0
 	6
 	    statusline #fefdc2
 	
-|3,0,1,0,3,0,1525708264,"6","    statusline #fefdc2",""
-"2	CHAR	0
-	697b8d
-|3,0,2,0,1,0,1525708075,"697b8d"
+|3,0,2,0,3,0,1525708264,"6","    statusline #fefdc2",""
 "3	CHAR	0
-	97b8d9
-|3,0,3,0,1,0,1525708044,"97b8d9"
+	697b8d
+|3,0,3,0,1,0,1525708075,"697b8d"
 "4	CHAR	0
-	161616
-|3,0,4,0,1,0,1525707983,"161616"
+	97b8d9
+|3,0,4,0,1,0,1525708044,"97b8d9"
 "5	CHAR	0
+	161616
+|3,0,5,0,1,0,1525707983,"161616"
+"6	CHAR	0
 	;
 	fade-in-step = 0.03
-|3,0,5,0,2,0,1525435034,";","fade-in-step = 0.03"
-"6	CHAR	0
-	98b5b4
-|3,0,6,0,1,0,1525265251,"98b5b4"
+|3,0,6,0,2,0,1525435034,";","fade-in-step = 0.03"
 "7	CHAR	0
 	98b5b4
-|3,0,7,0,1,0,1525265242,"98b5b4"
+|3,0,7,0,1,0,1525265251,"98b5b4"
 "8	CHAR	0
-	586e75
-|3,0,8,0,1,0,1525265240,"586e75"
+	98b5b4
+|3,0,8,0,1,0,1525265242,"98b5b4"
 "9	CHAR	0
-	002b36
-|3,0,9,0,1,0,1525265063,"002b36"
+	586e75
+|3,0,9,0,1,0,1525265240,"586e75"
 "-	CHAR	0
 	e
 |3,0,36,0,1,0,1525779018,"e"
 
 # File marks:
-'0  1  0  ~/workspace/devenv_private/etckeepergit/etckeeper.conf
-|4,48,1,0,1525783251,"~/workspace/devenv_private/etckeepergit/etckeeper.conf"
-'1  1  0  ~/.config/compton.conf
-|4,49,1,0,1525783013,"~/.config/compton.conf"
-'2  8  0  ~/.config
-|4,50,8,0,1525783004,"~/.config"
-'3  1  0  .i3/compt
-|4,51,1,0,1525780059,".i3/compt"
-'4  32  0  ~/.config/compton.conf
-|4,52,32,0,1525779182,"~/.config/compton.conf"
-'5  32  0  ~/.config/compton.conf
-|4,53,32,0,1525779182,"~/.config/compton.conf"
-'6  28  18  ~/.config/compton.conf
-|4,54,28,18,1525779125,"~/.config/compton.conf"
-'7  28  18  ~/.config/compton.conf
-|4,55,28,18,1525779125,"~/.config/compton.conf"
+'0  1  0  ~/workspace/forks/eonbot-scraper-web/.gitignore
+|4,48,1,0,1525783363,"~/workspace/forks/eonbot-scraper-web/.gitignore"
+'1  1  0  ~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG
+|4,49,1,0,1525783353,"~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG"
+'2  1  0  ~/workspace/devenv_private/etckeepergit/etckeeper.conf
+|4,50,1,0,1525783251,"~/workspace/devenv_private/etckeepergit/etckeeper.conf"
+'3  1  0  ~/.config/compton.conf
+|4,51,1,0,1525783013,"~/.config/compton.conf"
+'4  8  0  ~/.config
+|4,52,8,0,1525783004,"~/.config"
+'5  1  0  .i3/compt
+|4,53,1,0,1525780059,".i3/compt"
+'6  32  0  ~/.config/compton.conf
+|4,54,32,0,1525779182,"~/.config/compton.conf"
+'7  32  0  ~/.config/compton.conf
+|4,55,32,0,1525779182,"~/.config/compton.conf"
 '8  28  18  ~/.config/compton.conf
 |4,56,28,18,1525779125,"~/.config/compton.conf"
 '9  28  18  ~/.config/compton.conf
 |4,57,28,18,1525779125,"~/.config/compton.conf"
 
 # Jumplist (newest first):
+-'  1  0  ~/workspace/forks/eonbot-scraper-web/.gitignore
+|4,39,1,0,1525783363,"~/workspace/forks/eonbot-scraper-web/.gitignore"
+-'  1  0  ~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG
+|4,39,1,0,1525783353,"~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG"
+-'  1  0  ~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG
+|4,39,1,0,1525783353,"~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG"
+-'  1  0  ~/workspace/devenv_private/etckeepergit/etckeeper.conf
+|4,39,1,0,1525783251,"~/workspace/devenv_private/etckeepergit/etckeeper.conf"
+-'  1  0  ~/workspace/devenv_private/etckeepergit/etckeeper.conf
+|4,39,1,0,1525783251,"~/workspace/devenv_private/etckeepergit/etckeeper.conf"
+-'  1  0  ~/workspace/devenv_private/etckeepergit/etckeeper.conf
+|4,39,1,0,1525783251,"~/workspace/devenv_private/etckeepergit/etckeeper.conf"
 -'  1  0  ~/workspace/devenv_private/etckeepergit/etckeeper.conf
 |4,39,1,0,1525783251,"~/workspace/devenv_private/etckeepergit/etckeeper.conf"
 -'  1  0  ~/.config/compton.conf
 |4,39,1,0,1525783013,"~/.config/compton.conf"
 -'  1  0  ~/.config/compton.conf
 |4,39,1,0,1525783013,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525783013,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525783013,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525783013,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525783013,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525783013,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1525783013,"~/.config/compton.conf"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
+-'  8  0  ~/.config
+|4,39,8,0,1525783004,"~/.config"
 -'  8  0  ~/.config
 |4,39,8,0,1525783004,"~/.config"
 -'  8  0  ~/.config
@@ -240,6 +288,54 @@ $
 |4,39,1,0,1525780059,".i3/compt"
 -'  1  0  .i3/compt
 |4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
+-'  1  0  .i3/compt
+|4,39,1,0,1525780059,".i3/compt"
 -'  32  0  ~/.config/compton.conf
 |4,39,32,0,1525779182,"~/.config/compton.conf"
 -'  32  0  ~/.config/compton.conf
@@ -260,158 +356,73 @@ $
 |4,39,32,0,1525779182,"~/.config/compton.conf"
 -'  32  0  ~/.config/compton.conf
 |4,39,32,0,1525779182,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525779161,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525779161,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525779161,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525779161,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525779161,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525779161,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525779161,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525779161,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  28  18  ~/.config/compton.conf
-|4,39,28,18,1525779125,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778948,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778948,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778948,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778948,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778948,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778948,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778948,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778948,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  26  21  ~/.config/compton.conf
-|4,39,26,21,1525778910,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778880,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778880,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778880,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778880,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778880,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778880,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778880,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525778880,"~/.config/compton.conf"
--'  31  0  ~/.config/compton.conf
-|4,39,31,0,1525778528,"~/.config/compton.conf"
--'  31  0  ~/.config/compton.conf
-|4,39,31,0,1525778528,"~/.config/compton.conf"
--'  31  0  ~/.config/compton.conf
-|4,39,31,0,1525778528,"~/.config/compton.conf"
--'  31  0  ~/.config/compton.conf
-|4,39,31,0,1525778528,"~/.config/compton.conf"
--'  31  0  ~/.config/compton.conf
-|4,39,31,0,1525778528,"~/.config/compton.conf"
--'  31  0  ~/.config/compton.conf
-|4,39,31,0,1525778528,"~/.config/compton.conf"
--'  31  0  ~/.config/compton.conf
-|4,39,31,0,1525778528,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  32  0  ~/.config/compton.conf
+|4,39,32,0,1525779182,"~/.config/compton.conf"
 
 # History of marks within files (newest to oldest):
+
+> ~/workspace/forks/eonbot-scraper-web/.gitignore
+	*	1525783363	0
+	"	1	0
+	^	2	0
+	.	1	0
+	+	1	0
+
+> ~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG
+	*	1525783350	0
+	"	1	0
 
 > ~/workspace/devenv_private/etckeepergit/etckeeper.conf
 	*	1525783247	0
@@ -695,10 +706,6 @@ $
 	+	40	10
 	+	41	13
 
-> ~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG
-	*	1525275325	0
-	"	7	12
-
 > ~/workspace/forks/eonbotscraperweb1/.gitignore
 	*	1525275234	0
 	"	2	0
@@ -819,13 +826,6 @@ $
 > /etc/fonts/fonts.conf
 	*	1525084384	0
 	"	1	0
-
-> ~/workspace/forks/eonbot-scraper-web/.gitignore
-	*	1524753016	0
-	"	3	0
-	^	3	0
-	.	2	5
-	+	2	5
 
 > ~/workspace/forks/magnetissimo/merge.sh
 	*	1524657168	0
