@@ -11,7 +11,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/\<default\>
+~MSle0~/glx
 
 # Last Substitute Search Pattern:
 ~MSle0&c7a774
@@ -21,9 +21,9 @@ $
 
 # Command Line History (newest to oldest):
 :q
-|2,0,1525783251,,"q"
+|2,0,1525787156,,"q"
 :w
-|2,0,1525779124,,"w"
+|2,0,1525787094,,"w"
 :%s/c7a774/7ed6c0/g
 |2,0,1525708185,,"%s/c7a774/7ed6c0/g"
 :%s/fdf6e3/c7a774/g
@@ -42,6 +42,8 @@ $
 |2,0,1524496328,,"colorscheme"
 
 # Search String History (newest to oldest):
+?/glx
+|2,1,1525787372,47,"glx"
 ? @$
 |2,1,1525783002,,"@$"
 ?/lxnn
@@ -128,8 +130,6 @@ $
 |2,1,1525188479,47,"swap"
 ?/no-sten
 |2,1,1525185031,47,"no-sten"
-?/glx
-|2,1,1525183948,47,"glx"
 ?/step
 |2,1,1525177806,47,"step"
 ?/inact
@@ -152,10 +152,10 @@ $
 # Registers:
 "0	CHAR	0
 	e
-|3,0,0,0,1,0,1525783002,"e"
-""1	LINE	0
+|3,0,0,0,1,0,1525786862,"e"
+"1	LINE	0
 	.idea
-|3,1,1,1,1,0,1525783362,".idea"
+|3,0,1,1,1,0,1525783362,".idea"
 "2	CHAR	0
 	6
 	    statusline #fefdc2
@@ -183,235 +183,260 @@ $
 "9	CHAR	0
 	586e75
 |3,0,9,0,1,0,1525265240,"586e75"
-"-	CHAR	0
-	e
-|3,0,36,0,1,0,1525779018,"e"
+""-	CHAR	0
+	l
+|3,1,36,0,1,0,1525787405,"l"
 
 # File marks:
-'0  1  0  ~/workspace/forks/eonbot-scraper-web/.gitignore
-|4,48,1,0,1525783363,"~/workspace/forks/eonbot-scraper-web/.gitignore"
-'1  1  0  ~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG
-|4,49,1,0,1525783353,"~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG"
-'2  1  0  ~/workspace/devenv_private/etckeepergit/etckeeper.conf
-|4,50,1,0,1525783251,"~/workspace/devenv_private/etckeepergit/etckeeper.conf"
-'3  1  0  ~/.config/compton.conf
-|4,51,1,0,1525783013,"~/.config/compton.conf"
-'4  8  0  ~/.config
-|4,52,8,0,1525783004,"~/.config"
-'5  1  0  .i3/compt
-|4,53,1,0,1525780059,".i3/compt"
-'6  32  0  ~/.config/compton.conf
-|4,54,32,0,1525779182,"~/.config/compton.conf"
-'7  32  0  ~/.config/compton.conf
-|4,55,32,0,1525779182,"~/.config/compton.conf"
-'8  28  18  ~/.config/compton.conf
-|4,56,28,18,1525779125,"~/.config/compton.conf"
-'9  28  18  ~/.config/compton.conf
-|4,57,28,18,1525779125,"~/.config/compton.conf"
+'0  87  25  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,48,87,25,1525787408,"~/workspace/devenv_private/manjaro/config/compton.conf"
+'1  192  20  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,49,192,20,1525787157,"~/workspace/devenv_private/manjaro/config/compton.conf"
+'2  192  20  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,50,192,20,1525787157,"~/workspace/devenv_private/manjaro/config/compton.conf"
+'3  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,51,1,0,1525787111,"~/workspace/devenv_private/manjaro/config/compton.conf"
+'4  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,52,1,0,1525787111,"~/workspace/devenv_private/manjaro/config/compton.conf"
+'5  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,53,1,0,1525787111,"~/workspace/devenv_private/manjaro/config/compton.conf"
+'6  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,54,1,0,1525787111,"~/workspace/devenv_private/manjaro/config/compton.conf"
+'7  192  26  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,55,192,26,1525787096,"~/workspace/devenv_private/manjaro/config/compton.conf"
+'8  192  26  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,56,192,26,1525787096,"~/workspace/devenv_private/manjaro/config/compton.conf"
+'9  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,57,1,0,1525787052,"~/workspace/devenv_private/manjaro/config/compton.conf"
 
 # Jumplist (newest first):
--'  1  0  ~/workspace/forks/eonbot-scraper-web/.gitignore
-|4,39,1,0,1525783363,"~/workspace/forks/eonbot-scraper-web/.gitignore"
--'  1  0  ~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG
-|4,39,1,0,1525783353,"~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG"
--'  1  0  ~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG
-|4,39,1,0,1525783353,"~/workspace/forks/eonbot-scraper-web/.git/MERGE_MSG"
--'  1  0  ~/workspace/devenv_private/etckeepergit/etckeeper.conf
-|4,39,1,0,1525783251,"~/workspace/devenv_private/etckeepergit/etckeeper.conf"
--'  1  0  ~/workspace/devenv_private/etckeepergit/etckeeper.conf
-|4,39,1,0,1525783251,"~/workspace/devenv_private/etckeepergit/etckeeper.conf"
--'  1  0  ~/workspace/devenv_private/etckeepergit/etckeeper.conf
-|4,39,1,0,1525783251,"~/workspace/devenv_private/etckeepergit/etckeeper.conf"
--'  1  0  ~/workspace/devenv_private/etckeepergit/etckeeper.conf
-|4,39,1,0,1525783251,"~/workspace/devenv_private/etckeepergit/etckeeper.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525783013,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525783013,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525783013,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525783013,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525783013,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525783013,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525783013,"~/.config/compton.conf"
--'  1  0  ~/.config/compton.conf
-|4,39,1,0,1525783013,"~/.config/compton.conf"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  8  0  ~/.config
-|4,39,8,0,1525783004,"~/.config"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  1  0  .i3/compt
-|4,39,1,0,1525780059,".i3/compt"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
--'  32  0  ~/.config/compton.conf
-|4,39,32,0,1525779182,"~/.config/compton.conf"
+-'  87  25  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,87,25,1525787408,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  29  81  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,29,81,1525787372,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  192  18  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,192,18,1525787372,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,1,0,1525787341,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  192  20  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,192,20,1525787157,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,1,0,1525787139,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,1,0,1525787111,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  192  26  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,192,26,1525787096,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,1,0,1525787074,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,1,0,1525787052,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,1,0,1525787046,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  87  26  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,87,26,1525786999,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  87  26  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,87,26,1525786999,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  87  26  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,87,26,1525786999,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  87  26  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,87,26,1525786999,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  87  26  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,87,26,1525786999,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  87  26  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,87,26,1525786999,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  159  11  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,159,11,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  158  2  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,158,2,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  159  11  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,159,11,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  158  2  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,158,2,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  159  11  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,159,11,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  158  2  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,158,2,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  159  11  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,159,11,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  158  2  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,158,2,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  159  11  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,159,11,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  158  2  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,158,2,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  159  11  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,159,11,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  158  2  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,158,2,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  159  11  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,159,11,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  158  2  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,158,2,1525786958,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  157  32  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,157,32,1525786957,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  157  32  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,157,32,1525786957,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  157  32  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,157,32,1525786957,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  157  32  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,157,32,1525786957,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  157  32  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,157,32,1525786957,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  157  32  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,157,32,1525786957,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  157  32  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,157,32,1525786957,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  113  110  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,113,110,1525786956,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  113  110  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,113,110,1525786956,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  113  110  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,113,110,1525786956,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  113  110  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,113,110,1525786956,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  113  110  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,113,110,1525786956,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  113  110  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,113,110,1525786956,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  113  110  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,113,110,1525786956,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  29  81  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,29,81,1525786954,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  29  81  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,29,81,1525786954,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  29  81  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,29,81,1525786954,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  29  81  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,29,81,1525786954,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  29  81  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,29,81,1525786954,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  29  81  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,29,81,1525786954,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  27  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,27,17,1525786953,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  27  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,27,17,1525786953,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  27  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,27,17,1525786953,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  27  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,27,17,1525786953,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  27  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,27,17,1525786953,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  27  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,27,17,1525786953,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  27  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,27,17,1525786953,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,1,0,1525786917,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  25  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,25,17,1525786896,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  25  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,25,17,1525786896,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  25  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,25,17,1525786896,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  25  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,25,17,1525786896,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  25  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,25,17,1525786896,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  25  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,25,17,1525786896,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  25  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,25,17,1525786896,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  25  17  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,25,17,1525786896,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,1,0,1525786883,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  81  14  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,81,14,1525786866,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  81  14  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,81,14,1525786866,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  81  14  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,81,14,1525786866,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  81  14  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,81,14,1525786866,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  81  14  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,81,14,1525786866,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  81  14  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,81,14,1525786866,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  81  14  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,81,14,1525786866,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  81  14  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,81,14,1525786866,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  81  14  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,81,14,1525786866,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  72  3  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,72,3,1525786803,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  72  3  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,72,3,1525786803,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  72  3  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,72,3,1525786803,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  72  3  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,72,3,1525786803,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  72  3  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,72,3,1525786803,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  72  3  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,72,3,1525786803,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  72  3  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,72,3,1525786803,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  72  3  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,72,3,1525786803,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  72  3  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,72,3,1525786803,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,1,0,1525786762,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton.conf
+|4,39,1,0,1525786718,"~/workspace/devenv_private/manjaro/config/compton.conf"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton
+|4,39,1,0,1525786404,"~/workspace/devenv_private/manjaro/config/compton"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton
+|4,39,1,0,1525786404,"~/workspace/devenv_private/manjaro/config/compton"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton
+|4,39,1,0,1525786404,"~/workspace/devenv_private/manjaro/config/compton"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton
+|4,39,1,0,1525786404,"~/workspace/devenv_private/manjaro/config/compton"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton
+|4,39,1,0,1525786404,"~/workspace/devenv_private/manjaro/config/compton"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton
+|4,39,1,0,1525786404,"~/workspace/devenv_private/manjaro/config/compton"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton
+|4,39,1,0,1525786404,"~/workspace/devenv_private/manjaro/config/compton"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton
+|4,39,1,0,1525786404,"~/workspace/devenv_private/manjaro/config/compton"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton
+|4,39,1,0,1525786404,"~/workspace/devenv_private/manjaro/config/compton"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton
+|4,39,1,0,1525786404,"~/workspace/devenv_private/manjaro/config/compton"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton
+|4,39,1,0,1525786404,"~/workspace/devenv_private/manjaro/config/compton"
+-'  1  0  ~/workspace/devenv_private/manjaro/config/compton
+|4,39,1,0,1525786404,"~/workspace/devenv_private/manjaro/config/compton"
 
 # History of marks within files (newest to oldest):
+
+> ~/workspace/devenv_private/manjaro/config/compton.conf
+	*	1525787408	0
+	"	87	25
+	^	87	26
+	.	87	25
+	+	49	19
+	+	50	20
+	+	65	24
+	+	27	18
+	+	26	21
+	+	27	19
+	+	25	17
+	+	81	14
+	+	25	17
+	+	17	21
+	+	25	17
+	+	192	19
+	+	87	0
+	+	192	27
+	+	87	25
+
+> ~/workspace/devenv_private/manjaro/config/compton
+	*	1525786402	0
+	"	1	0
 
 > ~/workspace/forks/eonbot-scraper-web/.gitignore
 	*	1525783363	0
