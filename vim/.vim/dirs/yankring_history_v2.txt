@@ -1,0 +1,100 @@
+l,v
+a,v
+f,v
+ ,v
+e,v
+s,v
+3,v
+y,v
+p,v
+o,v
+c,v
+undefined,v
+8,v
+9,v
+12,v
+6,v
+4,v
+1,v
+7,v
+r,v
+t,v
+;,v
+u,v
+.idea,V
+#,v
+.,v
+0,v
+2,v
+A,v
+5,v
+16A085,v
+fefdc2,v
+d,v
+6    statusline #fefdc2,v
+ff7c84,v
+:,v
+9fd79d,v
+000000,v
+697b8d,v
+97b8d9,v
+161616,v
+b,v
+x,v
+FEFDC2,v
+;fade-in-step = 0.03,v
+-,v
+ihelloo,V
+ooihellooihellooihello,v
+!,v
+98b5b4,v
+586e75,v
+4f4f4f,v
+eee8d5,v
+c6b375,v
+073642,v
+616161,v
+dc322f,v
+859900,v
+002b36,v
+d33682,v
+8599,v
+exec --no-startup-id xsetroot -solid "#000000",V
+EndSection,V
+    Option         "ZAxisMapping" "4 5",V
+    Option         "Emulate3Buttons" "no",V
+    Option         "Device" "/dev/psaux",V
+    Option         "Protocol" "auto",V
+    Driver         "mouse",V
+    Identifier     "Mouse0",V
+    # generated from default,V
+,V
+n,v
+exec /usr/bin/compton --config /home/joe/.compton.conf~.i3/config,V
+Z,v
+i,v
+exec --no-startup-id /usr/bin/compton --config /home/rabshakeh/.config/compton.conf,V
+d,V
+inactive-opacity = 1.0;             # Default opacity of inactive windows. (0.0 - 1.0),V
+w,v
+g,v
+exec --no-startup-id dual-screen,V
+	,v
+/,v
+~,v
+@,v
+!Xft.dpi : 96,V
+`,v
+];,V
+    "window_type = 'desktop'",V
+    "window_type = 'dock'",,V
+blur-background-exclude = [,V
+    "name *= 'Firefox'",,V
+    "name *= 'Chrome'",,V
+    "name *= 'Chromium'",,V
+    "name *= 'compton'",,V
+    "name *= 'VLC'",,V
+    "name = 'xfce4-notifyd'",,V
+    "name = 'Kupfer'",,V
+    "name = 'Docky'",,V
+    "name = 'Plank'",,V
