@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/rabshakeh/.config/i3'
+let g:netrw_dirhist_2='/home/rabshakeh/.i3'
+let g:netrw_dirhist_3='/home/rabshakeh'
+let g:netrw_dirhist_4='/etc/X11/xorg.conf.d'
+let g:netrw_dirhist_5='/home/rabshakeh/.config'
+let g:netrw_dirhist_6='/home/rabshakeh/.config/configstore'
+let g:netrw_dirhist_7='/home/rabshakeh/.kde4/share/config'
+let g:netrw_dirhist_8='/home/rabshakeh/.config'
