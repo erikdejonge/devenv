@@ -1,52 +1,70 @@
+0,v
+1,v
+4,v
+2,v
+3,v
+7,v
+ ,v
+8,v
+,V
+~,v
+!,v
+t,v
+c,v
+5,v
+q,v
+;,v
+e,v
+r,v
+u,v
+9,v
+.,v
+#,v
+x,v
+b,v
+o,v
 l,v
 a,v
-f,v
- ,v
-e,v
-s,v
-3,v
-y,v
-p,v
-o,v
-c,v
-undefined,v
-8,v
-9,v
-12,v
+n,v
+m,v
 6,v
-4,v
-1,v
-7,v
-r,v
-t,v
-;,v
-u,v
+c2e199bdbae14ede9e1fd5d3138fdf37,V
+fields=0 48 17 18 38 39 40 2 46 47 49 1 ,V
+=,v
+h,v
+w,v
+:,v
+i,v
+g,v
+s,v
+E,v
+-,v
+K,v
+/,v
+z,v
+k,v
+y,v
+_,v
+d,v
+f,v
+p,v
+undefined,v
+12,v
 .idea,V
-#,v
-.,v
-0,v
-2,v
 A,v
-5,v
 16A085,v
 fefdc2,v
-d,v
 6    statusline #fefdc2,v
 ff7c84,v
-:,v
 9fd79d,v
 000000,v
 697b8d,v
 97b8d9,v
 161616,v
-b,v
-x,v
 FEFDC2,v
 ;fade-in-step = 0.03,v
--,v
 ihelloo,V
 ooihellooihellooihello,v
-!,v
 98b5b4,v
 586e75,v
 4f4f4f,v
@@ -68,33 +86,15 @@ EndSection,V
     Driver         "mouse",V
     Identifier     "Mouse0",V
     # generated from default,V
-,V
-n,v
 exec /usr/bin/compton --config /home/joe/.compton.conf~.i3/config,V
 Z,v
-i,v
 exec --no-startup-id /usr/bin/compton --config /home/rabshakeh/.config/compton.conf,V
 d,V
 inactive-opacity = 1.0;             # Default opacity of inactive windows. (0.0 - 1.0),V
-w,v
-g,v
 exec --no-startup-id dual-screen,V
 	,v
-/,v
-~,v
 @,v
 !Xft.dpi : 96,V
 `,v
 ];,V
     "window_type = 'desktop'",V
-    "window_type = 'dock'",,V
-blur-background-exclude = [,V
-    "name *= 'Firefox'",,V
-    "name *= 'Chrome'",,V
-    "name *= 'Chromium'",,V
-    "name *= 'compton'",,V
-    "name *= 'VLC'",,V
-    "name = 'xfce4-notifyd'",,V
-    "name = 'Kupfer'",,V
-    "name = 'Docky'",,V
-    "name = 'Plank'",,V
