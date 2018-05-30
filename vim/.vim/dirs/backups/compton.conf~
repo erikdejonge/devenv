@@ -13,8 +13,8 @@ mark-ovredir-focused = false;
 
 # * Opacity and Dimming
 active-opacity = 1;
-menu-opacity = 0.9;
-inactive-opacity = 0.9;
+menu-opacity = 1;
+inactive-opacity = 1;
  # Opacity of window titlebars and borders. (0.1 - 1.0)
 frame-opacity = 1;
  # Let inactive opacity set by 'inactive-opacity' overrides the windows' _NET_WM_OPACITY values. Bad choice.
@@ -22,14 +22,14 @@ inactive-opacity-override = false;
 # only for xrender backend?
 # alpha-step = 0.06;
 
-inactive-dim = 0.2;
+inactive-dim = 0.1;
 # Do not let dimness adjust based on window opacity.
 inactive-dim-fixed = false;
 
 # Blur background of transparent windows. Bad performance with X Render backend. GLX backend is preferred.
-blur-background = true;
+blur-background = false;
 # Blur background of opaque windows with transparent frames as well.
-blur-background-frame = true;
+blur-background-frame = false;
 # Do not let blur radius adjust based on window opacity.
 blur-background-fixed = false;
 # Exclude conditions for background blur.
@@ -76,7 +76,7 @@ shadow-ignore-shaped = false;
 
 # * Fading
 # Fade windows during opacity changes.
-fading = true;
+fading = false; 
 # The time between steps in a fade in milliseconds. (default 10).
 fade-delta = 30;
 # Opacity change between steps while fading in. (default 0.028).
@@ -84,7 +84,7 @@ fade-in-step = 0.03;
 # Opacity change between steps while fading out. (default 0.03).
 fade-out-step = 0.03;
 # Fade windows in/out when opening/closing
-no-fading-openclose = false;
+no-fading-openclose = true;
 
 # Specify a list of conditions of windows that should not be faded.
 fade-exclude = [ ];
@@ -189,4 +189,4 @@ glx-copy-from-front = false;
 # Useless with --glx-use-copysubbuffermesa.
 # Partially breaks --resize-damage.
 # Defaults to undefined.
-glx-swap-method = "3";
+glx-swap-method = "undefined";

@@ -1,10 +1,17 @@
 !Xft.dpi : 176
 !Xft.dpi : 152
-!Xft.dpi : 104
-Xft.dpi : 96
-#Xft.dpi : 92
+!~Xft.dpi : 112
+#Xft.dpi : 88
+Xft.dpi : 92
 
 # --==--==--==--
+! Perl Extensions
+URxvt.perl-ext-common: default,clipboard
+! Copy-Paste Keys
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
 Xft.antialias:1
 Xft.hinting: 1
@@ -34,7 +41,7 @@ URxvt.secondaryWheel: 1
 #urxvt.font: xft:DejaVuSansMono:size=10
 #urxvt.font: xft:Terminus:size=10
 URxvt.font: xft:Source Code Pro:size=13
-URxvt*scrollBar:                      true
+URxvt*scrollBar:                      false
 URxvt*mouseWheelScrollPage:           false
 URxvt*cursorBlink:                    false
 URxvt*background:                     black
@@ -158,7 +165,7 @@ URxvt*buffered: true
 ! URxvt*skipScroll: boolean
 
 ! Fade the text by the given percentage when focus is lost; option -fade.
-! URxvt*fading: number
+URxvt*fading: 10
 
 ! Fade to this colour, when fading is used (see fading:). The default colour is black; option -fadecolor.
 ! URxvt*fadeColor: colour
@@ -274,7 +281,7 @@ URxvt*buffered: true
 ! URxvt*cursorBlink: boolean
 
 ! True: Make the cursor underlined. False: Make the cursor a box [default]; option -uc.
-! URxvt*cursorUnderline: boolean
+URxvt*cursorUnderline: true
 
 ! True: blank the pointer when a key is pressed or after a set number of seconds of inactivity. False: the pointer is always visible [default].
 ! URxvt*pointerBlank: boolean
