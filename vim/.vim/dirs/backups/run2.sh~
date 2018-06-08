@@ -1,0 +1,276 @@
+cp -r ./.bash/ dotfiles
+cp  ./.bash dotfiles
+cp -r ./.bash_history/ dotfiles
+cp  ./.bash_history dotfiles
+cp -r ./.bash_logout/ dotfiles
+cp  ./.bash_logout dotfiles
+cp -r ./.bash_profile/ dotfiles
+cp  ./.bash_profile dotfiles
+cp -r ./.bashrc/ dotfiles
+cp  ./.bashrc dotfiles
+cp -r ./.bluefish/ dotfiles
+cp  ./.bluefish dotfiles
+cp -r ./.cinnamon/ dotfiles
+cp  ./.cinnamon dotfiles
+cp -r ./.coinmontmc/ dotfiles
+cp  ./.coinmontmc dotfiles
+cp -r ./.config/ dotfiles
+cp  ./.config dotfiles
+cp -r ./.conky/ dotfiles
+cp  ./.conky dotfiles
+cp -r ./.cryptop/ dotfiles
+cp  ./.cryptop dotfiles
+cp -r ./.darkplaces/ dotfiles
+cp  ./.darkplaces dotfiles
+cp -r ./.dbus/ dotfiles
+cp  ./.dbus dotfiles
+cp -r ./.dir_colors/ dotfiles
+cp  ./.dir_colors dotfiles
+cp -r ./.directory/ dotfiles
+cp  ./.directory dotfiles
+cp -r ./.dmenurc/ dotfiles
+cp  ./.dmenurc dotfiles
+cp -r ./.dmrc/ dotfiles
+cp  ./.dmrc dotfiles
+cp -r ./.dreampie/ dotfiles
+cp  ./.dreampie dotfiles
+cp -r ./.drirc/ dotfiles
+cp  ./.drirc dotfiles
+cp -r ./.electron/ dotfiles
+cp  ./.electron dotfiles
+cp -r ./.electron-gyp/ dotfiles
+cp  ./.electron-gyp dotfiles
+cp -r ./.electrum/ dotfiles
+cp  ./.electrum dotfiles
+cp -r ./.elementary/ dotfiles
+cp  ./.elementary dotfiles
+cp -r ./.elinks/ dotfiles
+cp  ./.elinks dotfiles
+cp -r ./.esd_auth/ dotfiles
+cp  ./.esd_auth dotfiles
+cp -r ./.ethereum/ dotfiles
+cp  ./.ethereum dotfiles
+cp -r ./.extend.bashrc/ dotfiles
+cp  ./.extend.bashrc dotfiles
+cp -r ./.extend.bashrc2/ dotfiles
+cp  ./.extend.bashrc2 dotfiles
+cp -r ./.extend.xinitrc/ dotfiles
+cp  ./.extend.xinitrc dotfiles
+cp -r ./.ff-theme-util_1strun/ dotfiles
+cp  ./.ff-theme-util_1strun dotfiles
+cp -r ./.fltk/ dotfiles
+cp  ./.fltk dotfiles
+cp -r ./.fonts/ dotfiles
+cp  ./.fonts dotfiles
+cp -r ./.gdmap/ dotfiles
+cp  ./.gdmap dotfiles
+cp -r ./.gem/ dotfiles
+cp  ./.gem dotfiles
+cp -r ./.gimp-2.8/ dotfiles
+cp  ./.gimp-2.8 dotfiles
+cp -r ./.gitconfig/ dotfiles
+cp  ./.gitconfig dotfiles
+cp -r ./.gitencrypt/ dotfiles
+cp  ./.gitencrypt dotfiles
+cp -r ./.gksu.lock/ dotfiles
+cp  ./.gksu.lock dotfiles
+cp -r ./.gnome/ dotfiles
+cp  ./.gnome dotfiles
+cp -r ./.gnupg/ dotfiles
+cp  ./.gnupg dotfiles
+cp -r ./.googleearth/ dotfiles
+cp  ./.googleearth dotfiles
+cp -r ./.gphoto/ dotfiles
+cp  ./.gphoto dotfiles
+cp -r ./.gradle/ dotfiles
+cp  ./.gradle dotfiles
+cp -r ./.gtk-bookmarks/ dotfiles
+cp  ./.gtk-bookmarks dotfiles
+cp -r ./.gtkrc-2.0/ dotfiles
+cp  ./.gtkrc-2.0 dotfiles
+cp -r ./.gtkrc-2.0.bak/ dotfiles
+cp  ./.gtkrc-2.0.bak dotfiles
+cp -r ./.Heaven/ dotfiles
+cp  ./.Heaven dotfiles
+cp -r ./.historybashconfig/ dotfiles
+cp  ./.historybashconfig dotfiles
+cp -r ./.historybashstl/ dotfiles
+cp  ./.historybashstl dotfiles
+cp -r ./.hplip/ dotfiles
+cp  ./.hplip dotfiles
+cp -r ./.i3blocks.conf.1/ dotfiles
+cp  ./.i3blocks.conf.1 dotfiles
+cp -r ./.icons/ dotfiles
+cp  ./.icons dotfiles
+cp -r ./.inxi_info/ dotfiles
+cp  ./.inxi_info dotfiles
+cp -r ./.ipynb_checkpoints/ dotfiles
+cp  ./.ipynb_checkpoints dotfiles
+cp -r ./.ipython/ dotfiles
+cp  ./.ipython dotfiles
+cp -r ./.java/ dotfiles
+cp  ./.java dotfiles
+cp -r ./.jupyter/ dotfiles
+cp  ./.jupyter dotfiles
+cp -r ./.kde4/ dotfiles
+cp  ./.kde4 dotfiles
+cp -r ./.kodi/ dotfiles
+cp  ./.kodi dotfiles
+cp -r ./.lamperc/ dotfiles
+cp  ./.lamperc dotfiles
+cp -r ./.lastpath/ dotfiles
+cp  ./.lastpath dotfiles
+cp -r ./.lesshst/ dotfiles
+cp  ./.lesshst dotfiles
+cp -r ./.links/ dotfiles
+cp  ./.links dotfiles
+cp -r ./.local/ dotfiles
+cp  ./.local dotfiles
+cp -r ./.LuminanceHDR/ dotfiles
+cp  ./.LuminanceHDR dotfiles
+cp -r ./.macromedia/ dotfiles
+cp  ./.macromedia dotfiles
+cp -r ./.moc/ dotfiles
+cp  ./.moc dotfiles
+cp -r ./.mono/ dotfiles
+cp  ./.mono dotfiles
+cp -r ./.moonchild productions/ dotfiles
+cp  ./.moonchild productions dotfiles
+cp -r ./.mozilla/ dotfiles
+cp  ./.mozilla dotfiles
+cp -r ./.mplayer/ dotfiles
+cp  ./.mplayer dotfiles
+cp -r ./.mtab.fuseiso/ dotfiles
+cp  ./.mtab.fuseiso dotfiles
+cp -r ./.multirust/ dotfiles
+cp  ./.multirust dotfiles
+cp -r ./.neocr/ dotfiles
+cp  ./.neocr dotfiles
+cp -r ./.nixnote/ dotfiles
+cp  ./.nixnote dotfiles
+cp -r ./.node-gyp/ dotfiles
+cp  ./.node-gyp dotfiles
+cp -r ./.npm/ dotfiles
+cp  ./.npm dotfiles
+cp -r ./.nv/ dotfiles
+cp  ./.nv dotfiles
+cp -r ./.parallel/ dotfiles
+cp  ./.parallel dotfiles
+cp -r ./.password-store/ dotfiles
+cp  ./.password-store dotfiles
+cp -r ./.phoronix-test-suite/ dotfiles
+cp  ./.phoronix-test-suite dotfiles
+cp -r ./.pki/ dotfiles
+cp  ./.pki dotfiles
+cp -r ./.profile/ dotfiles
+cp  ./.profile dotfiles
+cp -r ./.PyCharm2017.3/ dotfiles
+cp  ./.PyCharm2017.3 dotfiles
+cp -r ./.PyCharm2018.1/ dotfiles
+cp  ./.PyCharm2018.1 dotfiles
+cp -r ./.pythonhist/ dotfiles
+cp  ./.pythonhist dotfiles
+cp -r ./.python_history/ dotfiles
+cp  ./.python_history dotfiles
+cp -r ./.qd/ dotfiles
+cp  ./.qd dotfiles
+cp -r ./.remarkable/ dotfiles
+cp  ./.remarkable dotfiles
+cp -r ./.rnd/ dotfiles
+cp  ./.rnd dotfiles
+cp -r ./.running_kernel/ dotfiles
+cp  ./.running_kernel dotfiles
+cp -r ./.rustup/ dotfiles
+cp  ./.rustup dotfiles
+cp -r ./.screenlayout/ dotfiles
+cp  ./.screenlayout dotfiles
+cp -r ./.searchfiles/ dotfiles
+cp  ./.searchfiles dotfiles
+cp -r ./.sourcery/ dotfiles
+cp  ./.sourcery dotfiles
+cp -r ./.ssh/ dotfiles
+cp  ./.ssh dotfiles
+cp -r ./.stack/ dotfiles
+cp  ./.stack dotfiles
+cp -r ./.steam/ dotfiles
+cp  ./.steam dotfiles
+cp -r ./.steampath/ dotfiles
+cp  ./.steampath dotfiles
+cp -r ./.steampid/ dotfiles
+cp  ./.steampid dotfiles
+cp -r ./.swt/ dotfiles
+cp  ./.swt dotfiles
+cp -r ./.task/ dotfiles
+cp  ./.task dotfiles
+cp -r ./.taskrc/ dotfiles
+cp  ./.taskrc dotfiles
+cp -r ./.themes/ dotfiles
+cp  ./.themes dotfiles
+cp -r ./.thumbnails/ dotfiles
+cp  ./.thumbnails dotfiles
+cp -r ./.thunderbird/profiles.ini/ dotfiles
+cp  ./.thunderbird/profiles.ini dotfiles
+cp -r ./.tor-browser/ dotfiles
+cp  ./.tor-browser dotfiles
+cp -r ./.typetalk/ dotfiles
+cp  ./.typetalk dotfiles
+cp -r ./.update-timestamp/ dotfiles
+cp  ./.update-timestamp dotfiles
+cp -r ./.urxvt/ dotfiles
+cp  ./.urxvt dotfiles
+cp -r ./.userpwd.txt/ dotfiles
+cp  ./.userpwd.txt dotfiles
+cp -r ./.vagrant.d/ dotfiles
+cp  ./.vagrant.d dotfiles
+cp -r ./.vim/ dotfiles
+cp  ./.vim dotfiles
+cp -r ./.viminfo/ dotfiles
+cp  ./.viminfo dotfiles
+cp -r ./.vimrc/ dotfiles
+cp  ./.vimrc dotfiles
+cp -r ./.virtualenvs/ dotfiles
+cp  ./.virtualenvs dotfiles
+cp -r ./.vmware/ dotfiles
+cp  ./.vmware dotfiles
+cp -r ./.vnc/ dotfiles
+cp  ./.vnc dotfiles
+cp -r ./.w3af/ dotfiles
+cp  ./.w3af dotfiles
+cp -r ./.w3m/ dotfiles
+cp  ./.w3m dotfiles
+cp -r ./.wget-hsts/ dotfiles
+cp  ./.wget-hsts dotfiles
+cp -r ./.whereami/ dotfiles
+cp  ./.whereami dotfiles
+cp -r ./.wine/ dotfiles
+cp  ./.wine dotfiles
+cp -r ./.Xauthority/ dotfiles
+cp  ./.Xauthority dotfiles
+cp -r ./.Xclients/ dotfiles
+cp  ./.Xclients dotfiles
+cp -r ./.xine/ dotfiles
+cp  ./.xine dotfiles
+cp -r ./.xinitrc/ dotfiles
+cp  ./.xinitrc dotfiles
+cp -r ./.xprofile/ dotfiles
+cp  ./.xprofile dotfiles
+cp -r ./.Xresources/ dotfiles
+cp  ./.Xresources dotfiles
+cp -r ./.xscreensaver/ dotfiles
+cp  ./.xscreensaver dotfiles
+cp -r ./.xsession/ dotfiles
+cp  ./.xsession dotfiles
+cp -r ./.xsession-errors/ dotfiles
+cp  ./.xsession-errors dotfiles
+cp -r ./.xsession-errors.old/ dotfiles
+cp  ./.xsession-errors.old dotfiles
+cp -r ./.yaourtrc/ dotfiles
+cp  ./.yaourtrc dotfiles
+cp -r ./.yarn/ dotfiles
+cp  ./.yarn dotfiles
+cp -r ./.yarnrc/ dotfiles
+cp  ./.yarnrc dotfiles
+cp -r ./.yoshimi_history/ dotfiles
+cp  ./.yoshimi_history dotfiles
+cp -r ./.zcash-params/ dotfiles
+cp  ./.zcash-params dotfiles
