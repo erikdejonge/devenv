@@ -1,0 +1,6 @@
+rsync -avvz -O --stats --checksum --human-readable --acls \
+    --itemize-changes --progress \
+    --out-format='[%t] [%i] (Last Modified: %M) (bytes: %-10l) %-100n' \
+    --exclude='workspace/github'
+    --delete \
+    "/home/rabshakeh" "/var/run/media/rabshakeh/1tb/"
