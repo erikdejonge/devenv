@@ -97,11 +97,9 @@ def print_finds(aliasses, lines, profile, searchfor):
             if line.strip().startswith("function "):
                 if searchfor.lower() in line.lower():
                     printing = True
-<<<<<<< HEAD
+
                     print("\033[0m\033[90m")
-=======
-                    print("\033[0m--\033[90m")
->>>>>>> b6e11e4df6fff8e17b08c25f36b014ad34249310
+
 
             if printing:
                 if line.startswith("function"):
@@ -131,11 +129,7 @@ def print_finds(aliasses, lines, profile, searchfor):
 
             print(retval)
 
-<<<<<<< HEAD
         print("\033[0m")
-=======
-        print("--\033[0m")
->>>>>>> b6e11e4df6fff8e17b08c25f36b014ad34249310
     else:
         print(retval)
 
@@ -191,15 +185,12 @@ def main():
     """
     userinput = sys.stdin.read()
     searchfor = userinput.strip()
-<<<<<<< HEAD
-    profile = str(open(os.path.expanduser("~/.bash_profile"), 'rt').read())
-=======
     if os.path.exists(os.path.expanduser("~/.bash_profile")):
         profile = str(open(os.path.expanduser("~/.bash_profile"), 'rt').read())
     if os.path.exists(os.path.expanduser("~/.extend.bashrc")):
         profile += str(open(os.path.expanduser("~/.extend.bashrc"), 'rt').read())
 
->>>>>>> b6e11e4df6fff8e17b08c25f36b014ad34249310
+
 
     # if len(profile.strip()):
     #    profile = profile.encode("utf8")
@@ -216,11 +207,6 @@ def main():
         lines.append(line)
         if line.startswith("alias "):
             sline = line.split("=", 1)
-<<<<<<< HEAD
-
-=======
-            print(sline)
->>>>>>> b6e11e4df6fff8e17b08c25f36b014ad34249310
             if len(sline) > 0:
                 alias = sline[0].strip().replace("alias ", "")
                 imp = sline[1].strip().strip(":").strip("'")
