@@ -1,0 +1,8 @@
+#!/bin/bash
+ adapta-maia-theme alpm-octopi-utils breeze-icons ccfits chmlib chrome-gnome-shell ckbcomp cups-pdf editorconfig-core-c gambas3-gb-desktop gambas3-gb-desktop-x11 \    
+     gambas3-gb-form gnome-shell-extension-appindicator gnome-shell-extension-arc-menu gnome-shell-extension-dash-to-dock gnome-shell-extension-openweather \
+    gnome-shell-extension-taskbar gnome-shell-extensions gnome-wallpapers gsl hplip libaccounts-glib libcpuid libdmtx libgit2 libplacebo libqalculate manjaro-base-skel \
+    manjaro-gnome-extension-settings muparser nethogs noto-fonts-compat pastebinit podofo python-dnspython python-ecdsa python-jsonrpclib-pelix python-markdown2 \
+    python-pbkdf2 python-protobuf python-pyaes python-pycryptodomex python-qrcode python-xlib python2-apsw python2-cssutils python2-dnspython python2-dukpy \
+    python2-mechanize python2-msgpack python2-netifaces python2-pillow python2-regex python2-unrardll splix wxgtk2 xcursor-breeze xorg-xmessage
+

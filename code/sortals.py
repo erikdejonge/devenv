@@ -50,9 +50,15 @@ def get_alias_and_implementation(aliasses, profile, searchfor):
 
             if imp.count(";") > 1:
                 retval += "\033[30malias " + alias[0].strip() + "=" + imp.strip() + "\"\n"
+<<<<<<< HEAD
                 retval += "\033[91m" + alias[0].strip() + ":\033[33m\n   " + imp.replace(";", ";\n  ") + "\033[0m\n\n"
             else:
                 retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n\n"
+=======
+                retval += "\033[91m" + alias[0].strip() + ":\033[33m\n   " + imp.replace(";", ";\n  ") + "\033[0m\n---\n"
+            else:
+                retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n---\n"
+>>>>>>> b6e11e4df6fff8e17b08c25f36b014ad34249310
 
             if imp.startswith("_"):
                 foundfunc = False
@@ -63,7 +69,11 @@ def get_alias_and_implementation(aliasses, profile, searchfor):
                         retval += "\033[90mfunction " + func.strip() + "\033[0m\n\n"
 
                 if foundfunc:
+<<<<<<< HEAD
                     retval = retval.strip() + "\n\n"
+=======
+                    retval = retval.strip() + "\n--\n"
+>>>>>>> b6e11e4df6fff8e17b08c25f36b014ad34249310
 
     return retval
 
@@ -87,7 +97,11 @@ def print_finds(aliasses, lines, profile, searchfor):
             if line.strip().startswith("function "):
                 if searchfor.lower() in line.lower():
                     printing = True
+<<<<<<< HEAD
                     print("\033[0m\033[90m")
+=======
+                    print("\033[0m--\033[90m")
+>>>>>>> b6e11e4df6fff8e17b08c25f36b014ad34249310
 
             if printing:
                 if line.startswith("function"):
@@ -117,7 +131,11 @@ def print_finds(aliasses, lines, profile, searchfor):
 
             print(retval)
 
+<<<<<<< HEAD
         print("\033[0m")
+=======
+        print("--\033[0m")
+>>>>>>> b6e11e4df6fff8e17b08c25f36b014ad34249310
     else:
         print(retval)
 
@@ -173,7 +191,15 @@ def main():
     """
     userinput = sys.stdin.read()
     searchfor = userinput.strip()
+<<<<<<< HEAD
     profile = str(open(os.path.expanduser("~/.bash_profile"), 'rt').read())
+=======
+    if os.path.exists(os.path.expanduser("~/.bash_profile")):
+        profile = str(open(os.path.expanduser("~/.bash_profile"), 'rt').read())
+    if os.path.exists(os.path.expanduser("~/.extend.bashrc")):
+        profile += str(open(os.path.expanduser("~/.extend.bashrc"), 'rt').read())
+
+>>>>>>> b6e11e4df6fff8e17b08c25f36b014ad34249310
 
     # if len(profile.strip()):
     #    profile = profile.encode("utf8")
@@ -186,10 +212,15 @@ def main():
     profile = str(profile)
 
     for line in profile.split("\n"):
+        print(line)
         lines.append(line)
         if line.startswith("alias "):
             sline = line.split("=", 1)
+<<<<<<< HEAD
 
+=======
+            print(sline)
+>>>>>>> b6e11e4df6fff8e17b08c25f36b014ad34249310
             if len(sline) > 0:
                 alias = sline[0].strip().replace("alias ", "")
                 imp = sline[1].strip().strip(":").strip("'")
