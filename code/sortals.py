@@ -68,7 +68,7 @@ def get_alias_and_implementation(aliasses, profile, searchfor):
     return retval
 
 
-def print_finds(aliasses, lines, profile, searchfor):
+def console_finds(aliasses, lines, profile, searchfor):
     """
     @type aliasses: list
     @type lines: list
@@ -79,27 +79,27 @@ def print_finds(aliasses, lines, profile, searchfor):
     retval = get_alias_and_implementation(aliasses, profile, searchfor)
 
     if len(retval) == 0:
-        printing = False
+        consoleing = False
 
         if searchfor.startswith("_"):
             searchfor = '_'.join(searchfor.split("_")[1:])
         for line in lines:
             if line.strip().startswith("function "):
                 if searchfor.lower() in line.lower():
-                    printing = True
-                    print("\033[0m--\033[90m")
+                    consoleing = True
+                    console("\033[0m--\033[90m")
 
-            if printing:
+            if consoleing:
                 if line.startswith("function"):
                     linesp = line.split("function ")
-                    print("function\033[33m", ''.join(linesp[1:]), "\033[90m")
+                    console("function\033[33m", ''.join(linesp[1:]), "\033[90m")
                 else:
-                    print(line)
+                    console(line)
 
             if line.strip().startswith("}"):
-                printing = False
+                consoleing = False
 
-                # print("\033[0m")
+                # console("\033[0m")
 
         if len(retval) == 0:
             cnt = 0
@@ -115,11 +115,11 @@ def print_finds(aliasses, lines, profile, searchfor):
 
                     retval += "\n"
 
-            print(retval)
+            console(retval)
 
-        print("--\033[0m")
+        console("--\033[0m")
     else:
-        print(retval)
+        console(retval)
 
 
 def no_finds(aliasses):
@@ -164,7 +164,7 @@ def no_finds(aliasses):
         myaliasses4.append(list(i))
 
     table = AsciiTable(myaliasses4)
-    print(table.table)
+    console(table.table)
 
 
 def main():
@@ -185,16 +185,16 @@ def main():
     lines = []
 
     if len(searchfor) == 0:
-        print("possible commands:")
+        console("possible commands:")
 
     profile = str(profile)
 
     for line in profile.split("\n"):
-        print(line)
+        console(line, print=True)
         lines.append(line)
         if line.startswith("alias "):
             sline = line.split("=", 1)
-            print(sline)
+
             if len(sline) > 0:
                 alias = sline[0].strip().replace("alias ", "")
                 imp = sline[1].strip().strip(":").strip("'")
@@ -204,12 +204,12 @@ def main():
 
                 raise RuntimeError()
 
-    # print(len(searchfor), len(aliasses))
+    # console(len(searchfor), len(aliasses))
 
     if len(searchfor) == 0:
         no_finds(aliasses)
     else:
-        print_finds(aliasses, lines, profile, searchfor)
+        console_finds(aliasses, lines, profile, searchfor)
 
 
 if __name__ == "__main__":

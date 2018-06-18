@@ -205,7 +205,7 @@ set confirm
 set nobackup
 " other settings
 set langmenu=zh_CN.UTF-8
-set mouse=a
+" set mouse=r
 set whichwrap+=<,>,h,l,[,]
 set background=dark
 set encoding=utf-8
