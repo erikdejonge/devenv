@@ -8,7 +8,7 @@ Usage:
   sortalias
 
 Options:
-  -h --help     Show this screen.
+  -h help     Show this screen.
 
 author  : rabshakeh (erik@a8.nl)
 project : devenv
@@ -50,9 +50,15 @@ def get_alias_and_implementation(aliasses, profile, searchfor):
 
             if imp.count(";") > 1:
                 retval += "\033[30malias " + alias[0].strip() + "=" + imp.strip() + "\"\n"
+<<<<<<< HEAD
+                retval += "\033[91m" + alias[0].strip() + ":\033[33m\n   " + imp.replace(";", ";\n  ") + "\033[0m\n\n"
+            else:
+                retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n\n"
+=======
                 retval += "\033[91m" + alias[0].strip() + ":\033[33m\n   " + imp.replace(";", ";\n  ") + "\033[0m\n---\n"
             else:
                 retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n---\n"
+>>>>>>> b6e11e4df6fff8e17b08c25f36b014ad34249310
 
             if imp.startswith("_"):
                 foundfunc = False
@@ -63,7 +69,11 @@ def get_alias_and_implementation(aliasses, profile, searchfor):
                         retval += "\033[90mfunction " + func.strip() + "\033[0m\n\n"
 
                 if foundfunc:
+<<<<<<< HEAD
+                    retval = retval.strip() + "\n\n"
+=======
                     retval = retval.strip() + "\n--\n"
+>>>>>>> b6e11e4df6fff8e17b08c25f36b014ad34249310
 
     return retval
 
@@ -86,8 +96,15 @@ def console_finds(aliasses, lines, profile, searchfor):
         for line in lines:
             if line.strip().startswith("function "):
                 if searchfor.lower() in line.lower():
+<<<<<<< HEAD
                     consoleing = True
                     console("\033[0m--\033[90m")
+=======
+                    printing = True
+
+                    print("\033[0m\033[90m")
+
+>>>>>>> 7c6cd077341c0b01e45618d4a834c5ac1c39f7eb
 
             if consoleing:
                 if line.startswith("function"):
@@ -117,7 +134,11 @@ def console_finds(aliasses, lines, profile, searchfor):
 
             console(retval)
 
+<<<<<<< HEAD
         console("--\033[0m")
+=======
+        print("\033[0m")
+>>>>>>> 7c6cd077341c0b01e45618d4a834c5ac1c39f7eb
     else:
         console(retval)
 
@@ -179,6 +200,7 @@ def main():
         profile += str(open(os.path.expanduser("~/.extend.bashrc"), 'rt').read())
 
 
+
     # if len(profile.strip()):
     #    profile = profile.encode("utf8")
     aliasses = []
@@ -194,7 +216,10 @@ def main():
         lines.append(line)
         if line.startswith("alias "):
             sline = line.split("=", 1)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7c6cd077341c0b01e45618d4a834c5ac1c39f7eb
             if len(sline) > 0:
                 alias = sline[0].strip().replace("alias ", "")
                 imp = sline[1].strip().strip(":").strip("'")

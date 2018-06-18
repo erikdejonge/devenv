@@ -1,4 +1,4 @@
 
 
-delay 0.5
+delay 0.1
 tell application "Google Chrome" to activate
