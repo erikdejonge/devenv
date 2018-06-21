@@ -11,11 +11,9 @@ Options:
 
 author  : rabshakeh (erik@a8.nl)
 project : xx
-created : 21 Jun 2018 / 13:57
-where   : [?25l\
-          [?25l[1000d[k[1a[1000d[k|
-          https://www.google.nl/maps/place/[?25l\
-          [?25l[1000d[k[1a[1000d[k|
+created : 21 Jun 2018 / 16:33
+where   : 51.9568,4.582
+          https://www.google.nl/maps/place/51.9568,4.582
 """
 import sys
 

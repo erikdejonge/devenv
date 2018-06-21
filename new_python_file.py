@@ -93,21 +93,19 @@ if __name__ == \"__main__\":
 """
     import time
     from sh import whoami, whereami
+   
     arguments = IArguments(__doc__)
 
     project_name = arguments.projectname
     name = arguments.filename
     user = whoami().wait().strip()
-    whereamisplit = whereami.stdin.readlines()
-    whereamisplit  = whereamisplit.strip().split('\n')
-    print(whereamisplit)
-    if len(whereamisplit) > 0:
-        whereamisplit = whereamisplit[:2]
-        whereami = whereamisplit[0]+'\n'
-        whereami += '\n'.join([(10*' ')+x for x in whereamisplit[1:]]).lower()+"\n"
-        s = whereami.strip().lower().replace("latitude", "").replace("longitude", "")
-        s = ','.join([x.strip() for x in s.lower().replace("latitude", "").replace("longitude", "").split(":") if x.strip()])
-        whereami += (10*' ')+"https://www.google.nl/maps/place/"+s
+    
+    c = whereami()
+    
+    whereami = ''.join([x for x in c.split("[")[-2].strip() if x.isdigit() or x==',' or x=='.'])
+
+    if whereami:
+        whereami += "\n"+(10*' ')+"https://www.google.nl/maps/place/"+whereami
     else:
         whereami = "location not available"
     localtime = time.localtime(time.time())
