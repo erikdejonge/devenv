@@ -97,13 +97,15 @@ if __name__ == \"__main__\":
 
     project_name = arguments.projectname
     name = arguments.filename
-    user = whoami().strip()
-    whereamisplit = whereami().strip().split('\n')
+    user = whoami().wait().strip()
+    whereamisplit = whereami.stdin.readlines()
+    whereamisplit  = whereamisplit.strip().split('\n')
+    print(whereamisplit)
     if len(whereamisplit) > 0:
         whereamisplit = whereamisplit[:2]
         whereami = whereamisplit[0]+'\n'
         whereami += '\n'.join([(10*' ')+x for x in whereamisplit[1:]]).lower()+"\n"
-        s = whereami.lower().replace("latitude", "").replace("longitude", "")
+        s = whereami.strip().lower().replace("latitude", "").replace("longitude", "")
         s = ','.join([x.strip() for x in s.lower().replace("latitude", "").replace("longitude", "").split(":") if x.strip()])
         whereami += (10*' ')+"https://www.google.nl/maps/place/"+s
     else:

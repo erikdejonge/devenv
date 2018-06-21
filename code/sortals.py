@@ -53,7 +53,7 @@ def get_alias_and_implementation(aliasses, profile, searchfor):
                 retval += "\033[91m" + alias[0].strip() + ":\033[33m\n   " + imp.replace(";", ";\n  ") + "\033[0m\n\n"
             else:
                 retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n\n"
-                    retval = retval.strip() + "\n\n"
+                retval = retval.strip() + "\n\n"
 
     return retval
 
@@ -106,7 +106,6 @@ def console_finds(aliasses, lines, profile, searchfor):
                     retval += "\n"
 
             console(retval)
-
         console("--\033[0m")
     else:
         console(retval)
@@ -163,12 +162,12 @@ def main():
     """
     userinput = sys.stdin.read()
     searchfor = userinput.strip()
+
     if os.path.exists(os.path.expanduser("~/.bash_profile")):
         profile = str(open(os.path.expanduser("~/.bash_profile"), 'rt').read())
+
     if os.path.exists(os.path.expanduser("~/.extend.bashrc")):
         profile += str(open(os.path.expanduser("~/.extend.bashrc"), 'rt').read())
-
-
 
     # if len(profile.strip()):
     #    profile = profile.encode("utf8")
@@ -185,6 +184,7 @@ def main():
         lines.append(line)
         if line.startswith("alias "):
             sline = line.split("=", 1)
+
             if len(sline) > 0:
                 alias = sline[0].strip().replace("alias ", "")
                 imp = sline[1].strip().strip(":").strip("'")
