@@ -161,6 +161,7 @@ def change_filepath(fdp, fp):
         'sgml',
         'sh',
         'shar',
+        'smc',
         'snd',
         'so',
         'src',
