@@ -50,9 +50,9 @@ def get_alias_and_implementation(aliasses, profile, searchfor):
 
             if imp.count(";") > 1:
                 retval += "\033[30malias " + alias[0].strip() + "=" + imp.strip() + "\"\n"
-                retval += "\033[91m" + alias[0].strip() + ":\033[33m\n   " + imp.replace(";", ";\n  ") + "\033[0m\n\n"
+                retval += "\033[34m" + alias[0].strip() + ":\033[33m\n   " + imp.replace(";", ";\n  ") + "\033[0m\n\n"
             else:
-                retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n\n"
+                retval += "\033[34malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n\n"
                 retval = retval.strip() + "\n\n"
 
     return retval
@@ -77,19 +77,18 @@ def console_finds(aliasses, lines, profile, searchfor):
             if line.strip().startswith("function "):
                 if searchfor.lower() in line.lower():
                     consoleing = True
-                    console("\033[0m--\033[90m")
+                    console("\033[0m--\033[90m", plaintext=True)
 
             if consoleing:
                 if line.startswith("function"):
                     linesp = line.split("function ")
-                    console("function\033[33m", ''.join(linesp[1:]), "\033[90m")
+                    console("function\033[33m", ''.join(linesp[1:]), "\033[90m", plaintext=True)
                 else:
-                    console(line)
+                    console(line, plaintext=True)
 
             if line.strip().startswith("}"):
                 consoleing = False
-
-                # console("\033[0m")
+                console("\033[0m", plaintext=True)
 
         if len(retval) == 0:
             cnt = 0
@@ -106,9 +105,9 @@ def console_finds(aliasses, lines, profile, searchfor):
                     retval += "\n"
 
             console(retval)
-        console("--\033[0m")
+        console("--\033[0m", plaintext=True)
     else:
-        console(retval)
+        console(retval, plaintext=True)
 
 
 def no_finds(aliasses):
@@ -153,7 +152,7 @@ def no_finds(aliasses):
         myaliasses4.append(list(i))
 
     table = AsciiTable(myaliasses4)
-    console(table.table)
+    console(table.table, plaintext=True)
 
 
 def main():
@@ -175,12 +174,12 @@ def main():
     lines = []
 
     if len(searchfor) == 0:
-        console("possible commands:")
+        console("possible commands:", plaintext=True)
 
     profile = str(profile)
 
     for line in profile.split("\n"):
-        console(line, print=True)
+        #console(line, print=True)
         lines.append(line)
         if line.startswith("alias "):
             sline = line.split("=", 1)
@@ -190,7 +189,7 @@ def main():
                 imp = sline[1].strip().strip(":").strip("'")
                 aliasses.append((alias, imp))
             else:
-                console_warning("cant split this", line)
+                console_warning("cant split this", line, plaintext=True)
 
                 raise RuntimeError()
 

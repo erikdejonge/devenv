@@ -250,6 +250,20 @@ def change_filepath(fdp, fp):
 
         for i in range(0, 3):
             nfp = nfp.replace("..", ".").replace("-.", ".").replace("_.", ".").strip(".").strip("_").strip("-").strip(".")
+        slist = list(nfp)
+        for i in range(0,slist.count(".")-1):
+            slist[slist.index(".")]="_"
+        for i in range(0,slist.count("-")-1):
+            slist[slist.index("-")]="_"
+
+        nfp = ''.join(slist)
+        print(nfp.count("-"))
+        if 1==nfp.count("-"):
+            nfps = nfp.split("-")
+            print(nfps)
+            nfpsext = nfps[1].split(".")[-1]
+            nfp = nfps[0]+"."+nfpsext
+
 
         nfpl = nfp.split(".")
         nfp2 = "_".join(nfpl[:-1])
