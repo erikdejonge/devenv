@@ -50,9 +50,9 @@ def get_alias_and_implementation(aliasses, profile, searchfor):
             
             if imp.count(";") > 1:
                 retval += "\033[30malias " + alias[0].strip() + "=" + imp.strip() + "\"\n"
-                retval += "\033[91m" + alias[0].strip() + ":\033[33m\n   " + imp.replace(";", ";\n  ") + "\033[0m\n⎯⎯⎯\n"
+                retval += "\033[91m" + alias[0].strip() + ":\033[33m\n   " + imp.replace(";",";\n  ") + "\033[0m\n---\n"
             else:
-                retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n⎯⎯⎯\n"
+                retval += "\033[91malias " + alias[0].strip() + "=\"\033[33m" + imp + "\033[0m\"\n---\n"
             
             if imp.startswith("_"):
                 foundfunc = False
@@ -171,9 +171,10 @@ def main():
     """
     main
     """
-    userinput = sys.stdin.read()
+    #userinput = sys.stdin.read()
+    userinput = "clock"
     searchfor = userinput.strip()
-    profile = str(open(os.path.expanduser("~/.bash_profile"), 'rt').read())
+    profile = str(open(os.path.expanduser("~/.extend.bashrc"), 'rt').read())
     
     # if len(profile.strip()):
     #    profile = profile.encode("utf8")
