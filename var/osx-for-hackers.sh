@@ -1,4 +1,4 @@
-……# Source: https://gist.github.com/brandonb927/3195465
+
 
 #!/bin/sh
 
@@ -8,23 +8,6 @@
 # Ask for the administrator password upfront
 sudo -v
 
-echo "This script will make your Mac awesome"
-
-echo "hazel"
-defaults write com.noodlesoft.Hazel ScanInvisibles -bool YES
-
-###############################################################################
-# General UI/UX
-###############################################################################
-
-echo ""
-echo "Hide the Time Machine, Volume, User, and Bluetooth icons"
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-  defaults write "${domain}" dontAutoLoad -array \
-    "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-    "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-    "/System/Library/CoreServices/Menu Extras/User.menu"
-done
 defaults write com.apple.systemuiserver menuExtras -array \
   "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
   "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
@@ -94,14 +77,6 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 ###############################################################################
 
 echo ""
-echo "Increasing sound quality for Bluetooth headphones/headsets"
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
-
-echo ""
-echo "Enabling full keyboard access for all controls (e.g. enable Tab in modal dialogs)"
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
-echo ""
 echo "Disabling press-and-hold for keys in favor of a key repeat"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
@@ -113,10 +88,6 @@ echo ""
 echo "Disabling auto-correct"
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-echo ""
-echo "Setting trackpad & mouse speed to a reasonable number"
-defaults write -g com.apple.trackpad.scaling 2
-defaults write -g com.apple.mouse.scaling 2.5
 
 echo ""
 echo "Turn off keyboard illumination when computer is not used for 5 minutes"
@@ -129,7 +100,7 @@ defaults write com.apple.BezelServices kDimTime -int 300
 echo ""
 echo "Requiring password immediately after sleep or screen saver begins"
 defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
+defaults write com.apple.screensaver askForPasswordDelay -int 1
 
 echo ""
 echo "Enabling subpixel font rendering on non-Apple LCDs"
@@ -272,8 +243,8 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 echo ""
 echo "Enabling UTF-8 ONLY in Terminal.app and setting the Pro theme by default"
 defaults write com.apple.terminal StringEncodings -array 4
-defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
-defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
+defaults write com.apple.Terminal "Default Window Settings" -string "Pro 1"
+defaults write com.apple.Terminal "Startup Window Settings" -string "Pro 1"
 
 
 ###############################################################################
@@ -284,9 +255,6 @@ echo ""
 echo "Preventing Time Machine from prompting to use new hard drives as backup volume"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-echo ""
-echo "Disabling local Time Machine backups"
-hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 
 ###############################################################################
@@ -295,7 +263,7 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 echo ""
 echo "Disable automatic emoji substitution (i.e. use plain text smileys)"
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
+# defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 
 echo ""
 echo "Disable smart quotes as itÃ¢â‚¬â„¢s annoying for messages that contain code"
@@ -332,8 +300,8 @@ sudo pmset -a standbydelay 86400
 
 echo ""
 echo "Disable computer sleep and stop the display from shutting off"
-sudo pmset -a sleep 0
-sudo pmset -a displaysleep 0
+#sudo pmset -a sleep 0
+#sudo pmset -a displaysleep 0
 
 echo ""
 echo "Disable annoying backswipe in Chrome"
@@ -350,7 +318,7 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 
 echo ""
 echo "Increasing sound quality for Bluetooth headphones/headsets"
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+#defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 echo ""
 echo "Enabling full keyboard access for all controls (enable Tab in modal dialogs, menu windows, etc.)"
