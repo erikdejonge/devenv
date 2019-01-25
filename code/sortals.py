@@ -174,8 +174,11 @@ def main():
     userinput = sys.stdin.read()
     #userinput = "clock"
     searchfor = userinput.strip()
-    profile = str(open(os.path.expanduser("~/.extend.bashrc"), 'rt').read())
+    if os.path.exists(os.path.expanduser("~/.extend.bashrc")):
+        profile = str(open(os.path.expanduser("~/.extend.bashrc"), 'rt').read())
 
+    if os.path.exists(os.path.expanduser("~/.bash_profile")):
+        profile = str(open(os.path.expanduser("~/.bash_profile"), 'rt').read())
     # if len(profile.strip()):
     #    profile = profile.encode("utf8")
     aliasses = []
