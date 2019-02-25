@@ -8,16 +8,12 @@ Usage:
 Options:
   -h --help     Show this screen.
 
-
 author  : rabshakeh (erik@a8.nl)
 project : $dev env
 created : 26 Apr 2016 / 04:Apr
 where   :
-
 """
-
 import sys
-
 
 from arguments import Arguments
 from consoleprinter import console
@@ -38,8 +34,8 @@ class IArguments(Arguments):
         self.help = False
         self.projectnaam = ""
         self.filenaam = ""
-
         super().__init__(doc)
+
 
 
 def main():
@@ -92,34 +88,38 @@ if __name__ == \"__main__\":
     main()
 """
     import time
-    from sh import whoami, whereami
-   
-    arguments = IArguments(__doc__)
 
+    from sh import whoami, whereami
+    arguments = IArguments(__doc__)
     project_name = arguments.projectname
     name = arguments.filename
     user = whoami().wait().strip()
-    
+    whereamis = None
     c = whereami()
-    
-    whereami = ''.join([x for x in c.split("[")[-2].strip() if x.isdigit() or x==',' or x=='.'])
+    try:
+        whereamis = ''.join([x for x in c.split("[")[-2].strip() if x.isdigit() or x == ',' or x == '.'])
 
-    if whereami:
-        whereami += "\n"+(10*' ')+"https://www.google.nl/maps/place/"+whereami
-    else:
-        whereami = "location not available"
+        if whereamis:
+            whereamis += "\n" + (10 * ' ') + "https://www.google.nl/maps/place/" + whereami
+    except IndexError:
+        whereamis = str(whereami())
+    finally:
+        if not whereamis:
+            whereamis = "location not available"
+
     localtime = time.localtime(time.time())
     date = time.strftime("%d %b %Y", localtime)
     time = time.strftime("%H:%M", localtime)
-    template_filled = templ.format(PROJECT_NAME=project_name, NAME=name, USER=user, DATE=date, TIME=time, WHEREAMI=whereami)
-    #print(template_filled)
+    template_filled = templ.format(PROJECT_NAME=project_name, NAME=name, USER=user, DATE=date, TIME=time, WHEREAMI=whereamis)
+
+    # print(template_filled)
     filename = arguments.filename
+
     if not filename.endswith('.py'):
         filename += ".py"
+
     open(filename, "w").write(template_filled)
 
 
 if __name__ == "__main__":
     main()
-
-
