@@ -73,6 +73,7 @@ def change_filepath(fdp, fp):
         'docx',
         'dot',
         'dmg',
+        'dng',
         'dvi',
         'eml',
         'eps',
