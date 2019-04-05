@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>444.39</string>
+	<key>AMApplicationVersion</key>
+	<string>2.9</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.1.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>fileNames</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Get Specified Finder Items.action</string>
+				<key>ActionName</key>
+				<string>Get Specified Finder Items</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>fileNames</key>
+					<array>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0001.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0002.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0003.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0004.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0005.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0006.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0007.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0009.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0010.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0011.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0012.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0013.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0014.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0015.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0016.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0017.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0018.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0019.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0020.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0021.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0022.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0023.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0024.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0026.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0027.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0028.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0029.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0030.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0032.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0033.DNG</string>
+						<string>/Volumes/ssd1tb/Dropbox (Personal)/zuid_afrika_2019/PANORAMA/100_0338/PANO0034.DNG</string>
+					</array>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.SpecifiedFiles</string>
+				<key>CFBundleVersion</key>
+				<string>1.1.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryFilesAndFolders</string>
+				</array>
+				<key>Class Name</key>
+				<string>SpecifiedFilesAction</string>
+				<key>InputUUID</key>
+				<string>171DC486-C4BD-42AD-875D-6BBD16526944</string>
+				<key>Keywords</key>
+				<array>
+					<string>File</string>
+					<string>Choose</string>
+					<string>Find</string>
+					<string>Get</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>5D199094-D0A2-42FA-92B7-9CBB3C45C89F</string>
+				<key>UUID</key>
+				<string>21C6832C-78A1-4CC1-ACAA-92A3201E266F</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<array/>
+						<key>name</key>
+						<string>fileNames</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.000000:239.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Get Specified Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>*</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>v.1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>variableUUID</key>
+					<dict>
+						<key>isPathPopUp</key>
+						<false/>
+						<key>selectedVariableUUID</key>
+						<string>37BB01CD-D253-4999-9ADE-8E8B3EF941F1</string>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>*</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Set Value of Variable.action</string>
+				<key>ActionName</key>
+				<string>Set Value of Variable</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>variableUUID</key>
+					<string>37BB01CD-D253-4999-9ADE-8E8B3EF941F1</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.SetValueofVariable</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>Set_Value_of_Variable</string>
+				<key>InputUUID</key>
+				<string>686D5734-80D1-4D18-9083-0BBBB1262923</string>
+				<key>Keywords</key>
+				<array>
+					<string>variable</string>
+					<string>binding</string>
+					<string>input</string>
+					<string>output</string>
+					<string>storage</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>6E6DB8CC-4C6C-4AF1-89F4-024CFBFDE304</string>
+				<key>UUID</key>
+				<string>72DCFF0F-2039-42CB-95BE-8823073C78D6</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>variableUUID</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.000000:344.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>replaceExisting</key>
+					<dict/>
+					<key>toDirectory</key>
+					<dict>
+						<key>isPathPopUp</key>
+						<true/>
+						<key>variableUUIDsInMenu</key>
+						<array/>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Copy Finder Items.action</string>
+				<key>ActionName</key>
+				<string>Copy Finder Items</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>replaceExisting</key>
+					<false/>
+					<key>toDirectory</key>
+					<string>~/Desktop/temp</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.CopyFiles</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryFilesAndFolders</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMCopyFilesAction</string>
+				<key>InputUUID</key>
+				<string>6AA90AC8-6E26-47FA-8135-EF39F26E3A13</string>
+				<key>Keywords</key>
+				<array>
+					<string>File</string>
+					<string>Copy</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>F054F781-E515-4E4E-A2C6-B67C7B4D6F33</string>
+				<key>UUID</key>
+				<string>6E952B30-1A80-47A1-AB47-585F723F9A4E</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>~/Desktop</string>
+						<key>name</key>
+						<string>toDirectory</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>replaceExisting</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.000000:626.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Copy Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>public.image</string>
+						<string>public.item</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Pixelmator Pro</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict/>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>public.image</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/Applications/Pixelmator Pro.app/Contents/Library/Automator/Auto White Balance Images.action</string>
+				<key>ActionName</key>
+				<string>Auto White Balance Images</string>
+				<key>ActionParameters</key>
+				<dict/>
+				<key>BundleIdentifier</key>
+				<string>com.pixelmatorteam.pixelmator.x.automator.auto-white-balance-images</string>
+				<key>CFBundleVersion</key>
+				<string>1.0</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<false/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryPhotos</string>
+				</array>
+				<key>Class Name</key>
+				<string>Auto_White_Balance_Images.AutoWhiteBalanceAction</string>
+				<key>InputUUID</key>
+				<string>7020F1F3-1F96-40A4-AE14-BC8AB4D85941</string>
+				<key>Keywords</key>
+				<array/>
+				<key>OutputUUID</key>
+				<string>F8FF6649-FD4B-46F2-885E-23D95E04803A</string>
+				<key>UUID</key>
+				<string>07C4A39E-8E40-4B57-BABF-6E84EB6BBC21</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Pixelmator Pro</string>
+				</array>
+				<key>arguments</key>
+				<dict/>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.000000:871.000000</string>
+				<key>nibPath</key>
+				<string>/Applications/Pixelmator Pro.app/Contents/Library/Automator/Auto White Balance Images.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>public.image</string>
+						<string>public.item</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Pixelmator Pro</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict/>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>public.image</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/Applications/Pixelmator Pro.app/Contents/Library/Automator/Auto Enhance Images.action</string>
+				<key>ActionName</key>
+				<string>Auto Enhance Images</string>
+				<key>ActionParameters</key>
+				<dict/>
+				<key>BundleIdentifier</key>
+				<string>com.pixelmatorteam.pixelmator.x.automator.auto-enhance-images</string>
+				<key>CFBundleVersion</key>
+				<string>1.0</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<false/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryPhotos</string>
+				</array>
+				<key>Class Name</key>
+				<string>Auto_Enhance_Images.AutoEnhanceAction</string>
+				<key>InputUUID</key>
+				<string>D87698CE-06B8-4378-B0D0-353D6A60DDD8</string>
+				<key>Keywords</key>
+				<array/>
+				<key>OutputUUID</key>
+				<string>0BF94FF6-8934-40EA-8F9C-04C00450044D</string>
+				<key>UUID</key>
+				<string>74FD1475-FB11-4050-AAB1-2F9E6CC2DC93</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Pixelmator Pro</string>
+				</array>
+				<key>arguments</key>
+				<dict/>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.000000:936.000000</string>
+				<key>nibPath</key>
+				<string>/Applications/Pixelmator Pro.app/Contents/Library/Automator/Auto Enhance Images.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict>
+		<key>0960F51C-43F6-41F4-9725-DB00072D53DA</key>
+		<dict>
+			<key>from</key>
+			<string>07C4A39E-8E40-4B57-BABF-6E84EB6BBC21 - 07C4A39E-8E40-4B57-BABF-6E84EB6BBC21</string>
+			<key>to</key>
+			<string>74FD1475-FB11-4050-AAB1-2F9E6CC2DC93 - 74FD1475-FB11-4050-AAB1-2F9E6CC2DC93</string>
+		</dict>
+		<key>0D50F4A4-2E09-40DB-9064-85C9A2CE9358</key>
+		<dict>
+			<key>from</key>
+			<string>72DCFF0F-2039-42CB-95BE-8823073C78D6 - 72DCFF0F-2039-42CB-95BE-8823073C78D6</string>
+			<key>to</key>
+			<string>6E952B30-1A80-47A1-AB47-585F723F9A4E - 6E952B30-1A80-47A1-AB47-585F723F9A4E</string>
+		</dict>
+		<key>92ABC63B-2FA4-432B-BAAD-2726AE5476E3</key>
+		<dict>
+			<key>from</key>
+			<string>21C6832C-78A1-4CC1-ACAA-92A3201E266F - 21C6832C-78A1-4CC1-ACAA-92A3201E266F</string>
+			<key>to</key>
+			<string>72DCFF0F-2039-42CB-95BE-8823073C78D6 - 72DCFF0F-2039-42CB-95BE-8823073C78D6</string>
+		</dict>
+		<key>A481CA79-302A-4942-9C39-3A654006C1E1</key>
+		<dict>
+			<key>from</key>
+			<string>6E952B30-1A80-47A1-AB47-585F723F9A4E - 6E952B30-1A80-47A1-AB47-585F723F9A4E</string>
+			<key>to</key>
+			<string>07C4A39E-8E40-4B57-BABF-6E84EB6BBC21 - 07C4A39E-8E40-4B57-BABF-6E84EB6BBC21</string>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<array>
+		<dict>
+			<key>UUID</key>
+			<string>37BB01CD-D253-4999-9ADE-8E8B3EF941F1</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Storage</string>
+			<key>name</key>
+			<string>files</string>
+		</dict>
+	</array>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.workflow</string>
+	</dict>
+</dict>
+</plist>
