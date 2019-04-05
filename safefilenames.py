@@ -278,8 +278,9 @@ def change_filepath(fdp, fp):
             else:
                 ffp = fp
                 fnfp = nfp
-
-            if ffp != fnfp:
+            if os.path.exists(fnfp) :
+                raise Exception("File exists")
+            if ffp != fnfp and not os.path.exists(fnfp):
                 print(ffp, "->", fnfp)
                 os.system('mv "' + ffp + '" "' + fnfp + '"')
 
