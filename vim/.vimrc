@@ -238,7 +238,7 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 syntax on
 
 " show line numbers
-set nu
+" set nu
 
 " tab navigation mappings
 map tn :tabn<CR>

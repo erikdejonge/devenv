@@ -51,9 +51,14 @@ def main():
     l3 = [x.split('/') for x in l2]
     l4 = [x[1] for x in l3 if len(x)>1]
     s1 = set(l4)
-
+    print(s1)
     for i in s1:
-        print("sudo rm -Rf  /usr/lib/python3.7/site-packages/"+i.split(" ")[0])
+        mymod = i.split(" ")[0].rstrip(".py").strip()
+        if mymod=='num':
+            mymod='numpy'
+        if "usr"!=mymod:
+            print("sudo pip3 uninstall -y "+mymod)
+            print("sudo rm -Rf  /usr/lib/python3.7/site-packages/"+i.split(" ")[0])
 
 
 if __name__ == "__main__":
