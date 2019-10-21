@@ -1,15 +1,8 @@
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote {
+h1, h2, h3, h4, h5, h6, p, blockquote {
     margin: 0;
     padding: 0;
 }
+
 @font-face {
     font-family: "Computer Modern";
     src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
@@ -17,28 +10,22 @@ blockquote {
     font-style: normal;
 }
 
-
 body {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    /*font-family:  "Source Code Pro Regular";*/
-    font-family: "Verdana" ,"CMU Bright", "Lexie Readable";
+    -moz-osx-font-smoothing: grayscale;    /*font-family:  "Source Code Pro Regular";*/
+    font-family: "Verdana", "CMU Bright", "Lexie Readable";
     font-size: 16px;
     line-height: 24px;
     color: rgba(242, 240, 205, 1);
-    background-color: #02090B;
-    /* background-color: #000; */
+    background-color: #02090B;    /* background-color: #000; */
     margin: 10px 13px 10px 13px;
-
     padding: 16px 32px 32px 16px;
-
     letter-spacing: 0.01em;
     max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
 }
-
 
 html * {
     color-profile: sRGB;
@@ -47,12 +34,10 @@ html * {
 strong {
     font-weight: normal;
     font-style: normal;
-
     color: #ffd479;
 }
 
 em {
-
     font-weight: normal;
     color: #64B68A;
     color: #B6FFAA;
@@ -180,17 +165,13 @@ li.task-list-item input {
 ul li:nth-child(even) {
     background-color: #030B0D;
 }
+
 ol li:nth-child(even) {
     background-color: #030B0D;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: normal;
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
     text-transform: capitalize;
     font-size: 16px;
     font-family: "Lexie Readable";
@@ -200,48 +181,39 @@ h6 {
 }
 
 h1 {
-
     color: #FFDB6E;
     font-weight: normal;
     line-height: 32px;
     font-size: 26px;
-
     margin-bottom: 18px;
     margin-top: 24px;
 }
 
 h2 {
     color: #FFDF73;
-
-
-
     line-height: 32px;
     font-weight: normal;
     font-size: 22px;
-
     margin-bottom: 8px;
 }
 
 h3 {
-
     font-size: 20px;
-
     color: #FFFC93;
-
 }
 
 h4 {
     margin-top: 24x;
     font-size: 18px;
     text-transform: capitalize;
-    color:  #E6FFAC;
+    color: #E6FFAC;
 }
 
 h5 {
     margin-top: 24px;
     font-size: 16px;
     text-transform: capitalize;
-    color:  #C3FEC2;
+    color: #C3FEC2;
 }
 
 h6 {
@@ -267,6 +239,7 @@ p, blockquote, ul, ol, dl, li, table, pre {
     margin: 8px 0;
     margin-top: 8px;
 }
+
 blockquote {
     margin-top: 8px;
     margin-bottom: 8px;
@@ -308,12 +281,11 @@ code, pre {
 #message {
     border-radius: 6px;
     border: 1px solid #ccc;
-    display:block;
-    width:100%;
-    height:60px;
-    margin:6px 0px;
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin: 6px 0px;
 }
-
 
 sup {
     font-size: 0.83em;
@@ -325,7 +297,6 @@ sup {
     -webkit-print-color-adjust: exact;
 }
 
-
 @media print {
     body, code, pre code, h1, h2, h3, h4, h5, h6 {
         color: black;
@@ -335,6 +306,7 @@ sup {
     table, pre {
         page-break-inside: avoid;
     }
+
 }
 
 pre {
@@ -351,7 +323,7 @@ pre {
     border-radius: 3px;
     margin-top: 4px;
     margin-bottom: 4px;
-        overflow: auto;
+    overflow: auto;
 }
 
 pre code {
@@ -359,21 +331,28 @@ pre code {
     color: #81ddaf;
     padding: 0;
     border: none;
-margin-top: 0px !important;
-
-margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 pre:not([class]) {
     border: none;
     padding: 0px !important;
     color: #F2F0CD;
-
 }
 
+#ws {
+    background-color: #f8f8f8;
+}
 
-#ws { background-color: #f8f8f8; }
+.send {
+    color: #77bb77;
+}
 
-.send { color:#77bb77; }
-.server { color:#7799bb; }
-.error { color:#AA0000; }
+.server {
+    color: #7799bb;
+}
+
+.error {
+    color: #AA0000;
+}
