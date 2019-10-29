@@ -14,7 +14,7 @@ body {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;    /*font-family:  "Source Code Pro Regular";*/
-    font-family: "Verdana", "CMU Bright", "Lexie Readable";
+    font-family:  "CMU Bright", "Verdana", "Lexie Readable";
     font-size: 16px;
     line-height: 24px;
     color: rgba(242, 240, 205, 1);
@@ -262,7 +262,7 @@ blockquote p a {
 }
 
 code, pre {
-    font-family: "Source Code Pro Regular" !important;
+    font-family: "Source Code Pro" !important;
     color: #8EB1D0;
     display: block;
     padding: 4px;
