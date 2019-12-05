@@ -6,6 +6,7 @@ Usage:
   safefilenames.py [options] <filepath>
 
 Options:
+  -d --dryrun   Do not modify files, display commands
   -h --help      Show this screen.
   -r --recursive Recursive
 
@@ -38,13 +39,29 @@ class IArguments(Arguments):
         """
         self.help = False
         self.input = ""
-        super().__init__(doc)
+        self.dryrun = False
         self.seen = set()
+        self.recursive = False
+        self.filepath = None
+        super().__init__(doc)
 
 
-def change_filepath(fdp, fp):
+def ossystem(args, cmd):
     """
-    @type arguments: IArguments
+    @type args: IArguments
+    @type cmd: str
+    @return: None
+    """
+    print(cmd)
+
+    if args.dryrun:
+        os.system(cmd)
+
+
+def change_filepath(arg, fdp, fp):
+    """
+    @type arg: IArguments
+    @type fdp: str
     @type fp: str
     @return: None
     """
@@ -203,7 +220,8 @@ def change_filepath(fdp, fp):
         'zip']
 
     nfp = get_safe_filename_string(fp)
-    print(nfp)
+
+    # print(nfp)
 
     if nfp == 'ds_store':
         if os.path.exists(nfp):
@@ -226,7 +244,7 @@ def change_filepath(fdp, fp):
             # replaces.extend([str(x) for x in range(1950, 2020)])
             for i in replaces:
                 if "marit" not in i:
-                    nfp = nfp.replace(i, "").replace("..", ".").replace("-.", ".").replace("_.", "__").strip(".").strip("_").strip("-").strip(".").replace(".", "_").replace("_nfo", ".txt").replace("_url", ".txt")
+                    nfp = nfp.replace(i, "").replace("..", ".").replace("-.", ".").replace("_.", "__").strip(".").strip("_").strip("-").strip(".").replace(".", "-").replace("_nfo", ".txt").replace("_url", ".txt")
 
             for i in ext:
                 e = "_" + i
@@ -245,26 +263,31 @@ def change_filepath(fdp, fp):
             if nfp.endswith(e):
                 nfp = nfp.strip(e)
                 nfp += n
-                print(nfp)
 
+                # print(nfp)
+
+        nfp = nfp.replace(" ", "_").strip("_")
         nfp = nfp.replace("_-_", "_").strip(".").strip("_")
 
         for i in range(0, 3):
             nfp = nfp.replace("..", ".").replace("-.", ".").replace("_.", ".").strip(".").strip("_").strip("-").strip(".")
-        slist = list(nfp)
-        for i in range(0,slist.count(".")-1):
-            slist[slist.index(".")]="_"
-        for i in range(0,slist.count("-")-1):
-            slist[slist.index("-")]="_"
 
+        slist = list(nfp)
+
+        for i in range(0, slist.count(".") - 1):
+            slist[slist.index(".")] = "-"
+
+        # for i in range(0,slist.count("-")-1):
+        #    slist[slist.index("-")]="_"
         nfp = ''.join(slist)
-        print(nfp.count("-"))
-        if 1==nfp.count("-"):
+
+        # print(nfp.count("-"))
+        if 1 == nfp.count("-"):
             nfps = nfp.split("-")
+
             print(nfps)
             nfpsext = nfps[1].split(".")[-1]
-            nfp = nfps[0]+"."+nfpsext
-
+            nfp = nfps[0] + "." + nfpsext
 
         nfpl = nfp.split(".")
         nfp2 = "_".join(nfpl[:-1])
@@ -278,19 +301,23 @@ def change_filepath(fdp, fp):
             else:
                 ffp = fp
                 fnfp = nfp
-            if os.path.exists(fnfp) :
+
+            if os.path.exists(fnfp):
                 raise Exception("File exists")
+
             if ffp != fnfp and not os.path.exists(fnfp):
                 print(ffp, "->", fnfp)
-                os.system('mv "' + ffp + '" "' + fnfp + '"')
+                ossystem(arg, 'mv "' + ffp + '" "' + fnfp + '"')
 
 
 skipmsg = set()
 
 
-def walkdir(recursive, fdp):
+def walkdir(args, recursive, fdp):
     """
-    @type arguments: IArguments
+    @type args: IArguments
+    @type recursive: bool
+    @type fdp: str
     @return: None
     """
     global skipmsg
@@ -304,13 +331,13 @@ def walkdir(recursive, fdp):
                 skip = True
 
         if not skip:
-            change_filepath(fdp, fp)
+            change_filepath(args, fdp, fp)
 
             if recursive is not None:
                 fpd = os.path.join(fdp, fp)
 
                 if os.path.isdir(fpd):
-                    walkdir(recursive, fpd)
+                    walkdir(args, recursive, fpd)
         else:
             if fp not in skipmsg:
                 print("\033[33mskipping {}\033[0m".format(fp))
@@ -324,10 +351,10 @@ def main():
     arguments = IArguments(__doc__)
 
     if os.path.isfile(arguments.filepath):
-        change_filepath(os.path.dirname(arguments.filepath), os.path.basename(arguments.filepath))
+        change_filepath(arguments, os.path.dirname(arguments.filepath), os.path.basename(arguments.filepath))
     else:
         for i in range(0, 10):
-            walkdir(arguments.recursive, arguments.filepath)
+            walkdir(arguments, arguments.recursive, arguments.filepath)
 
 
 if __name__ == "__main__":
