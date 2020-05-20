@@ -52,9 +52,9 @@ def ossystem(args, cmd):
     @type cmd: str
     @return: None
     """
-    print(cmd)
+    print(cmd, args.dryrun)
 
-    if args.dryrun:
+    if not args.dryrun:
         os.system(cmd)
 
 
@@ -244,7 +244,7 @@ def change_filepath(arg, fdp, fp):
             # replaces.extend([str(x) for x in range(1950, 2020)])
             for i in replaces:
                 if "marit" not in i:
-                    nfp = nfp.replace(i, "").replace("..", ".").replace("-.", ".").replace("_.", "__").strip(".").strip("_").strip("-").strip(".").replace(".", "-").replace("_nfo", ".txt").replace("_url", ".txt")
+                    nfp = nfp.replace(i, "").replace("..", ".").replace("-.", ".").replace("_.", "__").strip(".").strip("_").strip("-").strip(".").replace(".", "_").replace("_nfo", ".txt").replace("_url", ".txt")
 
             for i in ext:
                 e = "_" + i
@@ -281,7 +281,8 @@ def change_filepath(arg, fdp, fp):
         #    slist[slist.index("-")]="_"
         nfp = ''.join(slist)
 
-        # print(nfp.count("-"))
+        print(nfp.count("-"))
+        
         if 1 == nfp.count("-"):
             nfps = nfp.split("-")
 
@@ -293,7 +294,7 @@ def change_filepath(arg, fdp, fp):
         nfp2 = "_".join(nfpl[:-1])
         nfp2 += "." + nfpl[-1]
 
-        # print(nfp2)
+        
         if fp != nfp:
             if os.path.isdir(fdp):
                 ffp = os.path.join(fdp, fp)
@@ -303,9 +304,10 @@ def change_filepath(arg, fdp, fp):
                 fnfp = nfp
 
             if os.path.exists(fnfp):
-                raise Exception("File exists")
+                #raise Exception("File exists: "+str(fnfp))
+                print("File exists: "+str(fnfp))
 
-            if ffp != fnfp and not os.path.exists(fnfp):
+            elif ffp != fnfp and not os.path.exists(fnfp):
                 print(ffp, "->", fnfp)
                 ossystem(arg, 'mv "' + ffp + '" "' + fnfp + '"')
 
